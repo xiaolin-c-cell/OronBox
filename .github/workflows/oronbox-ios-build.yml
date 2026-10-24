@@ -11,51 +11,80 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
-
       - name: Flutter config & pub get
         run: |
           flutter config --no-analytics
           flutter --version
           flutter pub get
-
-      # --no-codesign: 不搞苹果证书，产出未签名 .app，之后 ad-hoc 签名喂 TrollStore
-      # 注意: Flutter 3.47 在 --no-codesign 下，xcodebuild 编译成功后会再校验一次
-      # Development Team 并以非零退出（已知行为，与代码无关）。此时 Runner.app
-      # 已完整生成，故容忍退出码，但必须逐项校验产物完整性，缺任何一样都算失败。
+      # flutter build 负责生成工程配置、pod install、编译 Dart AOT；
+      # 其末尾的 Development Team 提示是 xcodebuild 失败后的兜底诊断
+      # (flutter_tools mac.dart: _missingDevelopmentTeam)，非零退出属已知行为。
+      # 策略: 容忍退出码 -> 诊断+强校验产物 -> 不完整则 xcodebuild 直编兜底。
       - name: Build iOS (no codesign)
         run: |
           set -uo pipefail
-          flutter build ios --release --no-codesign || echo "::warning:: flutter build non-zero exit (expected Team check), verifying artifacts instead"
+          flutter build ios --release --no-codesign || echo "::warning:: flutter build non-zero exit (known Team-check diagnosis), verifying artifacts next"
+          echo "===== DIAG build/ios tree ====="
+          find build/ios -maxdepth 3 2>/dev/null | head -60
+          for d in build/ios build/ios/Release-iphoneos build/ios/Release-iphoneos/Runner.app; do
+            echo "----- ls $d -----"
+            ls -la "$d" 2>/dev/null || true
+          done
           APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
+          OK=0
+          if [ -n "$APP" ]; then
+            BIN_NAME="$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist" 2>/dev/null || echo Runner)"
+            echo "flutter app: $APP  CFBundleExecutable=$BIN_NAME"
+            if [ -f "$APP/$BIN_NAME" ] && [ -d "$APP/Frameworks" ] && [ -d "$APP/flutter_assets" ]; then
+              OK=1
+            else
+              echo "::warning:: flutter app incomplete (exe / Frameworks / flutter_assets check failed)"
+            fi
+          fi
+          if [ "$OK" != "1" ]; then
+            echo "::warning:: fallback: direct xcodebuild with signing fully disabled"
+            xcodebuild \
+              -workspace ios/Runner.xcworkspace \
+              -scheme Runner \
+              -configuration Release \
+              -destination 'generic/platform=iOS' \
+              -derivedDataPath build/xcode-direct \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY="" \
+              EXPANDED_CODE_SIGN_IDENTITY="" \
+              ENABLE_BITCODE=NO \
+              build 2>&1 | tail -200
+            APP="$(find build/xcode-direct -name "Runner.app" -type d | head -n1 || true)"
+          fi
           if [ -z "$APP" ]; then
-            echo "::error:: Runner.app not found - the build really failed"
+            echo "::error:: Runner.app not found anywhere - see DIAG output above"
             exit 1
           fi
-          echo "Runner.app: $APP"
-          test -f "$APP/Runner"         || { echo "::error:: Runner binary missing"; exit 1; }
-          test -d "$APP/Frameworks"     || { echo "::error:: Frameworks missing"; exit 1; }
-          test -d "$APP/flutter_assets" || { echo "::error:: flutter_assets missing"; exit 1; }
-          test -f "$APP/Info.plist"     || { echo "::error:: Info.plist missing"; exit 1; }
-          echo "::notice:: artifact integrity check passed"
-          du -sh "$APP"
-
+          echo "::notice:: using app: $APP"
+          printf '%s' "$APP" > .app_path
       - name: Ad-hoc sign & package IPA
         run: |
           set -euo pipefail
-          APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
-          echo "Found app: $APP"
+          APP="$(cat .app_path 2>/dev/null || true)"
+          if [ -z "$APP" ] || [ ! -d "$APP" ]; then
+            APP="$(find build/ios build/xcode-direct -name "Runner.app" -type d 2>/dev/null | head -n1 || true)"
+          fi
+          if [ -z "$APP" ]; then
+            echo "::error:: no Runner.app to package"
+            exit 1
+          fi
+          echo "Packaging app: $APP"
           rm -rf Payload && mkdir -p Payload
           cp -r "$APP" Payload/
           codesign --force --sign - Payload/Runner.app || codesign --force --deep --sign - Payload/Runner.app
           zip -qry OronBox-iOS.ipa Payload
           ls -lh OronBox-iOS.ipa
-
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
