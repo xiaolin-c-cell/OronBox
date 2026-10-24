@@ -25,13 +25,30 @@ jobs:
           flutter pub get
 
       # --no-codesign: 不搞苹果证书，产出未签名 .app，之后 ad-hoc 签名喂 TrollStore
+      # 注意: Flutter 3.47 在 --no-codesign 下，xcodebuild 编译成功后会再校验一次
+      # Development Team 并以非零退出（已知行为，与代码无关）。此时 Runner.app
+      # 已完整生成，故容忍退出码，但必须逐项校验产物完整性，缺任何一样都算失败。
       - name: Build iOS (no codesign)
-        run: flutter build ios --release --no-codesign
+        run: |
+          set -uo pipefail
+          flutter build ios --release --no-codesign || echo "::warning:: flutter build non-zero exit (expected Team check), verifying artifacts instead"
+          APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
+          if [ -z "$APP" ]; then
+            echo "::error:: Runner.app not found - the build really failed"
+            exit 1
+          fi
+          echo "Runner.app: $APP"
+          test -f "$APP/Runner"         || { echo "::error:: Runner binary missing"; exit 1; }
+          test -d "$APP/Frameworks"     || { echo "::error:: Frameworks missing"; exit 1; }
+          test -d "$APP/flutter_assets" || { echo "::error:: flutter_assets missing"; exit 1; }
+          test -f "$APP/Info.plist"     || { echo "::error:: Info.plist missing"; exit 1; }
+          echo "::notice:: artifact integrity check passed"
+          du -sh "$APP"
 
       - name: Ad-hoc sign & package IPA
         run: |
           set -euo pipefail
-          APP="$(find build/ios -name "Runner.app" -type d | head -n1)"
+          APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
           echo "Found app: $APP"
           rm -rf Payload && mkdir -p Payload
           cp -r "$APP" Payload/
