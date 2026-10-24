@@ -35,7 +35,7 @@ class SceneDelegate: FlutterSceneDelegate {
     // Cold start: the channel is not registered yet, so stash the path and
     // let Dart pull it with getInitialFile after the first frame.
     for context in connectionOptions.urlContexts where context.url.isFileURL {
-      if let path = localPath(for: context.url) {
+      if let path = Self.localPath(for: context.url) {
         AppDelegate.pendingOpenFilePath = path
       }
     }
