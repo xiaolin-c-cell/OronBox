@@ -8,6 +8,7 @@ import 'package:oronbox/src/app/window/debug_window_preference.dart';
 import 'package:oronbox/src/app/window/window_launch_spec.dart';
 import 'package:oronbox/src/app/window/window_launcher.dart';
 import 'package:oronbox/src/cli/cli_entrypoint.dart';
+import 'package:oronbox/src/core/logging/bluetooth_log.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
 import 'package:oronbox/src/core/logging/diagnostic_event.dart';
 import 'package:oronbox/src/core/services/license_registry_service.dart';
@@ -33,6 +34,7 @@ void main(List<String> args) async {
           : DiagnosticProcess.frontend,
   };
   await initLogging(arguments: args, process: process);
+  initBluetoothLogging();
   installGlobalErrorLogging();
   await SharedPrefsService.instance.init();
   await runCliIfRequested(args);
