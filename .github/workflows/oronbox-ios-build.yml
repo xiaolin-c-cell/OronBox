@@ -1,0 +1,47 @@
+name: Build iOS IPA (TrollStore)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  FLUTTER_VERSION: "3.47.5"
+jobs:
+  build-ios:
+    runs-on: macos-14
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Flutter config & pub get
+        run: |
+          flutter config --no-analytics
+          flutter --version
+          flutter pub get --enforce-lockfile
+
+      # --no-codesign: 不搞苹果证书，产出未签名 .app，之后 ad-hoc 签名喂 TrollStore
+      - name: Build iOS (no codesign)
+        run: flutter build ios --release --no-codesign
+
+      - name: Ad-hoc sign & package IPA
+        run: |
+          set -euo pipefail
+          APP="$(find build/ios -name "Runner.app" -type d | head -n1)"
+          echo "Found app: $APP"
+          rm -rf Payload && mkdir -p Payload
+          cp -r "$APP" Payload/
+          codesign --force --sign - Payload/Runner.app || codesign --force --deep --sign - Payload/Runner.app
+          zip -qry OronBox-iOS.ipa Payload
+          ls -lh OronBox-iOS.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OronBox-iOS-ipa
+          path: OronBox-iOS.ipa
+          if-no-files-found: error
