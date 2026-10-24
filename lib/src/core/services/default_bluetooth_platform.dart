@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:oronbox/src/core/logging/bluetooth_log.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
 import 'package:oronbox/src/core/services/ble_gatt_driver.dart';
 import 'package:oronbox/src/core/services/rfcomm_driver.dart';
@@ -119,6 +120,12 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
   void _onEndpoint(BluetoothEndpoint endpoint) {
     final key = _endpointKey(endpoint);
     _scanResults[key] = endpoint;
+    logDiagnostic(_log, Level.FINE, 'scan endpoint received', fields: {
+      'address': endpoint.address,
+      'name': endpoint.name,
+      'rssi': endpoint.rssi,
+      'transport': endpoint.connectType.name,
+    });
     // BLE advertisements are incremental on some platforms, so later events
     // may provide a name or service UUIDs missing from the first result
     _scanController.add(endpoint);
@@ -147,7 +154,11 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
         }
       }
     }
-    _log.info('connecting to $name @ $address via ${options.connectType.name}');
+    logDiagnostic(_log, Level.INFO, 'connect requested', fields: {
+      'address': address,
+      'name': name,
+      'transport': options.connectType.name,
+    });
 
     final BluetoothConnection connection;
     switch (options.connectType) {
@@ -200,6 +211,7 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
     }
   }
 
+  @override
   Future<void> dispose() async {
     await _bleSubscription?.cancel();
     await _sppSubscription?.cancel();
