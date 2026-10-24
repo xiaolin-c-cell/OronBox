@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:universal_ble/universal_ble.dart';
+import 'package:oronbox/src/core/logging/bluetooth_log.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
 import 'package:oronbox/src/device/core/ble_requirement.dart';
 import 'package:oronbox/src/device/core/bluetooth_platform.dart';
@@ -49,7 +50,15 @@ class BleConnection {
 
   void _onConnectionStateChanged(bool connected) {
     if (_disposed) return;
-    _log.info('[$deviceId] connection state changed: connected=$connected');
+    if (connected) {
+      logDiagnostic(_log, Level.INFO, 'connection state changed', fields: {
+        'deviceId': deviceId,
+        'deviceName': deviceName,
+        'connected': true,
+      });
+    } else {
+      btDisconnected(deviceId: deviceId);
+    }
     _connectionController.add(connected);
   }
 
@@ -95,7 +104,14 @@ class BleConnection {
         const Duration(seconds: 10),
       ),
     );
-    _log.fine('[$deviceId] discovered ${services.length} services');
+    logDiagnostic(_log, Level.INFO, 'service discovery complete', fields: {
+      'deviceId': deviceId,
+      'serviceCount': services.length,
+      'services': services
+          .map((service) =>
+              '${service.uuid}(chars=${service.characteristics.length})')
+          .join(','),
+    });
     for (final service in services) {
       _log.fine(
         '[$deviceId] service ${service.uuid} with ${service.characteristics.length} characteristics',
@@ -119,6 +135,7 @@ class BleConnection {
       throw StateError('Characteristic $charUuid not found');
     }
     _log.fine('[$deviceId] subscribing to $charUuid');
+    btNotify(deviceId: deviceId, charUuid: charUuid, subscribed: true);
     await characteristic.notifications.subscribe().timeout(
       const Duration(seconds: 8),
       onTimeout: () => throw TimeoutException(
@@ -129,6 +146,11 @@ class BleConnection {
     return characteristic.onValueReceived.listen(
       (data) {
         _log.fine('[$deviceId] received ${data.length} bytes from $charUuid');
+        btRecv(
+          deviceId: deviceId,
+          charUuid: charUuid,
+          byteCount: data.length,
+        );
         onData(data);
       },
       onError: (Object e) =>
@@ -140,6 +162,7 @@ class BleConnection {
     final characteristic = findCharacteristic(serviceUuid, charUuid);
     if (characteristic == null) return;
     _log.fine('[$deviceId] unsubscribing from $charUuid');
+    btNotify(deviceId: deviceId, charUuid: charUuid, subscribed: false);
     await characteristic.notifications.unsubscribe().timeout(
       const Duration(seconds: 8),
       onTimeout: () => throw TimeoutException(
@@ -188,6 +211,12 @@ class BleConnection {
             '[$deviceId] writing ${data.length} bytes to $charUuid '
             'withResponse=$effectiveWithResponse '
             '(requested=$withResponse, properties=${characteristic.properties})',
+          );
+          btWrite(
+            deviceId: deviceId,
+            charUuid: charUuid,
+            byteCount: data.length,
+            withResponse: effectiveWithResponse,
           );
           await characteristic
               .write(data, withResponse: effectiveWithResponse)
@@ -281,7 +310,11 @@ class BleGattDriver {
   }) async {
     await stopScan();
     _scanResults.clear();
-    _log.info('starting BLE scan');
+    btScanStart(
+      serviceUuids: withServices ?? const [],
+      namePrefixes: withNamePrefixes ?? const [],
+      timeoutMs: timeout.inMilliseconds,
+    );
 
     _scanSubscription = UniversalBle.scanStream.listen((device) {
       final name = device.name?.trim() ?? '';
@@ -307,9 +340,11 @@ class BleGattDriver {
         _log.fine(
           'scanned device: $name @ ${device.deviceId} rssi=${device.rssi}',
         );
-        _log.fine(
-          'device_identity platform.ble_scan '
-          'addr=${device.deviceId} bleName="$name" rssi=${device.rssi}',
+        btDeviceDiscovered(
+          address: device.deviceId,
+          name: name,
+          rssi: device.rssi,
+          serviceUuids: device.services,
         );
       }
       _scanResults[device.deviceId] = scanned;
@@ -359,7 +394,13 @@ class BleGattDriver {
         : const Duration(seconds: 12);
     await stopScan();
     var effectiveDeviceId = deviceId;
-    _log.info('[$effectiveDeviceId] initiating BLE connection');
+    final stopwatch = Stopwatch()..start();
+    btConnectAttempt(
+      deviceId: effectiveDeviceId,
+      deviceName: deviceName,
+      attemptPair: attemptPair,
+      desiredMtu: desiredMtu,
+    );
     // Subscribe before starting the platform connection. Some backends emit
     // connected=true before UniversalBle.connect() completes; subscribing
     // afterwards loses that event and makes a healthy connection time out.
@@ -390,6 +431,12 @@ class BleGattDriver {
         '[$effectiveDeviceId] BLE connect timed out after '
         '${connectTimeout.inSeconds}s; the device may be connected to '
         'another host or out of range',
+      );
+      btConnectFailed(
+        deviceId: effectiveDeviceId,
+        stage: 'platform-connect-timeout',
+        error: TimeoutException('BLE connect timed out'),
+        elapsedMs: stopwatch.elapsedMilliseconds,
       );
       await connection.dispose();
       throw TimeoutException(
@@ -477,7 +524,12 @@ class BleGattDriver {
           rethrow;
         }
       } else {
-        _log.severe('[$effectiveDeviceId] UniversalBle.connect failed', e);
+        btConnectFailed(
+          deviceId: effectiveDeviceId,
+          stage: 'platform-connect',
+          error: e,
+          elapsedMs: stopwatch.elapsedMilliseconds,
+        );
         await connection.dispose();
         if (e is PlatformException) {
           // Same contract as the SPP driver: native errors cross the daemon
@@ -532,6 +584,12 @@ class BleGattDriver {
       await connection.discoverServices();
     } catch (e) {
       _log.severe('[$deviceId] service discovery failed', e);
+      btConnectFailed(
+        deviceId: effectiveDeviceId,
+        stage: 'service-discovery',
+        error: e,
+        elapsedMs: stopwatch.elapsedMilliseconds,
+      );
       await connection.dispose();
       rethrow;
     }
@@ -555,6 +613,12 @@ class BleGattDriver {
         '${missing.map((c) => c.label ?? c.characteristicUuid).join(', ')}; '
         'discovered=$discovered',
       );
+      btConnectFailed(
+        deviceId: effectiveDeviceId,
+        stage: 'required-characteristics-missing',
+        error: StateError('missing: ${missing.length} characteristic(s)'),
+        elapsedMs: stopwatch.elapsedMilliseconds,
+      );
       await connection.dispose();
       throw StateError(
         'Required BLE characteristics not found for $deviceName @ $deviceId. '
@@ -574,7 +638,12 @@ class BleGattDriver {
       }
     }
 
-    _log.info('[$deviceId] BLE connection ready');
+    btConnectEstablished(
+      deviceId: effectiveDeviceId,
+      mtu: connection.mtu,
+      serviceCount: connection.services.length,
+      elapsedMs: stopwatch.elapsedMilliseconds,
+    );
     return connection;
   }
 
