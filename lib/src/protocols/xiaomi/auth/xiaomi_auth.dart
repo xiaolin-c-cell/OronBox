@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:oronbox/src/core/logging/bluetooth_log.dart';
 import 'package:oronbox/src/protocols/common/device_protocol.dart';
 import 'package:oronbox/src/protocols/generated/xiaomi/wear.pb.dart' as pb;
 import 'package:oronbox/src/protocols/generated/xiaomi/wear_account.pb.dart'
@@ -30,7 +31,15 @@ class XiaomiAuth {
     _authKeyHex = authKeyHex;
     _appRandom = generateRandomBytes(16);
     final packet = _buildAuthStep1(_appRandom);
+    btAuthStage(
+      stage: 'step1-app-verify-sending',
+      keyFingerprint: redactAuthKey(authKeyHex),
+    );
     await _sendPbPacket(packet);
+    btAuthStage(
+      stage: 'step1-app-verify-sent',
+      keyFingerprint: redactAuthKey(authKeyHex),
+    );
   }
 
   Future<void> onDeviceVerify(pb_account.Auth_DeviceVerify verify) async {
@@ -44,8 +53,14 @@ class XiaomiAuth {
         deviceVerify: verify,
       );
       _keys = keys;
+      btAuthStage(
+        stage: 'step2-app-confirm-sending',
+        keyFingerprint: redactAuthKey(_authKeyHex),
+      );
       await _sendPbPacket(confirmPacket);
+      btAuthStage(stage: 'step2-app-confirm-sent');
     } catch (e) {
+      btAuthStage(stage: 'step2-app-confirm-failed', ok: false, error: e);
       onError(e);
       if (!_completer.isCompleted) {
         _completer.completeError(e);
@@ -56,14 +71,25 @@ class XiaomiAuth {
   void onDeviceConfirm(pb_account.Auth_DeviceConfirm confirm) {
     if (confirm.confirmResult) {
       if (_keys == null) {
+        btAuthStage(
+          stage: 'confirm',
+          ok: false,
+          error: 'confirm received but keys not set',
+        );
         onError(ProtocolException('auth confirm received but keys not set'));
         return;
       }
+      btAuthStage(stage: 'confirm-accepted-by-device');
       onAuthenticated(_keys!);
       if (!_completer.isCompleted) {
         _completer.complete();
       }
     } else {
+      btAuthStage(
+        stage: 'confirm-rejected-by-device',
+        ok: false,
+        error: 'auth confirm rejected by device',
+      );
       final error = ProtocolException('auth confirm rejected by device');
       onError(error);
       if (!_completer.isCompleted) {
