@@ -21,7 +21,9 @@ void logDiagnostic(
   Object? error,
   StackTrace? stackTrace,
 }) {
-  if (level < Logger.root.level) return;
+  // Respect hierarchical channel levels: a subsystem that raised its own
+  // level (e.g. bluetooth verbose logging) must not be silenced by root.
+  if (level < (logger.level ?? Logger.root.level)) return;
   publishDiagnostic(
     DiagnosticEvent(
       time: DateTime.now(),
@@ -62,11 +64,26 @@ List<String> get recentOronBoxLogs =>
     recentOronBoxDiagnostics.map((event) => event.format()).toList();
 bool _globalErrorLoggingInstalled = false;
 
+/// FINE 级日志默认只进内存环形缓冲；蓝牙排查场景需要落盘，默认开启
+/// （日志文件 3 天自动清理，见 file_log_sink_io）。
+bool _bluetoothVerboseFileSink = true;
+
+void setBluetoothVerboseFileSinkEnabled(bool enabled) {
+  _bluetoothVerboseFileSink = enabled;
+}
+
+bool isBluetoothSource(String source) =>
+    source.startsWith('oronbox.bluetooth') ||
+    source.startsWith('oronbox.Ble');
+
 void publishDiagnostic(DiagnosticEvent event) {
   _recentDiagnostics.add(event);
   if (_recentDiagnostics.length > 1000) _recentDiagnostics.removeAt(0);
   _diagnostics.add(event);
-  if (event.level < Level.INFO) return;
+  if (event.level < Level.INFO &&
+      !(_bluetoothVerboseFileSink && isBluetoothSource(event.source))) {
+    return;
+  }
   final line = event.format();
   writeFileLogLine(line);
   // ignore: avoid_print
