@@ -1,9 +1,3 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
-import 'package:crypto/crypto.dart';
-import 'package:oronbox/src/core/logging/logging_service.dart';
-
 /// 蓝牙子系统结构化日志通道。
 ///
 /// 设计目标（iOS / 桌面排障）：
@@ -13,6 +7,12 @@ import 'package:oronbox/src/core/logging/logging_service.dart';
 ///   入日志——导出的日志 zip 常被用户直接分享，泄露 key 等于泄露手环绑定；
 /// - 包级日志（[btPacket]）只记前若干字节的 hex 预览，防止日志量爆炸。
 library;
+
+import 'dart:convert';
+import 'dart:typed_data';
+
+import 'package:crypto/crypto.dart';
+import 'package:oronbox/src/core/logging/logging_service.dart';
 
 final _log = getLogger('bluetooth');
 final _packetLog = getLogger('bluetooth.packet');
@@ -77,12 +77,12 @@ void btScanStopped({required int deviceCount, required int elapsedMs}) =>
 void btDeviceDiscovered({
   required String address,
   required String name,
-  required int rssi,
+  int? rssi,
   List<String> serviceUuids = const [],
 }) => logDiagnostic(_log, Level.FINE, 'BLE device discovered', fields: {
   'address': address,
   'name': name,
-  'rssi': rssi,
+  'rssi': rssi ?? 'unknown',
   'serviceUuids': serviceUuids.isEmpty ? 'none' : serviceUuids.join(','),
 });
 
