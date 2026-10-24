@@ -22,7 +22,7 @@ jobs:
         run: |
           flutter config --no-analytics
           flutter --version
-          flutter pub get --enforce-lockfile
+          flutter pub get
 
       # --no-codesign: 不搞苹果证书，产出未签名 .app，之后 ad-hoc 签名喂 TrollStore
       - name: Build iOS (no codesign)
