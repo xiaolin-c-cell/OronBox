@@ -1,7 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:oronbox/src/core/wasm/wasm_runtime.dart';
-
 /// libwebp WASM 编码器的 iOS 桩（原因见 wasm_runtime.dart 顶部说明）。
 ///
 /// [encode] 恒返回 null——这正是调用方既有的"编码失败回退 PNG"信号，
