@@ -70,7 +70,7 @@ void _armWatchdogs() {
 void _installDiagnosticHooks() {
   final previousOnError = FlutterError.onError;
   FlutterError.onError = (details) {
-    _reportDiagnostic('Flutter 框架错误', details.exception, details.stackTrace);
+    _reportDiagnostic('Flutter 框架错误', details.exception, details.stack);
     if (previousOnError != null) {
       previousOnError(details);
     }
