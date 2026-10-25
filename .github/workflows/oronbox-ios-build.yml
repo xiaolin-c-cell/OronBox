@@ -21,6 +21,10 @@ jobs:
           flutter config --no-analytics
           flutter --version
           flutter pub get
+      # 静态分析先行：任何 Dart 编译错误在这里就以可读日志快速失败，
+      # 不消耗后续构建时间，也不会被 flutter build 的输出吞掉。
+      - name: Static analysis
+        run: flutter analyze
       # flutter build 负责生成工程配置、pod install、编译 Dart AOT；
       # 其末尾的 Development Team 提示是 xcodebuild 失败后的兜底诊断
       # (flutter_tools mac.dart: _missingDevelopmentTeam)，非零退出属已知行为。
