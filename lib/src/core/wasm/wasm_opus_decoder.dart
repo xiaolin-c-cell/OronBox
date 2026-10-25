@@ -1,7 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:oronbox/src/core/wasm/wasm_runtime.dart';
-
 /// libopus WASM 解码器的 iOS 桩（原因见 wasm_runtime.dart 顶部说明）。
 /// 仅 ZeppOS 小爱语音页使用，与小米手环主链路无关。
 final class WasmOpusDecoder {
