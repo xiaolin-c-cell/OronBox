@@ -69,6 +69,7 @@ void btScanStart({
 }) => logDiagnostic(_log, Level.INFO, 'BLE scan started', fields: {
   'serviceUuids': serviceUuids.isEmpty ? 'any' : serviceUuids.join(','),
   'namePrefixes': namePrefixes.isEmpty ? 'any' : namePrefixes.join(','),
+  'connectTypes': connectTypes.isEmpty ? 'any' : connectTypes.join(','),
   'timeoutMs': timeoutMs,
 });
 
