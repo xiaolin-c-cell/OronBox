@@ -29,6 +29,11 @@ const bluetoothChannelNames = <String>[
 
 /// 打开蓝牙 channel 的 FINE 级别。必须在 [initLogging] 之后调用。
 void initBluetoothLogging() {
+  // logging 1.3：给非 root logger 设置 level 前必须先打开全局
+  // hierarchicalLoggingEnabled 开关（默认 false，否则 setter 直接抛
+  // UnsupportedError——iOS 白屏的根因就是这里）。打开后 logger.level
+  // getter 也会沿父链解析，与 logDiagnostic 的阈值比较逻辑一致。
+  hierarchicalLoggingEnabled = true;
   for (final name in bluetoothChannelNames) {
     Logger(name).level = Level.FINE;
   }
@@ -64,7 +69,6 @@ void btScanStart({
 }) => logDiagnostic(_log, Level.INFO, 'BLE scan started', fields: {
   'serviceUuids': serviceUuids.isEmpty ? 'any' : serviceUuids.join(','),
   'namePrefixes': namePrefixes.isEmpty ? 'any' : namePrefixes.join(','),
-  'connectTypes': connectTypes.isEmpty ? 'any' : connectTypes.join(','),
   'timeoutMs': timeoutMs,
 });
 
