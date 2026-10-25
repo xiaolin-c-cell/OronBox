@@ -23,7 +23,9 @@ void logDiagnostic(
 }) {
   // Respect hierarchical channel levels: a subsystem that raised its own
   // level (e.g. bluetooth verbose logging) must not be silenced by root.
-  if (level < (logger.level ?? Logger.root.level)) return;
+  // logging 1.3: Logger.level is non-nullable and already resolves the
+  // parent hierarchy, so no root-level fallback is needed.
+  if (level < logger.level) return;
   publishDiagnostic(
     DiagnosticEvent(
       time: DateTime.now(),
