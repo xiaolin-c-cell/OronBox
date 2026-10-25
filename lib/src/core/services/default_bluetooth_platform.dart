@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:oronbox/src/core/logging/bluetooth_log.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
 import 'package:oronbox/src/core/services/ble_gatt_driver.dart';
 import 'package:oronbox/src/core/services/rfcomm_driver.dart';
@@ -211,7 +210,6 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
     }
   }
 
-  @override
   Future<void> dispose() async {
     await _bleSubscription?.cancel();
     await _sppSubscription?.cancel();
