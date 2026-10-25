@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
 import 'package:flutter/services.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
@@ -77,6 +78,7 @@ class NativeRfcommDriver implements RfcommDriver {
   }
 
   void _ensureEventSubscription() {
+    if (Platform.isIOS) return;
     _eventSubscription ??= _events.receiveBroadcastStream().listen(
       _onNativeEvent,
       onError: (Object e, StackTrace st) {
@@ -158,6 +160,14 @@ class NativeRfcommDriver implements RfcommDriver {
 
   @override
   Stream<BluetoothEndpoint> get scanStream {
+    if (Platform.isIOS) {
+      // No native SPP implementation on iOS. Touching the EventChannel here
+      // would emit MissingPluginException into the merged platform scan
+      // stream, which DeviceManager listens to without onError — an
+      // uncaught async error at startup (white screen). Empty stream = the
+      // SPP transport simply reports no devices.
+      return const Stream.empty();
+    }
     final parsed = _scanEvents.receiveBroadcastStream().map<BluetoothEndpoint?>(
       (event) {
         if (event is! Map) {
