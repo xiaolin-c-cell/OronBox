@@ -37,7 +37,7 @@ OronBox is a cross-platform wearable device management tool that connects to and
 | Web | ✅ Supported | The browser must support Web Serial / Bluetooth |
 | macOS | ✅ Supported | macOS 12+ |
 | Windows | ✅ Supported | Windows 10+; Xiaomi account 2FA login requires WebView2 |
-| iOS | ❌ Not currently supported | No physical device is available for debugging or testing |
+| iOS | ⚠️ Third-party build available | No official device for testing; see the third-party iOS build in [Releases (ios-1.1.3-final)](https://github.com/xiaolin-c-cell/OronBox/releases/tag/ios-1.1.3-final): iOS 15.0+ (verified on iPhone 8 Plus / iOS 16.7.16), install via TrollStore; BLE works, WASM plugins / Opus decoding unavailable |
 
 ## Supported devices
 
