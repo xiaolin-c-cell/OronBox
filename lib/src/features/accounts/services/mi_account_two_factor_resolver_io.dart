@@ -5,6 +5,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 
 import 'mi_account_two_factor_resolver_base.dart';
+import 'mi_account_two_factor_resolver_inappwebview.dart';
 
 MiAccountTwoFactorResolver createPlatformMiAccountTwoFactorResolver() {
   if (Platform.isAndroid ||
@@ -12,6 +13,10 @@ MiAccountTwoFactorResolver createPlatformMiAccountTwoFactorResolver() {
       Platform.isMacOS ||
       Platform.isWindows) {
     return const NativeMiAccountTwoFactorResolver();
+  }
+  if (Platform.isIOS) {
+    // iOS 原生侧未实现 2FA handler，改用纯 Dart 应用内 WebView 完成验证。
+    return const InAppWebViewMiAccountTwoFactorResolver();
   }
   return const UnsupportedIoMiAccountTwoFactorResolver();
 }
