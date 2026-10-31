@@ -63,6 +63,7 @@ dependencies:
   fl_chart: ^1.2.0
   flutter_timezone: ^5.1.0
   cupertino_ui: ^1.1.1
+  flutter_inappwebview: ^6.1.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
