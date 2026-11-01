@@ -15,6 +15,11 @@ import 'mi_account_two_factor_resolver_base.dart';
 ///
 /// 逻辑与 macOS 版（AppDelegate.swift 的 MacOSMiAccountTwoFactorSession）对齐：
 /// 轮询 cookie，一旦抓到 passToken / cUserId / userId 即视为验证完成。
+///
+/// 注意：WebView 必须放在一个**全屏路由（route）**里，不能嵌进 AlertDialog。
+/// 在 iOS 上把 InAppWebView 放进 AlertDialog 时，原生平台视图拿不到合法的
+/// UIViewController，会返回 null，从而触发包内 Dart 的 `!` 空断言导致崩溃
+/// （"Null check operator used on a null value"）。改用普通路由即可避免。
 class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolver {
   const InAppWebViewMiAccountTwoFactorResolver();
 
@@ -23,6 +28,7 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
     final completer = Completer<String>();
     InAppWebViewController? controller;
     Timer? pollTimer;
+    Timer? timeoutTimer;
     var settled = false;
 
     void finish({
@@ -35,6 +41,8 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
       settled = true;
       pollTimer?.cancel();
       pollTimer = null;
+      timeoutTimer?.cancel();
+      timeoutTimer = null;
       final navigator = Navigator.of(context, rootNavigator: true);
       if (navigator.canPop()) {
         navigator.pop();
@@ -63,50 +71,61 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
       });
     }
 
-    unawaited(
-      showDialog<void>(
-        context: context,
-        barrierDismissible: false,
-        builder: (dialogContext) {
-          return AlertDialog(
-            title: const Text('小米账号验证'),
-            contentPadding: const EdgeInsets.all(8),
-            content: SizedBox(
-              width: double.maxFinite,
-              height: 420,
-              child: InAppWebView(
-                initialSettings: InAppWebViewSettings(),
-                initialUrlRequest: URLRequest(
-                  url: WebUri(notificationUrl.toString()),
-                ),
-                onWebViewCreated: (created) => controller = created,
-                onLoadStop: (c, url) => checkCookies(),
-                onReceivedError: (c, request, error) {
-                  finish(
-                    errorMessage: '小米账号验证页面加载失败：${error.description}',
-                  );
-                },
-              ),
+    final route = MaterialPageRoute<void>(
+      builder: (routeContext) => Scaffold(
+        appBar: AppBar(
+          title: const Text('小米账号验证'),
+          leading: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () =>
+                finish(errorMessage: '用户取消了小米账号二次验证'),
+          ),
+        ),
+        body: SafeArea(
+          child: InAppWebView(
+            initialSettings: InAppWebViewSettings(),
+            initialUrlRequest: URLRequest(
+              url: WebUri(notificationUrl.toString()),
             ),
-            actions: [
-              TextButton(
-                onPressed: () => finish(
-                  errorMessage: '用户取消了小米账号二次验证',
-                ),
-                child: const Text('取消'),
-              ),
-            ],
-          );
-        },
+            onWebViewCreated: (created) {
+              controller = created;
+              pollTimer ??= Timer.periodic(
+                const Duration(milliseconds: 750),
+                (_) => checkCookies(),
+              );
+            },
+            onLoadStop: (c, url) => checkCookies(),
+          ),
+        ),
       ),
     );
 
-    // 小米验证完成后会在 WKHTTPCookieStore 写入 passToken 等 session cookie，
-    // 轮询抓取，命中即完成。
-    pollTimer = Timer.periodic(const Duration(milliseconds: 750), (_) {
-      checkCookies();
+    // 兜底超时：万一页面没回调（例如验证完成但 cookie 未写入），4 分钟后主动结束，
+    // 避免界面卡死。
+    timeoutTimer = Timer(const Duration(minutes: 4), () {
+      if (!settled) {
+        finish(errorMessage: '小米账号验证超时，请重试或检查网络');
+      }
     });
 
+    try {
+      await Navigator.of(context, rootNavigator: true).push(route);
+    } catch (error, stack) {
+      if (!settled) {
+        settled = true;
+        pollTimer?.cancel();
+        timeoutTimer?.cancel();
+        completer.completeError(
+          StateError('小米账号验证页面打开失败：$error\n$stack'),
+        );
+      }
+      return completer.future;
+    }
+
+    // 路由被关闭（用户返回 / 关闭按钮）且尚未完成时，视为取消。
+    if (!settled) {
+      finish(errorMessage: '用户取消了小米账号二次验证');
+    }
     return completer.future;
   }
 
