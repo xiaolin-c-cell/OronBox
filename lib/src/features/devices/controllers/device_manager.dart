@@ -1425,15 +1425,29 @@ class LocalDeviceManager extends DeviceManager {
         : 'name';
     var effectiveKind = kind == DeviceKind.xiaomi ? profile.kind : kind;
     final normalizedConnectType = connectType.toLowerCase();
+    // iOS only exposes BLE through CoreBluetooth. Classic Bluetooth (RFCOMM/
+    // SPP) is unavailable without MFi certification, so a Xiaomi VelaOS device
+    // that declares SPP as its preferred transport has no usable channel on
+    // iOS. Fall back to the BLE GATT transport there — OronBox already ships a
+    // cross-platform Xiaomi BLE implementation (universal_ble based), and the
+    // Xiaomi auth handshake is transport-agnostic, so it works identically.
+    final bool iosClassicBluetoothUnavailable =
+        defaultTargetPlatform == TargetPlatform.iOS;
     final effectiveConnectType =
-        effectiveKind == DeviceKind.zepp && normalizedConnectType.isNotEmpty
-        ? normalizedConnectType
-        : normalizedConnectType.isEmpty ||
-              (profile.id != DeviceRegistry.unknown.id &&
-                  profile.preferredConnectType.name.isNotEmpty &&
-                  profile.preferredConnectType.name != normalizedConnectType)
-        ? profile.preferredConnectType.name
-        : normalizedConnectType;
+        effectiveKind == DeviceKind.zepp
+            ? (normalizedConnectType.isNotEmpty
+                ? normalizedConnectType
+                : profile.preferredConnectType.name)
+            : iosClassicBluetoothUnavailable &&
+                    profile.kind == DeviceKind.xiaomi
+                ? ConnectType.ble.name
+                : (normalizedConnectType.isEmpty ||
+                        (profile.id != DeviceRegistry.unknown.id &&
+                            profile.preferredConnectType.name.isNotEmpty &&
+                            profile.preferredConnectType.name !=
+                                normalizedConnectType))
+                    ? profile.preferredConnectType.name
+                    : normalizedConnectType;
     _log.info(
       'connect request $addr rawName="$name" displayName="$displayName" '
       'codename="$effectiveCodename" via=$effectiveConnectType '
