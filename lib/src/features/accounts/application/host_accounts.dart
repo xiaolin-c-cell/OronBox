@@ -303,13 +303,23 @@ class HostAccountsNotifier extends Notifier<HostAccountsState> {
     final result = await ref.read(applicationHostProvider).execute(command);
     if (!result.ok) {
       if (result.error?.code == 'two_factor_required') {
-        final details = (result.error?.details as Map).cast<String, Object?>();
+        final rawDetails = result.error?.details;
+        final details = rawDetails is Map
+            ? (rawDetails as Map).cast<String, Object?>()
+            : const <String, Object?>{};
         throw HostTwoFactorRequired(
-          url: details['url']!.toString(),
-          deviceId: details['deviceId']!.toString(),
+          url: (details['url']?.toString()) ?? '',
+          deviceId: (details['deviceId']?.toString()) ?? '',
         );
       }
-      throw HostCommandException.fromCommand(result.error!);
+      final error = result.error;
+      if (error == null) {
+        throw const HostCommandException(
+          code: 'unknown',
+          message: '命令返回失败但未携带错误信息',
+        );
+      }
+      throw HostCommandException.fromCommand(error);
     }
     return result.value;
   }
