@@ -7,7 +7,7 @@ env:
   FLUTTER_VERSION: "3.47.5"
 jobs:
   build-ios:
-    runs-on: macos-14
+    runs-on: macos-15
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
