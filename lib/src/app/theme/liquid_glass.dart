@@ -1,6 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart'
-    show Widget, StatelessWidget, BuildContext, Key, ValueChanged, VoidCallback, IconData;
+    show
+        Widget,
+        StatelessWidget,
+        BuildContext,
+        Key,
+        ValueChanged,
+        VoidCallback,
+        IconData,
+        Row,
+        MainAxisSize;
 import 'package:liquidum/liquidum.dart';
 import 'package:material_ui/material_ui.dart' as material;
 
