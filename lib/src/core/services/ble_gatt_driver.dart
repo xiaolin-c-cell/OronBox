@@ -630,12 +630,25 @@ class BleGattDriver {
       _log.info('[$deviceId] required BLE characteristics found');
     }
 
-    if (desiredMtu != null && desiredMtu > 23) {
+    // iOS/macOS（CoreBluetooth）上 MTU 完全由 OS 协商，App 不能主动请求。
+    // universal_ble 在这两个平台上会先按需触发一次 discoverServices，再提交
+    // MTU 命令；由于 service discovery 已经在上文完成，这一步只会引入额外的
+    // 等待，正是 “BLE MTU negotiation timed out” 的来源。Apple 平台直接沿用
+    // OS 已协商的 MTU（通常为 185），跳过主动请求。
+    final mtuIsOsManaged =
+        defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.macOS;
+    if (desiredMtu != null && desiredMtu > 23 && !mtuIsOsManaged) {
       try {
         connection.mtu = await connection.requestMtu(desiredMtu);
       } catch (e) {
         _log.warning('[$deviceId] MTU request failed, keeping default', e);
       }
+    } else if (mtuIsOsManaged) {
+      _log.info(
+        '[$deviceId] skipping explicit MTU request on Apple platform '
+        '(CoreBluetooth negotiates MTU automatically; current=${connection.mtu})',
+      );
     }
 
     btConnectEstablished(

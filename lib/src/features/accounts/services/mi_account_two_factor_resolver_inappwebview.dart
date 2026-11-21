@@ -56,8 +56,20 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
       }
     }
 
+    // 记录验证页首次真正完成导航的时刻。小米的 2FA 页面在加载过程中，
+    // 账号密码阶段写入的 userId / cUserId 往往已经存在于 cookie store 里；
+    // 若在页面尚未跳转完成时就读取，会把“半成品会话”当成验证完成交回，
+    // 服务端随后再次要求凭证，表现为“验证完还要再登录一次”。
+    DateTime? navigatedAt;
+
     void checkCookies() {
       if (controller == null || settled) {
+        return;
+      }
+      // 必须等验证页至少发生一次导航落定，并且再稳定观察一段时间，
+      // 避免把旧 cookie 误判为本次 2FA 的结果。
+      if (navigatedAt == null ||
+          DateTime.now().difference(navigatedAt!).inMilliseconds < 1500) {
         return;
       }
       CookieManager.instance().getAllCookies().then((cookies) {
@@ -94,7 +106,12 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
                 (_) => checkCookies(),
               );
             },
-            onLoadStop: (c, url) => checkCookies(),
+            // 每次页面导航结束都刷新计时锚点：只有验证流程真正推进到
+            // 新的页面后，才允许开始判定 cookie，避免首屏即误判。
+            onLoadStop: (c, url) {
+              navigatedAt = DateTime.now();
+              checkCookies();
+            },
           ),
         ),
       ),
@@ -150,8 +167,11 @@ class InAppWebViewMiAccountTwoFactorResolver implements MiAccountTwoFactorResolv
           return (index < 0 ? part : part.substring(0, index)).trim();
         })
         .toSet();
-    return names.contains('passToken') ||
-        names.contains('cUserId') ||
-        names.contains('userId');
+    // 关键修复：原实现用 OR（三者任一即完成），但 userId / cUserId 在
+    // “账号密码”阶段就已写入，并不代表二次验证已完成；把它们当成功会
+    // 交回不完整会话，服务端再次索要凭证，用户被迫登录两次。
+    // 只有长期有效的 passToken 同时伴随用户标识，才视为验证真正完成。
+    return names.contains('passToken') &&
+        (names.contains('cUserId') || names.contains('userId'));
   }
 }
