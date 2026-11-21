@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:oronbox/src/app/generated/app_localizations.dart';
+import 'package:oronbox/src/app/theme/liquid_glass.dart';
 import 'package:oronbox/src/app/utils/error_localization.dart';
 import 'package:oronbox/src/app/window/debug_window_preference.dart';
 import 'package:oronbox/src/app/window/window_launcher.dart';
@@ -57,6 +58,7 @@ class SettingsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final showLiquidGlassSettings = isIOSPlatform;
     final showDesktopAccentSource =
         !kIsWeb && defaultTargetPlatform == TargetPlatform.linux;
     final showWideNavigationPosition = useWideLayout(
@@ -294,6 +296,21 @@ class SettingsPage extends ConsumerWidget {
                   description: Text(l10n.settingsThemeModeDesc),
                   value: Text(_themeModeLabel(l10n, themeSettings.themeMode)),
                 ),
+                if (showLiquidGlassSettings)
+                  SegmentedTile.navigation(
+                    onPressed: (context) =>
+                        _showLiquidGlassSelector(context, ref),
+                    leading: const Icon(Icons.blur_on_outlined),
+                    title: const Text('毛玻璃效果'),
+                    description: const Text('Apple 液态玻璃强度（重启后完全生效）'),
+                    value: Consumer(
+                      builder: (context, ref, _) => Text(
+                        _liquidGlassLevelLabel(
+                          ref.watch(liquidGlassLevelProvider),
+                        ),
+                      ),
+                    ),
+                  ),
                 if (!kIsWeb)
                   SegmentedTile.switchTile(
                     onToggle: (value) async {
@@ -1373,6 +1390,59 @@ class SettingsPage extends ConsumerWidget {
       await ref
           .read(appSettingsProvider.notifier)
           .setWideNavigationRailPosition(selected);
+    }
+  }
+
+  String _liquidGlassLevelLabel(LiquidGlassLevel level) => switch (level) {
+    LiquidGlassLevel.off => '关闭',
+    LiquidGlassLevel.plus => 'Plus',
+    LiquidGlassLevel.proMax => 'Pro Max',
+    LiquidGlassLevel.ultra => 'Ultra',
+  };
+
+  Future<void> _showLiquidGlassSelector(
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
+    final current = ref.read(liquidGlassLevelProvider);
+    final tileContext = context;
+    final renderBox = tileContext.findRenderObject() as RenderBox?;
+    final overlay =
+        Navigator.of(tileContext).overlay?.context.findRenderObject()
+            as RenderBox?;
+    if (renderBox == null || overlay == null) return;
+
+    final tileTopLeft = renderBox.localToGlobal(Offset.zero, ancestor: overlay);
+    final tileBottomRight = renderBox.localToGlobal(
+      renderBox.size.bottomRight(Offset.zero),
+      ancestor: overlay,
+    );
+    final anchor = Rect.fromLTWH(
+      tileBottomRight.dx - 96,
+      tileTopLeft.dy,
+      96,
+      renderBox.size.height,
+    );
+
+    final selected = await showMenu<LiquidGlassLevel>(
+      context: tileContext,
+      position: RelativeRect.fromRect(anchor, Offset.zero & overlay.size),
+      initialValue: current,
+      items: LiquidGlassLevel.values.map((level) {
+        final selected = level == current;
+        return PopupMenuItem<LiquidGlassLevel>(
+          value: level,
+          child: Row(
+            children: [
+              Expanded(child: Text(_liquidGlassLevelLabel(level))),
+              if (selected) const Icon(Icons.check),
+            ],
+          ),
+        );
+      }).toList(),
+    );
+    if (selected != null && selected != current) {
+      await ref.read(liquidGlassLevelProvider.notifier).set(selected);
     }
   }
 

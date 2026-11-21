@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:oronbox/src/app/theme/liquid_glass.dart';
 import 'package:oronbox/src/core/constants/style_constants.dart';
@@ -56,7 +57,7 @@ class LoadingView extends StatelessWidget {
   );
 }
 
-class SectionCard extends StatelessWidget {
+class SectionCard extends ConsumerWidget {
   const SectionCard({
     super.key,
     required this.child,
@@ -75,11 +76,12 @@ class SectionCard extends StatelessWidget {
   final Color? color;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final padded = Padding(padding: padding, child: child);
 
-    // iOS：Apple 液态玻璃卡片；其它平台保持原 Material Card。
-    if (isLiquidGlass) {
+    // iOS 且档位非关闭：Apple 液态玻璃卡片；其它情况保持原 Material Card。
+    final level = effectiveGlassLevel(ref);
+    if (level != LiquidGlassLevel.off) {
       return Padding(
         padding: margin ?? EdgeInsets.zero,
         child: AdaptiveGlassPanel(

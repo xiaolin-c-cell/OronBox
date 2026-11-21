@@ -253,7 +253,7 @@ class AppBottomNavigationBar extends ConsumerWidget {
     // indicator from the previous branch instead of appearing pre-selected.
     final activeBranch = ShellBranchIndex.maybeOf(context) ?? currentBranch;
     final selectedIndex = branchIndices.indexOf(activeBranch);
-    final glass = isLiquidGlass;
+    final glass = effectiveGlassLevel(ref) != LiquidGlassLevel.off;
     final navBar = NavigationBar(
       destinations: [
         for (final index in branchIndices)
