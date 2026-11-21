@@ -52,7 +52,7 @@ import UIKit
     // MARK: Live Activity POC channel (local-only, no APNs)
     // Dart 侧通过 oronbox/live_activity 调用 startTest/endTest/enabled。
     // 这里刻意不接入业务逻辑，仅验证无签名 ad-hoc 包能否装载 Widget Extension。
-    if #available(iOS 16.1, *) {
+    if #available(iOS 16.2, *) {
       let laChannel = FlutterMethodChannel(
         name: "oronbox/live_activity",
         binaryMessenger: registrar.messenger()

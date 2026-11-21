@@ -1,9 +1,11 @@
 import Foundation
 import ActivityKit
 
-/// POC 用的最小 ActivityAttributes。被主 app 与 Widget extension 两个 target 共享编译。
-/// 后续正式接入时可替换为真实的队列进度 attributes。
-@available(iOS 16.1, *)
+/// POC 用的最小 ActivityAttributes。
+/// 注：用 Xcode 16（iOS 18 SDK）编译时，ActivityKit 的 request/end 重载被标记为
+/// iOS 16.2+，因此本地控制门槛设为 16.2；Widget 显示侧仍支持 16.1。
+/// 后续正式接入可针对 16.1 使用旧的重载，或干脆把最低版本定为 16.2。
+@available(iOS 16.2, *)
 struct OronBoxLiveActivityAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         var title: String
@@ -15,7 +17,7 @@ struct OronBoxLiveActivityAttributes: ActivityAttributes {
 }
 
 /// 主 app 侧的活动控制封装。POC 阶段仅本地启动/结束，不走 APNs。
-@available(iOS 16.1, *)
+@available(iOS 16.2, *)
 enum OronBoxLiveActivityBridge {
     static func areActivitiesEnabled() -> Bool {
         ActivityAuthorizationInfo().areActivitiesEnabled
