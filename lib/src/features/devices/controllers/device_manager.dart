@@ -1072,6 +1072,13 @@ class LocalDeviceManager extends DeviceManager {
 
   Set<ConnectType> _scanConnectTypes(ConnectType connectType) {
     if (kIsWeb) return const {ConnectType.ble};
+    // iOS/CoreBluetooth cannot expose classic Bluetooth (RFCOMM/SPP) data
+    // channels without MFi. Starting an SPP scan there can only produce
+    // unusable endpoints (or a failing MethodChannel), so collapse every
+    // scan request to BLE-only on iOS — no device kind is exempt.
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
+      return const {ConnectType.ble};
+    }
     if (connectType == ConnectType.ble) {
       return const {ConnectType.ble, ConnectType.spp};
     }
@@ -1409,13 +1416,16 @@ class LocalDeviceManager extends DeviceManager {
       name: name,
       codename: effectiveCodename,
     );
+    // On iOS all scans are BLE-only, so look up the BLE cache key regardless
+    // of the incoming transport string (which may still say 'spp' from a
+    // pairing record saved on another platform).
+    final profileLookupType =
+        defaultTargetPlatform == TargetPlatform.iOS ||
+                connectType.toLowerCase() != ConnectType.spp.name
+            ? ConnectType.ble
+            : ConnectType.spp;
     final profile =
-        _scannedProfiles[_endpointTransportKey(
-          addr,
-          connectType.toLowerCase() == ConnectType.spp.name
-              ? ConnectType.spp
-              : ConnectType.ble,
-        )] ??
+        _scannedProfiles[_endpointTransportKey(addr, profileLookupType)] ??
         DeviceRegistry.resolveIdentity(
           name: displayName,
           codename: effectiveCodename,
@@ -1433,21 +1443,24 @@ class LocalDeviceManager extends DeviceManager {
     // Xiaomi auth handshake is transport-agnostic, so it works identically.
     final bool iosClassicBluetoothUnavailable =
         defaultTargetPlatform == TargetPlatform.iOS;
-    final effectiveConnectType =
-        effectiveKind == DeviceKind.zepp
+    // iOS (CoreBluetooth) has no classic Bluetooth / RFCOMM data channel
+    // without MFi certification. Every device — Xiaomi, Zepp, or unknown —
+    // must therefore use BLE on iOS, regardless of its catalog
+    // preferredConnectType or the incoming connectType. Keep this as the
+    // topmost branch so no profile/kind fallback can route back to SPP.
+    final effectiveConnectType = iosClassicBluetoothUnavailable
+        ? ConnectType.ble.name
+        : effectiveKind == DeviceKind.zepp
             ? (normalizedConnectType.isNotEmpty
                 ? normalizedConnectType
                 : profile.preferredConnectType.name)
-            : iosClassicBluetoothUnavailable &&
-                    profile.kind == DeviceKind.xiaomi
-                ? ConnectType.ble.name
-                : (normalizedConnectType.isEmpty ||
-                        (profile.id != DeviceRegistry.unknown.id &&
-                            profile.preferredConnectType.name.isNotEmpty &&
-                            profile.preferredConnectType.name !=
-                                normalizedConnectType))
-                    ? profile.preferredConnectType.name
-                    : normalizedConnectType;
+            : (normalizedConnectType.isEmpty ||
+                    (profile.id != DeviceRegistry.unknown.id &&
+                        profile.preferredConnectType.name.isNotEmpty &&
+                        profile.preferredConnectType.name !=
+                            normalizedConnectType))
+                ? profile.preferredConnectType.name
+                : normalizedConnectType;
     _log.info(
       'connect request $addr rawName="$name" displayName="$displayName" '
       'codename="$effectiveCodename" via=$effectiveConnectType '
