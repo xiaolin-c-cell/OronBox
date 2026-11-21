@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oronbox/src/app/generated/app_localizations.dart';
+import 'package:oronbox/src/app/theme/liquid_glass.dart';
 import 'package:oronbox/src/core/providers/app_settings_providers.dart';
 import 'package:oronbox/src/core/utils/layout.dart';
 import 'package:oronbox/src/features/resources/services/download_queue_notifier.dart';
@@ -252,12 +253,15 @@ class AppBottomNavigationBar extends ConsumerWidget {
     // indicator from the previous branch instead of appearing pre-selected.
     final activeBranch = ShellBranchIndex.maybeOf(context) ?? currentBranch;
     final selectedIndex = branchIndices.indexOf(activeBranch);
-    return NavigationBar(
+    final glass = isLiquidGlass;
+    final navBar = NavigationBar(
       destinations: [
         for (final index in branchIndices)
           bottomNavDestination(context, l10n, queue, doneAt, index),
       ],
       selectedIndex: selectedIndex < 0 ? 0 : selectedIndex,
+      backgroundColor: glass ? Colors.transparent : null,
+      elevation: 0,
       onDestinationSelected: (index) {
         final branch = branchIndices[index];
         if (branch != activeBranch) {
@@ -265,6 +269,20 @@ class AppBottomNavigationBar extends ConsumerWidget {
         }
       },
     );
+
+    // iOS：把底部导航整体做成 Apple 液态玻璃条。
+    if (glass) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+        child: AdaptiveGlassPanel(
+          radius: 26,
+          fallback: (inner) => inner,
+          child: navBar,
+        ),
+      );
+    }
+
+    return navBar;
   }
 }
 

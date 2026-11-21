@@ -64,6 +64,9 @@ dependencies:
   flutter_timezone: ^5.1.0
   cupertino_ui: ^1.1.1
   flutter_inappwebview: ^6.1.5
+  # iOS 26 Liquid Glass (Apple-style). Gated to iOS at runtime so desktop /
+  # Android keep their original Material look. Requires Flutter >= 3.47.
+  liquidum: ^1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

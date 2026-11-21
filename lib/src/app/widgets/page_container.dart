@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:oronbox/src/app/theme/liquid_glass.dart';
 import 'package:oronbox/src/core/constants/style_constants.dart';
 
 class PageContainer extends StatelessWidget {
@@ -75,13 +76,27 @@ class SectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final padded = Padding(padding: padding, child: child);
+
+    // iOS：Apple 液态玻璃卡片；其它平台保持原 Material Card。
+    if (isLiquidGlass) {
+      return Padding(
+        padding: margin ?? EdgeInsets.zero,
+        child: AdaptiveGlassPanel(
+          radius: 20,
+          fallback: (inner) => inner,
+          child: padded,
+        ),
+      );
+    }
+
     return Card(
       elevation: 0,
       margin: margin,
       color: color ?? Theme.of(context).colorScheme.surfaceContainerHigh,
       shape: RoundedRectangleBorder(borderRadius: borderRadius),
       clipBehavior: Clip.antiAlias,
-      child: Padding(padding: padding, child: child),
+      child: padded,
     );
   }
 }
