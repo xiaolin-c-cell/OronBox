@@ -1218,6 +1218,14 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
   }
 
   String _initialConnectType(DeviceProfile profile) {
+    // iOS/CoreBluetooth cannot open classic Bluetooth (RFCOMM/SPP) data
+    // channels without MFi. Xiaomi profiles declare SPP as preferred, which
+    // otherwise makes the pairing dialog show and connect via SPP — a channel
+    // that can never work on iOS. Force BLE at the UI source so the transport
+    // label, endpoint lookup and connect() call all agree on BLE.
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
+      return ConnectType.ble.name;
+    }
     if (!widget.saved && profile.id != DeviceRegistry.unknown.id) {
       return profile.preferredConnectType.name;
     }
@@ -1271,7 +1279,10 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
     final isUnrecognized =
         !widget.saved && profile.id == DeviceRegistry.unknown.id;
     final zeppDevice = zeppOsDeviceForBluetoothName(widget.device.name);
+    // iOS has no classic Bluetooth data channel; never offer the SPP/BT-Classic
+    // connect action there.
     final supportsBtbr =
+        defaultTargetPlatform != TargetPlatform.iOS &&
         zeppDevice != null &&
         zeppDevice.connectionCapability != ZeppOsConnectionCapability.ble;
     final transportLabel = _connectType == ConnectType.spp.name
