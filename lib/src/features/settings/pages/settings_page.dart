@@ -16,6 +16,7 @@ import 'package:oronbox/src/core/constants/style_constants.dart';
 import 'package:oronbox/src/core/providers/app_settings_providers.dart';
 import 'package:oronbox/src/core/providers/theme_locale_providers.dart';
 import 'package:oronbox/src/core/services/shared_prefs_service.dart';
+import 'package:oronbox/src/core/services/live_activity_poc_bridge.dart' as la_poc;
 import 'package:oronbox/src/core/utils/layout.dart';
 import 'package:oronbox/src/core/network/github_cdn.dart';
 import 'package:oronbox/src/features/resources/application/resource_catalog_providers.dart';
@@ -504,6 +505,14 @@ class SettingsPage extends ConsumerWidget {
                     l10n.settingsRealtimeActivityNotificationDesc,
                   ),
                 ),
+                // [POC] 仅 iOS 16.1+ 显示：验证无签名包能否装载灵动岛 Widget
+                if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+                  SegmentedTile.navigation(
+                    onPressed: (_) => _showLiveActivityPocDialog(context),
+                    leading: const Icon(Icons.bubble_chart_outlined),
+                    title: const Text('灵动岛 POC 测试'),
+                    description: const Text('验证 Live Activity 是否能显示'),
+                  ),
               ],
             ),
           if (category == null || category == SettingsCategory.support)
@@ -1662,6 +1671,60 @@ class _SettingsSvgLogo extends StatelessWidget {
       ),
     );
   }
+}
+
+/// [POC] 灵动岛测试对话框：启动 / 更新 / 结束一张本地 Live Activity。
+Future<void> _showLiveActivityPocDialog(BuildContext context) async {
+  final enabled = await la_poc.LiveActivityPocBridge.enabled();
+  if (!context.mounted) return;
+  String? activityId;
+
+  await showDialog<void>(
+    context: context,
+    builder: (dialogContext) => AlertDialog(
+      title: const Text('灵动岛 POC'),
+      content: Text(
+        enabled
+            ? '实时活动已启用。点"启动"生成测试卡片，观察灵动岛与锁屏。'
+            : '实时活动未启用或系统版本低于 16.1。请确认机型为 iPhone 14 Pro / 15+ 且 iOS ≥ 16.1，并在设置中允许实时活动。',
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(dialogContext).pop(),
+          child: const Text('关闭'),
+        ),
+        TextButton(
+          onPressed: () async {
+            activityId = await la_poc.LiveActivityPocBridge.startTest(
+              title: 'OronBox POC',
+              detail: '无签名包灵动岛测试',
+              progress: 0.35,
+            );
+          },
+          child: const Text('启动'),
+        ),
+        TextButton(
+          onPressed: () async {
+            final id = activityId;
+            if (id != null) {
+              await la_poc.LiveActivityPocBridge.updateTest(
+                id,
+                detail: '已更新进度',
+                progress: 0.8,
+              );
+            }
+          },
+          child: const Text('更新'),
+        ),
+        TextButton(
+          onPressed: () async {
+            await la_poc.LiveActivityPocBridge.endTest(activityId);
+          },
+          child: const Text('结束'),
+        ),
+      ],
+    ),
+  );
 }
 
 class _ColorDot extends StatelessWidget {

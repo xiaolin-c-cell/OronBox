@@ -49,6 +49,53 @@ import UIKit
       }
     }
 
+    // MARK: Live Activity POC channel (local-only, no APNs)
+    // Dart 侧通过 oronbox/live_activity 调用 startTest/endTest/enabled。
+    // 这里刻意不接入业务逻辑，仅验证无签名 ad-hoc 包能否装载 Widget Extension。
+    if #available(iOS 16.1, *) {
+      let laChannel = FlutterMethodChannel(
+        name: "oronbox/live_activity",
+        binaryMessenger: registrar.messenger()
+      )
+      laChannel.setMethodCallHandler { call, result in
+        switch call.method {
+        case "enabled":
+          result(OronBoxLiveActivityBridge.areActivitiesEnabled())
+        case "startTest":
+          let args = call.arguments as? [String: Any]
+          let id = OronBoxLiveActivityBridge.start(
+            title: args?["title"] as? String ?? "OronBox POC",
+            detail: args?["detail"] as? String ?? "灵动岛 POC 测试卡片",
+            progress: args?["progress"] as? Double ?? 0.35
+          )
+          result(id)
+        case "updateTest":
+          guard let args = call.arguments as? [String: Any],
+                let id = args["id"] as? String else { result(nil); return }
+          OronBoxLiveActivityBridge.update(
+            id: id,
+            title: args["title"] as? String ?? "OronBox POC",
+            detail: args["detail"] as? String ?? "更新",
+            progress: args["progress"] as? Double ?? 0.75
+          )
+          result(nil)
+        case "endTest":
+          OronBoxLiveActivityBridge.end(id: call.arguments as? String)
+          result(nil)
+        default:
+          result(FlutterMethodNotImplemented)
+        }
+      }
+    } else {
+      let laChannel = FlutterMethodChannel(
+        name: "oronbox/live_activity",
+        binaryMessenger: registrar.messenger()
+      )
+      laChannel.setMethodCallHandler { call, result in
+        if call.method == "enabled" { result(false) } else { result(nil) }
+      }
+    }
+
     let fileChannel = FlutterMethodChannel(
       name: "oronbox/file_open",
       binaryMessenger: registrar.messenger()

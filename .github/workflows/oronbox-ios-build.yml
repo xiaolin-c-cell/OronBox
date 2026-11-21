@@ -86,9 +86,26 @@ jobs:
             exit 1
           fi
           echo "Packaging app: $APP"
+          # --- Live Activity POC 诊断:检查 Widget Extension 是否被嵌入 ---
+          echo "===== DIAG: embedded PlugIns ====="
+          find "$APP/PlugIns" -maxdepth 2 2>/dev/null || echo "::warning:: no PlugIns dir in app (widget not embedded)"
+          APPEX="$(find "$APP/PlugIns" -name '*.appex' -type d 2>/dev/null | head -n1 || true)"
+          if [ -n "$APPEX" ]; then
+            echo "::notice:: widget appex embedded at $APPEX"
+          else
+            echo "::warning:: widget appex MISSING - Live Activity will not work"
+          fi
           rm -rf Payload && mkdir -p Payload
           cp -r "$APP" Payload/
-          codesign --force --sign - Payload/Runner.app || codesign --force --deep --sign - Payload/Runner.app
+          # 先逐个 ad-hoc 签嵌 dawn 的扩展(PlugIns/Watch 等)，再签主 app。
+          # codesign 默认不递归签内部 bundle，必须显式处理，否则系统拒绝加载 appex。
+          while IFS= read -r -d '' nested; do
+            echo "ad-hoc signing nested bundle: $nested"
+            codesign --force --sign - "$nested" 2>/dev/null || true
+          done < <(find Payload/Runner.app/PlugIns Payload/Runner.app/Watch -maxdepth 1 -name '*.appex' -o -name '*.app' 2>/dev/null | tr '\n' '\0')
+          codesign --force --deep --sign - Payload/Runner.app
+          echo "===== DIAG: verify signatures ====="
+          codesign --verify --deep --verbose=2 Payload/Runner.app 2>&1 | tail -20 || true
           zip -qry OronBox-iOS.ipa Payload
           ls -lh OronBox-iOS.ipa
       - name: Upload IPA artifact
