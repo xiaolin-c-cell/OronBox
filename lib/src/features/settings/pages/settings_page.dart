@@ -307,48 +307,34 @@ class SettingsPage extends ConsumerWidget {
                     leading: const Icon(Icons.blur_on_outlined),
                     title: const Text('玻璃效果'),
                   ),
-                  Consumer(
-                    builder: (context, ref, _) {
-                      final enabled = ref.watch(liquidGlassEnabledProvider);
-                      if (!enabled) return const SizedBox.shrink();
-                      return Column(
-                        children: [
-                          SegmentedTile.navigation(
-                            onPressed: (context) =>
-                                _showLiquidGlassSelector(context, ref),
-                            leading: const Icon(Icons.auto_awesome_outlined),
-                            title: const Text('玻璃样式'),
-                            value: Text(
-                              _liquidGlassLevelLabel(
-                                ref.watch(liquidGlassLevelProvider),
-                              ),
-                            ),
-                          ),
-                          SegmentedTile.switchTile(
-                            onToggle: (value) async {
-                              await ref
-                                  .read(liquidGlassNavProvider.notifier)
-                                  .set(value ?? true);
-                            },
-                            initialValue: ref.watch(liquidGlassNavProvider),
-                            leading: const Icon(Icons.navigation_outlined),
-                            title: const Text('顶栏玻璃'),
-                          ),
-                          SegmentedTile.switchTile(
-                            onToggle: (value) async {
-                              await ref
-                                  .read(liquidGlassProgressiveProvider.notifier)
-                                  .set(value ?? true);
-                            },
-                            initialValue: ref.watch(
-                              liquidGlassProgressiveProvider,
-                            ),
-                            leading: const Icon(Icons.blur_circular_outlined),
-                            title: const Text('渐进模糊'),
-                          ),
-                        ],
-                      );
+                  SegmentedTile.navigation(
+                    onPressed: (context) =>
+                        _showLiquidGlassSelector(context, ref),
+                    leading: const Icon(Icons.auto_awesome_outlined),
+                    title: const Text('玻璃样式'),
+                    value: Text(
+                      _liquidGlassLevelLabel(ref.watch(liquidGlassLevelProvider)),
+                    ),
+                  ),
+                  SegmentedTile.switchTile(
+                    onToggle: (value) async {
+                      await ref
+                          .read(liquidGlassNavProvider.notifier)
+                          .set(value ?? true);
                     },
+                    initialValue: ref.watch(liquidGlassNavProvider),
+                    leading: const Icon(Icons.navigation_outlined),
+                    title: const Text('顶栏玻璃'),
+                  ),
+                  SegmentedTile.switchTile(
+                    onToggle: (value) async {
+                      await ref
+                          .read(liquidGlassProgressiveProvider.notifier)
+                          .set(value ?? true);
+                    },
+                    initialValue: ref.watch(liquidGlassProgressiveProvider),
+                    leading: const Icon(Icons.blur_circular_outlined),
+                    title: const Text('渐进模糊'),
                   ),
                 ],
                 if (!kIsWeb)
