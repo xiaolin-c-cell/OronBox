@@ -296,21 +296,61 @@ class SettingsPage extends ConsumerWidget {
                   description: Text(l10n.settingsThemeModeDesc),
                   value: Text(_themeModeLabel(l10n, themeSettings.themeMode)),
                 ),
-                if (showLiquidGlassSettings)
-                  SegmentedTile.navigation(
-                    onPressed: (context) =>
-                        _showLiquidGlassSelector(context, ref),
+                if (showLiquidGlassSettings) ...[
+                  SegmentedTile.switchTile(
+                    onToggle: (value) async {
+                      await ref
+                          .read(liquidGlassEnabledProvider.notifier)
+                          .set(value ?? true);
+                    },
+                    initialValue: ref.watch(liquidGlassEnabledProvider),
                     leading: const Icon(Icons.blur_on_outlined),
-                    title: const Text('毛玻璃效果'),
-                    description: const Text('Apple 液态玻璃强度（重启后完全生效）'),
-                    value: Consumer(
-                      builder: (context, ref, _) => Text(
-                        _liquidGlassLevelLabel(
-                          ref.watch(liquidGlassLevelProvider),
-                        ),
-                      ),
-                    ),
+                    title: const Text('玻璃效果'),
                   ),
+                  Consumer(
+                    builder: (context, ref, _) {
+                      final enabled = ref.watch(liquidGlassEnabledProvider);
+                      if (!enabled) return const SizedBox.shrink();
+                      return Column(
+                        children: [
+                          SegmentedTile.navigation(
+                            onPressed: (context) =>
+                                _showLiquidGlassSelector(context, ref),
+                            leading: const Icon(Icons.auto_awesome_outlined),
+                            title: const Text('玻璃样式'),
+                            value: Text(
+                              _liquidGlassLevelLabel(
+                                ref.watch(liquidGlassLevelProvider),
+                              ),
+                            ),
+                          ),
+                          SegmentedTile.switchTile(
+                            onToggle: (value) async {
+                              await ref
+                                  .read(liquidGlassNavProvider.notifier)
+                                  .set(value ?? true);
+                            },
+                            initialValue: ref.watch(liquidGlassNavProvider),
+                            leading: const Icon(Icons.navigation_outlined),
+                            title: const Text('顶栏玻璃'),
+                          ),
+                          SegmentedTile.switchTile(
+                            onToggle: (value) async {
+                              await ref
+                                  .read(liquidGlassProgressiveProvider.notifier)
+                                  .set(value ?? true);
+                            },
+                            initialValue: ref.watch(
+                              liquidGlassProgressiveProvider,
+                            ),
+                            leading: const Icon(Icons.blur_circular_outlined),
+                            title: const Text('渐进模糊'),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ],
                 if (!kIsWeb)
                   SegmentedTile.switchTile(
                     onToggle: (value) async {
@@ -1394,10 +1434,10 @@ class SettingsPage extends ConsumerWidget {
   }
 
   String _liquidGlassLevelLabel(LiquidGlassLevel level) => switch (level) {
-    LiquidGlassLevel.off => '关闭',
+    LiquidGlassLevel.lite => 'Lite',
     LiquidGlassLevel.plus => 'Plus',
-    LiquidGlassLevel.proMax => 'Pro Max',
-    LiquidGlassLevel.ultra => 'Ultra',
+    LiquidGlassLevel.pro => 'Pro',
+    LiquidGlassLevel.max => 'Max',
   };
 
   Future<void> _showLiquidGlassSelector(
@@ -1405,41 +1445,34 @@ class SettingsPage extends ConsumerWidget {
     WidgetRef ref,
   ) async {
     final current = ref.read(liquidGlassLevelProvider);
-    final tileContext = context;
-    final renderBox = tileContext.findRenderObject() as RenderBox?;
-    final overlay =
-        Navigator.of(tileContext).overlay?.context.findRenderObject()
-            as RenderBox?;
-    if (renderBox == null || overlay == null) return;
-
-    final tileTopLeft = renderBox.localToGlobal(Offset.zero, ancestor: overlay);
-    final tileBottomRight = renderBox.localToGlobal(
-      renderBox.size.bottomRight(Offset.zero),
-      ancestor: overlay,
-    );
-    final anchor = Rect.fromLTWH(
-      tileBottomRight.dx - 96,
-      tileTopLeft.dy,
-      96,
-      renderBox.size.height,
-    );
-
-    final selected = await showMenu<LiquidGlassLevel>(
-      context: tileContext,
-      position: RelativeRect.fromRect(anchor, Offset.zero & overlay.size),
-      initialValue: current,
-      items: LiquidGlassLevel.values.map((level) {
-        final selected = level == current;
-        return PopupMenuItem<LiquidGlassLevel>(
-          value: level,
-          child: Row(
-            children: [
-              Expanded(child: Text(_liquidGlassLevelLabel(level))),
-              if (selected) const Icon(Icons.check),
-            ],
-          ),
-        );
-      }).toList(),
+    final selected = await showModalBottomSheet<LiquidGlassLevel>(
+      context: context,
+      showDragHandle: true,
+      builder: (sheetContext) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                '玻璃样式',
+                style: Theme.of(sheetContext).textTheme.titleMedium,
+              ),
+            ),
+            for (final level in LiquidGlassLevel.values)
+              ListTile(
+                leading: const Icon(Icons.blur_on_outlined),
+                title: Text(_liquidGlassLevelLabel(level)),
+                subtitle: Text(level.description),
+                trailing: level == current
+                    ? const Icon(Icons.check, color: Colors.green)
+                    : null,
+                onTap: () => Navigator.of(sheetContext).pop(level),
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
     );
     if (selected != null && selected != current) {
       await ref.read(liquidGlassLevelProvider.notifier).set(selected);

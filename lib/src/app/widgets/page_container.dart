@@ -79,9 +79,8 @@ class SectionCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final padded = Padding(padding: padding, child: child);
 
-    // iOS 且档位非关闭：Apple 液态玻璃卡片；其它情况保持原 Material Card。
-    final level = effectiveGlassLevel(ref);
-    if (level != LiquidGlassLevel.off) {
+    // iOS 且玻璃总开关开启：Apple 液态玻璃卡片；否则保持原 Material Card。
+    if (glassEnabled(ref)) {
       return Padding(
         padding: margin ?? EdgeInsets.zero,
         child: AdaptiveGlassPanel(

@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart'
     show
         Widget,
-        StatelessWidget,
-        BuildContext,
         Key,
         ValueChanged,
         VoidCallback,
@@ -15,35 +13,55 @@ import 'package:liquidum/liquidum.dart';
 import 'package:oronbox/src/core/services/shared_prefs_service.dart';
 import 'package:material_ui/material_ui.dart' as material;
 
-/// Apple 液态玻璃的四档强度（命名借鉴 iPhone 产品线）。
-///
-/// 用户可在设置中切换；默认 Pro Max（较强的玻璃观感）。
+/// Apple 液态玻璃的四档强度（对齐 Origo X 的 Lite / Plus / Pro / Max）。
 enum LiquidGlassLevel {
-  off,
+  lite,
   plus,
-  proMax,
-  ultra;
+  pro,
+  max;
 
-  String get storageKey => 'liquid_glass_level';
+  /// 档位副标题（与 Origo X 的展示一致）。
+  String get description => switch (this) {
+    LiquidGlassLevel.lite => '基本模糊',
+    LiquidGlassLevel.plus => '适度模糊与适度反光',
+    LiquidGlassLevel.pro => '柔和折射与均衡视觉',
+    LiquidGlassLevel.max => '清晰折射与增强色彩',
+  };
 }
 
-/// 是否应在当前平台启用液态玻璃。
+/// 是否在当前平台启用液态玻璃：仅 iOS，且不看系统版本。
 ///
-/// 只在 iOS 上启用，且不看系统版本：liquidum 是纯 Flutter shader，
-/// iOS 15+ 开启 Impeller 即可渲染；低于 iOS 26 会降级为毛玻璃观感，
-/// 但仍保持玻璃材质，不会退回 Material 风格。
+/// liquidum 是纯 Flutter shader，iOS 15+ 开启 Impeller 即可渲染；
+/// 低于 iOS 26 会降级为毛玻璃观感，但仍是玻璃材质，不会退回 Material。
 bool get isIOSPlatform =>
     !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
 
-/// 从枚举名恢复档位（兼容旧值），未知值回退到 Pro Max。
 LiquidGlassLevel liquidGlassLevelFromName(String? name) =>
     LiquidGlassLevel.values.firstWhere(
       (level) => level.name == name,
-      orElse: () => LiquidGlassLevel.proMax,
+      orElse: () => LiquidGlassLevel.pro,
     );
 
-/// 毛玻璃档位状态：独立 provider，不侵入 AppSettings（避免改动扩散）。
-class LiquidGlassNotifier extends Notifier<LiquidGlassLevel> {
+/// 玻璃效果总开关（对应 Origo X 的「玻璃效果」）。
+class LiquidGlassEnabledNotifier extends Notifier<bool> {
+  static const _key = 'liquid_glass_enabled';
+
+  @override
+  bool build() => SharedPrefsService.instance.getBool(_key) ?? true;
+
+  Future<void> set(bool value) async {
+    state = value;
+    await SharedPrefsService.instance.setBool(_key, value);
+  }
+}
+
+final liquidGlassEnabledProvider =
+    NotifierProvider<LiquidGlassEnabledNotifier, bool>(
+      LiquidGlassEnabledNotifier.new,
+    );
+
+/// 玻璃样式档位（对应 Origo X 的「玻璃样式」）。
+class LiquidGlassLevelNotifier extends Notifier<LiquidGlassLevel> {
   static const _key = 'liquid_glass_level';
 
   @override
@@ -58,17 +76,64 @@ class LiquidGlassNotifier extends Notifier<LiquidGlassLevel> {
 }
 
 final liquidGlassLevelProvider =
-    NotifierProvider<LiquidGlassNotifier, LiquidGlassLevel>(
-      LiquidGlassNotifier.new,
+    NotifierProvider<LiquidGlassLevelNotifier, LiquidGlassLevel>(
+      LiquidGlassLevelNotifier.new,
     );
 
-/// 在 widget build 期间调用：当前生效档位。非 iOS 恒为 off。
-LiquidGlassLevel effectiveGlassLevel(WidgetRef ref) {
-  if (!isIOSPlatform) return LiquidGlassLevel.off;
+/// 顶栏玻璃开关（对应 Origo X 的「顶栏玻璃」）：控制底部导航是否玻璃化。
+class LiquidGlassNavNotifier extends Notifier<bool> {
+  static const _key = 'liquid_glass_nav';
+
+  @override
+  bool build() => SharedPrefsService.instance.getBool(_key) ?? true;
+
+  Future<void> set(bool value) async {
+    state = value;
+    await SharedPrefsService.instance.setBool(_key, value);
+  }
+}
+
+final liquidGlassNavProvider =
+    NotifierProvider<LiquidGlassNavNotifier, bool>(LiquidGlassNavNotifier.new);
+
+/// 渐进模糊开关（对应 Origo X 的「渐进模糊」）：开启时高档位使用 clear 玻璃
+/// 以呈现更强的折射层次，关闭时统一用 regular 玻璃。
+class LiquidGlassProgressiveNotifier extends Notifier<bool> {
+  static const _key = 'liquid_glass_progressive';
+
+  @override
+  bool build() => SharedPrefsService.instance.getBool(_key) ?? true;
+
+  Future<void> set(bool value) async {
+    state = value;
+    await SharedPrefsService.instance.setBool(_key, value);
+  }
+}
+
+final liquidGlassProgressiveProvider =
+    NotifierProvider<LiquidGlassProgressiveNotifier, bool>(
+      LiquidGlassProgressiveNotifier.new,
+    );
+
+/// widget build 期间调用：玻璃总开关是否生效（含平台判断）。
+bool glassEnabled(WidgetRef ref) {
+  if (!isIOSPlatform) return false;
+  return ref.watch(liquidGlassEnabledProvider);
+}
+
+/// widget build 期间调用：当前档位（含平台判断）。
+LiquidGlassLevel glassLevel(WidgetRef ref) {
+  if (!isIOSPlatform) return LiquidGlassLevel.lite;
   return ref.watch(liquidGlassLevelProvider);
 }
 
-bool _isOn(LiquidGlassLevel level) => level != LiquidGlassLevel.off;
+/// 档位 -> 玻璃半径倍率。
+double _radiusFactor(LiquidGlassLevel level) => switch (level) {
+  LiquidGlassLevel.lite => 0.7,
+  LiquidGlassLevel.plus => 0.85,
+  LiquidGlassLevel.pro => 1.0,
+  LiquidGlassLevel.max => 1.15,
+};
 
 /// 平台感知、档位感知的圆角矩形玻璃面。
 class AdaptiveGlassPanel extends ConsumerWidget {
@@ -87,25 +152,19 @@ class AdaptiveGlassPanel extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final level = effectiveGlassLevel(ref);
-    if (!_isOn(level)) return fallback(child);
+    if (!glassEnabled(ref)) return fallback(child);
 
-    // 三档玻璃的强度差异：半径递增 + Ultra 使用 clear 玻璃（更通透）。
-    final effectiveRadius = switch (level) {
-      LiquidGlassLevel.plus => radius * 0.8,
-      LiquidGlassLevel.proMax => radius,
-      LiquidGlassLevel.ultra => radius * 1.2,
-      LiquidGlassLevel.off => radius,
-    };
-    final effectiveInteractive = interactive || level == LiquidGlassLevel.ultra;
-    final style = level == LiquidGlassLevel.ultra
-        ? GlassStyle.clear
-        : GlassStyle.regular;
+    final level = glassLevel(ref);
+    final progressive = ref.watch(liquidGlassProgressiveProvider);
+    final style =
+        progressive && level == LiquidGlassLevel.max
+            ? GlassStyle.clear
+            : GlassStyle.regular;
 
     return Glass(
-      radius: effectiveRadius,
+      radius: radius * _radiusFactor(level),
       style: style,
-      interactive: effectiveInteractive,
+      interactive: interactive || level == LiquidGlassLevel.max,
       child: child,
     );
   }
@@ -128,8 +187,7 @@ class AdaptiveGlassButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final level = effectiveGlassLevel(ref);
-    if (!_isOn(level)) {
+    if (!glassEnabled(ref)) {
       final content = icon == null
           ? material.Text(label)
           : Row(
@@ -164,8 +222,7 @@ class AdaptiveGlassSwitch extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final level = effectiveGlassLevel(ref);
-    if (!_isOn(level)) {
+    if (!glassEnabled(ref)) {
       return material.Switch(value: value, onChanged: onChanged);
     }
     return GlassSwitch(value: value, onChanged: onChanged ?? (_) {});
