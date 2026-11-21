@@ -2,6 +2,19 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
+/// Widget target 独立编译的 attributes 定义。
+/// 与主 app 的 LiveActivityBridge.swift 中同名结构体保持一致即可——
+/// 两个 target 各自编译自己的副本，字段名/类型一致就能正确解码 content-state。
+@available(iOS 16.1, *)
+struct OronBoxLiveActivityAttributes: ActivityAttributes {
+    public struct ContentState: Codable, Hashable {
+        var title: String
+        var detail: String
+        var progress: Double
+    }
+    var deviceName: String
+}
+
 /// POC 灵动岛 Widget：锁屏卡片 + 灵动岛三态（expanded / compact / minimal）。
 /// 只依赖系统框架（ActivityKit/WidgetKit/SwiftUI），不需要任何第三方 pod。
 @available(iOS 16.1, *)
@@ -56,7 +69,6 @@ struct OronBoxWidget: Widget {
                 Image(systemName: "waveform.path.ecg").foregroundColor(.accentColor)
             }
             .widgetURL(URL(string: "oronbox://liveactivity"))
-            .keylineTint(.accentColor)
         }
     }
 }

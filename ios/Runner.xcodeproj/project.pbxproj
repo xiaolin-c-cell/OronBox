@@ -365,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000000000000000000001 /* LiveActivityBridge.swift in Sources */,
 				A10000000000000000000011 /* OronBoxWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
