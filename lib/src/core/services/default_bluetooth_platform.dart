@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:oronbox/src/core/logging/logging_service.dart';
 import 'package:oronbox/src/core/services/ble_gatt_driver.dart';
 import 'package:oronbox/src/core/services/rfcomm_driver.dart';
@@ -60,7 +61,13 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
     await stopScan();
     _scanResults.clear();
 
-    final connectTypes = options.normalizedConnectTypes;
+    // Last-resort platform guard: iOS/CoreBluetooth has no classic
+    // Bluetooth (RFCOMM/SPP) data channel without MFi. Collapse every scan
+    // to BLE-only here so no upper-layer caller (command bus, saved device,
+    // catalog default) can ever start an unusable SPP scan on iOS.
+    final connectTypes = defaultTargetPlatform == TargetPlatform.iOS
+        ? const {ConnectType.ble}
+        : options.normalizedConnectTypes;
     _activeScanTypes = connectTypes;
 
     if (connectTypes.contains(ConnectType.ble)) {
@@ -145,8 +152,19 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
   ) async {
     await requestPermissions();
     await stopScan();
-    final connectionKey = _connectionKey(address, options.connectType);
-    if (options.connectType == ConnectType.spp) {
+
+    // Last-resort platform guard: on iOS every connection — Xiaomi, Zepp,
+    // unknown, or a saved device whose catalog default is SPP — must use the
+    // BLE GATT transport. CoreBluetooth cannot open an RFCOMM/SPP data channel
+    // without MFi. Forcing it here (below all UI/profile decision layers)
+    // guarantees no code path can fall back to SPP on iOS.
+    final effectiveConnectType =
+        defaultTargetPlatform == TargetPlatform.iOS
+            ? ConnectType.ble
+            : options.connectType;
+
+    final connectionKey = _connectionKey(address, effectiveConnectType);
+    if (effectiveConnectType == ConnectType.spp) {
       for (final entry in _connections.entries.toList()) {
         if (entry.value.connectType == ConnectType.spp) {
           await _disposeConnection(entry.key);
@@ -156,11 +174,11 @@ class DefaultBluetoothPlatform implements BluetoothPlatform {
     logDiagnostic(_log, Level.INFO, 'connect requested', fields: {
       'address': address,
       'name': name,
-      'transport': options.connectType.name,
+      'transport': effectiveConnectType.name,
     });
 
     final BluetoothConnection connection;
-    switch (options.connectType) {
+    switch (effectiveConnectType) {
       case ConnectType.ble:
         final bleConnection = await _ble.connect(
           address,
