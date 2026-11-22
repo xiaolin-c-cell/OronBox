@@ -127,6 +127,28 @@ const oronBoxKnownErrorCodes = <String>{
   'validation',
 };
 
+/// 仅用于诊断：把统一兜底文案拆成可辨识的 BLE 失败阶段。
+/// 不改变任何连接逻辑，只改变 toast 的显示文本。
+String _bleFailureWithStage(AppLocalizations l10n, String normalized) {
+  final stage = normalized.contains('service discovery timed out')
+      ? '服务发现超时'
+      : normalized.contains('notification subscription timed out')
+      ? '通知订阅超时'
+      : normalized.contains('required ble characteristics not found')
+      ? '必需特征缺失'
+      : normalized.contains('characteristic') &&
+            normalized.contains('not found')
+      ? '特征缺失'
+      : normalized.contains('ble connect failed: timeout')
+      ? '平台连接超时'
+      : normalized.contains('universalble.connect failed') ||
+            normalized.contains('connect_failed') ||
+            normalized.contains('ble connect failed')
+      ? '平台连接失败'
+      : '连接失败';
+  return '${l10n.errorBluetoothConnectFailed} [$stage]';
+}
+
 String localizedErrorMessage(AppLocalizations l10n, Object? error) {
   final raw = _flattenError(error);
   final normalized = raw.toLowerCase();
@@ -357,9 +379,7 @@ String localizedErrorMessage(AppLocalizations l10n, Object? error) {
   if (normalized.contains('ble connect failed: timeout') ||
       normalized.contains('ble connect failed: service discovery timed out') ||
       normalized.contains('ble notification subscription timed out')) {
-    // All connection-failure causes (timeout or refused) share one message:
-    // permissions, radio off, device occupied, or wrong device mode.
-    return l10n.errorBluetoothConnectFailed;
+    return _bleFailureWithStage(l10n, normalized);
   }
 
   // The BLE and SPP drivers normalize native failures into these stable
@@ -368,6 +388,10 @@ String localizedErrorMessage(AppLocalizations l10n, Object? error) {
       normalized.contains('spp connect failed') ||
       normalized.contains('ble device was not discovered') ||
       normalized.contains('unknown deviceid')) {
+    if (normalized.contains('ble connect failed') ||
+        normalized.contains('ble device was not discovered')) {
+      return _bleFailureWithStage(l10n, normalized);
+    }
     return l10n.errorBluetoothConnectFailed;
   }
 
@@ -402,12 +426,9 @@ String localizedErrorMessage(AppLocalizations l10n, Object? error) {
   }
 
   if (normalized.contains('required ble characteristics not found') ||
-      normalized.contains('characteristic') &&
-          normalized.contains('not found')) {
-    final detail = _trimPlatformNoise(raw);
-    return normalized.contains('discovered:')
-        ? l10n.errorUnknownWithDetail(detail)
-        : l10n.errorBleCharacteristicsMissing;
+      (normalized.contains('characteristic') &&
+          normalized.contains('not found'))) {
+    return _bleFailureWithStage(l10n, normalized);
   }
 
   if (normalized.contains('send_failed') ||
@@ -424,6 +445,10 @@ String localizedErrorMessage(AppLocalizations l10n, Object? error) {
       normalized.contains('连接被拒绝') ||
       normalized.contains('设备或资源忙') ||
       normalized.contains('无法分配内存')) {
+    if (normalized.contains('connect_failed') ||
+        normalized.contains('universalble.connect failed')) {
+      return _bleFailureWithStage(l10n, normalized);
+    }
     return l10n.errorBluetoothConnectFailed;
   }
 
