@@ -19,14 +19,14 @@ import UIKit
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-    let registrar = engineBridge.pluginRegistry.registrar(
+    guard let registrar = engineBridge.pluginRegistry.registrar(
       forPlugin: "OronBoxBackgroundTasks"
-    )
+    ) else { return }
     let channel = FlutterMethodChannel(
       name: "org.oroncanopy.oronbox/background_tasks",
       binaryMessenger: registrar.messenger()
     )
-    channel.setMethodCallHandler { [weak self] call, result in
+    channel.setMethodCallHandler { [weak self] (call: FlutterMethodCall, result: FlutterResult) in
       guard let self else { return }
       switch call.method {
       case "begin", "beginPlugin":
@@ -60,7 +60,7 @@ import UIKit
       name: "org.oroncanopy.oronbox/file_open",
       binaryMessenger: registrar.messenger()
     )
-    fileChannel.setMethodCallHandler { call, result in
+    fileChannel.setMethodCallHandler { (call: FlutterMethodCall, result: FlutterResult) in
       switch call.method {
       case "getInitialFile":
         result(Self.pendingOpenFilePath)
