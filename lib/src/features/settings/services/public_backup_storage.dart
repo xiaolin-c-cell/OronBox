@@ -1,1 +1,1 @@
-export 'public_backup_storage_stub.dart'
+export 'public_backup_storage_stub.dart';
