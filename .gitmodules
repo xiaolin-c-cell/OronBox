@@ -1,0 +1,3 @@
+[submodule "android/xms-wearable-lib-cleanroom"]
+	path = android/xms-wearable-lib-cleanroom
+	url = https://github.com/OrPudding/XMS_Wearable_SDK_CleanRoom.git

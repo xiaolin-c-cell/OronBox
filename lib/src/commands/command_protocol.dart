@@ -1,0 +1,104 @@
+import 'dart:convert';
+
+import 'package:oronbox/src/core/errors/coded_error.dart';
+
+const oronBoxProtocolVersion = 6;
+
+const oronBoxDaemonCapabilities = <String>[
+  'device',
+  'install',
+  'resources',
+  'creator',
+  'apps',
+  'watchfaces',
+  'accounts',
+  'settings',
+  'tasks',
+  'logs',
+  'plugins',
+  'debug',
+];
+
+class OronBoxCommand {
+  const OronBoxCommand({required this.method, this.params = const {}});
+
+  final String method;
+  final Map<String, Object?> params;
+
+  Map<String, Object?> toJson() => {'method': method, 'params': params};
+
+  factory OronBoxCommand.fromJson(Map<String, Object?> json) {
+    return OronBoxCommand(
+      method: json['method']?.toString() ?? '',
+      params: (json['params'] as Map?)?.cast<String, Object?>() ?? const {},
+    );
+  }
+}
+
+class CommandResult {
+  const CommandResult.success([this.value]) : error = null;
+  const CommandResult.failure(this.error) : value = null;
+
+  final Object? value;
+  final CommandError? error;
+  bool get ok => error == null;
+
+  Map<String, Object?> toJson() => {
+    'ok': ok,
+    'result': value,
+    'error': error?.toJson(),
+  };
+
+  factory CommandResult.fromJson(Map<String, Object?> json) {
+    final rawError = json['error'];
+    return rawError is Map
+        ? CommandResult.failure(
+            CommandError.fromJson(rawError.cast<String, Object?>()),
+          )
+        : CommandResult.success(json['result']);
+  }
+}
+
+class CommandError implements CodedError {
+  const CommandError(this.code, this.message, {this.details});
+  @override
+  final String code;
+  @override
+  final String message;
+  @override
+  final Object? details;
+
+  Map<String, Object?> toJson() => {
+    'code': code,
+    'message': message,
+    if (details != null) 'details': details,
+  };
+
+  factory CommandError.fromJson(Map<String, Object?> json) => CommandError(
+    json['code']?.toString() ?? 'unknown',
+    json['message']?.toString() ?? 'Unknown error',
+    details: json['details'],
+  );
+
+  @override
+  String toString() =>
+      details == null ? '$code: $message' : '$code: $message\n$details';
+}
+
+const canopusConnectMessageEvent = 'canopusconnect.message';
+const canopusResponseEvent = 'canopus.response';
+
+class CommandEvent {
+  const CommandEvent(this.event, {this.data = const {}});
+  final String event;
+  final Map<String, Object?> data;
+
+  Map<String, Object?> toJson() => {'event': event, ...data};
+  String encode() => jsonEncode(toJson());
+}
+
+abstract interface class OronBoxCommandBus {
+  Future<CommandResult> execute(OronBoxCommand command);
+  Stream<CommandEvent> get events;
+  Future<void> close();
+}

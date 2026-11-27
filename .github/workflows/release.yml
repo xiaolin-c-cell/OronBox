@@ -1,0 +1,560 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  FLUTTER_VERSION: 3.50.1
+  ORONBOX_RETRY_ATTEMPTS: 3
+  ORONBOX_RETRY_DELAY_SECONDS: 10
+
+jobs:
+  validate:
+    name: Validate release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.metadata.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate tag, version, and SDK
+        id: metadata
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          source tool/build_common.sh
+          base_version="$(get_version)"
+          build_number="$(get_build_number)"
+          sdk_version="$(awk -F'"' '/"flutter"/ { print $4; exit }' .fvmrc)"
+
+          [[ -n "${build_number}" ]] || {
+            echo 'pubspec.yaml version must include an Android build number (+N)' >&2
+            exit 1
+          }
+          [[ "${base_version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]] || {
+            echo "invalid release version: ${base_version}" >&2
+            exit 1
+          }
+          [[ "${build_number}" =~ ^[1-9][0-9]*$ ]] || {
+            echo "invalid Android build number: ${build_number}" >&2
+            exit 1
+          }
+          [[ "${TAG}" == "v${base_version}" ]] || {
+            echo "tag ${TAG} does not match pubspec version ${base_version}" >&2
+            exit 1
+          }
+          [[ "${sdk_version}" == "${FLUTTER_VERSION}" ]] || {
+            echo ".fvmrc pins Flutter ${sdk_version}, workflow uses ${FLUTTER_VERSION}" >&2
+            exit 1
+          }
+
+          echo "version=${base_version}" >> "$GITHUB_OUTPUT"
+
+  build-android-web:
+    name: Build Android and Web
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      ORONBOX_KEYSTORE_BASE64: ${{ secrets.ORONBOX_KEYSTORE_BASE64 }}
+      ORONBOX_KEYSTORE_PASSWORD: ${{ secrets.ORONBOX_KEYSTORE_PASSWORD }}
+      ORONBOX_KEY_ALIAS: ${{ secrets.ORONBOX_KEY_ALIAS }}
+      ORONBOX_KEY_PASSWORD: ${{ secrets.ORONBOX_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Prepare client attestation
+        shell: bash
+        env:
+          ORONBOX_AUTH_MASTER: ${{ secrets.ORONBOX_AUTH_MASTER }}
+          OB_BUILD_VERSION: ${{ needs.validate.outputs.version }}
+          OB_BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          [[ -n "$ORONBOX_AUTH_MASTER" ]] || { echo 'Missing required secret: ORONBOX_AUTH_MASTER' >&2; exit 1; }
+          python tool/prepare_build_integrity.py --version "$OB_BUILD_VERSION" --commit "$OB_BUILD_COMMIT"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Prepare release signing
+        run: |
+          set -euo pipefail
+          for name in ORONBOX_KEYSTORE_BASE64 ORONBOX_KEYSTORE_PASSWORD ORONBOX_KEY_ALIAS ORONBOX_KEY_PASSWORD; do
+            [[ -n "${!name:-}" ]] || {
+              echo "missing required Android signing secret: ${name}" >&2
+              exit 1
+            }
+          done
+          keystore="$RUNNER_TEMP/oronbox-release.jks"
+          printf '%s' "$ORONBOX_KEYSTORE_BASE64" | base64 --decode > "$keystore"
+          chmod 600 "$keystore"
+          keytool -list -keystore "$keystore" -storepass "$ORONBOX_KEYSTORE_PASSWORD" -alias "$ORONBOX_KEY_ALIAS" >/dev/null
+          echo "ORONBOX_KEYSTORE_PATH=$keystore" >> "$GITHUB_ENV"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Cache Android dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: oronbox-android-${{ runner.os }}-${{ runner.arch }}-${{ env.FLUTTER_VERSION }}-${{ hashFiles('pubspec.lock', 'android/**/gradle-wrapper.properties', 'android/**/build.gradle*', 'android/**/settings.gradle*') }}
+          restore-keys: |
+            oronbox-android-${{ runner.os }}-${{ runner.arch }}-${{ env.FLUTTER_VERSION }}-
+            oronbox-android-${{ runner.os }}-${{ runner.arch }}-
+
+      - name: Install dependencies
+        run: |
+          source tool/build_common.sh
+          retry_cmd flutter pub get --enforce-lockfile
+          python tool/check_naming.py
+
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r28c
+          add-to-path: true
+
+      - name: Build Android packages
+        run: |
+          source tool/build_common.sh
+          retry_cmd tool/build_android.sh
+
+      - name: Build Web package
+        run: |
+          source tool/build_common.sh
+          retry_cmd tool/build_web.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-android-web
+          path: build/release/*
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Clean client attestation files
+        if: always()
+        shell: bash
+        run: |
+          python -c "from pathlib import Path; [Path(p).unlink(missing_ok=True) for p in ('build/integrity_defines.json', 'config/integrity_defines.local.json')]"
+
+  build-linux:
+    name: Build Linux (${{ matrix.arch }})
+    needs: validate
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: x64
+            abi: x86_64
+            arch-image: archlinux:base-devel
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+            abi: aarch64
+            arch-image: menci/archlinuxarm:base-devel
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Prepare client attestation
+        shell: bash
+        env:
+          ORONBOX_AUTH_MASTER: ${{ secrets.ORONBOX_AUTH_MASTER }}
+          OB_BUILD_VERSION: ${{ needs.validate.outputs.version }}
+          OB_BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          [[ -n "$ORONBOX_AUTH_MASTER" ]] || { echo 'Missing required secret: ORONBOX_AUTH_MASTER' >&2; exit 1; }
+          python tool/prepare_build_integrity.py --version "$OB_BUILD_VERSION" --commit "$OB_BUILD_COMMIT"
+
+      - name: Cache Flutter SDK (arm64)
+        if: matrix.arch == 'arm64'
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/flutter
+          key: oronbox-flutter-${{ runner.os }}-${{ runner.arch }}-${{ env.FLUTTER_VERSION }}
+
+      - name: Install Flutter (x64)
+        if: matrix.arch == 'x64'
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install Flutter (arm64)
+        if: matrix.arch == 'arm64'
+        run: |
+          source tool/build_common.sh
+          if [[ ! -x "$RUNNER_TEMP/flutter/bin/flutter" ]]; then
+            retry_cmd git clone --depth 1 --branch "$FLUTTER_VERSION" https://github.com/flutter/flutter.git "$RUNNER_TEMP/flutter"
+          fi
+          export PATH="$RUNNER_TEMP/flutter/bin:$PATH"
+          echo "$RUNNER_TEMP/flutter/bin" >> "$GITHUB_PATH"
+          flutter config --no-analytics
+          flutter --version
+
+      - name: Cache Dart packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: oronbox-linux-pub-${{ runner.arch }}-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            oronbox-linux-pub-${{ runner.arch }}-
+
+      - name: Install Linux build dependencies
+        run: |
+          source tool/build_common.sh
+          retry_cmd sudo apt-get update
+          retry_cmd sudo apt-get install -y libsecret-1-dev \
+            clang cmake ninja-build pkg-config zip curl \
+            libgtk-3-dev libx11-dev libxi-dev libblkid-dev liblzma-dev libasound2-dev \
+            libwebkit2gtk-4.1-dev \
+            libbluetooth-dev libayatana-appindicator3-dev \
+            dpkg-dev rpm flatpak flatpak-builder
+
+      - name: Install dependencies
+        run: |
+          source tool/build_common.sh
+          retry_cmd flutter pub get --enforce-lockfile
+          python tool/check_naming.py
+
+      - name: Cache Linux packaging tools
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/bin
+          key: oronbox-linux-tools-${{ runner.arch }}-appimage-runtime-v1
+
+      - name: Install linuxdeploy (latest)
+        run: |
+          set -euo pipefail
+          case "$(uname -m)" in
+            aarch64) tool_arch=aarch64 ;;
+            x86_64) tool_arch=x86_64 ;;
+            *) echo "unsupported runner architecture: $(uname -m)" >&2; exit 1 ;;
+          esac
+          mkdir -p "$RUNNER_TEMP/bin"
+          if [[ ! -x "$RUNNER_TEMP/bin/linuxdeploy" ]]; then
+            curl -fsSL --retry "${ORONBOX_RETRY_ATTEMPTS}" --retry-delay "${ORONBOX_RETRY_DELAY_SECONDS}" --retry-all-errors \
+              -o "$RUNNER_TEMP/bin/linuxdeploy" \
+              "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-${tool_arch}.AppImage"
+          fi
+          if [[ ! -x "$RUNNER_TEMP/bin/linuxdeploy-plugin-appimage" ]]; then
+            curl -fsSL --retry "${ORONBOX_RETRY_ATTEMPTS}" --retry-delay "${ORONBOX_RETRY_DELAY_SECONDS}" --retry-all-errors \
+              -o "$RUNNER_TEMP/bin/linuxdeploy-plugin-appimage" \
+              "https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/releases/download/continuous/linuxdeploy-plugin-appimage-${tool_arch}.AppImage"
+          fi
+          if [[ "${{ matrix.arch }}" == "x64" ]]; then
+            runtime="$RUNNER_TEMP/bin/runtime-${tool_arch}"
+            if [[ ! -s "$runtime" ]]; then
+              curl -fsSL --retry "${ORONBOX_RETRY_ATTEMPTS}" --retry-delay "${ORONBOX_RETRY_DELAY_SECONDS}" --retry-all-errors \
+                -o "$runtime" \
+                "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-${tool_arch}"
+            fi
+            echo "LDAI_RUNTIME_FILE=$runtime" >> "$GITHUB_ENV"
+          fi
+          chmod +x "$RUNNER_TEMP/bin/linuxdeploy" "$RUNNER_TEMP/bin/linuxdeploy-plugin-appimage"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+          echo 'APPIMAGE_EXTRACT_AND_RUN=1' >> "$GITHUB_ENV"
+
+      - name: Install Flatpak runtime and SDK
+        run: |
+          source tool/build_common.sh
+          set -euo pipefail
+          runtime_version="$(awk -F'"' '/^runtime-version:/ { print $2; exit }' tool/packaging/flatpak/org.zxor.oronbox.yml)"
+          retry_cmd sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+          retry_cmd sudo flatpak install -y --noninteractive flathub \
+            "org.gnome.Platform//${runtime_version}" "org.gnome.Sdk//${runtime_version}"
+
+      - name: Build Linux packages
+        run: |
+          source tool/build_common.sh
+          retry_cmd tool/build_linux.sh --format all --abi "${{ matrix.abi }}"
+
+      - name: Build Arch package
+        run: |
+          source tool/build_common.sh
+          chmod a+rwX build
+          chmod -R a+rwX build/linux build/release build/linux_staging
+          retry_cmd docker run --rm -v "$PWD:/ws" -w /ws "${{ matrix.arch-image }}" \
+              bash -euc '
+                command -v git >/dev/null || pacman --disable-sandbox -Sy --noconfirm git
+                id builder >/dev/null 2>&1 || useradd -m -u "$(stat -c %u /ws)" -o builder
+                su builder -c "git config --global --add safe.directory /ws && tool/build_linux.sh --format arch --abi ${{ matrix.abi }} --skip-build --skip-clean-check"
+              '
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-linux-${{ matrix.arch }}
+          path: build/release/*
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Clean client attestation files
+        if: always()
+        shell: bash
+        run: |
+          python -c "from pathlib import Path; [Path(p).unlink(missing_ok=True) for p in ('build/integrity_defines.json', 'config/integrity_defines.local.json')]"
+
+  build-macos:
+    name: Build macOS (${{ matrix.abi }})
+    needs: validate
+    strategy:
+      fail-fast: false
+      matrix:
+        abi: [arm64, x86_64, universal]
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Prepare client attestation
+        shell: bash
+        env:
+          ORONBOX_AUTH_MASTER: ${{ secrets.ORONBOX_AUTH_MASTER }}
+          OB_BUILD_VERSION: ${{ needs.validate.outputs.version }}
+          OB_BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          [[ -n "$ORONBOX_AUTH_MASTER" ]] || { echo 'Missing required secret: ORONBOX_AUTH_MASTER' >&2; exit 1; }
+          python tool/prepare_build_integrity.py --version "$OB_BUILD_VERSION" --commit "$OB_BUILD_COMMIT"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Cache Dart packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: oronbox-macos-pub-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            oronbox-macos-pub-
+
+      - name: Install dependencies
+        run: |
+          source tool/build_common.sh
+          retry_cmd flutter pub get --enforce-lockfile
+          python tool/check_naming.py
+
+      - name: Install DMG packaging tools
+        run: |
+          source tool/build_common.sh
+          retry_cmd brew install create-dmg
+
+      - name: Build macOS packages
+        run: |
+          source tool/build_common.sh
+          retry_cmd tool/build_macos.sh --abi "${{ matrix.abi }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-macos-${{ matrix.abi }}
+          path: build/release/*
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Clean client attestation files
+        if: always()
+        shell: bash
+        run: |
+          python -c "from pathlib import Path; [Path(p).unlink(missing_ok=True) for p in ('build/integrity_defines.json', 'config/integrity_defines.local.json')]"
+
+  build-windows:
+    name: Build Windows
+    needs: validate
+    runs-on: windows-2022
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Prepare client attestation
+        shell: bash
+        env:
+          ORONBOX_AUTH_MASTER: ${{ secrets.ORONBOX_AUTH_MASTER }}
+          OB_BUILD_VERSION: ${{ needs.validate.outputs.version }}
+          OB_BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          [[ -n "$ORONBOX_AUTH_MASTER" ]] || { echo 'Missing required secret: ORONBOX_AUTH_MASTER' >&2; exit 1; }
+          python tool/prepare_build_integrity.py --version "$OB_BUILD_VERSION" --commit "$OB_BUILD_COMMIT"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Cache Windows dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~\AppData\Local\Pub\Cache
+          key: oronbox-windows-${{ runner.arch }}-${{ env.FLUTTER_VERSION }}-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            oronbox-windows-${{ runner.arch }}-${{ env.FLUTTER_VERSION }}-
+            oronbox-windows-${{ runner.arch }}-
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          for ($attempt = 1; $attempt -le [int]$env:ORONBOX_RETRY_ATTEMPTS; $attempt++) {
+            flutter pub get --enforce-lockfile
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            if ($attempt -lt [int]$env:ORONBOX_RETRY_ATTEMPTS) {
+              Write-Host "Attempt $attempt failed; retrying in $([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)s"
+              Start-Sleep -Seconds ([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)
+            }
+          }
+          exit 1
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          for ($attempt = 1; $attempt -le [int]$env:ORONBOX_RETRY_ATTEMPTS; $attempt++) {
+            choco install innosetup --no-progress -y
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            if ($attempt -lt [int]$env:ORONBOX_RETRY_ATTEMPTS) {
+              Write-Host "Attempt $attempt failed; retrying in $([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)s"
+              Start-Sleep -Seconds ([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)
+            }
+          }
+          exit 1
+
+      - name: Build Windows package
+        shell: pwsh
+        run: |
+          for ($attempt = 1; $attempt -le [int]$env:ORONBOX_RETRY_ATTEMPTS; $attempt++) {
+            ./tool/build_windows.ps1
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            if ($attempt -lt [int]$env:ORONBOX_RETRY_ATTEMPTS) {
+              Write-Host "Attempt $attempt failed; retrying in $([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)s"
+              Start-Sleep -Seconds ([int]$env:ORONBOX_RETRY_DELAY_SECONDS * $attempt)
+            }
+          }
+          exit 1
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-windows
+          path: build/release/*
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Clean client attestation files
+        if: always()
+        shell: bash
+        run: |
+          python -c "from pathlib import Path; [Path(p).unlink(missing_ok=True) for p in ('build/integrity_defines.json', 'config/integrity_defines.local.json')]"
+
+  publish:
+    name: Publish release
+    needs: [validate, build-android-web, build-linux, build-macos, build-windows]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Verify release packages
+        env:
+          RELEASE_VERSION: ${{ needs.validate.outputs.version }}
+        run: |
+          set -euo pipefail
+          source tool/build_common.sh
+          require_file() {
+            local pattern="$1"
+            compgen -G "dist/${pattern}" >/dev/null || {
+              echo "missing release artifact: ${pattern}" >&2
+              exit 1
+            }
+          }
+
+          require_file "${APP_NAME}-${RELEASE_VERSION}-android-arm64-v8a.apk"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-android-armeabi-v7a.apk"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-android-x86_64.apk"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-android-appbundle.aab"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-web.zip"
+
+          for linux_arch in amd64 arm64; do
+            require_file "${APP_NAME}-${RELEASE_VERSION}-linux-${linux_arch}.tar.gz"
+            require_file "${APP_NAME}-${RELEASE_VERSION}-linux-${linux_arch}.AppImage"
+            require_file "${APP_NAME}-${RELEASE_VERSION}-linux-${linux_arch}.flatpak"
+          done
+
+          deb_version="$(deb_upstream_version "${RELEASE_VERSION}")-1"
+          arch_version="$(arch_pkgver "${RELEASE_VERSION}")"
+          read -r rpm_version rpm_release <<< "$(rpm_version_release "${RELEASE_VERSION}")"
+          require_file "${APP_NAME}_${deb_version}_amd64.deb"
+          require_file "${APP_NAME}_${deb_version}_arm64.deb"
+          require_file "${APP_NAME}-${rpm_version}-${rpm_release}.x86_64.rpm"
+          require_file "${APP_NAME}-${rpm_version}-${rpm_release}.aarch64.rpm"
+          require_file "${APP_NAME}-${arch_version}-1-x86_64.pkg.tar.zst"
+          require_file "${APP_NAME}-${arch_version}-1-aarch64.pkg.tar.zst"
+
+          require_file "${APP_NAME}-${RELEASE_VERSION}-macos-universal.zip"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-macos-universal.dmg"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-windows-amd64.zip"
+          require_file "${APP_NAME}-${RELEASE_VERSION}-windows-amd64-setup.exe"
+
+      - name: Generate and verify checksums
+        run: |
+          set -euo pipefail
+          source tool/build_common.sh
+          generate_checksums "$PWD/dist"
+          (cd dist && sha256sum -c sha256sums.txt)
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: dist/*
+          fail_on_unmatched_files: true
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-') }}

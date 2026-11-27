@@ -1,0 +1,169 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:oronbox/src/commands/command_protocol.dart';
+import 'package:oronbox/src/core/network/dio_provider.dart';
+import 'package:oronbox/src/core/network/github_cdn.dart';
+import 'package:oronbox/src/core/providers/app_settings_providers.dart';
+import 'package:oronbox/src/data/astrobox/astrobox_repo_resource_provider.dart';
+import 'package:oronbox/src/data/bandbbs/bandbbs_resource_provider.dart';
+import 'package:oronbox/src/data/community/community_source.dart';
+import 'package:oronbox/src/data/huami/huami_app_store_resource_provider.dart';
+import 'package:oronbox/src/data/oronbox/oronbox_resource_provider.dart';
+import 'package:oronbox/src/device/core/device_profile.dart';
+import 'package:oronbox/src/features/devices/controllers/device_manager.dart';
+import 'package:oronbox/src/features/accounts/services/bandbbs_auth_service.dart';
+import 'package:oronbox/src/features/accounts/services/huami_auth_service.dart';
+import 'package:oronbox/src/features/resources/application/command_resource_catalog.dart';
+import 'package:oronbox/src/features/resources/domain/community_resource.dart';
+import 'package:oronbox/src/features/resources/domain/community_resource_codec.dart';
+import 'package:oronbox/src/features/resources/domain/resource_catalog.dart';
+import 'package:oronbox/src/host/application_host_provider.dart';
+
+final selectedCommunitySourceProvider = Provider<CommunitySourceId>((ref) {
+  return ref.watch(
+    appSettingsProvider.select((settings) => settings.communitySource),
+  );
+});
+
+final localCommunityCatalogProviderForSource =
+    Provider.family<CommunityResourceCatalog, CommunitySourceId>((ref, source) {
+      final dio = ref.watch(appDioProvider);
+      return switch (source) {
+        CommunitySourceId.oronBox => OronBoxResourceCatalog(dio: dio),
+        CommunitySourceId.astroboxRepo => AstroBoxRepoCatalog(
+          dio: dio,
+          useServerMetadata: ref.watch(
+            appSettingsProvider.select(
+              (settings) => settings.cdn == GitHubCdn.auto,
+            ),
+          ),
+          cdn: ref.watch(
+            appSettingsProvider.select((settings) => settings.effectiveCdn),
+          ),
+        ),
+        CommunitySourceId.bandbbs => BandBbsCatalog(
+          dio: dio,
+          auth: ref.read(bandBbsAuthProvider.notifier),
+          showAllCategories: ref.watch(
+            appSettingsProvider.select(
+              (settings) => settings.bandbbsShowAllCategories,
+            ),
+          ),
+        ),
+        CommunitySourceId.huamiAppStore => HuamiAppStoreCatalog(
+          dio: dio,
+          auth: ref.read(huamiAuthProvider.notifier),
+        ),
+        _ => throw StateError(
+          'Plugin community catalogs are only available through the command bus',
+        ),
+      };
+    });
+
+final communityCatalogProviderForSource =
+    Provider.family<CommunityResourceCatalog, CommunitySourceId>((ref, source) {
+      return CommandResourceCatalog(
+        host: ref.watch(applicationHostProvider),
+        sourceId: source,
+      );
+    });
+
+final communityCatalogProvider = Provider<CommunityResourceCatalog>((ref) {
+  return ref.watch(
+    communityCatalogProviderForSource(
+      ref.watch(selectedCommunitySourceProvider),
+    ),
+  );
+});
+
+final communityCatalogDevicesProvider =
+    FutureProvider.autoDispose<List<CommunityResourceDevice>>((ref) {
+      return ref.watch(communityCatalogProvider).getDevices();
+    });
+
+final communitySourcesProvider =
+    StreamProvider.autoDispose<List<CommunitySourceId>>((ref) async* {
+      final host = ref.watch(applicationHostProvider);
+      Future<List<CommunitySourceId>> load() async {
+        final result = await host.execute(
+          const OronBoxCommand(method: 'resource.sources'),
+        );
+        if (!result.ok) {
+          throw result.error!;
+        }
+        return (result.value as List? ?? const [])
+            .whereType<Map>()
+            .map((row) => communitySourceIdByName(row['id']?.toString() ?? ''))
+            .nonNulls
+            .toList(growable: false);
+      }
+
+      yield await load();
+      await for (final event in host.events) {
+        if (event.event == 'plugin.provider' ||
+            event.event == 'plugin.state' ||
+            event.event == 'host.connected') {
+          yield await load();
+        }
+      }
+    });
+
+final communityResourceDetailProvider = FutureProvider.autoDispose
+    .family<CommunityResourceDetail, ResourceRef>((ref, refValue) {
+      return ref
+          .watch(communityCatalogProviderForSource(refValue.source))
+          .getDetail(refValue);
+    });
+
+final bandbbsCategoryTreeProvider =
+    FutureProvider.autoDispose<List<BandBbsCategoryNode>>((ref) async {
+      if (!ref.watch(bandBbsAuthProvider).isSignedIn) {
+        return const [];
+      }
+      final result = await ref
+          .read(applicationHostProvider)
+          .execute(const OronBoxCommand(method: 'resource.bandbbs.categories'));
+      if (!result.ok) {
+        throw result.error!;
+      }
+      BandBbsCategoryNode decode(Map<String, Object?> json) =>
+          BandBbsCategoryNode(
+            id: (json['id'] as num).toInt(),
+            title: json['title']?.toString() ?? '',
+            resourceCount: (json['resourceCount'] as num?)?.toInt() ?? 0,
+            children: (json['children'] as List? ?? const [])
+                .whereType<Map>()
+                .map((row) => decode(row.cast<String, Object?>()))
+                .toList(),
+          );
+      final roots = (result.value as List)
+          .whereType<Map>()
+          .map((row) => decode(row.cast<String, Object?>()))
+          .toList();
+      final currentDevice = ref.watch(deviceManagerProvider).currentDevice;
+      final currentDeviceKind = currentDevice == null
+          ? null
+          : DeviceRegistry.resolveIdentity(
+              name: currentDevice.name,
+              codename: currentDevice.codename,
+            ).kind;
+      return filterBandBbsCategoryTreeForDevice(roots, currentDeviceKind);
+    });
+
+final huamiPublisherResourcesProvider = FutureProvider.autoDispose
+    .family<List<CommunityResource>, String>((ref, publisherName) async {
+      final result = await ref
+          .read(applicationHostProvider)
+          .execute(
+            OronBoxCommand(
+              method: 'resource.huami.publisher',
+              params: {'publisher': publisherName},
+            ),
+          );
+      if (!result.ok) {
+        throw result.error!;
+      }
+      return (result.value as List)
+          .whereType<Map>()
+          .map((row) => communityResourceFromJson(row.cast<String, Object?>()))
+          .toList();
+    });

@@ -1,0 +1,147 @@
+import 'dart:ui' as ui;
+
+import 'package:flutter/foundation.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:oronbox/src/app/window/desktop_window.dart';
+import 'package:oronbox/src/core/utils/layout.dart';
+
+class SysAppBar extends ConsumerWidget implements PreferredSizeWidget {
+  const SysAppBar({
+    super.key,
+    this.title,
+    this.backgroundColor,
+    this.elevation,
+    this.actions,
+    this.leading,
+    this.automaticallyImplyLeading = true,
+    this.bottom,
+    this.secondary = false,
+    this.fullWindow = false,
+  });
+
+  final Widget? title;
+  final Color? backgroundColor;
+  final double? elevation;
+  final List<Widget>? actions;
+  final Widget? leading;
+  final bool automaticallyImplyLeading;
+  final PreferredSizeWidget? bottom;
+  final bool secondary;
+
+  /// The page fills the whole window without the navigation rail (e.g. the
+  /// OOBE). On macOS the traffic-light avoidance must then apply even in the
+  /// wide layout, where other pages rely on the rail to stay clear.
+  final bool fullWindow;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final desktop =
+        !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.windows ||
+            defaultTargetPlatform == TargetPlatform.linux ||
+            defaultTargetPlatform == TargetPlatform.macOS);
+    final customClose =
+        desktop && defaultTargetPlatform != TargetPlatform.macOS;
+    final macOS = desktop && defaultTargetPlatform == TargetPlatform.macOS;
+    final compactMacOS =
+        macOS &&
+        (!useWideLayout(MediaQuery.sizeOf(context).width) ||
+            (secondary && fullWindow));
+    final macOSSecondary = compactMacOS && secondary;
+    final resolvedLeading = macOSSecondary
+        ? Padding(
+            padding: const EdgeInsets.only(left: 12, top: 20),
+            child:
+                leading ??
+                (automaticallyImplyLeading && Navigator.canPop(context)
+                    ? const BackButton()
+                    : null),
+          )
+        : leading;
+    final resolvedTitle = title;
+    final resolvedActions = compactMacOS
+        ? actions
+              ?.map(
+                (action) => Transform.translate(
+                  offset: const Offset(0, -16),
+                  child: action,
+                ),
+              )
+              .toList(growable: false)
+        : actions;
+    // Android-only debug entry: the settings toggle puts a bug button in
+    // every app bar; desktop uses its separate debug window instead.
+    // `SysAppBar` is also used by pages pushed with a plain
+    // `MaterialPageRoute` (for example workout/resource details).  Calling
+    // `GoRouterState.of` for such a route loops forever in go_router:18,
+    // because it keeps looking for a `Page` route that does not exist.  Only
+    // ask go_router for its state when the current route is actually a Page.
+    final route = ModalRoute.of(context);
+    final routePath = route?.settings is Page<Object?>
+        ? GoRouterState.of(context).uri.path
+        : null;
+    final showDebugEntry =
+        !kIsWeb &&
+        defaultTargetPlatform == TargetPlatform.android &&
+        ref.watch(debugWindowEnabledProvider) &&
+        routePath != '/debug';
+    final appBar = AppBar(
+      title: resolvedTitle,
+      leading: resolvedLeading,
+      leadingWidth: macOSSecondary ? 68 : null,
+      titleSpacing: macOSSecondary ? 16 : null,
+      centerTitle: macOSSecondary ? false : null,
+      toolbarHeight: compactMacOS ? 72 : null,
+      automaticallyImplyLeading: automaticallyImplyLeading && !macOSSecondary,
+      actions: [
+        ...?resolvedActions,
+        if (showDebugEntry)
+          IconButton(
+            icon: const Icon(Icons.bug_report_outlined),
+            tooltip: 'DevTools',
+            onPressed: () => context.push('/debug'),
+          ),
+        if (customClose) const CloseButton(onPressed: closeDesktopWindow),
+        if (desktop) const SizedBox(width: 4),
+      ],
+      bottom: bottom,
+      backgroundColor: backgroundColor,
+      elevation: elevation,
+      scrolledUnderElevation: 0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness:
+            Theme.of(context).brightness == Brightness.light
+            ? Brightness.dark
+            : Brightness.light,
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarDividerColor: Colors.transparent,
+      ),
+    );
+    if (!desktop) return appBar;
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onPanStart: (_) => dragDesktopWindow(),
+      child: appBar,
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(
+    (_usesCompactMacOSLayout ? 72 : kToolbarHeight) +
+        (bottom?.preferredSize.height ?? 0),
+  );
+
+  bool get _usesCompactMacOSLayout {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.macOS) return false;
+    if (secondary && fullWindow) return true;
+    final views = ui.PlatformDispatcher.instance.views;
+    if (views.isEmpty) return false;
+    final view = views.first;
+    final logicalWidth = view.physicalSize.width / view.devicePixelRatio;
+    return !useWideLayout(logicalWidth);
+  }
+}

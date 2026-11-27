@@ -1,0 +1,159 @@
+name: oronbox
+description: "A pretty fast wearable management tool for VelaOS and ZeppOS, built with Flutter."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.3.0+17
+
+environment:
+  sdk: ^3.13.0
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+  go_router: ^18.0.0
+  flutter_riverpod: ^3.4.2
+  url_launcher: ^6.3.2
+  cached_network_image: ^4.0.2
+  dynamic_color: ^2.1.0
+  material_ui: ^1.11.1
+  dio: ^5.11.1
+  csv: ^8.0.0
+  html: ^0.15.7
+  openai_dart: ^12.0.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^2.0.0
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+  segmented_list:
+    path: packages/segmented_list
+  flutter_svg: ^2.5.0
+  shared_preferences: ^2.5.5
+  universal_ble: 3.1.0
+  protobuf: ^6.1.0
+  fixnum: ^1.1.1
+  pointycastle: ^4.0.0
+  crypto: ^3.0.7
+  file_picker: ^13.4.0
+  # file_picker and desktop_drop 0.8.x still require cross_file 0.3.x
+  cross_file: ^0.3.5+5
+  archive: ^4.5.2
+  image: ^4.13.1
+  charset: ^2.0.1
+  enough_convert: ^1.6.0
+  logging: ^1.3.0
+  qr_flutter: ^4.1.0
+  flutter_zxing: ^3.1.1
+  app_links: ^7.2.1
+  path_provider: ^2.1.6
+  # Unified WebAssembly & AstroBox Plugin System (ABP) runtime
+  wasm_abp:
+    git:
+      url: https://github.com/OrPudding/wasm_abp.git
+      ref: 8d75c2ec40555f670dfbf191e3db77448bd772a9
+  webview_all: ^1.5.2
+  wear_net:
+    git:
+      url: https://github.com/OrPudding/wear_net.git
+      ref: 8f8a8d2736c3d03c696ec58e4cefac7b8e72ea17
+  web: ^1.1.1
+  flutter_markdown_plus: ^1.0.12
+  uuid: ^4.6.0
+  mdns_dart: ^2.2.2
+  fl_chart: ^1.2.0
+  flutter_timezone: ^5.1.0
+  cupertino_ui: ^1.1.7
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+  wear_location:
+    git:
+      url: https://github.com/OrPudding/wear_location.git
+      ref: 72329f70506368a56cc91a06f8934bb66880a7b7
+  flutter_secure_storage: ^11.2.0
+  html2md: ^1.3.2
+  markdown: ^7.3.1
+  web_socket_channel: ^3.0.3
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+  build_runner: ^2.16.1
+  freezed: ^4.0.2
+  json_serializable: ^6.14.0
+
+flutter:
+  generate: true
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/images/team/
+    - assets/images/devices/
+    - assets/scripts/zeppos/zml.js
+    - assets/images/brands/
+    - assets/licenses/
+    - assets/wasm/
+    - assets/legal/
+    - assets/certs/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

@@ -1,0 +1,2631 @@
+{
+  "@@locale": "ja",
+  "homeTab": "ホーム",
+  "exploreTab": "探索",
+  "devicesTab": "デバイス",
+  "pluginsTab": "プラグイン",
+  "settingsTab": "設定",
+  "search": "検索",
+  "filter": "フィルター",
+  "resourceTypeFilter": "リソースの種類",
+  "resourceCompatibleDevicesFilter": "対応デバイス",
+  "creatorPaidType": "支払いタイプ",
+  "supportedDevices": "対応デバイス",
+  "watchfaces": "文字盤",
+  "module": "モジュール",
+  "quickApps": "クイックアプリ",
+  "miniprograms": "ミニプログラム",
+  "firmwareTools": "ファームウェア / ツール",
+  "all": "すべて",
+  "paid": "有料",
+  "update": "更新",
+  "install": "インストール",
+  "cancel": "キャンセル",
+  "close": "閉じる",
+  "refresh": "更新",
+  "resourceLibrary": "リソースライブラリ",
+  "resourceDetails": "リソース詳細",
+  "creatorCenter": "クリエイターセンター",
+  "pluginImport": "プラグインをインポート",
+  "pluginInstalled": "インストール済み",
+  "pluginMarket": "プラグインマーケット",
+  "pluginMarketEmpty": "利用できるプラグインはありません",
+  "pluginSearchEmpty": "一致するプラグインが見つかりません",
+  "pluginEmpty": "インストール済みのプラグインはありません",
+  "pluginSelectHint": "プラグインを選択して機能を表示",
+  "pluginFeatures": "機能",
+  "pluginDetails": "詳細",
+  "pluginNoFeatures": "利用可能な機能はありません",
+  "pluginAuthor": "作成者",
+  "pluginVersion": "バージョン",
+  "pluginApiLevel": "APIレベル",
+  "pluginWebsite": "ウェブサイト",
+  "pluginPermissions": "権限",
+  "pluginDeclaredPermissions": "このプラグインは次の権限を宣言しています：",
+  "pluginNoPermissions": "権限は宣言されていません",
+  "pluginUpToDate": "最新版がインストールされています",
+  "pluginUninstallTitle": "プラグインをアンインストール",
+  "pluginUninstallMessage": "プラグインのデータも削除されます",
+  "resourceListView": "リスト表示",
+  "resourceGridView": "カード表示",
+  "refreshing": "更新中",
+  "notifications": "通知",
+  "newlyPublished": "新着",
+  "resourceCollectionDetails": "コレクション詳細",
+  "resourceArticleDetails": "記事詳細",
+  "creatorNewResource": "新しいリソース",
+  "creatorResourceName": "リソース名",
+  "creatorResourceSummary": "リソース概要",
+  "creatorSummaryHint": "1〜2文の簡単な紹介（1行プレーンテキスト）",
+  "creatorDescriptionHint": "詳細な説明（複数行の Markdown を使用可能）",
+  "creatorResourceMetadataRequired": "リソース名と概要は必須です",
+  "creatorSubmitValidationFailed": "送信前に次の項目を確認してください",
+  "creatorSaveDraft": "下書きを保存",
+  "creatorAddArtifact": "リソースファイルを追加",
+  "creatorBindDevices": "デバイスを紐付け",
+  "creatorDeleteResource": "削除",
+  "creatorIconCover": "アイコンとカバー",
+  "creatorInvalidImage": "画像を読み込めません。PNG/JPEG/WebPを使用してください",
+  "creatorInvalidPackage": "Velaクイックアプリまたは文字盤ではありません",
+  "creatorPublishPreparing": "ファイルを処理中 {done}/{total}",
+  "creatorPublishUploading": "アップロード中 {percent}%",
+  "creatorPublishServer": "サーバーで処理中…",
+  "creatorAstroBoxItemId": "アイテムID",
+  "creatorAstroBoxRepository": "リポジトリ名",
+  "creatorAstroBoxTags": "タグ（カンマ区切り）",
+  "creatorAstroBoxBindAccount": "AstroBoxアカウントを連携",
+  "replace": "置換",
+  "delete": "削除",
+  "creatorSubmitReview": "送信",
+  "creatorArchiveAction": "非公開",
+  "creatorRestoreAction": "再公開",
+  "creatorArtifactCount": "{count}個のパッケージ",
+  "creatorSelectDevices": "対応デバイスを選択",
+  "creatorSelectedDeviceCount": "{count}台を選択",
+  "creatorNoDevicesSelected": "デバイスが選択されていません",
+  "creatorDeviceSelectionDone": "完了",
+  "creatorAtLeastOneDevice": "各リソースファイルには少なくとも1台のデバイスを紐付けてください",
+  "resourceAstroBoxPurchaseAction": "了解",
+  "currentDevice": "現在のデバイス",
+  "currentWatchface": "現在の文字盤",
+  "description": "説明",
+  "downloads": "ダウンロード",
+  "changelog": "更新履歴",
+  "notFound": "見つかりません",
+  "downloadStarted": "ダウンロードを開始",
+  "myResources": "マイリソース",
+  "drafts": "下書き",
+  "pendingReview": "審査中",
+  "published": "公開済み",
+  "failed": "失敗 / 要対応",
+  "basicInfo": "基本情報",
+  "packageFiles": "リソースファイル",
+  "publishTargets": "公開先",
+  "scan": "スキャン",
+  "logs": "ログ",
+  "pairedDevices": "ペアリング済みデバイス",
+  "apps": "アプリ",
+  "connection": "接続",
+  "protocol": "プロトコル",
+  "error": "エラー",
+  "appearance": "外観",
+  "resources": "リソース",
+  "devices": "デバイス",
+  "categories": "カテゴリー",
+  "advanced": "詳細設定",
+  "openSourceLicenses": "オープンソースライセンス",
+  "deviceNotConnected": "未接続",
+  "deviceConnected": "接続済み",
+  "deviceDisconnected": "切断済み",
+  "deviceReconnect": "再接続",
+  "deviceConnect": "接続",
+  "deviceSwitch": "切り替え",
+  "deviceSyncTime": "同期",
+  "deviceCharging": "充電中",
+  "deviceFeaturesInstallApp": "アプリをインストール",
+  "deviceFeaturesInstallWatchface": "文字盤をインストール",
+  "download": "ダウンロード",
+  "checkUpdates": "更新を確認",
+  "updateChecking": "更新を確認中…",
+  "updateCheckFailed": "更新を確認できません",
+  "latestVersionInstalled": "最新版を使用しています",
+  "newVersionAvailable": "バージョン {version} を利用できます",
+  "oobeNext": "次へ",
+  "oobeBack": "戻る",
+  "oobeFinish": "完了",
+  "oobeRestoreAction": "バックアップから復元",
+  "oobeRestoreSuccess": "バックアップを復元しました",
+  "commentEmpty": "コメントはまだありません",
+  "commentHint": "コメントを書く",
+  "reply": "返信",
+  "loadMore": "もっと見る",
+  "more": "その他",
+  "settingsCategoryAccounts": "アカウントと認証",
+  "settingsCategoryAppearance": "外観とナビゲーション",
+  "settingsCategoryConnection": "接続とダウンロード",
+  "settingsCategorySupport": "サポートと情報",
+  "settingsCategoryAdvanced": "詳細設定",
+  "settingsAdvancedDescription": "ログと開発者ツールを表示します",
+  "localServerTitle": "ローカル API サービス",
+  "localServerDescription": "外部の開発ツールや自動化向けにローカル API を提供します",
+  "localServerEnable": "ローカル API サービスを有効にする",
+  "localServerEnableDescription": "承認したローカルネットワーク上のクライアントに OronBox の確認と操作を許可します",
+  "localServerEndpoint": "接続先",
+  "localServerFingerprint": "サーバーフィンガープリント",
+  "localServerPendingClients": "承認待ちペアリング",
+  "localServerAuthorizedClients": "承認済みクライアント",
+  "localServerApprove": "承認",
+  "localServerReject": "拒否",
+  "localServerRevoke": "アクセスを取り消す",
+  "localServerNoPendingClients": "承認を待っているリクエストはありません",
+  "localServerNoAuthorizedClients": "承認済みクライアントはありません",
+  "localServerSecurityNotice": "信頼できるネットワークでのみ有効にしてください",
+  "localServerStartFailed": "ローカル API サービスを起動できませんでした",
+  "localServerStopFailed": "ローカル API サービスを停止できませんでした",
+  "localServerPairingTitle": "ローカル API による制御を許可しますか？",
+  "localServerPairingDescription": "「{clientName}」がウェアラブル管理サービスへのアクセスを要求しています",
+  "@localServerPairingDescription": {
+    "placeholders": {
+      "clientName": {
+        "type": "String"
+      }
+    }
+  },
+  "localServerPairingFingerprint": "Ed25519 SHA-256 フィンガープリント",
+  "localServerPairingAlwaysAllow": "このコンピューターからの接続を常に許可する",
+  "localServerPairingAllow": "許可",
+  "localServerPairingDeny": "拒否",
+  "localServerPairingScopes": "要求された権限",
+  "wifiPasswordInputPlaceholder": "Wi-Fi パスワードを入力",
+  "wifiConnectButton": "接続",
+  "wifiCancelButton": "キャンセル",
+  "cleanMode": "機能スイッチ",
+  "cleanModeDescription": "メインナビゲーション、コミュニティ機能、リソースソースを管理",
+  "settingsGithubCdnAuto": "自動",
+  "updateLater": "後で",
+  "updateNow": "今すぐ更新",
+  "updateGoToPage": "ダウンロードページを開く",
+  "updateDownloadFromCloud": "クラウドからダウンロード",
+  "updateDownloadFromOfficial": "公式サイトからダウンロード",
+  "pluginLegacyWarningTitle": "旧形式のプラグイン",
+  "pluginLegacyWarningMessage": "これはAstroBox v1プラグインです。OronBoxは互換モードで実行しますが、問題が発生する可能性があります。\\nOronBoxネイティブ版への更新を確認するか、作者に対応を依頼してください",
+  "creatorAstroBoxAuthor": "作者（AstroBoxユーザー名と一致）",
+  "creatorArchiveConfirm": "非公開にするとストアから隠れます。いつでも再公開できます",
+  "creatorDeleteConfirm": "この下書きリソースを完全に削除します",
+  "creatorDeletePublishedConfirm": "OronBoxリソースと対応するBandBBSリソースを完全に削除します。この操作は取り消せません。AstroBoxで公開済みの内容には影響しません。非公開はAstroBox-Repoの管理者に依頼してください",
+  "creatorKindMismatchMessage": "このファイルは{detected}のようですが、リソースは{expected}です。保持できますが、審査送信前に確認してください",
+  "creatorDeviceMoveBlocked": "「{name}」にはこのデバイスしか紐付いていないため移動できません",
+  "oronBox": "OronBox",
+  "bandbbs": "BandBBS",
+  "astroBox": "AstroBox",
+  "local": "ローカル",
+  "downloadTimes": "{count}回ダウンロード",
+  "changelogUnavailable": "更新履歴はありません",
+  "compatible": "対応：",
+  "incompatible": "非対応：",
+  "incompatibleSuffix": "",
+  "creatorStateSuspended": "非公開",
+  "creatorStateFrozen": "凍結",
+  "creatorSuspendedByOwnerNotice": "このリソースは非公開です。編集して審査に再送するか、直接再公開してください",
+  "creatorSuspendedByAdminNotice": "管理者がこのリソースを非公開にしました。編集して審査に再送してください。承認後に再公開されます",
+  "creatorFrozenNotice": "管理者がこのリソースを凍結しました。編集できず、解除できるのは管理者のみです",
+  "creatorModerationReason": "理由：{reason}",
+  "creatorBannedTitle": "アカウント停止",
+  "creatorBannedDescription": "管理者によりアカウントが停止され、クリエイターセンターを利用できません。誤りと思われる場合はサポートチケットでチームに連絡してください",
+  "creatorFrozenTitle": "クリエイター機能の凍結",
+  "creatorFrozenDescription": "管理者によりクリエイター機能が凍結されているため、現在リソースの送信や管理はできません。その他のアカウント機能には影響しません",
+  "creatorBandBbsNoDevices": "先にリソースファイルへ対応デバイスを選択してください",
+  "creatorBandBbsUnmappedDevices": "対応するBandBBSカテゴリーが見つかりません：{devices}",
+  "creatorBandBbsSharedCategory": "同じBandBBSカテゴリーのデバイスが複数パッケージに紐付いています。カテゴリーごとに1つのパッケージを紐付けてください",
+  "creatorBandBbsUnresolved": "BandBBSカテゴリーを解決できません",
+  "creatorOptionalIcon": "アイコン（任意、1:1）",
+  "creatorOptionalCover": "カバー（任意、3:2）",
+  "creatorRequiredIcon": "アイコン（AstroBox必須、1:1）",
+  "creatorRequiredCover": "カバー（AstroBox必須、3:2）",
+  "creatorIconShapeHint": "アイコンが正方形ではないため、AstroBoxで正しく表示されない可能性があります",
+  "creatorCoverShapeHint": "カバーが3:2ではないため、AstroBoxで正しく表示されない可能性があります",
+  "creatorTermsBandBbs": "BandBBSコミュニティの利用規約とルール",
+  "creatorTermsAstroBox": "AstroBox-Repo投稿基準",
+  "creatorTermsAccept": "上記の公開規約を読み、同意します",
+  "creatorTermsContinue": "クリエイターセンターへ",
+  "agree": "同意する",
+  "creatorRulesAccept": "上記の審査ルールを読み、同意します",
+  "creatorBandBbsTermsNotice": "OronBoxの審査後、リソースは対応するBandBBSカテゴリーへ直接公開されます。OronBoxリソースを削除すると対応するBandBBSリソースも削除されます",
+  "creatorBandBbsLimitsNotice": "BandBBSへのワンクリック公開には次の制限があります。公開後に手動で修正してください：\\n1. BandBBSにはリソースアイコンのアップロードAPIがないため、アイコンが空欄になります。BandBBSサイトで手動更新してください\\n2. BandBBSにはディスカッションフォーラムタグのAPIがないため、フォーラム属性が設定されず削除される可能性があります。BandBBSサイトで正しいフォーラムを手動設定してください",
+  "creatorAstroBoxTermsNotice": "OronBoxの審査後、リポジトリを作成し公式AstroBoxリポジトリへPRを送信します。審査はAstroBox管理者が独立して行います。公開後の非公開はAstroBox-Repo管理者に依頼してください",
+  "creatorAstroBoxReviewNotice": "AstroBoxへ公開するリソースは次の審査要件を満たす必要があります：\\n1. わいせつ、政治的に敏感、その他違法な内容を含まないこと\\n2. テンプレートを置き換えただけの文字盤や単純すぎるクイックアプリなど、品質が低すぎないこと\\n3. カバーは魅力的で3:2比率（推奨1200x800）、アイコンは192x192を推奨\\n4. 対応デバイスで基本機能が正常に動作すること\\n5. 許可なく他者のリソースをアップロードしないこと\\n6. 有名IPの素材を使用する場合、AstroBoxおよびXiaomiとは無関係であることを示す著作権表示画像をプレビューに含めること",
+  "deviceAppCount": "アプリ数",
+  "deviceWatchfaceCount": "文字盤数",
+  "deviceModuleCount": "モジュール数",
+  "modules": "モジュール",
+  "errorBluetoothUnavailable": "Bluetoothを利用できません。Bluetoothが有効で、OronBoxに使用許可があることを確認してください",
+  "errorBluetoothConnectFailed": "接続に失敗しました。Bluetooth権限を確認し、デバイスを近くに置いて使用中でない状態にし、デバイスで「新しいスマホに接続」を有効にしてから再試行してください",
+  "errorBluetoothDisconnected": "Bluetoothが切断されました。デバイスを再接続して再試行してください",
+  "errorOperationTimeout": "操作がタイムアウトしました",
+  "errorDeviceNotReady": "デバイスの準備ができていません。先に接続して認証してください",
+  "errorBleCharacteristicsMissing": "必要なBLEチャンネルが見つかりません。再接続するか、この機能に対応しているか確認してください",
+  "errorWebSerialUnavailable": "このブラウザーはWeb Serialに対応していません。Chrome、Edgeなど対応ブラウザーを使用してください",
+  "errorAccountPasswordIncorrect": "Xiaomiアカウントのユーザー名またはパスワードが正しくありません",
+  "errorAccountTwoFactorIncomplete": "Xiaomiアカウントの2段階認証が完了していません。再度サインインしてください",
+  "errorXiaomiAccountSessionExpired": "Xiaomiアカウントのセッションが期限切れです。再度サインインしてください",
+  "errorOronBoxSessionExpired": "OronBoxのセッションが期限切れです。BandBBSに再度サインインしてください",
+  "errorNetworkUnavailable": "サービスに接続できません。ネットワークを確認して再試行してください",
+  "errorServiceUnavailable": "サービスが一時的に利用できません。後でもう一度お試しください",
+  "errorPermissionDenied": "この操作を実行する権限がありません",
+  "errorContentNotFound": "要求された内容は存在しないか利用できません",
+  "errorRequestConflict": "内容が変更されました。更新して再試行してください",
+  "errorCoinBalanceInsufficient": "コインが不足しています",
+  "errorCoinResourceLimit": "このリソースに贈れるコインは最大2枚です",
+  "errorCoinOwnResource": "自分のリソースにはコインを贈れません",
+  "errorCoinVotingFrozen": "コイン投票は現在停止しています",
+  "errorCoinAccountTooNew": "コインを贈るにはアカウント作成から24時間以上必要です",
+  "errorCoinOperationFailed": "コインを送信できませんでした。再試行してください",
+  "errorCoinStatusUnavailable": "コイン状態を取得できません。タップして再試行してください",
+  "errorOperationFailed": "操作に失敗しました。再試行してください",
+  "errorUnknown": "問題が発生しました。再試行してください",
+  "errorDownloadQuotaExceeded": "本日のダウンロード上限に達しました",
+  "errorGitHubNotConfigured": "GitHub公開が設定されていません",
+  "errorRateLimited": "リクエストが多すぎます。少し待って再試行してください",
+  "errorFileTooLarge": "選択したファイルが大きすぎます",
+  "errorInvalidRequest": "入力内容に問題があります。確認して再試行してください",
+  "errorOperationCancelled": "操作をキャンセルしました",
+  "errorUnsupportedFileType": "未対応または認識できないファイル形式です",
+  "errorDeviceFeatureUnsupported": "現在のデバイスまたはファームウェアではこの機能に対応していません",
+  "errorDeviceMusicUnsupported": "現在のデバイスまたはファームウェアでは音楽転送に対応していません",
+  "errorDeviceRecordingUnsupported": "現在のデバイスまたはファームウェアでは録音のエクスポートに対応していません",
+  "errorDeviceScreenMirrorUnsupported": "現在のデバイスまたはファームウェアでは画面ミラーリングに対応していません",
+  "errorNotInstalled": "必要なコンポーネントまたはアプリがインストールされていません",
+  "errorInvalidOperation": "現在の状態ではこの操作を実行できません",
+  "errorCertificateVerificationFailed": "証明書の検証に失敗しました。プロキシを使用している場合はHTTPSインターセプトを無効にするか、証明書を信頼してください",
+  "errorUnknownWithDetail": "操作に失敗しました：{detail}",
+  "communitySourceAstroBoxRepo": "AstroBox",
+  "communitySourceBandBbs": "BandBBSコミュニティ",
+  "communitySourceHuamiAppStore": "Amazfitアプリストア",
+  "creatorCompatibleDeviceCount": "{count}台のデバイス",
+  "acknowledgements": "謝辞",
+  "deviceLastChargedNow": "充電したばかり",
+  "deviceLastChargedMinutes": "{count}分前に充電",
+  "deviceLastChargedHours": "{count}時間前に充電",
+  "deviceLastChargedDays": "{count}日前に充電",
+  "deviceFeaturesInstallFirmware": "ファームウェア更新",
+  "deviceFeaturesInstallFirmwareDesc": "デバイスの更新を確認するか、ローカルファームウェアをインストールします",
+  "firmwareCheckingUpdates": "ファームウェア更新を確認中",
+  "firmwareNoUpdatesFound": "このデバイスに新しいファームウェアはありません",
+  "firmwareSourceUnavailable": "このデバイス種別のオンラインファームウェアソースはまだ利用できません",
+  "firmwareVersionUnknown": "現在のファームウェアバージョンは不明です",
+  "firmwareCurrentVersion": "現在のバージョン",
+  "firmwareLatestRelease": "最新リリース",
+  "firmwareHistoricalReleases": "過去のファームウェア",
+  "firmwareUpToDate": "ファームウェアは最新です",
+  "firmwareUpdateAvailable": "更新があります",
+  "firmwareDownloadLatestFull": "最新の完全パッケージをダウンロード",
+  "firmwareUpdateIncrementalPackage": "差分パッケージで更新",
+  "firmwareUpdateFullPackage": "完全パッケージで更新",
+  "firmwareReleaseNotes": "リリースノート",
+  "firmwareReleaseNotesUnavailable": "リリースノートはありません",
+  "downloadTaskAdded": "ダウンロードキューに追加しました",
+  "zeppOsMoreFeatures": "特別な機能",
+  "zeppOsMoreFeaturesDescription": "Zepp OSデバイスの追加機能を管理",
+  "zeppOsDeviceFeaturesSection": "デバイス機能",
+  "zeppOsAppsAndDevelopmentSection": "アプリと開発",
+  "zeppOsAssistant": "ボイスラボ",
+  "zeppOsAssistantDescription": "時計の音声アシスタントセッションを取得、監視、返信",
+  "zeppOsScreenMirror": "画面ミラーリング",
+  "zeppOsScreenMirrorDescription": "時計の画面をこのデバイスに表示",
+  "zeppOsScreenMirrorSemantics": "Zepp OS時計画面ミラー",
+  "zeppOsScreenMirrorUnsupported": "この画面形式は表示できません：{error}",
+  "expand": "展開",
+  "collapse": "折りたたむ",
+  "voiceLabTitle": "音声アシスタント",
+  "voiceLabXiaoAi": "小愛",
+  "voiceLabReceivingAudio": "時計から音声を受信中",
+  "voiceLabWaiting": "音声セッションを待機中",
+  "voiceLabContinuousCapture": "継続キャプチャ",
+  "voiceLabContinuousCaptureDescription": "現在の録音が終わると次の録音を要求",
+  "voiceLabReplyLabel": "時計へ返信を送信",
+  "voiceLabReplyHint": "返信を入力",
+  "voiceLabReplyQueued": "現在の録音終了後に返信します",
+  "voiceLabReplySent": "時計へ返信しました",
+  "voiceLabCapturedData": "取得データ",
+  "voiceLabDecoder": "デコーダー",
+  "voiceLabOpusFrames": "Opusフレーム",
+  "voiceLabDataSize": "データサイズ",
+  "voiceLabPcmSamples": "PCMサンプル",
+  "voiceLabExportOpus": "Opusを書き出し",
+  "voiceLabExportWav": "WAVを書き出し",
+  "voiceLabClearCapture": "取得データを消去",
+  "voiceLabSaveRecording": "録音を保存",
+  "voiceLabSaveOpus": "Opus音声を保存",
+  "voiceLabAudioProcessingFailedPrefix": "音声処理に失敗",
+  "voiceLabAudioProcessingFailed": "音声処理に失敗しました：{error}",
+  "voiceLabContinuousCaptureFailed": "継続キャプチャを設定できません：{error}",
+  "voiceLabAssistantSwitchFailed": "音声アシスタントを切り替えられません：{error}",
+  "voiceLabExportWavFailed": "WAVを書き出せません：{error}",
+  "voiceLabExportOpusFailed": "Opusを書き出せません：{error}",
+  "send": "送信",
+  "sendFailed": "送信できません：{error}",
+  "ready": "準備完了",
+  "initializing": "初期化中",
+  "zeppOsMapSelectPackage": "Zepp OS地図パッケージを選択",
+  "zeppOsMapReadFailed": "地図パッケージを読み込めません",
+  "zeppOsMapTransferTitle": "オフライン地図を転送",
+  "zeppOsMapGarminDetected": "{fileName}\n単一ファイルのGarmin IMG地図を検出：{mapName}",
+  "zeppOsMapGarminNoPreview": "この地図にはZepp OS 11/x/yタイルツリーがありません。元のIMGを単一ファイルの地図パッケージとして転送するため、範囲プレビューは利用できません",
+  "zeppOsMapTileSummary": "{fileName} · {count}タイル\nプレビューはパッケージの範囲であり時計上のGarmin IMG表示ではありません",
+  "zeppOsMapStartTransfer": "転送開始",
+  "zeppOsMapTransferringBluetooth": "Bluetoothで転送中",
+  "zeppOsMapTransferComplete": "オフライン地図の転送完了",
+  "zeppOsMapConversionFailed": "地図を安全に変換できません",
+  "zeppOsMapBtClassicHint": "BT Classicによる一括転送が有効です。転送開始後、時計でインストールを確認してください",
+  "zeppOsMapBleHint": "BLEは2MBまでの地図パッケージに対応します。大きな地図は転送前にBT Classicへ切り替えてください。転送開始後、時計でインストールを確認してください",
+  "zeppOsMapPreviewTooLarge": "地図の範囲が大きすぎるため全体をプレビューできません",
+  "zeppOsSettingPageLoadFailed": "設定ページを読み込めません：{error}",
+  "zeppOsAppCompatibilitySaved": "{appId}の互換ファイルを保存しました",
+  "zeppOsAppStorageSaved": "{appId}のsettingsStorageを保存しました",
+  "zeppOsAppSupplementFiles": "アプリ側または設定ファイルを追加",
+  "zeppOsAppSupplementCompatibility": "ミニアプリ互換ファイルを追加",
+  "zeppOsAppReplaceCompatibility": "互換ファイルを追加または置換",
+  "zeppOsAppSideAvailable": "アプリ側 ✓",
+  "zeppOsAppSideMissing": "アプリ側なし",
+  "zeppOsSettingAvailable": "設定 ✓",
+  "zeppOsSettingMissing": "設定なし",
+  "zeppOsAppEditStorage": "settingsStorageを編集",
+  "zeppOsStorageKeyRequired": "キーは必須です",
+  "zeppOsStorageDuplicateKey": "キーが重複しています：{key}",
+  "zeppOsStorageDescription": "このデータは設定ページとアプリ側で共有され、Zepp OS仕様に従って文字列として保存されます",
+  "zeppOsStorageEmpty": "保存された項目はありません",
+  "zeppOsStorageKey": "キー",
+  "zeppOsStorageValue": "値",
+  "clear": "消去",
+  "save": "保存",
+  "selectedFileReadFailed": "選択したファイルを読み込めません",
+  "zeppOsAppInvalidHexId": "有効な16進数のアプリIDを入力してください",
+  "zeppOsAppSelectCompatibilityFile": "app-side.jsまたはsetting.jsを1つ以上選択してください",
+  "zeppOsAppHexId": "アプリID（16進数）",
+  "optionalDisplayName": "表示名（任意）",
+  "zeppOsAppSideUnchanged": "既存のアプリ側を保持",
+  "zeppOsSettingUnchanged": "既存の設定を保持",
+  "selectFile": "ファイルを選択",
+  "zeppOsAppCompatibilityOverwriteHint": "保存すると同じアプリIDの互換ファイルを置き換えますが、時計上のミニアプリは変更しません",
+  "zeppOsDebugRefreshFailed": "自動更新に失敗しました：{error}",
+  "zeppOsDebugInvalidHex": "HEXはスペース、改行、0x、カンマなどで区切った完全なバイト列にしてください",
+  "zeppOsDebugClearEventsTitle": "現在のアプリのイベントを消去しますか？",
+  "zeppOsDebugClearEventsDescription": "{appId}のすべてのデバッグイベントを消去します",
+  "zeppOsDebugClearEvents": "イベントを消去",
+  "zeppOsDebugRefresh": "状態とイベントを更新",
+  "zeppOsDebugAppList": "アプリ側一覧",
+  "zeppOsDebugNoApps": "キャッシュ済みスクリプトまたは時計のアプリ側セッションは検出されませんでした",
+  "zeppOsDebugCached": "キャッシュ済み",
+  "zeppOsDebugNotCached": "キャッシュなし",
+  "zeppOsDebugRuntimeRunning": "ランタイム実行中",
+  "zeppOsDebugRuntimeStopped": "ランタイム停止中",
+  "zeppOsDebugLocalRuntime": "ローカルランタイム",
+  "zeppOsDebugCannotStart": "このアプリIDにはキャッシュ済みスクリプトがないためローカル起動できません",
+  "zeppOsDebugCanStart": "キャッシュ済みスクリプトを時計のセッション情報なしで手動起動できます",
+  "zeppOsDebugScriptRunning": "スクリプトはローカルQuickJSで実行中です",
+  "zeppOsDebugStartQuickJs": "QuickJSを起動",
+  "stop": "停止",
+  "zeppOsDebugMessageEditor": "メッセージエディター",
+  "zeppOsDebugUtf8Text": "UTF-8テキスト",
+  "zeppOsDebugJsonCompact": "JSON（送信前に圧縮）",
+  "zeppOsDebugHexBytes": "HEXバイト",
+  "zeppOsDebugEncodingFailed": "現在の内容を選択した形式でエンコードできません",
+  "zeppOsDebugByteCountUnavailable": "バイト数：--",
+  "zeppOsDebugBytePreview": "バイト数：{count}\nHEX：{hex}",
+  "zeppOsDebugInjectLocal": "ローカルランタイムへ受信メッセージを注入",
+  "zeppOsDebugSendToWatch": "時計へ送信",
+  "zeppOsDebugWaitingForWatch": "時計へ送信（実セッション待ち）",
+  "zeppOsDebugEvents": "デバッグイベント",
+  "zeppOsDebugClearCurrentApp": "現在のアプリを消去",
+  "zeppOsDebugSearch": "種類、メッセージ、HEX、または表示テキストを検索",
+  "zeppOsDebugWatchOnly": "時計からの実メッセージのみ",
+  "zeppOsDebugNoEvents": "条件に一致するイベントはありません",
+  "zeppOsDebugMessageActions": "メッセージ操作",
+  "zeppOsDebugLoadEditor": "エディターに読み込む",
+  "zeppOsDebugCopyHex": "HEXをコピー",
+  "zeppOsDebugCopyText": "テキストをコピー",
+  "zeppOsDebugSessionStatus": "ランタイムとセッション状態",
+  "zeppOsDebugCachedScript": "キャッシュ済みスクリプト：{status}",
+  "zeppOsDebugLocalRuntimeStatus": "ローカルランタイム：{status}",
+  "zeppOsDebugWatchSession": "時計セッション：{status}",
+  "exists": "利用可能",
+  "notExists": "利用不可",
+  "running": "実行中",
+  "notRunning": "停止中",
+  "notOpen": "未開放",
+  "zeppOsDebugWatchSessionOpen": "実セッションが開いています",
+  "zeppOsDebugRealHeader": "実ヘッダー",
+  "zeppOsDebugLatestStartup": "最新起動状態：{status}",
+  "zeppOsDebugWatchInbound": "時計から",
+  "zeppOsDebugWatchOutbound": "時計へ",
+  "zeppOsDebugLifecycle": "ライフサイクル",
+  "zeppOsMirrorInterval": "フレーム間隔",
+  "zeppOsMirrorIntervalRange": "10–250",
+  "zeppOsOfflineMaps": "オフライン地図",
+  "zeppOsOfflineMapsDescription": "既存の地図パッケージを時計へ転送",
+  "zeppOsAppSettings": "アプリ設定",
+  "zeppOsAppSettingsDescription": "Zepp OSアプリのキャッシュ済み設定を管理",
+  "zeppOsAppDebug": "アプリデバッグ",
+  "zeppOsAppDebugDescription": "アプリ側スクリプトとデバイス通信をデバッグ",
+  "deviceMusicSync": "音楽同期",
+  "deviceHealthTitle": "ヘルスケア",
+  "deviceHealthDescription": "デバイスの活動量と睡眠データを同期",
+  "deviceHealthSyncCardTitle": "ヘルスデータ",
+  "deviceHealthNeverSynced": "ヘルスデータはまだ同期されていません",
+  "deviceHealthLastSynced": "最終同期 {time}",
+  "@deviceHealthLastSynced": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceHealthSync": "ヘルスデータを同期",
+  "deviceHealthSyncing": "同期中",
+  "deviceHealthConnectFirst": "ヘルスデータを同期するにはデバイスを接続してください",
+  "deviceHealthPartialSync": "一部のヘルスデータを同期できませんでした",
+  "deviceHealthToday": "今日",
+  "deviceHealthSteps": "歩数",
+  "deviceHealthDistance": "距離",
+  "deviceHealthCalories": "カロリー",
+  "deviceHealthHeartRate": "心拍数",
+  "deviceHealthAverageHeartRateLabel": "平均心拍数",
+  "deviceHealthRestingHeartRate": "安静時心拍数",
+  "deviceHealthAbnormalHeartRate": "異常心拍数",
+  "deviceHealthHeartRateHigh": "心拍数が高い",
+  "deviceHealthHeartRateLow": "心拍数が低い",
+  "deviceHealthHeartHealth": "心臓の健康",
+  "deviceHealthHeartHealthMonitoring": "心臓の健康モニタリング",
+  "deviceHealthIrregularHeartbeat": "不規則な心拍",
+  "deviceHealthLowBloodOxygen": "血中酸素低下",
+  "deviceHealthHighStress": "高ストレス",
+  "deviceHealthDetected": "検出済み",
+  "deviceHealthSleep": "最近の睡眠",
+  "deviceHealthSleepCard": "睡眠",
+  "deviceHealthAllDaySleep": "終日の睡眠",
+  "deviceHealthLongSleep": "長時間の睡眠",
+  "deviceHealthSleepStructure": "睡眠構造",
+  "deviceHealthSleepDetails": "睡眠の詳細",
+  "deviceHealthSleepAverageHeartRate": "睡眠中の平均心拍数",
+  "deviceHealthSleepAverageBloodOxygen": "睡眠中の平均血中酸素",
+  "deviceHealthAverageHeartRate": "平均心拍数 {value} bpm",
+  "@deviceHealthAverageHeartRate": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceHealthNoData": "データがありません",
+  "deviceHealthLoadFailed": "ヘルスデータを読み込めません",
+  "deviceHealthSleepStages": "睡眠ステージ",
+  "deviceHealthSleepHrv": "睡眠 HRV",
+  "deviceHealthSleepAwake": "覚醒",
+  "deviceHealthSleepWakeCount": "{count} 回",
+  "@deviceHealthSleepWakeCount": {
+    "description": "睡眠覚醒回数",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "deviceHealthSleepLight": "浅い睡眠",
+  "deviceHealthSleepDeep": "深い睡眠",
+  "deviceHealthSleepRem": "REM",
+  "deviceHealthSleepNoStages": "睡眠ステージのデータなし",
+  "deviceHealthDayView": "日",
+  "deviceHealthWeekView": "週",
+  "deviceHealthMonthView": "月",
+  "deviceMusicUpload": "音楽を転送",
+  "deviceMusicSyncDescription": "MP3ファイルをデバイスへ同期",
+  "deviceMusicChooseDialog": "デバイスへ同期するMP3ファイルを選択",
+  "deviceMusicReadFailed": "選択したMP3ファイルを読み込めません",
+  "deviceMusicSizeInvalid": "MP3は0バイトより大きく、{maxMb}MB以下にしてください",
+  "deviceMusicUnknownArtist": "不明なアーティスト",
+  "deviceMusicTransferred": "音楽の転送完了",
+  "deviceMusicSongs": "曲",
+  "deviceMusicSongsTotal": "合計{count}曲",
+  "deviceMusicNoPlaylist": "プレイリスト未登録",
+  "deviceMusicPlaylists": "プレイリスト",
+  "deviceMusicEmpty": "デバイスに曲がありません",
+  "deviceMusicNoPlaylists": "プレイリストはまだありません",
+  "deviceMusicLoadFailed": "デバイスの音楽を読み込めません：{error}",
+  "deviceMusicPlaylistCreate": "新しいプレイリスト",
+  "deviceMusicPlaylistRename": "プレイリスト名を変更",
+  "deviceMusicPlaylistName": "プレイリスト名",
+  "deviceMusicPlaylistLimit": "最大{count}個のプレイリスト",
+  "deviceMusicSongCount": "{count}曲",
+  "deviceMusicDeleteSong": "この曲をデバイスから削除しますか？",
+  "deviceMusicDeletePlaylist": "このプレイリストを削除しますか？",
+  "deviceMusicDeletePlaylistDescription": "プレイリスト内の曲はデバイスに残ります",
+  "deviceMusicManagePlaylists": "プレイリストを管理",
+  "deviceMusicPlaylistMembership": "プレイリスト",
+  "deviceMusicTransferSpeed": "{speed}/秒",
+  "deviceMusicSelectedFiles": "{count}ファイルを選択",
+  "deviceMusicQueueProgress": "転送中 {current}/{total}：{name}",
+  "deviceRecordingsTitle": "録音の同期",
+  "deviceRecordingsDescription": "時計から録音を同期して書き出し",
+  "deviceRecordingsHint": "録音は1件ずつ受信・検証します。同期後に各元ファイルを書き出してください",
+  "deviceRecordingsSync": "録音を同期",
+  "deviceRecordingsReading": "録音一覧を読み込み中",
+  "deviceRecordingsProgress": "受信済み {completed}/{total}：{name}",
+  "deviceRecordingsProgressCount": "受信済み {completed}/{total}",
+  "deviceRecordingsEmpty": "時計を接続し、「録音を同期」を選択してください",
+  "deviceRecordingsSave": "録音を書き出し",
+  "deviceRecordingsNoneOnWatch": "時計に新しい録音はありません",
+  "deviceRecordingsSynced": "{count}件の録音を同期しました",
+  "deviceRecordingsSaveFailed": "録音を書き出せません：{error}",
+  "deviceRecordingsSavedBadge": "保存済み",
+  "deviceRecordingsSelectAll": "すべて選択",
+  "deviceRecordingsDeselectAll": "選択解除",
+  "deviceRecordingsExportSelected": "選択項目をエクスポート ({count})",
+  "deviceRecordingsOpenDirectory": "フォルダを開く",
+  "deviceRecordingsExported": "{path} に書き出しました",
+  "@deviceRecordingsExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceRecordingsSaveSuccess": "録音を書き出しました",
+  "deviceRecordingsRefresh": "更新",
+  "deviceMusicTransferTitle": "MP3ファイルを転送",
+  "deviceMusicVelaDescription": "MP3ファイルをデバイスへ同期します。1ファイル100MB以下にしてください",
+  "deviceMusicZeppDescription": "50MB以下のMP3に対応しています。高速転送にはBluetooth Classicを推奨します。BLEも利用できますが時間がかかります",
+  "deviceMusicChooseMp3": "MP3ファイルを選択",
+  "deviceMusicSongTitle": "曲名",
+  "deviceMusicArtist": "アーティスト",
+  "deviceMusicFileSize": "ファイルサイズ：{size}",
+  "deviceMusicProgress": "転送進捗：{progress}%",
+  "deviceMusicTransferring": "転送中",
+  "deviceMusicSend": "転送開始",
+  "zeppOsFindDevice": "デバイスを探す",
+  "zeppOsFindDeviceDescription": "デバイスを振動させるか着信音を鳴らし続けます",
+  "deviceFeaturesDeviceInfo": "デバイス情報",
+  "deviceFeaturesDeviceInfoDesc": "ファームウェア、容量、詳細情報",
+  "switchDeviceTitle": "デバイスを切り替え",
+  "savedDevices": "保存済みデバイス",
+  "deviceSwitchAddDevice": "デバイスを追加",
+  "scanAndAdd": "スキャンして追加",
+  "authkey": "認証キー",
+  "authkeyPrompt": "デバイスの認証キーを入力",
+  "authkeyPlaceholder": "認証キー",
+  "connectFailed": "接続に失敗しました",
+  "deviceConnectingTo": "{deviceName}へ接続中…",
+  "deviceConnectionPreparing": "接続を準備中…",
+  "deviceConnectionEstablishing": "{transport}接続を確立中…",
+  "deviceConnectionInitializing": "デバイスプロトコルを初期化中…",
+  "deviceConnectionAuthenticating": "デバイスを認証中…",
+  "deviceConnectionFetchingStatus": "デバイス情報を読み込み中…",
+  "deviceTransportBle": "BLE",
+  "deviceEndpointUnavailable": "{transport}エンドポイントがありません。システムBluetooth設定でペアリングしてから再スキャンしてください",
+  "deviceTransportSpp": "SPP",
+  "deviceCompatibilityUnknown": "互換性不明",
+  "webSerialTitle": "Web Serial",
+  "webSerialHint": "対応ブラウザーでデバイスを接続",
+  "webSerialConnectDialogTitle": "Web Serialで接続",
+  "webSerialConnectDialogHint": "シリアルデバイスを選択してください",
+  "deviceActionsDelete": "デバイスを削除",
+  "deviceActionsDisconnect": "切断",
+  "deviceActionsShareQR": "QRコードを共有",
+  "deviceShareOronBoxCode": "OronBoxコード",
+  "deviceShareAstroBoxCompatibleCode": "AstroBox互換コード",
+  "installTapToSelectFile": "タップしてファイルを選択",
+  "deviceInfoTitle": "デバイス情報",
+  "deviceInfoGroupDevice": "デバイス",
+  "deviceInfoGroupSystem": "システム",
+  "deviceInfoGroupStatus": "状態",
+  "fieldName": "名前",
+  "fieldAddress": "アドレス",
+  "fieldAuthkey": "認証キー",
+  "fieldConnectionType": "接続方式",
+  "fieldCodename": "コードネーム",
+  "fieldModel": "モデル",
+  "fieldImei": "IMEI",
+  "fieldFirmware": "ファームウェア",
+  "fieldSerial": "シリアル番号",
+  "fieldBattery": "バッテリー",
+  "fieldChargeStatus": "充電状態",
+  "fieldStorage": "ストレージ",
+  "appManagementTitle": "アプリ管理",
+  "appManagementNone": "アプリはありません",
+  "appManagementShowSystemApps": "システムアプリを表示",
+  "watchfaceManagementTitle": "文字盤管理",
+  "watchfaceManagementNone": "文字盤はありません",
+  "moduleManagementTitle": "モジュール管理",
+  "moduleManagementNone": "インストール済みのモジュールはありません",
+  "moduleUninstallConfirm": "モジュール「{name}」をアンインストールしますか？",
+  "@moduleUninstallConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "moduleStatusEnabled": "有効",
+  "moduleStatusDisabled": "無効",
+  "moduleEnable": "有効にする",
+  "moduleDisable": "無効にする",
+  "deviceFeaturesInstallModule": "モジュールをインストール",
+  "open": "開く",
+  "externalLinkTitle": "外部リンク",
+  "externalLinkDescription": "{url} を開こうとしています\n\nこのウェブサイトは第三者が運営しており、OronBox とは関係ありません。安全性は確認できません。注意して続行してください。続行しますか？",
+  "externalLinkAstroBoxResourceHint": "AstroBoxでリソースを表示",
+  "continueToWebsite": "ウェブサイトへ進む",
+  "viewInOronBox": "OronBoxで表示",
+  "uninstall": "アンインストール",
+  "enable": "有効化",
+  "show": "表示",
+  "hide": "非表示",
+  "copy": "コピー",
+  "copied": "コピーしました",
+  "desktopTrayShow": "OronBoxを表示",
+  "desktopTrayExit": "OronBoxを終了",
+  "desktopCloseTitle": "ウィンドウを閉じる",
+  "desktopCloseMessage": "ウィンドウを閉じたときの動作を選択",
+  "desktopCloseRemember": "今後もこの設定を使用",
+  "desktopCloseToTray": "トレイに最小化",
+  "desktopCloseExit": "終了",
+  "settingsDesktopCloseBehavior": "ウィンドウを閉じる",
+  "settingsDesktopCloseBehaviorDesc": "閉じるボタンを押したときの動作",
+  "settingsRemoveBondBeforeSpp": "接続時に再ペアリング",
+  "settingsRemoveBondBeforeSppDesc": "接続の安定性を高め、Xiaomi Fitness に接続を奪われるのを防ぎます。オフにすると接続が速くなる場合があります",
+  "desktopCloseBehaviorAsk": "毎回確認",
+  "desktopCloseBehaviorExit": "アプリを終了",
+  "desktopCloseBehaviorTray": "トレイに最小化",
+  "quickApp": "クイックアプリ",
+  "miniprogram": "ミニプログラム",
+  "watchface": "文字盤",
+  "firmwareTool": "ファームウェア / ツール",
+  "free": "無料",
+  "forcePaid": "有料必須",
+  "version": "バージョン",
+  "noContent": "内容なし",
+  "preview": "プレビュー",
+  "productDeviceRequirements": "対応デバイス",
+  "productOtherVersions": "その他のバージョン",
+  "productInQueue": "キューに追加済み",
+  "settingsAccount": "アカウント",
+  "settingsGeneral": "一般",
+  "settingsQueue": "キュー",
+  "settingsAbout": "このアプリについて",
+  "settingsAccountLoginBBSDesc": "BandBBSにサインインしてリソースを利用・公開",
+  "settingsAccountBandBbsSigningIn": "BandBBSにサインイン中…",
+  "settingsAccountBandBbsOpenedBrowser": "ブラウザーでBandBBSを開きました",
+  "settingsAccountBandBbsSignedIn": "BandBBSにサインインしました",
+  "settingsAccountBandBbsLoginFailed": "BandBBSへのサインインに失敗しました",
+  "settingsBandBbsAccountRequired": "先にBandBBSアカウントへサインインしてください",
+  "settingsAccountBBSAccount": "BandBBSアカウント",
+  "bandBbsAccountTitle": "BandBBSアカウント",
+  "bandBbsResourceId": "BandBBSリソースID",
+  "bandBbsResourceIdHint": "リソースIDを入力",
+  "bandBbsQueryResource": "リソースを検索",
+  "bandBbsLogout": "BandBBSからログアウト",
+  "bandBbsLoggedOut": "ログアウトしました",
+  "accountSignOutTitle": "{accountName} からサインアウトしますか？",
+  "accountSignOutMessage": "このアカウントからサインアウトしますか？",
+  "bandBbsLoadPreviews": "プレビューを読み込む",
+  "bandBbsLoadPreviewsDesc": "BandBBSからプレビュー画像を取得",
+  "bandBbsShowAllCategories": "すべてのカテゴリーを表示",
+  "bandBbsShowAllCategoriesDesc": "対応デバイスのないカテゴリーも表示",
+  "settingsMiAccount": "Xiaomiアカウント",
+  "settingsMiAccountDesc": "Xiaomiアカウントでバインド済みデバイスを同期",
+  "deviceSwitchMiAccountImport": "Xiaomiアカウントから同期",
+  "deviceSwitchWearableLogImport": "Xiaomi Fitnessログから読み込む",
+  "settingsMiAccountLoginTitle": "Xiaomiアカウントにサインイン",
+  "settingsMiAccountUsername": "ユーザー名",
+  "settingsMiAccountPassword": "パスワード",
+  "settingsMiAccountRememberCredentials": "認証情報を保存",
+  "settingsMiAccountLoginAndSync": "サインインして同期",
+  "settingsMiAccountLogInvalid": "ログファイルが無効です",
+  "settingsMiAccountLogNoDevices": "デバイスが見つかりません",
+  "settingsWearableLogSync": "Fitnessログを同期",
+  "settingsWearableLogGuide": "Xiaomi Fitnessでログを取得し、ここでスキャンしてください",
+  "settingsWearableLogFound": "{count}台のデバイスを検出",
+  "settingsWearableLogImportedDevice": "{name} をインポートしました",
+  "settingsMiAccountMissingCredentials": "ユーザー名とパスワードを入力してください",
+  "settingsMiAccountTwoFactorTitle": "Xiaomiアカウント認証",
+  "settingsMiAccountTwoFactorPrompt": "2段階認証を完了してください",
+  "settingsMiAccountLoginWindowClosed": "ログインウィンドウが閉じられました",
+  "settingsMiAccountSyncedDevices": "小米デバイス {count} 台を同期しました",
+  "xiaomiAccountRequiredForEphemeris": "Xiaomiアカウントにサインインしてからエフェメリスデータを同期してください",
+  "xiaomiWifiPasswordRequestTitle": "Wi-Fi 接続リクエスト",
+  "xiaomiWifiPasswordRequestMessage": "デバイスが Wi-Fi ネットワーク「{ssid}」への接続を要求しています。",
+  "@xiaomiWifiPasswordRequestMessage": {
+    "placeholders": {
+      "ssid": {}
+    }
+  },
+  "settingsHuamiAccount": "Amazfitアカウント",
+  "settingsHuamiAccountDesc": "Amazfitアカウントでアプリストアのリソースを利用",
+  "settingsHuamiAccountSigningIn": "Amazfitアカウントにサインイン中…",
+  "settingsHuamiAccountSignedIn": "Amazfitアカウントにサインインしました",
+  "settingsHuamiAccountLoginTitle": "Amazfitアカウントにサインイン",
+  "settingsHuamiAccountUsername": "アカウント",
+  "settingsHuamiAccountPassword": "パスワード",
+  "settingsHuamiAccountRememberCredentials": "パスワードを保存",
+  "settingsHuamiAccountLoginAndSave": "サインインして保存",
+  "settingsHuamiAccountMissingCredentials": "Amazfitアカウントとパスワードを入力してください",
+  "settingsHuamiAccountRequired": "先に設定でAmazfitアカウントへサインインしてください",
+  "understood": "了解",
+  "settingsGeneralLanguage": "言語",
+  "settingsGeneralLanguageDesc": "アプリの表示言語を変更",
+  "settingsWideNavigationPosition": "ナビゲーション位置",
+  "settingsWideNavigationPositionDesc": "横長画面でのサイドタブ位置を調整",
+  "settingsWideNavigationPositionBottom": "下",
+  "settingsWideNavigationPositionCenter": "中央",
+  "settingsWideNavigationPositionSplit": "分割",
+  "settingsAutoReconnectTitle": "自動再接続",
+  "settingsAutoReconnectDesc": "起動時に最後にペアリングしたデバイスへ自動接続",
+  "settingsAutoReconnectOnDisconnectTitle": "自動再接続",
+  "settingsAutoReconnectOnDisconnectDesc": "デバイスが予期せず切断されたときに再接続を試みる",
+  "deviceReconnectAttempting": "デバイスへの再接続を試行中",
+  "deviceReconnectSucceeded": "再接続しました",
+  "deviceReconnectFailedPrefix": "再接続に失敗しました。確認してください：",
+  "settingsSourceOfficialCdn": "GitHubソースCDN",
+  "settingsSourceOfficialCdnDesc": "GitHub上のコミュニティインデックス取得に使用するCDN",
+  "settingsQueueAutoInstall": "自動インストール",
+  "settingsQueueAutoInstallDesc": "ダウンロード後に自動でインストール開始",
+  "settingsQueueDontClear": "インストールキューを消去しない",
+  "settingsQueueDontClearDesc": "完了項目をインストールキューに残す",
+  "settingsRealtimeActivityNotification": "リアルタイムアクティビティ通知",
+  "settingsRealtimeActivityNotificationDesc": "リアルタイムアクティビティ通知でキューの進捗を表示",
+  "settingsAboutWebsite": "公式ウェブサイト",
+  "settingsTapToSignIn": "タップしてサインイン",
+  "settingsConnected": "接続済み",
+  "settingsSystem": "システム",
+  "settingsLight": "ライト",
+  "settingsDark": "ダーク",
+  "settingsOledDark": "OLEDダーク",
+  "settingsThemeMode": "テーマモード",
+  "settingsThemeModeDesc": "アプリのテーマ表示を変更",
+  "settingsThemePreset": "テーマスタイル",
+  "settingsThemePresetDesc": "アプリのビジュアルスタイルを選択",
+  "settingsThemePresetMaterial3": "Material 3",
+  "settingsThemePresetMaterial2": "Material 2",
+  "settingsThemePresetFluent": "Fluent",
+  "settingsDynamicColor": "ダイナミックカラー",
+  "settingsDynamicColorDesc": "システムのアクセント色をアプリテーマに使用",
+  "settingsColorScheme": "配色",
+  "settingsColorSchemeDesc": "アプリのアクセント色を選択",
+  "settingsColorSchemePink": "ピンク",
+  "settingsColorSchemePurple": "紫",
+  "settingsColorSchemeTeal": "青緑",
+  "settingsColorSchemeGreen": "緑",
+  "settingsColorSchemeRed": "赤",
+  "settingsColorSchemeAmber": "琥珀",
+  "settingsDesktopAccentSource": "Linuxアクセント色のソース",
+  "settingsDesktopAccentSourceDesc": "GTKまたはQtからアクセント色を読み込むか選択",
+  "settingsDesktopAccentSourceSystem": "自動",
+  "settingsDesktopAccentSourceGtk": "GTK",
+  "settingsDesktopAccentSourceQt": "Qt",
+  "settingsCancel": "キャンセル",
+  "settingsTeamRoleMain": "メイン開発 / アーキテクチャ / デザイン",
+  "settingsTeamRoleHarmonyOS": "HarmonyOS移植と保守",
+  "settingsTeamRoleDeviceConnection": "macOS接続最適化への貢献",
+  "settingsTeamRoleZeppOS": "ZeppOS対応と実装",
+  "settingsAboutSoftware": "ソフトウェア情報",
+  "settingsAboutSoftwareDesc": "バージョン、更新履歴、開発チーム",
+  "settingsAboutSoftwareTagline": "Flutterで作られたVelaOSとZeppOS向けの高速なウェアラブル管理ツール",
+  "settingsAboutSoftwareRepository": "GitHubリポジトリを開く",
+  "settingsAboutSoftwareTeam": "開発チーム",
+  "settingsAboutSoftwareBuildInfo": "ビルド情報",
+  "settingsAboutSoftwareCopyright": "Copyright © 2026 OrPudding",
+  "acknowledgementsKazumi": "Material DesignのコンポーネントとUIパターンを参考にしました",
+  "acknowledgementsAstroBoxPublic": "UI構成とインタラクション設計を参考にしました",
+  "acknowledgementsAstroBoxNgCore": "Xiaomiデバイスプロトコルと転送層、移植・改変",
+  "acknowledgementsAstroBoxNgPb": "Xiaomi wearプロトコル定義、原文をそのまま採用",
+  "acknowledgementsAstroBoxNgBluetooth": "Bluetooth接続フローの参考",
+  "acknowledgementsAstroBoxNgAccount": "Xiaomiアカウントログインとauthkey取得フローの参考",
+  "acknowledgementsAstroBoxNgProvider": "コミュニティリソースインデックスとマニフェスト解析フローの参考",
+  "acknowledgementsAstroBoxNgAppWasm": "Web Serial接続フローの参考",
+  "acknowledgementsGadgetbridge": "ZeppOSプロトコル実装、移植・改変",
+  "acknowledgementsBreezyWeather": "中国向け天気ソース実装の参考",
+  "acknowledgementsOpenMeteo": "CC BY 4.0で提供される天気予報、空気質、ジオコーディングデータ",
+  "resourceHomeRecommended": "おすすめ",
+  "resourceHomeFeatured": "注目",
+  "resourceHomeUpdates": "更新",
+  "blogTypeAnnouncement": "お知らせ",
+  "blogTypeRecommendation": "おすすめ",
+  "blogTypeDocs": "ドキュメント",
+  "resourceHomeEmptyTitle": "おすすめはまだありません",
+  "resourceLibraryEndOfList": "最後まで表示しました。他のソースのリソースも確認しますか？",
+  "resourceHomeEmptySubtitle": "リソースライブラリから取得できます",
+  "openResourceLibrary": "リソースライブラリを開く",
+  "downloadQueueTitle": "ダウンロードキュー",
+  "installQueueTitle": "インストールキュー",
+  "queueClear": "消去",
+  "queueStart": "開始",
+  "queuePause": "一時停止",
+  "downloadQueueEmpty": "ダウンロードタスクはありません",
+  "installQueueEmpty": "インストールタスクはありません",
+  "localAppInstall": "ローカルアプリをインストール",
+  "localWatchfaceInstall": "ローカル文字盤をインストール",
+  "localFirmwareInstall": "ローカルファームウェアをインストール",
+  "queueStatusPending": "待機中",
+  "queueStatusDownloading": "ダウンロード中 {percent}%",
+  "queueStatusInstalling": "インストール中 {percent}%",
+  "queueStatusCompleted": "完了",
+  "queueStatusFailed": "失敗",
+  "queueDragToInstall": "離してアプリ、文字盤、プラグインをインストール",
+  "queueAddedFiles": "{count}ファイルをインストールキューに追加",
+  "installQueueReadFailed": "読み込み失敗",
+  "installQueueUnsupportedFile": "未対応ファイル",
+  "timeTodayAt": "今日 {time}",
+  "timeYesterdayAt": "昨日 {time}",
+  "settingsAccountBandBbsAccount": "BandBBSアカウント",
+  "settingsAccountGitHub": "GitHubアカウント",
+  "settingsAccountGitHubDesc": "GitHubを接続してAstroBoxリソースを自分の名前で公開",
+  "githubAccountNeedsBandBbs": "先にBandBBSへサインインしてください",
+  "bandBbsPublishAuthTitle": "公開の認証",
+  "bandBbsResourceQueryTitle": "購入済みリソースをインストール",
+  "settingsAboutLogs": "実行ログ",
+  "settingsAboutLogsDescription": "アプリと接続デバイスの実行ログを表示、書き出し、管理",
+  "settingsAboutLogsSize": "現在の使用量：{size}",
+  "settingsAboutLogsExport": "書き出し",
+  "settingsAboutLogsExported": "{path}へ書き出しました",
+  "settingsAboutLogsEmpty": "ログファイルはありません",
+  "settingsAboutLogsClear": "消去",
+  "settingsDeviceLogsPull": "デバイスログを取得",
+  "settingsDeviceLogsTip": "接続中のXiaomiウェアラブルからログを取得します。時間がかかる場合があります。完了までアプリを前面に表示し、デバイス画面をオンにしてください",
+  "settingsDeviceLogsStart": "開始",
+  "settingsDeviceLogsPulling": "デバイスログを取得中",
+  "settingsDeviceLogsWaiting": "デバイスからの送信を待っています",
+  "settingsDeviceLogsProgress": "受信済み {progress}%",
+  "settingsDeviceLogsSaved": "デバイスログを{name}として保存しました",
+  "settingsDeviceLogsFailed": "デバイスログを取得できません：{error}",
+  "settingsAboutLogsClearConfirm": "現在のセッションを除くすべてのログファイルを削除します",
+  "settingsAboutLogsOpen": "ログフォルダーを開く",
+  "settingsAboutLogsOpenFailed": "ログフォルダーを開けません",
+  "settingsLogsFileList": "ログファイル",
+  "settingsAboutLogsWarningTitle": "機密情報に関する注意",
+  "settingsAboutLogsWarningMessage": "ログにはBandBBS、Xiaomi、Amazfitのログイン情報など機密情報が含まれる場合があります。公式OronBoxメンテナー以外には共有しないでください！",
+  "pluginPermissionRequestTitle": "プラグイン権限の要求",
+  "pluginPermissionRequestMessage": "「{plugin}」は{operation}を要求しています",
+  "pluginPermissionOnce": "今回のみ許可",
+  "pluginPermissionSession": "今回の実行中は許可",
+  "pluginPermissionAlways": "常に許可",
+  "pluginPermissionDeny": "拒否",
+  "pluginPermissionOpenExternal": "外部リンクを開く",
+  "pluginPermissionPickFile": "ホストのファイルへアクセス",
+  "pluginPermissionExportFile": "ホストへファイルを書き出す",
+  "pluginPermissionInterconnect": "デバイスアプリと通信",
+  "pluginPermissionProvider": "リソースプロバイダーを登録",
+  "pluginPermissionReadDevice": "デバイス情報を読む",
+  "pluginPermissionOperateDevice": "デバイスを操作",
+  "pluginPermissionObserveProtocol": "デバイスプロトコルの生データを読む",
+  "pluginPermissionSendProtocol": "デバイスへ生プロトコルを送信",
+  "pluginPermissionReadAppSide": "AppSideスクリプトとイベントを読む",
+  "pluginPermissionOperateAppSide": "AppSideセッションを管理",
+  "pluginErrorTitle": "プラグインが破損しています",
+  "pluginErrorMessage": "「{plugin}」を実行できません。破損している可能性があります。\\n\\nエラー：{error}\\n\\nこのプラグインをアンインストールしますか？",
+  "pluginPackageCorruptedMessage": "選択したプラグインパッケージを読み取れません。破損している可能性があります。再取得してからインポートしてください。",
+  "pluginErrorClearData": "プラグインデータを消去",
+  "pluginErrorUninstall": "プラグインをアンインストール",
+  "pluginErrorSafeMode": "セーフモードに入る",
+  "pluginSafeModeTitle": "プラグインセーフモードが有効",
+  "pluginSafeModeDescription": "すべてのプラグインを停止しています。セーフモードを無効にすると再読み込みされます",
+  "pluginSafeModeExit": "セーフモードを終了",
+  "devTools": "開発者ツール",
+  "devToolsDescriptionDesktop": "別ウィンドウで開発者ツールを開く",
+  "devToolsDescriptionEntry": "アプリバーに開発者ツールボタンを表示",
+  "devToolsOperationFailed": "開発者ツールの状態を変更できません",
+  "resourceTypeErrorTitle": "リソース種別が正しくありません",
+  "resourceTypeUnknownTitle": "リソース種別を認識できません",
+  "resourceTypeUnknownNoType": "OronBoxはこのファイルのリソース種別を判別できません。このファイルは破損している可能性があります",
+  "resourceTypeUnknownCancel": "キャンセル",
+  "watchfaceRestrictedTitle": "インストールできないリソース",
+  "watchfaceRestrictedMessage": "知的財産権の尊重および関連ポリシーの遵守のため、Xiaomi社からの要請に基づき、\nOronBoxは公式ウォッチフェイスストアからのものである可能性が高いウォッチフェイスをインストールできません。\nこれが誤検出と思われる場合は、ウォッチフェイスの作成者からご連絡ください。",
+  "resourceTypeMismatchMessage": "{detectedType}リソースのようですが、{selectedType}を選択しています。インストール方法を選択してください",
+  "resourcePlatformMismatchMessage": "これは {resourcePlatform} デバイス向けの {resourceType} ですが、接続中のデバイスは {deviceName}（{devicePlatform}）です。未対応のため、強制インストールは予期しない問題を起こす可能性があります",
+  "resourceTypeUnknownMessage": "実際のリソース種別を判別できません。{selectedType}としてインストールしますか？",
+  "resourceInstallCancel": "インストールをキャンセル",
+  "resourceInstallAcknowledge": "理解しました",
+  "resourceInstallForce": "強制インストール",
+  "resourceInstallForceCountdown": "強制インストール（{seconds}秒）",
+  "resourceInstallAsSelected": "{type}として続行",
+  "resourceInstallAsSelectedCountdown": "{type}として続行（{seconds}秒）",
+  "resourceInstallAsDetected": "{type}としてインストール",
+  "resourceTypeApp": "ミニプログラム",
+  "resourceTypeQuickApp": "クイックアプリ",
+  "resourceTypeResPack": "リソースパック",
+  "resourceTypeWatchface": "文字盤",
+  "resourceTypeFirmware": "ファームウェア",
+  "resourceInstallConfirmTitle": "{type}をインストール",
+  "resourceInstallConfirmMessage": "{fileName}（{fileSize}）をインストールしますか？",
+  "resourceInstallConfirm": "インストール",
+  "previewImages": "画像をプレビュー",
+  "add": "追加",
+  "submit": "送信",
+  "creatorConfirmTitle": "コミットを確認",
+  "creatorConfirmOronBox": "OronBoxへコミット",
+  "creatorConfirmBandBbs": "BandBBSへ同期：{category}",
+  "creatorConfirmAstroBox": "AstroBoxへ同期：{owner}/{repository}",
+  "creatorBandBbsDirectPublish": "BandBBSへ同期",
+  "creatorBandBbsBoundUpdate": "連携済み・BandBBSへ同期",
+  "creatorBandBbsVersionTitle": "バージョンタイトル",
+  "creatorBandBbsVersionMessage": "更新内容",
+  "creatorBandBbsVersionPairRequired": "バージョンタイトルと更新内容は両方入力するか、両方空欄にしてください",
+  "creatorLinkedSections": "{count}セクションを連携",
+  "creatorBandBbsBindingIds": "セクション{categoryId}・リソース{resourceId}",
+  "creatorAstroBoxBoundSync": "連携済み・AstroBoxへ同期",
+  "creatorThisCommit": "このコミット",
+  "creatorAstroBoxPrPublish": "AstroBoxへ同期・{repository}",
+  "creatorOronBoxRequired": "必須。リソースはOronBoxで審査されます",
+  "creatorOpenInOronBox": "OronBoxで表示",
+  "creatorAstroTagsHint": "英語セミコロン ; でタグを区切る",
+  "retry": "再試行",
+  "reviewNote": "審査メモ",
+  "creatorReviewRejected": "リソースの修正が必要です",
+  "creatorReviewState": "審査状態：{state}",
+  "creatorOperationWorking": "処理中",
+  "creatorProcessingImage": "画像を処理中",
+  "creatorOperationRefreshing": "クリエイターデータを更新中",
+  "creatorOperationCreating": "リソースを作成中",
+  "creatorOperationCreatingCollection": "コレクションを作成中",
+  "creatorOperationSaving": "変更を保存中",
+  "creatorOperationDeleting": "削除中",
+  "creatorOperationSubmitting": "審査へ送信中",
+  "creatorOperationAuthorizing": "認証を待機中",
+  "creatorResolvingPublicationTarget": "公開カテゴリーを解決中",
+  "creatorStateApproved": "承認済み",
+  "creatorStateReviewing": "審査中",
+  "creatorStatePublishing": "公開中",
+  "creatorStateExternalReview": "外部審査中",
+  "creatorStateFailed": "公開に失敗",
+  "creatorStateSuperseded": "新しい改訂に置き換え済み",
+  "creatorStateCancelled": "キャンセル済み",
+  "creatorNoResources": "作成したリソースはありません",
+  "creatorLoginRequiredTitle": "クリエイターセンターを利用するにはサインインしてください",
+  "creatorLoginRequiredDescription": "リソースの作成、編集、送信を行うにはBandBBSへサインインし、OronBoxアカウントを連携してください",
+  "creatorLoginAction": "BandBBSにサインイン",
+  "creatorBandBbsWriteReady": "BandBBS公開の認証済み",
+  "creatorBandBbsWriteMissing": "BandBBS公開が未認証",
+  "creatorGitHubOwnPublishReady": "GitHub接続済み",
+  "creatorGitHubOwnPublishMissing": "GitHub未接続",
+  "creatorAuthorize": "認証",
+  "installQueueFixWatchfaceId": "文字盤IDを修正",
+  "installQueueFixWatchfaceIdHint": "新しい文字盤 ID を入力",
+  "installQueueReinstallWatchface": "文字盤の再インストール",
+  "installQueueRetryDirectly": "そのまま再試行",
+  "installLowStorageMessage": "デバイスの予約済みストレージ容量が不足しているか、保存件数の上限に達しています",
+  "installLowBatteryMessage": "デバイスのバッテリー残量が不足しています",
+  "installQuantityLimitMessage": "デバイスへのインストール数が上限に達しています",
+  "installQueueReplaceWatchface": "削除して再インストール",
+  "installQueueReplaceWatchfaceMessage": "ID {id} の文字盤がデバイスに存在するため、このバージョンを直接インストールできません\nそのまま再試行するか、既存の文字盤を削除して再インストールできます\n削除後にインストールが失敗した場合、元の文字盤は自動的に復元できません",
+  "@installQueueReplaceWatchfaceMessage": {"placeholders": {"id": {"type": "String"}}},
+  "watchfaceDowngradeMessage": "同じ ID の文字盤がデバイスに存在するため、このバージョンを直接インストールできません",
+  "authorize": "認証",
+  "creatorBandBbsAuthorized": "BandBBSリソース公開が認証済み",
+  "creatorBandBbsAuthorizationRequired": "BandBBSリソースを代理公開するにはOronBoxを別途認証してください",
+  "connect": "接続",
+  "legalAndPrivacy": "法務とプライバシー",
+  "termsTitle": "利用規約と免責事項",
+  "privacyTitle": "プライバシー通知",
+  "resourcePublishingTitle": "リソース公開規約",
+  "reviewRulesTitle": "リソース審査ルール",
+  "joinQqGroup": "QQグループに参加",
+  "joinQqGroupDesc": "開発者や他のユーザーと相談できます",
+  "feedbackTitle": "フィードバック",
+  "feedbackDesc": "フィードバックを送信して回答を確認",
+  "reportResource": "リソースを通報",
+  "reportComment": "コメントを通報",
+  "report": "通報",
+  "feedbackSubject": "件名",
+  "feedbackMessage": "フィードバックまたは問題",
+  "reportReason": "通報理由",
+  "noFeedback": "フィードバックはまだありません",
+  "feedbackProcessing": "処理中",
+  "feedbackReplied": "返信済み",
+  "feedbackOpen": "受付中",
+  "feedbackResolved": "解決済み",
+  "feedbackDismissed": "却下済み",
+  "feedbackClosed": "終了",
+  "feedbackLoading": "チケットを読み込み中",
+  "feedbackNewTicket": "新しいチケット",
+  "feedbackYou": "あなた",
+  "feedbackResolution": "解決内容",
+  "feedbackReplyHint": "このチケットに返信",
+  "feedbackConversationClosed": "このチケットは終了しており返信できません",
+  "oobeWelcomeSlogan": "Flutterで作られた美しく高速なVelaOS / ZeppOSウェアラブル管理ツール",
+  "oobeFeatureDevicesTitle": "デバイス接続",
+  "oobeFeatureDevicesBody": "VelaOSとZeppOSのウェアラブルを接続・管理",
+  "oobeFeatureResourcesTitle": "リソースセンター",
+  "oobeFeatureResourcesBody": "公式OronBoxソース、AstroBox-Repo、BandBBS、Amazfitアプリストアに対応",
+  "oobeFeaturePluginsTitle": "JavaScriptプラグイン",
+  "oobeFeaturePluginsBody": "デバイス操作に対応した高性能で拡張性の高いJavaScriptプラグインシステム",
+  "oobeFeaturePlatformsTitle": "マルチプラットフォーム",
+  "oobeFeaturePlatformsBody": "Android、Windows、macOS、Linux、Webで利用可能",
+  "oobeOpenSourceTitle": "完全オープンソース",
+  "oobeOpenSourceBody": "OronBoxクライアントとサーバーはGNU AGPL-3.0に従い、ソースコードを公開しています",
+  "oobeAgreementHint": "最後まで読んでスクロールしてください",
+  "oobeAgreeCheckbox": "読み、同意します",
+  "oobeDeclineExit": "終了",
+  "oobeDeclineWebHint": "続行するには規約に同意してください。このページを閉じてください",
+  "oobeLoginTitle": "アカウントを接続",
+  "oobeLoginBandBbsDesc": "BandBBSリソースを利用し、クリエイター機能を準備するためBandBBSにサインイン",
+  "oobeLoginLocalNote": "XiaomiとAmazfitのサインインはこのデバイス上だけで実行されます\n関連データはXiaomi/Amazfit以外の第三者へ送信されません",
+  "oobeLoginXiaomiDesc": "バインド済みXiaomiデバイスを同期するためXiaomiアカウントにサインイン",
+  "oobeLoginHuamiDesc": "Amazfitアプリストアのリソースを利用するためAmazfitアカウントにサインイン",
+  "oobeCdnTesting": "テスト中…",
+  "oobeCdnSelected": "最速のCDNを選択しました",
+  "oobeCdnTitle": "GitHub CDN速度テスト",
+  "oobeDoneTitle": "準備完了",
+  "oobeDoneBody": "OronBoxを探索しましょう",
+  "settingsReplayOobe": "ガイドを再表示",
+  "settingsReplayOobeDesc": "ようこそガイドと初期設定をもう一度表示",
+  "creatorConnect": "接続",
+  "comments": "コメント",
+  "commentLoginRequired": "コメントするにはBandBBSにサインインしてください",
+  "commentPending": "審査待ち",
+  "commentBlocked": "このコメントはコミュニティガイドラインに適合しません",
+  "commentModerationUnavailable": "コメント審査は一時的に利用できません",
+  "commentRateLimited": "コメントが速すぎます",
+  "commentReplying": "コメントに返信",
+  "inbox": "受信箱",
+  "inboxLoading": "メッセージを読み込み中",
+  "inboxEmpty": "メッセージはありません",
+  "inboxClear": "メッセージを消去",
+  "inboxClearFailed": "メッセージを消去できません。後でもう一度お試しください",
+  "messageUnknownTitle": "通知",
+  "messageUnknownBody": "通知の詳細データを取得できません。",
+  "messageCommentRepliedTitle": "コメントへの新しい返信",
+  "messageCommentHiddenTitle": "コメントが非表示になりました",
+  "messageCommentHiddenAutomatedBody": "コメントは自動審査を通過しなかったため、現在非表示です。メッセージから異議申し立てができます。",
+  "messageCommentHiddenReviewedBody": "コメントは手動審査後に非表示になりました。",
+  "messageReviewApprovedTitle": "リソースが承認されました",
+  "messageReviewRejectedTitle": "リソースの修正が必要です",
+  "messageResourceSuspendedTitle": "リソースが公開停止になりました",
+  "messageResourceFrozenTitle": "リソースが凍結されました",
+  "messageResourceDeletedTitle": "リソースが削除されました",
+  "messageResourceRestoredTitle": "リソースが復元されました",
+  "messageReportUpdatedTitle": "報告の状態が更新されました",
+  "messagePluginApprovedTitle": "プラグインが承認されました",
+  "messagePluginRelistedTitle": "プラグインが再公開されました",
+  "messagePluginRejectedTitle": "プラグインの修正が必要です",
+  "messagePluginDelistedTitle": "プラグインが公開停止になりました",
+  "messageCollectionApprovedTitle": "コレクションが承認されました",
+  "messageCollectionRejectedTitle": "コレクションの修正が必要です",
+  "messageCoinAddedTitle": "コインが追加されました",
+  "messageCoinDeductedTitle": "コインが差し引かれました",
+  "messageCoinReversedTitle": "コイン取引が取り消されました",
+  "messageCoinVoteRevokedTitle": "コインの支援が無効になりました",
+  "messageAppealOverturnedTitle": "異議申し立てが認められました",
+  "messageAppealUpheldTitle": "元の決定が維持されました",
+  "messageAppealDismissedTitle": "異議申し立てが却下されました",
+  "messageAccountBannedTitle": "アカウントが停止されました",
+  "messageAccountUnbannedTitle": "アカウント停止が解除されました",
+  "messageCreatorFrozenTitle": "クリエイター権限が凍結されました",
+  "messageCreatorUnfrozenTitle": "クリエイター権限が復元されました",
+  "messageRoleChangedTitle": "アカウントの役割が変更されました",
+  "messageRoleUser": "ユーザー",
+  "messageRoleReviewer": "レビュアー",
+  "messageRoleAdministrator": "管理者",
+  "messageApprovedBody": "提出内容は審査に合格しました。",
+  "messageNeedsChangesBody": "審査で修正が必要な問題が見つかりました。",
+  "messageReasonBody": "理由：{reason}",
+  "messageReviewNoteBody": "審査メモ：{note}",
+  "messageReviewerPrefix": "審査員：{reviewer}",
+  "messageOperatorPrefix": "操作者：{operator}",
+  "messageReferencePrefix": "関連：{reference}",
+  "messageTargetsPrefix": "配信先：{targets}",
+  "messageUnapprovedItemsPrefix": "修正が必要な項目：{items}",
+  "messageStatusChangedBody": "この項目の状態が変更されました。",
+  "messageReportStatusBody": "報告の状態：{status}",
+  "messageCoinAddedBody": "アカウントに {amount} コインが追加されました。",
+  "messageCoinDeductedBody": "アカウントから {amount} コインが差し引かれました。",
+  "messageCoinVoteRevokedBody": "このリソースへの {amount} コインの支援が無効になりました。",
+  "messageAppealOverturnedBody": "管理者が元の決定を取り消しました。",
+  "messageAppealUpheldBody": "再審査後も元の決定が維持されました。",
+  "messageAppealDismissedBody": "異議申し立ては受理されませんでした。",
+  "messageRoleChangedBody": "アカウントの役割は {role} になりました。",
+  "cleanPluginsEntry": "プラグイン入口",
+  "cleanSourceHuamiAppStore": "Amazfitアプリストア",
+  "announcementAcknowledge": "了解",
+  "cleanHomeFeed": "ホームフィード",
+  "cleanExplore": "リソースライブラリ",
+  "cleanInbox": "受信箱",
+  "cleanAnnouncements": "お知らせポップアップ",
+  "cleanComments": "コメント",
+  "cleanCreator": "クリエイターセンター",
+  "cleanBandBbsLogin": "BandBBSサインイン",
+  "cleanGitHubLogin": "GitHubサインイン",
+  "cleanSourceOronBox": "OronBoxソース",
+  "cleanSourceBandBbs": "BandBBSソース",
+  "cleanSourceAstroBox": "AstroBoxソース",
+  "cleanExploreEntry": "探索入口",
+  "cleanNavigationGroup": "メインナビゲーション",
+  "cleanExploreContentGroup": "探索コンテンツ",
+  "cleanHomeSectionsGroup": "ホームセクション",
+  "cleanHomeBanner": "バナーカルーセル",
+  "cleanHomeEditorSections": "編集セクション",
+  "cleanResourceSourcesGroup": "リソースソース",
+  "cleanCommunityGroup": "コミュニティ機能",
+  "xmsDeveloperMode": "XMS開発者モード",
+  "xmsDeveloperModeDescription": "Androidアプリの署名差異を許可",
+  "oronBoxCoinsTitle": "リソースコイン",
+  "oronBoxCoinsBalance": "コイン残高：{balance}",
+  "oronBoxCoinsCheckin": "チェックイン",
+  "oronBoxCoinsCheckedIn": "チェックイン済み",
+  "oronBoxCoinsCheckinReward": "{count}コインを獲得",
+  "oronBoxCoinsDescription": "毎日チェックインで1～5コインを獲得し、クリエイターを支援できます",
+  "resourceFromCollection": "コレクション「{name}」から",
+  "resourceCoin": "コイン",
+  "resourceCoinNotSignedIn": "未サインイン",
+  "resourceCoinDialogTitle": "このリソースにコインを贈る",
+  "resourceCoinDialogMessage": "このリソースにコインを贈りますか？\nこの操作は取り消せません\n\nコインはリソースの露出を高めます\nクリエイターは贈られた量の10%を受け取ります\n設定 - BandBBSアカウントでチェックインしてコインを獲得できます",
+  "resourceCoinOne": "1コインを贈る",
+  "resourceCoinTwo": "2コインを贈る",
+  "resourceCoinCount": "{count}コイン",
+  "resourceCoinSuccess": "コインを送信しました",
+  "resourceCoinVoted": "コイン済み",
+  "resourceFeatured": "注目",
+  "resourceCollection": "コレクション",
+  "resourceCollectionType": "{type}コレクション",
+  "creatorCollections": "リソースコレクション",
+  "creatorCollectionTag": "コレクション",
+  "creatorNewCollection": "新しいコレクション",
+  "creatorMoveToCollection": "コレクションへ移動",
+  "creatorMoveToCollectionConfirm": "選択した{count}件のリソースをこのコレクションへ移動しますか？",
+  "creatorDissolveCollection": "コレクションを解散",
+  "creatorResourceList": "リソース",
+  "creatorAdditionalLinks": "追加リンク",
+  "creatorAddLink": "リンクを追加",
+  "creatorLinkTitle": "リンク名",
+  "creatorLinkUrl": "リンクURL",
+  "creatorCollectionName": "コレクション名",
+  "creatorCollectionSummary": "コレクション概要",
+  "creatorCollectionRepresentative": "代表リソース",
+  "creatorCollectionDeleteConfirm": "このコレクションを削除しますか？リソースとの紐付けだけ解除されます",
+  "creatorContentAttributes": "コンテンツ属性",
+  "creatorConfirm": "確認",
+  "creatorCollectionAddResource": "コレクションに追加",
+  "creatorCollectionResourceCount": "{count}件のリソース",
+  "communityImportSelected": "{count}件を選択",
+  "communityImportResultCreated": "下書きを作成しました",
+  "communityImportResultFailed": "失敗",
+  "communityImportUnsupported": "この種別はまだインポートできません",
+  "communityImportDuplicate": "クリエイターセンターにすでに存在します",
+  "communityImportNoArtifacts": "インポート可能なリソースファイルがありません",
+  "creatorImportExternal": "他のプラットフォームから既存リソースをインポート",
+  "creatorNewResourceDescription": "OronBoxでリソースを作成・管理",
+  "creatorNewCollectionDescription": "関連リソースのコレクションを作成",
+  "creatorImportExternalDescription": "試験的機能：BandBBSまたはAstroBox-Repoから既存リソースをインポート",
+  "creatorImportAlreadyImported": "インポート済み・連携済み",
+  "creatorImportReviewNotice": "インポート内容が不完全または誤認識されている可能性があります。送信前にすべての項目を確認・修正してください",
+  "creatorImportLogTitle": "処理ログ",
+  "communityImportPickerEmpty": "リソースはありません",
+  "creatorWizardChooseAction": "作成",
+  "creatorImportSelectTitle": "リソースを選択",
+  "creatorImportProgressTitle": "インポート中",
+  "creatorImportResultTitle": "インポート結果",
+  "creatorImportGitHubHint": "GitHubを接続してAstroBoxリソースを一覧表示",
+  "creatorImportGitHubConnect": "GitHubを接続",
+  "creatorImportStageDetails": "詳細を取得中",
+  "creatorImportStageDownloading": "ファイルをダウンロード中",
+  "creatorImportStageMedia": "画像を処理中",
+  "creatorImportStageUploading": "下書きを作成中",
+  "creatorImportContinue": "続けてインポート",
+  "creatorImportPartialFailureTitle": "一部のリソースを読み込めませんでした",
+  "creatorImportPartialFailureMessage": "{count}件のリソースを読み込めませんでした\n失敗した項目を再試行するか、正常に読み込めたリソースだけで続行できます",
+  "creatorImportRetryFailed": "失敗した項目を再試行",
+  "creatorImportContinuePartial": "続行",
+  "creatorImportWarnings": "{count}件の警告",
+  "creatorDeleteExternalBandbbs": "BandBBSのリソースも削除",
+  "creatorDeleteExternalAstrobox": "AstroBox-Repoへ削除PRも送信",
+  "creatorDeleteExternalWarning": "外部での削除は取り消せません",
+  "creatorDeletePrSubmitted": "削除PRを送信しました",
+  "githubCdnFallback": "GitHubリクエストに失敗。{cdn}経由で再試行中",
+  "deviceConnectBle": "BLEで接続",
+  "deviceConnectBtClassic": "BT Classicで接続",
+  "bandBbsIdLabel": "BandBBS ID {id}",
+  "oobeCdnTestFailed": "失敗",
+  "updateDownloading": "更新をダウンロード中",
+  "updateInstalling": "更新をインストール中",
+  "updateFailed": "更新に失敗",
+  "updateNoApkForAbi": "ABI {abi}向けAPKがありません",
+  "cleanUpdateGroup": "更新",
+  "cleanCheckUpdates": "起動時に更新を確認",
+  "creatorImportNoticeTitle": "既存リソースをインポート",
+  "creatorImportNoticeMessage": "複数デバイスに対応するリソースはBandBBSの複数セクションに公開されている場合があります\nインポート時は複数のBandBBS項目を選択できますが、同じリソースの項目だけを選択してください\nインポートを押すと選択項目を1つのリソースへ統合します\nインポートに失敗した場合は対応する下書きを開いて削除してください\n下書きを削除しても他プラットフォームに連携済みのリソースは削除されません",
+  "creatorImportNoticeConfirm": "インポートを続行",
+  "creatorImportSameResourceHint": "1回のインポートでは同じリソースだけを選択してください",
+  "@creatorPublishPreparing": {
+    "placeholders": {
+      "done": {},
+      "total": {}
+    }
+  },
+  "@creatorPublishUploading": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@creatorArtifactCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "@creatorKindMismatchMessage": {
+    "placeholders": {
+      "detected": {},
+      "expected": {}
+    }
+  },
+  "@creatorDeviceMoveBlocked": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@downloadTimes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorModerationReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@creatorBandBbsUnmappedDevices": {
+    "placeholders": {
+      "devices": {}
+    }
+  },
+  "@errorUnknownWithDetail": {
+    "placeholders": {
+      "detail": {}
+    }
+  },
+  "@creatorCompatibleDeviceCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@zeppOsScreenMirrorUnsupported": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabAudioProcessingFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabContinuousCaptureFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabAssistantSwitchFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabExportWavFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabExportOpusFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@sendFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsMapGarminDetected": {
+    "placeholders": {
+      "fileName": {},
+      "mapName": {}
+    }
+  },
+  "@zeppOsMapTileSummary": {
+    "placeholders": {
+      "fileName": {},
+      "count": {}
+    }
+  },
+  "@zeppOsSettingPageLoadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsAppCompatibilitySaved": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsAppStorageSaved": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsStorageDuplicateKey": {
+    "placeholders": {
+      "key": {}
+    }
+  },
+  "@zeppOsDebugRefreshFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsDebugClearEventsDescription": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsDebugBytePreview": {
+    "placeholders": {
+      "count": {},
+      "hex": {}
+    }
+  },
+  "@zeppOsDebugCachedScript": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugLocalRuntimeStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugWatchSession": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugLatestStartup": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@deviceMusicSizeInvalid": {
+    "placeholders": {
+      "maxMb": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicSongsTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicPlaylistLimit": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicSongCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicTransferSpeed": {
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicSelectedFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicQueueProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceRecordingsProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceRecordingsProgressCount": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceRecordingsSynced": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceRecordingsSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicFileSize": {
+    "placeholders": {
+      "size": {}
+    }
+  },
+  "@deviceMusicProgress": {
+    "placeholders": {
+      "progress": {}
+    }
+  },
+  "@deviceConnectingTo": {
+    "placeholders": {
+      "deviceName": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceConnectionEstablishing": {
+    "placeholders": {
+      "transport": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceEndpointUnavailable": {
+    "placeholders": {
+      "transport": {
+        "type": "String"
+      }
+    }
+  },
+  "@externalLinkDescription": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountSignOutTitle": {
+    "placeholders": {
+      "accountName": {}
+    }
+  },
+  "@settingsWearableLogFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@settingsWearableLogImportedDevice": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@settingsMiAccountSyncedDevices": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@queueStatusDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@queueStatusInstalling": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@queueAddedFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeTodayAt": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@timeYesterdayAt": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@settingsAboutLogsSize": {
+    "placeholders": {
+      "size": {}
+    }
+  },
+  "@settingsAboutLogsExported": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@settingsDeviceLogsProgress": {
+    "placeholders": {
+      "progress": {}
+    }
+  },
+  "@settingsDeviceLogsSaved": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@settingsDeviceLogsFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@pluginPermissionRequestMessage": {
+    "placeholders": {
+      "plugin": {},
+      "operation": {}
+    }
+  },
+  "@pluginErrorMessage": {
+    "placeholders": {
+      "plugin": {},
+      "error": {}
+    }
+  },
+  "@resourceTypeMismatchMessage": {
+    "placeholders": {
+      "detectedType": {},
+      "selectedType": {}
+    }
+  },
+  "@resourcePlatformMismatchMessage": {
+    "placeholders": {
+      "resourcePlatform": {},
+      "resourceType": {},
+      "deviceName": {},
+      "devicePlatform": {}
+    }
+  },
+  "@resourceTypeUnknownMessage": {
+    "placeholders": {
+      "selectedType": {}
+    }
+  },
+  "@resourceInstallForceCountdown": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceInstallAsSelected": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallAsSelectedCountdown": {
+    "placeholders": {
+      "type": {},
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceInstallAsDetected": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallConfirmTitle": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallConfirmMessage": {
+    "placeholders": {
+      "fileName": {},
+      "fileSize": {}
+    }
+  },
+  "@creatorConfirmBandBbs": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "@creatorConfirmAstroBox": {
+    "placeholders": {
+      "owner": {},
+      "repository": {}
+    }
+  },
+  "@creatorLinkedSections": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorBandBbsBindingIds": {
+    "placeholders": {
+      "categoryId": {},
+      "resourceId": {}
+    }
+  },
+  "@creatorAstroBoxPrPublish": {
+    "placeholders": {
+      "repository": {}
+    }
+  },
+  "@creatorReviewState": {
+    "placeholders": {
+      "state": {}
+    }
+  },
+  "@newVersionAvailable": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "@oronBoxCoinsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "@oronBoxCoinsCheckinReward": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceFromCollection": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@resourceCoinCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceCollectionType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@creatorMoveToCollectionConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorCollectionResourceCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@communityImportSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorImportPartialFailureMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorImportWarnings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@githubCdnFallback": {
+    "placeholders": {
+      "cdn": {}
+    }
+  },
+  "@bandBbsIdLabel": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@updateNoApkForAbi": {
+    "placeholders": {
+      "abi": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorFullVersionExternalPurchase": "外部購入が必要",
+  "creatorExternalPurchaseDescription": "OronBox と AstroBox ではリソースファイルを試用版として公開し、購入ボタンを表示します。BandBBS では「第三者購入」リソースとして公開され、支払いに関する手続きはご自身で行ってください",
+  "creatorExternalPurchaseLink": "購入リンク",
+  "creatorExternalPurchaseAmount": "金額（CNY）",
+  "creatorExternalPurchaseLinkRequired": "有効な外部購入リンクを入力してください",
+  "creatorExternalPurchaseAmountRequired": "有効な CNY 金額を入力してください",
+  "resourcePurchaseFullVersion": "外部購入",
+  "creatorBandBbsOverwritePrevious": "前回の投稿を上書き",
+  "creatorBandBbsOverwritePreviousDescription": "新しいバージョンを作成してから、BandBBS の前回の投稿を削除します",
+  "deviceHealthAutoSyncTitle": "ヘルスデータを自動同期",
+  "deviceHealthAutoSyncDescription": "デバイスデータの同期時にヘルスデータを自動同期",
+  "weatherAutoSyncTitle": "天気データを自動同期",
+  "weatherAutoSyncDescription": "デバイスデータの同期時に天気データを自動同期",
+  "weatherAqiGood": "良好",
+  "weatherAqiModerate": "普通",
+  "weatherAqiSensitive": "敏感な人に影響",
+  "weatherAqiUnhealthy": "不健康",
+  "weatherAqiVeryUnhealthy": "非常に不健康",
+  "weatherAqiHazardous": "危険",
+  "weatherDataSource": "データソース：{source}",
+  "@weatherDataSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "xiaomiScreenshotTitle": "デバイスのスクリーンショット",
+  "xiaomiScreenshotDescription": "デバイスのキー操作でスクリーンショットを撮ると、ここに自動同期されます",
+  "xiaomiScreenshotAction": "スクリーンショットを取得",
+  "xiaomiScreenshotLoading": "取得中…",
+  "xiaomiScreenshotEmpty": "スクリーンショットはありません",
+  "xiaomiScreenshotFailed": "スクリーンショットを取得できませんでした",
+  "xiaomiScreenshotDownloadStarted": "スクリーンショットのダウンロードを開始しました",
+  "xiaomiScreenshotSaveFailed": "スクリーンショットを保存できませんでした",
+  "xiaomiScreenshotSaved": "ウォッチのスクリーンショットを保存しました：{path}",
+  "@xiaomiScreenshotSaved": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "deviceHealthRecoveryTime": "回復時間",
+  "deviceHealthTodayLoad": "今日の負荷",
+  "deviceHealthSevenDayLoad": "7日間の負荷",
+  "deviceHealthLoadLevel": "負荷レベル",
+  "deviceHealthFitnessBalance": "フィットネスバランス",
+  "deviceHealthFitnessLevel": "フィットネス",
+  "deviceHealthFatigueLevel": "疲労",
+  "deviceHealthTrainingStress": "トレーニングストレス",
+  "deviceHealthTrainingStatus": "トレーニング状態",
+  "deviceHealthSevenDayVitality": "7日間の活力",
+  "deviceHealthEarnedToday": "当日獲得",
+  "deviceHealthEarnedInPeriod": "選択期間の獲得",
+  "deviceHealthModerateIntensity": "中強度",
+  "deviceHealthHighIntensity": "高強度",
+  "deviceHealthNap": "仮眠",
+  "deviceHealthNapSingular": "仮眠",
+  "deviceHealthWorkoutOverview": "ワークアウト概要",
+  "deviceHealthWorkoutHistory": "履歴",
+  "deviceHealthWorkoutDuration": "時間",
+  "deviceHealthWorkoutRoute": "ルート",
+  "deviceHealthWorkoutDetails": "詳細",
+  "deviceHealthSwimmingSections": "水泳セクション",
+  "deviceHealthWorkoutCharts": "ワークアウトグラフ",
+  "deviceHealthActiveDuration": "有効時間",
+  "deviceHealthAveragePace": "平均ペース",
+  "deviceHealthBestPace": "最高ペース",
+  "deviceHealthHeartRateRange": "心拍範囲",
+  "deviceHealthBloodOxygenRange": "血中酸素範囲",
+  "deviceHealthMainStroke": "主な泳法",
+  "deviceHealthHeartRateZones": "心拍ゾーン",
+  "deviceHealthZoneLabel": "ゾーン {zone}",
+  "@deviceHealthZoneLabel": {
+    "placeholders": {
+      "zone": {}
+    }
+  },
+  "deviceHealthZoneWarmup": "ウォームアップ",
+  "deviceHealthZoneFatBurning": "脂肪燃焼",
+  "deviceHealthZoneAerobic": "有酸素",
+  "deviceHealthZoneAnaerobic": "無酸素",
+  "deviceHealthZoneExtreme": "極限",
+  "deviceHealthRecoveryAfterWorkout": "運動後の心拍回復",
+  "deviceHealthRecoveredHeartRate": "回復心拍",
+  "deviceHealthRecoveryRate": "回復率",
+  "deviceHealthSamples": "サンプル",
+  "deviceHealthAverageSpeed": "平均速度",
+  "deviceHealthTopSpeed": "最高速度",
+  "deviceHealthAverageStride": "平均ストライド",
+  "deviceHealthAverageCadence": "平均ケイデンス",
+  "deviceHealthMaximumCadence": "最高ケイデンス",
+  "deviceHealthAverageBloodOxygenDetail": "平均血中酸素",
+  "deviceHealthTotalAscent": "累計上昇",
+  "deviceHealthTotalDescent": "累計下降",
+  "deviceHealthAverageAltitude": "平均高度",
+  "deviceHealthAerobicEffect": "有酸素効果",
+  "deviceHealthAnaerobicEffect": "無酸素効果",
+  "deviceHealthPeakEffect": "ピーク効果",
+  "deviceHealthVo2Max": "最大酸素摂取量",
+  "deviceHealthBodyEnergyUsed": "身体エネルギー消費",
+  "deviceHealthExpectedRecovery": "回復見込み",
+  "deviceHealthTrainingLoad": "トレーニング負荷",
+  "deviceHealthVitalityEarned": "獲得活力",
+  "deviceHealthAveragePower": "平均パワー",
+  "deviceHealthMaximumPower": "最大パワー",
+  "deviceHealthArmPulls": "ストローク数",
+  "deviceHealthAverageStrokeRate": "平均ストローク率",
+  "deviceHealthMaximumStrokeRate": "最高ストローク率",
+  "deviceHealthTurns": "ターン数",
+  "deviceHealthAverageSwolf": "平均 SWOLF",
+  "deviceHealthBestSwolf": "最高 SWOLF",
+  "deviceHealthPoolLength": "プール長",
+  "deviceHealthJumps": "ジャンプ数",
+  "deviceHealthAverageJumpRate": "平均ジャンプ率",
+  "deviceHealthBestJumpRate": "最高ジャンプ率",
+  "deviceHealthTrips": "つまずき",
+  "deviceHealthSets": "セット数",
+  "deviceHealthTotalStrokes": "総ストローク数",
+  "deviceHealthAverageRowingRate": "平均ストローク率",
+  "deviceHealthBestRowingRate": "最高ストローク率",
+  "deviceHealthChartHeartRate": "心拍数",
+  "deviceHealthChartCadence": "ケイデンス",
+  "deviceHealthChartPace": "ペース",
+  "deviceHealthChartSpeed": "速度",
+  "deviceHealthChartPower": "パワー",
+  "deviceHealthChartStrokeRate": "ストローク率",
+  "deviceHealthChartJumpRate": "ジャンプ率",
+  "deviceHealthChartBloodOxygen": "血中酸素",
+  "deviceHealthChartStress": "ストレス",
+  "deviceHealthWorkoutOutdoorRunning": "屋外ランニング",
+  "deviceHealthWorkoutOutdoorWalking": "屋外ウォーキング",
+  "deviceHealthWorkoutIndoorRunning": "屋内ランニング",
+  "deviceHealthWorkoutMountaineering": "登山",
+  "deviceHealthWorkoutTrailRunning": "トレイルランニング",
+  "deviceHealthWorkoutOutdoorCycling": "屋外サイクリング",
+  "deviceHealthWorkoutIndoorCycling": "屋内サイクリング",
+  "deviceHealthWorkoutFreeTraining": "フリートレーニング",
+  "deviceHealthWorkoutSwimming": "水泳",
+  "deviceHealthWorkoutElliptical": "エリプティカル",
+  "deviceHealthWorkoutRowing": "ローイング",
+  "deviceHealthWorkoutJumpRope": "縄跳び",
+  "deviceHealthWorkoutHiking": "ハイキング",
+  "deviceHealthWorkoutGeneric": "ワークアウト",
+  "deviceHealthWorkoutExport": "FITを書き出す",
+  "deviceHealthWorkoutExported": "FITを書き出しました：{path}",
+  "deviceHealthWorkoutExportFailed": "FITの書き出しに失敗しました：{error}",
+  "@deviceHealthWorkoutExported": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@deviceHealthWorkoutExportFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "deviceHealthStrokeMedley": "メドレー",
+  "deviceHealthStrokeBreaststroke": "平泳ぎ",
+  "deviceHealthStrokeFreestyle": "自由形",
+  "deviceHealthStrokeBackstroke": "背泳ぎ",
+  "deviceHealthStrokeButterfly": "バタフライ",
+  "deviceHealthSectionLabel": "セクション",
+  "deviceHealthVitalityRunSuggestion": "次の目標まであと {minutes} 分ランニング",
+  "@deviceHealthVitalityRunSuggestion": {
+    "placeholders": {
+      "minutes": {}
+    }
+  },
+  "deviceHealthVitalityActiveMinutes": "次の目標まであと {minutes} 分の活動",
+  "@deviceHealthVitalityActiveMinutes": {
+    "placeholders": {
+      "minutes": {}
+    }
+  },
+  "deviceHealthLatestHeartRate": "最新の心拍数",
+  "deviceHealthLatestBloodOxygen": "最新の血中酸素",
+  "deviceHealthLatestStress": "最新のストレス",
+  "deviceHealthDebugSnapshots": "活動ファイル",
+  "deviceHealthDebugSnapshotList": "活動ファイル",
+  "deviceHealthDebugSnapshotsDescription": "保存された活動ファイルをエクスポートできます",
+  "deviceHealthDebugRefresh": "更新",
+  "deviceHealthDebugRefreshDescription": "Reload the saved activity file list",
+  "deviceHealthDebugClearAll": "すべて削除",
+  "deviceHealthDebugClearAllDescription": "Delete every saved activity file",
+  "deviceHealthDebugNoSnapshots": "活動ファイルはありません",
+  "deviceHealthDebugReload": "再生",
+  "deviceHealthDebugReloaded": "Activity file replayed",
+  "deviceHealthDebugFiles": "{count} 個のファイル",
+  "@deviceHealthDebugFiles": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "creatorAccounts": "アカウント",
+  "creatorPendingItems": "対応が必要な項目",
+  "creatorResourceStatus": "リソースの状態",
+  "creatorOverview": "概要",
+  "creatorManage": "管理",
+  "creatorManageUnavailable": "管理機能は現在利用できません",
+  "creatorReviewTab": "審査",
+  "creatorReviewQueue": "審査キュー",
+  "creatorReviewStatus": "審査状態",
+  "creatorReviewActive": "進行中",
+  "creatorReviewChangesRequested": "修正が必要",
+  "creatorReviewDeclined": "拒否済み",
+  "creatorReviewClosed": "クローズ済み",
+  "creatorReviewFixedPending": "修正済み・再審査待ち",
+  "creatorNoPendingReviews": "保留中の審査はありません",
+  "creatorNoReviews": "審査はありません",
+  "creatorNeedsChanges": "修正が必要",
+  "creatorConnected": "接続済み",
+  "creatorNotConnected": "未接続",
+  "creatorCenterExitTitle": "クリエイターセンターを終了",
+  "creatorCenterExitMessage": "クリエイターセンターを終了してもよろしいですか？",
+  "creatorEditComment": "コメントを編集",
+  "creatorReply": "返信",
+  "creatorReplyingTo": "#{id} に返信中",
+  "@creatorReplyingTo": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "creatorReplyPrefix": "返信 #{id}: ",
+  "@creatorReplyPrefix": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "creatorSupplement": "補足",
+  "creatorModifyResource": "リソースを修正",
+  "creatorAstroBoxReview": "AstroBox 審査",
+  "creatorGithubPr": "GitHub リポジトリと PR",
+  "creatorApplyChanges": "変更を適用",
+  "creatorUpdatedAt": "更新日時",
+  "creatorSubmittedAt": "提出日時",
+  "creatorPublicationStatus": "公開状態",
+  "creatorStageInfo": "情報の編集",
+  "creatorStageFiles": "ファイルの紐付け",
+  "creatorStagePublish": "公開設定",
+  "creatorNextStep": "次へ",
+  "creatorWatchfaceMissingId": "ウォッチフェイスの認識に失敗、または全てゼロ：ID がないためアップロードできません",
+  "creatorWatchfaceZeroIdTitle": "ウォッチフェイス ID が全てゼロです。修正してからアップロードしてください",
+  "creatorWatchfacePayloadTooShort": "このウォッチフェイスファイルは小さすぎて ID フィールドを含できません",
+  "creatorQuickAppMissingPackage": "クイックアプリの認識に失敗：パッケージ名がないためアップロードできません",
+  "creatorVelajsDefaultPackage": "クイックアプリのパッケージ名が com.application.watch.demo です。これは VelaJS プロジェクトの既定値なので、変更してからアップロードしてください",
+  "creatorFilteredSupport": "サポートを絞り込み",
+  "creatorSkippedPublication": "公開をスキップ",
+  "creatorAstroBoxUnsupportedDevicesNotice": "選択した一部の対応デバイスは AstroBox への同期公開に未対応のため、これらのサポート宣言を除外します",
+  "creatorBandBbsUnsupportedDevicesNotice": "選択した一部の対応デバイスは BandBBS への同期公開に未対応のため、これらの公開をスキップします",
+  "errorSppBondRemovalFailed": "Bluetooth のペアリングを解除できませんでした\nスマートフォンの Bluetooth 設定で解除してから再試行してください",
+  "viewAllResources": "すべて表示",
+  "deviceHealthMinimum": "最低",
+  "deviceHealthMaximum": "最高",
+  "deviceHealthResting": "安静時",
+  "deviceHealthDebugExport": "活動ファイルをエクスポート",
+  "deviceHealthDebugExportTooltip": "活動ファイルをエクスポート",
+  "deviceHealthDebugExported": "活動ファイルを {path} にエクスポートしました",
+  "deviceHealthDebugExportFailed": "活動ファイルをエクスポートできませんでした: {error}",
+  "deviceHealthDebugImport": "活動ファイルをインポート",
+  "deviceHealthDebugImportDescription": "以前にエクスポートした活動ファイルをインポート",
+  "deviceHealthDebugImported": "{deviceCode} をインポートしました（{files} ファイル）",
+  "deviceHealthDebugImportFailed": "活動ファイルをインポートできませんでした: {error}",
+  "commentDeletedPlaceholder": "コメントは削除されました",
+  "commentViewReplies": "{count} 件の返信をすべて表示",
+  "commentThreadTitle": "コメント詳細",
+  "commentReplyTarget": "{username} に返信",
+  "commentLoadEarlier": "以前の返信を読み込む",
+  "@commentViewReplies": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@commentReplyTarget": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "messageCommentCreatedTitle": "リソースへの新しいコメント",
+  "scanQrCode": "QR コードをスキャン",
+  "deviceSwitchQrImport": "共有 QR コードをスキャンして既存のデバイスを追加",
+  "creatorCollectionReplacePendingDescription": "審査待ちのバージョンを置き換えます\n公開済みのバージョンは引き続き利用できます",
+  "creatorCollectionNoMatchingResources": "同じ種類のリソースがありません\n先にクリエイターセンターで作成してください",
+  "commentCreateFailed": "コメントを投稿できませんでした 再試行してください",
+  "commentsReadFailed": "コメントを読み込めませんでした 再試行してください",
+  "commentDeleteFailed": "コメントを削除できませんでした 再試行してください",
+  "errorRequestTimeout": "リクエストがタイムアウトしました 再試行してください",
+  "creatorCollectionReplacePendingTitle": "審査待ちのバージョンを置き換えますか？",
+  "creatorCollectionReplaceAndSubmit": "置き換えて審査に提出",
+  "creatorCollectionCreateTitle": "コレクションを作成",
+  "creatorCollectionEditTitle": "コレクションを編集",
+  "creatorCollectionCurrentRevision": "公開中のバージョン：{number}",
+  "@creatorCollectionCurrentRevision": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorCollectionPendingRevision": "審査待ちのバージョン：{number}",
+  "@creatorCollectionPendingRevision": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorCollectionHistory": "過去のバージョンを表示",
+  "creatorCollectionBody": "本文（Markdown）",
+  "creatorMediaIcon": "アイコン",
+  "creatorMediaCover": "カバー",
+  "creatorMediaUnset": "未設定",
+  "creatorMediaSet": "設定済み",
+  "creatorCollectionMemberOrder": "メンバーの順序と代表リソース",
+  "creatorCollectionMemberUnavailable": "リソースを利用できません 削除してください",
+  "creatorCollectionSetRepresentative": "代表リソースに設定",
+  "creatorCollectionAddMember": "メンバーを追加",
+  "creatorImageReadFailed": "画像を読み込めません",
+  "creatorImageProcessFailed": "画像を処理できません",
+  "creatorPublicationRetry": "公開を再試行",
+  "creatorTermsLoadFailed": "公開条件を読み込めません",
+  "creatorReviewItems": "修正項目",
+  "creatorReviewFixReplied": "修正を報告済み",
+  "creatorReviewReplyFix": "修正を報告",
+  "creatorTermsUpdated": "公開条件が更新されました",
+  "creatorPublishingLater": "今は公開しない",
+  "creatorTermsAgree": "確認して同意",
+  "updateAssetUnavailable": "このバージョンには現在の環境用のインストーラーがありません",
+  "legalDocumentUnavailable": "文書を利用できません 再試行してください",
+  "deviceImportTitle": "デバイスをインポート",
+  "qrScanFromImage": "画像から読み取る",
+  "qrScanNoCode": "QRコードが見つかりません",
+  "qrScanImageFailed": "この画像を読み取れません",
+  "qrScanCameraUnavailable": "カメラを利用できません",
+  "qrScanChooseCode": "QRコードを選択",
+  "qrScanCodeLabel": "QRコード {index}",
+  "@qrScanCodeLabel": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "qrScanUnsupported": "このプラットフォームではQRコードを読み取れません",
+  "featureLabTitle": "機能ラボ",
+  "featureLabDescription": "開発中の機能を試す",
+  "voiceAssistantDescription": "デバイスの音声を受信・再生して返信",
+  "voiceLabConnectDevice": "デバイスを接続して音声アシスタントを起動してください",
+  "voiceLabCaptureLimit": "録音の上限に達しました 録音を消去して再試行してください",
+  "voiceLabReplyTooLong": "返信が長すぎます",
+  "voiceLabRecognitionLabel": "認識結果",
+  "voiceLabRecognitionHint": "認識した言葉を入力",
+  "appDataTitle": "アプリデータ",
+  "appDataDescription": "保存容量の確認とファイルの書き出し",
+  "appDataSpaceUsage": "分類別の使用量",
+  "appDataHealth": "活動ファイル",
+  "appDataPlugins": "プラグイン",
+  "appDataZeppos": "ZeppOS アプリデータ",
+  "appDataRecovery": "インポート復旧データ",
+  "appDataDownloads": "リソースと更新のダウンロード",
+  "appDataPluginCache": "プラグインキャッシュ",
+  "appDataManageSnapshots": "保存された活動ファイルを管理",
+  "appDataExported": "書き出したファイルを保存しました",
+  "appDataLoadFailed": "アプリデータを読み取れません",
+  "appDataExportFailed": "ファイルを書き出せません",
+  "appDataArchiveTooLarge": "Activity files are too large, export them separately",
+  "appDataUpdateFailed": "アプリデータを更新できません",
+  "appDataBackup": "バックアップを書き出す",
+  "appDataBackupDescription": "保存するローカルデータを選んで書き出す",
+  "appDataRestore": "バックアップを復元",
+  "appDataRestoreDescription": "復元するデータを選択\n同じデバイスのローカル履歴を置き換えます",
+  "appDataSettings": "アプリ設定",
+  "appDataHealthDevices": "ヘルスケア履歴（{count} 台）",
+  "appDataRestored": "復元しました\nすべての設定を反映するには再起動してください",
+  "appDataRestoreFailed": "バックアップを復元できません",
+  "appDataRecover": "前回の復元を取り消す",
+  "appDataRecoveryPending": "前回の復元が中断されました",
+  "appDataRecoverDescription": "前回のインポート前の設定と履歴に戻します\nその後追加されたローカル履歴も置き換えます",
+  "@appDataHealthDevices": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "voiceAsrMethod": "認識方式",
+  "voiceAsrManual": "手動入力",
+  "voiceAsrLocal": "ローカル認識",
+  "voiceAsrWeType": "WeChat 入力",
+  "voiceAsrDoubao": "Doubao 入力",
+  "voiceAsrWasm": "WASM 実験",
+  "voiceAsrCloudConsent": "音声を{provider}に送信して認識します\nこのページの使用中のみ送信します",
+  "voiceAsrPreparing": "認識を準備中",
+  "voiceAsrRecognizing": "認識中",
+  "voiceAsrFinishing": "最後の音声を処理中",
+  "voiceAsrFinished": "認識完了",
+  "voiceAsrModelReady": "中国語と英語のローカル認識を利用できます",
+  "voiceAsrModelDescription": "中国語と英語をローカルで認識\n初回はモデルと実行環境をダウンロード",
+  "voiceAsrDownloadModel": "認識データをダウンロード",
+  "voiceAsrDeleteModel": "認識データを削除",
+  "voiceAsrSendRecognition": "認識結果を送信",
+  "voiceAsrModelMissing": "ローカル認識データをダウンロードしてください",
+  "voiceAsrModelDamaged": "認識データが破損しています\n削除して再ダウンロードしてください",
+  "voiceAsrDownloadFailed": "ダウンロードできません\n接続を確認して再試行してください",
+  "voiceAsrRegistrationFailed": "認識サービスを開始できません\n後で再試行してください",
+  "voiceAsrServiceRejected": "認識サービスがリクエストを拒否しました",
+  "voiceAsrTimeout": "認識がタイムアウトしました\nもう一度話してください",
+  "voiceAsrOpusUnsupported": "このデバイスの音声は WeChat 入力に対応していません",
+  "voiceAsrUnsupported": "このプラットフォームでは利用できません",
+  "voiceAsrTooSlow": "認識処理が遅すぎます\nこの会話を終了して再試行してください",
+  "voiceAsrNoSpeech": "音声を認識できませんでした",
+  "voiceAsrInvalidResponse": "認識サービスから無効な結果が返されました",
+  "voiceAsrInferenceFailed": "ローカル認識に失敗しました\n認識方式を選び直してください",
+  "voiceAsrCancelled": "認識をキャンセルしました",
+  "voiceAsrConnectionFailed": "認識サービスに接続できません\n接続を確認して再試行してください",
+  "@voiceAsrCloudConsent": {
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    }
+  },
+  "appDataModels": "音声認識データ",
+  "appDataTasks": "タスク履歴",
+  "appDataDocuments": "文書キャッシュ",
+  "privateStateLoadFailed": "保存済みのアカウントとデバイスを読み込めません\n再試行してください",
+  "privateStateSaveFailed": "アカウントまたはデバイスの変更を保存できません\n再試行してください",
+  "resetPrivateStorageAction": "ローカル資格情報をリセット",
+  "resetPrivateStorageTitle": "アカウントとデバイスをリセット",
+  "resetPrivateStorageMessage": "リセット後にアカウントの再ログインとデバイスの再接続が必要です\n保存済みのヘルスケア履歴やアプリ設定は失われません",
+  "confirmReset": "リセット",
+  "voiceAsrStorageFull": "空き容量が不足しています\n空き容量を増やして再試行してください",
+  "voiceAsrReconnect": "音声認識サービスに再接続",
+  "voiceAsrReconnectDescription": "この音声認識サービスに再登録します\nログイン中のアカウントには影響しません",
+  "voiceAsrReconnectFailed": "再接続できませんでした",
+  "appDataClearCache": "キャッシュを削除",
+  "appDataClearCacheDescription": "画像、WebAssembly コンパイル、プラグイン、ドキュメントのキャッシュと期限切れの一時ファイルを削除\n必要に応じて再生成またはダウンロードされます\n実行中のプラグインとデバイスアプリは停止します",
+  "appDataCacheCleared": "キャッシュを削除しました",
+  "voiceAsrReplayRecording": "録音を再生して認識",
+  "voiceAsrImportWave": "WAV を読み込む",
+  "voiceAsrReplayDescription": "認識方法を選択して録音または WAV を認識\n16 kHz モノラル PCM16、最長 60 秒\nオンライン認識では選択したサービスへ音声を送信します",
+  "voiceAsrReplayMetrics": "所要時間 {elapsed} ms · 最初の結果 {first} ms · RTF {factor}",
+  "voiceAsrExportReport": "テスト結果を出力",
+  "voiceAsrWaveFormat": "16 kHz モノラル PCM16 WAV を選択してください\n最長 60 秒",
+  "voiceAsrReplayBusy": "現在の音声または認識を終了してください",
+  "@voiceAsrReplayMetrics": {
+    "placeholders": {
+      "elapsed": {
+        "type": "String"
+      },
+      "first": {
+        "type": "String"
+      },
+      "factor": {
+        "type": "String"
+      }
+    }
+  },
+  "appDataExtensionSettings": "プラグインとデバイスアプリのデータ",
+  "appDataExtensionSettingsDescription": "プラグインとデバイスアプリの設定とデータ",
+  "appDataExtensionMissing": "復元する前に同じバージョンのプラグインと対応アプリをインストールしてください",
+  "appDataImageCache": "画像キャッシュ",
+  "appDataSelectBackup": "バックアップするデータを選択",
+  "appDataSettingsDescription": "テーマ、言語、機能の設定",
+  "appDataHealthDescription": "端末から同期した運動・健康データ",
+  "appDataDeviceKeys": "デバイスのペアリングと鍵",
+  "appDataDeviceKeysDescription": "保存したデバイスと接続用の認証情報",
+  "appDataXiaomiAccount": "Xiaomi と Amazfit の認証情報",
+  "appDataXiaomiAccountDescription": "アカウントのパスワードと現在のログインセッション",
+  "appDataSensitiveBackup": "バックアップには暗号化されていないアカウント情報が含まれます\n安全に保管し、共有しないでください",
+  "appDataImportDescription": "バックアップからデータを選んで復元",
+  "appDataPluginDescription": "インストール済みプラグインとデータ",
+  "appDataZepposDescription": "デバイスアプリのスクリプトと設定",
+  "appDataLogsDescription": "アプリの動作と問題調査のログ",
+  "appDataRecoveryDescription": "中断した復元に備えて保持するデータ",
+  "appDataDownloadsDescription": "ダウンロードとインストールの一時ファイル",
+  "appDataPluginCacheDescription": "プラグインが作成したキャッシュと一時ファイル",
+  "appDataImagesDescription": "リソース閲覧で保存した画像キャッシュ",
+  "appDataModelsDescription": "ダウンロード済みの音声モデルと実行環境",
+  "appDataTasksDescription": "ダウンロードとインストールの進捗",
+  "appDataDocumentsDescription": "規約とプライバシー情報のローカルコピー",
+  "phoneLocationTitle": "測位アシスト",
+  "deviceFeaturesGroupTitle": "機能とツール",
+  "deviceSettingsGroupTitle": "デバイス設定とメンテナンス",
+  "phoneLocationStatusSection": "ステータス",
+  "phoneLocationPermissionsSection": "権限とシステム設定",
+  "phoneLocationOptionsSection": "連携オプション",
+  "phoneLocationReady": "アシスト位置情報は準備完了",
+  "phoneLocationReadyDesc": "屋外ワークアウトの開始時に自動で位置情報を提供します",
+  "phoneLocationServiceEnabled": "位置情報サービス",
+  "phoneLocationPreciseTitle": "正確な位置情報",
+  "phoneLocationPreciseGranted": "高精度な位置情報を許可済み",
+  "phoneLocationPreciseDenied": "正確な位置情報が未許可です",
+  "phoneLocationBackgroundTitle": "バックグラウンド位置情報",
+  "phoneLocationBackgroundAlways": "常に許可",
+  "phoneLocationBackgroundWhileInUse": "使用中のみ許可",
+  "phoneLocationBackgroundDenied": "未許可",
+  "phoneLocationAutoSync": "自動アシスト位置情報",
+  "phoneLocationAutoSyncDesc": "デバイスが屋外ワークアウトを開始した際に端末のGPSを提供します",
+  "phoneLocationEnabledText": "オン",
+  "phoneLocationDisabledText": "オフ",
+  "phoneLocationNotification": "運動中の位置をデバイスに送信",
+  "phoneLocationDescription": "運動の準備中と実行中に位置情報を提供",
+  "phoneLocationOpenApp": "OronBox を開いて測位を続行",
+  "phoneLocationRecovery": "アプリを開いてデバイスから運動をやり直してください",
+  "phoneLocationPermission": "正確な位置情報の権限が必要です",
+  "phoneLocationBackground": "バックグラウンド測位を許可",
+  "phoneLocationBackgroundDescription": "バックグラウンドで運動の測位要求を受信",
+  "phoneLocationSettings": "システム設定を開く",
+  "phoneLocationServiceOff": "位置情報サービスが無効です",
+  "phoneLocationPermissionHelp": "正確な位置情報を許可して再試行してください",
+  "phoneLocationMobileOnly": "Android と iOS で利用できます",
+  "phoneLocationUnavailable": "位置を取得できません\n位置情報の権限とサービスを確認してください",
+  "deviceConnectionAbnormalTitle": "デバイス接続の問題",
+  "deviceConnectionAbnormalMessage": "デバイスが頻繁に切断されています。再ペアリングするか、デバイスを「新しいスマホに接続」モードにして接続を安定させてください。",
+  "deviceRePair": "再ペアリング",
+  "appDataClearCategoryTitle": "{category}を削除しますか？",
+  "appDataClearCategoryDescription": "選択したローカルデータを削除します\n他のカテゴリは保持されます",
+  "appDataClearHealthDescription": "同期された活動ファイルが削除されます\nローカルの運動・健康データが消去されます",
+  "appDataClearCachedCategoryDescription": "未使用のキャッシュファイルを削除\n必要に応じて再生成またはダウンロードされます",
+  "appDataClearModelsDescription": "現在のモデルを保持します\n未使用の旧バージョンと期限切れのダウンロードを削除します",
+  "settingsPermissionsTitle": "権限管理",
+  "settingsPermissionsDesc": "測位アシストとバックグラウンド権限",
+  "appArrangementTitle": "アプリ配置",
+  "appArrangementDescription": "アプリの表示順とドロワーの配置を調整します",
+  "appOrderMainSection": "表示アプリ",
+  "appOrderMoreSection": "その他のアプリ",
+  "appOrderHiddenSection": "非表示アプリ",
+  "appOrderMoreSectionDesc": "デバイスのサブドロワーに表示されるアプリ",
+  "appOrderHiddenSectionDesc": "デバイス上に表示しないアプリ",
+  "appOrderMoveToMore": "その他に移動",
+  "appOrderMoveToMain": "リストに移動",
+  "appOrderHide": "非表示",
+  "appOrderUnhide": "表示",
+  "appOrderCannotHide": "システム常駐アプリは非表示にできません",
+  "privateStateAccessPromptTitle": "OronBox は安全なストレージで保護されたアカウント資格情報へのアクセスが必要です",
+  "privateStateAccessPromptMacOs": "システム認証ダイアログが表示された場合は、ログインパスワードを入力し、プロンプトが繰り返されないよう「常に許可」をクリックしてください",
+  "privateStateAccessPromptLinux": "システムロック解除ダイアログが表示された場合は、ユーザーパスワードを入力してキーリングを解除してください",
+  "creatorSubmissionPreview": "送信内容を確認",
+  "creatorResourceBinding": "リソースの関連付け",
+  "creatorPublicationIdentity": "公開アカウント",
+  "creatorPublicationRange": "今回の公開内容",
+  "creatorNewPublication": "初回公開",
+  "creatorUpdatePublication": "既存のリソースを更新",
+  "creatorAppendSubmission": "PR #{number} に追加",
+  "@creatorAppendSubmission": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorPublicationExcludedDevices": "公開対象外のデバイス：{devices}",
+  "@creatorPublicationExcludedDevices": {
+    "placeholders": {
+      "devices": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorBackToEdit": "編集に戻る",
+  "creatorPackageVersionCodeMissing": "パッケージに有効なバージョンコードがありません\n再ビルドしてアップロードしてください",
+  "creatorReopenSubmission": "再審査を申請",
+  "creatorReopenRequested": "再審査を申請しました",
+  "creatorFixesForSubmission": "今回修正した項目",
+  "creatorFixNote": "修正内容",
+  "creatorNameRequired": "リソース名を入力してください",
+  "creatorSummaryRequired": "リソースの概要を入力してください",
+  "creatorSubmitForReview": "審査に提出",
+  "creatorAstroBoxPRBody": "PR の説明（任意）",
+  "autoBackupTitle": "定期バックアップ",
+  "autoBackupDescription": "定期的にアプリデータをシステムドキュメントへバックアップ",
+  "autoBackupEnabled": "定期バックアップを有効化",
+  "autoBackupInterval": "バックアップ頻度",
+  "autoBackupEvery": "間隔",
+  "autoBackupUnitDay": "日ごと",
+  "autoBackupUnitWeek": "週間ごと",
+  "autoBackupUnitMonth": "か月ごと",
+  "autoBackupRetention": "保持世代数",
+  "autoBackupRetentionCount": "{count} 世代",
+  "@autoBackupRetentionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "autoBackupRetentionUnlimited": "制限なし",
+  "autoBackupPasswordEnable": "パスワード保護",
+  "autoBackupPasswordEnableDesc": "標準 AES-256 でバックアップを暗号化",
+  "autoBackupPassword": "パスワード",
+  "autoBackupPasswordConfirm": "パスワードの確認",
+  "autoBackupPasswordMismatch": "入力されたパスワードが一致しません",
+  "autoBackupPasswordPlaceholder": "パスワードを入力",
+  "autoBackupScope": "バックアップ範囲",
+  "autoBackupScopeSettings": "アプリ設定",
+  "autoBackupScopeHealth": "健康データ",
+  "autoBackupScopeExtensions": "拡張機能とミニアプリ",
+  "autoBackupScopeDevices": "デバイス接続情報",
+  "autoBackupStorageLocation": "保存場所",
+  "autoBackupStorageLocationDesc": "バックアップはシステムの共有ドキュメントフォルダに保存されます",
+  "autoBackupOpenFolder": "ファイルマネージャーで開く",
+  "autoBackupStatusEnabled": "有効 · {value} {unit}",
+  "@autoBackupStatusEnabled": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupStatusDisabled": "無効",
+  "autoBackupRunNow": "今すぐバックアップ",
+  "autoBackupRunSuccess": "定期バックアップが完了しました",
+  "autoBackupRunFailed": "定期バックアップに失敗しました",
+  "backupPasswordDialogTitle": "パスワードを入力",
+  "backupPasswordDialogMessage": "このバックアップは暗号化されています\n復元するにはパスワードを入力してください",
+  "backupPasswordIncorrect": "パスワードが正しくありません",
+  "backupPasswordRequired": "パスワードを入力してください",
+  "exportBackupPasswordOptional": "暗号化パスワード（任意）",
+  "exportBackupPasswordPlaceholder": "空欄の場合は暗号化されません",
+  "backupTargetPublicDocuments": "システム書類フォルダーに保存",
+  "backupTargetCustom": "外部ファイルとして保存",
+  "restoreFromDocumentsTitle": "復元するバックアップを選択",
+  "restorePickExternalFile": "別の外部ファイルを選択...",
+  "backupSavedToDocuments": "バックアップをシステム書類フォルダーに保存しました",
+  "appDataExporting": "バックアップをエクスポートおよび暗号化しています...",
+  "appDataDecrypting": "バックアップを復号しています...",
+  "appDataRestoring": "データを復元しています...",
+  "autoBackupRetentionInputHint": "0 で無制限",
+  "autoBackupRetentionLabel": "保持世代数（0 で無制限）",
+  "autoBackupRetentionUnit": "世代",
+  "backupTypeAuto": "定期バックアップ",
+  "backupTypeManual": "手動バックアップ",
+  "autoBackupStatusDetail": "有効 · {value} {unit} · {retentionText} 保持",
+  "@autoBackupStatusDetail": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "retentionText": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsMiAccountRegion": "サーバー地域",
+  "settingsMiAccountRegionCn": "中国本土 (CN)",
+  "settingsMiAccountRegionDe": "ヨーロッパ (DE)",
+  "settingsMiAccountRegionRu": "ロシア (RU)",
+  "settingsMiAccountRegionSg": "グローバル / シンガポール (SG)",
+  "settingsMiAccountRegionUs": "アメリカ (US)",
+  "settingsMiAccountRegionIn": "インド (IN)",
+  "alarmManagementTitle": "アラーム管理",
+  "alarmManagementNone": "設定されたアラームはありません",
+  "pluginPermissionReadClipboard": "クリップボードを読み取る",
+  "pluginPermissionWriteClipboard": "クリップボードに書き込む",
+  "pluginPermissionHostServer": "ローカル HTTP サーバーを起動する",
+  "pluginPermissionReceiveLink": "アプリのリンクを受信する",
+  "pluginProviderUnavailable": "このプラグインのリソースプロバイダーは現在利用できません",
+  "pluginDisabled": "プラグインは無効です",
+  "pluginOpenWindow": "別ウィンドウで開く",
+  "pluginRunSettings": "実行設定",
+  "pluginEnable": "有効にする",
+  "pluginDisable": "無効にする",
+  "pluginEnabled": "プラグインを有効にする",
+  "pluginBackground": "バックグラウンド実行",
+  "pluginBackgroundDescription": "10 分間操作や通信がないと停止",
+  "pluginBackgroundForbidden": "禁止",
+  "pluginBackgroundActive": "アクティブを維持",
+  "pluginBackgroundContinuous": "実行を継続",
+  "pluginBackgroundForbiddenDescription": "プラグインを離れると停止",
+  "pluginBackgroundContinuousDescription": "プラグインを離れても実行を継続",
+  "pluginAutoStart": "自動起動",
+  "pluginAutoStartDescription": "OronBox を開いたときに起動します",
+  "pluginRunStatus": "実行状態",
+  "pluginStopped": "停止中",
+  "pluginExistingGrant": "既存の許可",
+  "pluginPermissionAsk": "確認する",
+  "pluginPermissionAllow": "許可",
+  "pluginTargetPermissions": "操作と対象の許可",
+  "pluginNoTargetPermissions": "デバイスやアプリへの許可はありません",
+  "errorPlatformCapabilityUnavailable": "このプラットフォームまたはブラウザーでは利用できません",
+  "oauthPopupBlocked": "このサイトのポップアップを許可してから、もう一度ログインしてください",
+  "oauthBrowserCompleting": "元のページでログインを完了しています",
+  "oauthBrowserCompleted": "ログインしました このページを閉じてください",
+  "oauthBrowserOriginalClosed": "元のページから応答がありません ここでログインを続行できます",
+  "oauthBrowserContinue": "ログインを続行",
+  "wasmCompatibilityTitle": "ランタイム互換性テスト",
+  "wasmCompatibilityMessage": "OronBox はこの端末で WebAssembly を実行できるかテストする必要があります\n\n次の場合にこの案内が表示されます\n• Android 8~9 と Linux 4.x カーネルを使用している\n• ランタイムの読み込み中またはテスト中にアプリが予期せず終了した\n\n既知の互換性リスクにより、テスト中にアプリが強制終了する可能性があります\n端末のセキュリティポリシーがランタイムと互換性を持たない可能性があります\n\n強制終了した場合は OronBox を再度開いてください\n再度の強制終了を防ぐため、ランタイムの読み込みを一時停止します\n\n画像処理、音声処理、一部のプラグイン、Huami アプリのバックグラウンドスクリプトなどは、関連機能を再び使用する前にテストに成功するまで利用できない場合があります",
+  "wasmCompatibilityDefer": "今はテストしない",
+  "wasmCompatibilityStart": "テスト開始",
+  "wasmCompatibilityTesting": "テスト中です、お待ちください",
+  "wasmCompatibilityPassed": "互換性テストに成功しました",
+  "wasmCompatibilityTestFailed": "テストが完了していません、再試行するか後でテストしてください",
+  "wasmCompatibilityRequired": "この機能を使用する前に互換性テストを完了してください",
+  "pluginType": "プラグインの種類",
+  "pluginTypeAstroBox": "AstroBox-NG",
+  "pluginTypeOronBox": "OronBox",
+  "appDataCompilationCache": "コンパイルキャッシュ",
+  "appDataCompilationCacheDescription": "WebAssembly コンパイルキャッシュ",
+  "openExternally": "外部で開く",
+  "externalOpenFailed": "ブラウザーを開けません",
+  "resourceAstroBoxPurchaseTitle": "このファイルには購入または認証が必要です",
+  "resourceAstroBoxPurchaseMessage": "このリソースは AstroBox Creator Console で暗号化してアップロードされています\n復号には購入または利用許可が必要です\nAstroBox で開いてください",
+  "resourceAstroBoxAccessCheckFailed": "ファイルへのアクセス権を確認できません\nもう一度お試しください",
+  "resourceAstroBoxDecryptionFailed": "ファイルを復号できませんでした\nもう一度お試しください",
+  "appDataClearPluginCacheDescription": "プラグインのキャッシュと一時ファイルを削除\n必要に応じて再生成またはダウンロードされます",
+  "appDataClearCompilationCacheDescription": "WebAssembly コンパイルキャッシュを削除\n必要に応じて再生成されます",
+  "resourceMoreDevicesDownload": "他のデバイス用にダウンロード",
+  "resourceCompatibleWithDevice": "このリソースはお使いのデバイスに対応しています",
+  "resourceIncompatibleWithDevice": "このリソースはお使いのデバイスにまだ対応していません",
+  "resourceInstallSucceeded": "インストール成功",
+  "installStorageFullTitle": "デバイスの空き容量が不足しています",
+  "installQuantityLimitTitle": "インストール数の上限に達しました",
+  "installStorageFullHelp": "デバイスの予約領域が不足しているか、リソース数の上限に達しています\nリソースをいくつか削除してから、インストールを再試行してください",
+  "installQuantityLimitHelp": "デバイスのリソースのインストール数が上限に達しています\nリソースをいくつか削除してから、インストールを再試行してください",
+  "installTargetDeviceChanged": "先にこのインストールタスクの対象デバイスに切り替えてください",
+  "debugNoLogs": "ログはありません",
+  "debugNoLayoutTree": "このソースにはレイアウトツリーがありません",
+  "debugSelectElement": "要素を選択して詳細を表示",
+  "debugEmptyDirectory": "ディレクトリは空です",
+  "debugNoProtocolEvents": "プロトコルイベントはまだ記録されていません",
+  "globalAiNoProvidersTitle": "プロバイダーが追加されていません",
+  "globalAiNoProvidersMessage": "上でプロバイダーを追加してください",
+  "globalAiNoModelsTitle": "利用できるモデルはありません",
+  "globalAiNoModelsMessage": "先にモデルを追加してください",
+  "debugNoMatchingLogs": "一致するログはありません",
+  "appManagementNoVisibleApps": "表示できるアプリはありません",
+  "zeppOsAppCompatibilityEmpty": "アプリの互換性ファイルが追加されていません",
+  "qrScanCameraUnavailableMessage": "画像からQRコードを読み取れます",
+  "resourceFeaturesDisabledTitle": "リソース機能が無効になっています",
+  "pairingConnectStep": "デバイスに接続",
+  "pairingAccountStep": "アカウントを連携",
+  "pairingLocalStep": "ローカルでペアリング",
+  "pairingAuthStep": "デバイスを認証",
+  "pairingUnbound": "未ペアリング",
+  "pairingContinue": "続ける",
+  "pairingStartPrompt": "このデバイスは紐付けられていません\n案内に従って紐付けを完了してください",
+  "pairingSuccess": "接続に成功しました",
+  "pairingTitle": "デバイスを紐付ける",
+  "pairingConnecting": "デバイスに接続しています",
+  "pairingConfirmOnDevice": "デバイスで紐付けを確認してください",
+  "pairingCompareCode": "紐付けコードが一致することを確認してください",
+  "pairingRebind": "デバイスを再度紐付ける必要があります",
+  "pairingAlreadyBound": "このデバイスはすでにペアリングされています",
+  "pairingUseExistingKey": "既存のキーで接続",
+  "engineeringTitle": "MiWear エンジニアリングモード",
+  "engineeringDescription": "デバイスモードの切替とファームウェア更新",
+  "engineeringMode": "デバイスモード",
+  "engineeringUser": "ユーザーモード",
+  "engineeringUserDebug": "ユーザーデバッグモード",
+  "engineeringEng": "エンジニアリングモード",
+  "engineeringModeConfirm": "デバイスが再起動して接続が切れます\n再起動後に再接続してください",
+  "engineeringConnectDevice": "デバイスを接続",
+  "engineeringConnectConfirm": "現在のデバイスとの接続が切れます\n操作するデバイスを確認してください",
+  "engineeringFirmwareHint": "デバイスに対応するファームウェアを選択してください",
+  "engineeringOtaConfirm": "接続中のデバイスをこのファームウェアで更新しますか？\n機種が一致することを確認してください\n更新中は十分な電池残量を確保してください",
+  "engineeringReturn": "ユーザーモードで再起動",
+  "engineeringIdle": "操作待ち",
+  "engineeringScanning": "エンジニアリングデバイスを検索中",
+  "engineeringConnecting": "接続中",
+  "engineeringUpdateBackBlocked": "ファームウェアを更新しています\n操作が完了するまでお待ちください",
+  "engineeringUploading": "ファームウェアをアップロード中",
+  "engineeringRestarting": "デバイスの再起動を要求中",
+  "engineeringWaiting": "デバイスの再起動を待っています\n起動後に再接続してください",
+  "engineeringFailed": "更新が中断されました",
+  "engineeringEmpty": "エンジニアリングデバイスが見つかりません\nモードを確認して再検索してください",
+  "engineeringFirmwareError": "空でないファームウェアファイルを選択してください",
+  "engineeringResponseError": "デバイスが要求を拒否したか、予期しない応答を返しました",
+  "engineeringTimeout": "デバイスの応答がタイムアウトしました\n再接続して再試行してください",
+  "engineeringMtuError": "制御メッセージを送信できません\n再接続するか SPP を使用してください",
+  "engineeringBusyError": "現在の操作を完了またはキャンセルしてください",
+  "engineeringConnectionError": "先にエンジニアリングデバイスに接続してください",
+  "deviceSettingsTitle": "デバイス設定",
+  "deviceSettingsDescription": "このデバイスの使い方に合わせて設定を調整",
+  "deviceSettingsUnavailable": "このデバイスで設定できる項目はありません",
+  "deviceNotificationSync": "通知の同期",
+  "deviceNotificationSyncDescription": "選択したアプリの通知をこのデバイスに送信します",
+  "deviceNotificationApps": "同期するアプリ",
+  "deviceNotificationAppsEmpty": "アプリが見つかりません",
+  "updateReminderInbox": "受信トレイの通知",
+  "inboxNotificationUnread": "未読のメッセージがあります",
+  "notificationPermissionsSection": "通知の権限",
+  "notificationPermissionDisplay": "通知を表示",
+  "notificationPermissionRead": "通知を読み取る",
+  "notificationPermissionEnabled": "オン",
+  "notificationPermissionDisabled": "オフ",
+  "notificationPermissionUnavailable": "権限の状態を確認できません",
+  "updateReminderFirmwareTitle": "ファームウェアの更新が見つかりました",
+  "updateReminderResourcesTitle": "リソースの更新が見つかりました",
+  "updateReminderPluginsTitle": "プラグインの更新が見つかりました",
+  "updateReminderFirmwareMessage": "お使いのデバイスのファームウェアを更新できます",
+  "updateReminderResourcesMessage": "お使いのデバイスのリソースを更新できます",
+  "updateReminderCurrentVersion": "現在のバージョン  {version}",
+  "updateReminderLatestFirmware": "最新のファームウェア  {version}",
+  "updateReminderSilence": "次の更新まで通知しない",
+  "updateReminderInstall": "更新",
+  "updateReminderInstallAll": "すべて更新",
+  "updateReminderChanged": "現在、この更新は実行できません"
+}

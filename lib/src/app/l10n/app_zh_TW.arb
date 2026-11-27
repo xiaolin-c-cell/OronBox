@@ -1,0 +1,2631 @@
+{
+  "@@locale": "zh_TW",
+  "homeTab": "首頁",
+  "exploreTab": "探索",
+  "devicesTab": "裝置",
+  "pluginsTab": "外掛程式",
+  "settingsTab": "設定",
+  "search": "搜尋",
+  "filter": "篩選",
+  "resourceTypeFilter": "資源類型",
+  "resourceCompatibleDevicesFilter": "相容裝置",
+  "creatorPaidType": "付費類型",
+  "supportedDevices": "支援的裝置",
+  "watchfaces": "錶盤",
+  "module": "模組",
+  "quickApps": "快應用",
+  "miniprograms": "小程式",
+  "firmwareTools": "韌體 / 工具",
+  "all": "全部",
+  "paid": "付費",
+  "update": "更新",
+  "install": "安裝",
+  "cancel": "取消",
+  "close": "關閉",
+  "refresh": "重新整理",
+  "resourceLibrary": "資源庫",
+  "resourceDetails": "資源詳情",
+  "creatorCenter": "創作者中心",
+  "pluginImport": "匯入外掛程式",
+  "pluginInstalled": "已安裝",
+  "pluginMarket": "外掛程式市場",
+  "pluginMarketEmpty": "暫無可用外掛程式",
+  "pluginSearchEmpty": "找不到符合條件的外掛程式",
+  "pluginEmpty": "尚未安裝外掛程式",
+  "pluginSelectHint": "選擇外掛程式以查看功能",
+  "pluginFeatures": "功能",
+  "pluginDetails": "詳細資料",
+  "pluginNoFeatures": "沒有可用功能",
+  "pluginAuthor": "作者",
+  "pluginVersion": "版本",
+  "pluginApiLevel": "API 等級",
+  "pluginWebsite": "網站",
+  "pluginPermissions": "權限",
+  "pluginDeclaredPermissions": "此外掛程式宣告了以下權限：",
+  "pluginNoPermissions": "未宣告任何權限",
+  "pluginUpToDate": "已安裝最新版本",
+  "pluginUninstallTitle": "解除安裝外掛程式",
+  "pluginUninstallMessage": "外掛程式資料也會一併刪除",
+  "resourceListView": "清單檢視",
+  "resourceGridView": "卡片檢視",
+  "refreshing": "重新整理中",
+  "notifications": "通知",
+  "newlyPublished": "最新發佈",
+  "resourceCollectionDetails": "合集詳情",
+  "resourceArticleDetails": "文章詳情",
+  "creatorNewResource": "新增資源",
+  "creatorResourceName": "資源名稱",
+  "creatorResourceSummary": "資源簡介",
+  "creatorSummaryHint": "一兩句話簡單介紹，單行純文字",
+  "creatorDescriptionHint": "詳細描述，可使用多行 Markdown",
+  "creatorResourceMetadataRequired": "資源名稱和簡介為必填項目",
+  "creatorSubmitValidationFailed": "提交前請先處理以下問題",
+  "creatorSaveDraft": "儲存草稿",
+  "creatorAddArtifact": "新增資源檔案",
+  "creatorBindDevices": "繫結裝置",
+  "creatorDeleteResource": "刪除",
+  "creatorIconCover": "圖示與封面",
+  "creatorInvalidImage": "無法讀取圖片，請使用 PNG/JPEG/WebP",
+  "creatorInvalidPackage": "此檔案不是 Vela 快應用或錶盤",
+  "creatorPublishPreparing": "正在處理檔案 {done}/{total}",
+  "creatorPublishUploading": "正在上傳 {percent}%",
+  "creatorPublishServer": "伺服器處理中…",
+  "creatorAstroBoxItemId": "項目 ID",
+  "creatorAstroBoxRepository": "儲存庫名稱",
+  "creatorAstroBoxTags": "標籤（以逗號分隔）",
+  "creatorAstroBoxBindAccount": "繫結 AstroBox 帳戶",
+  "replace": "取代",
+  "delete": "刪除",
+  "creatorSubmitReview": "提交",
+  "creatorArchiveAction": "下架",
+  "creatorRestoreAction": "重新上架",
+  "creatorArtifactCount": "{count} 個套件",
+  "creatorSelectDevices": "選擇支援的裝置",
+  "creatorSelectedDeviceCount": "已選擇 {count} 部裝置",
+  "creatorNoDevicesSelected": "尚未選擇裝置",
+  "creatorDeviceSelectionDone": "完成",
+  "creatorAtLeastOneDevice": "每個資源檔案至少要繫結一部裝置",
+  "resourceAstroBoxPurchaseAction": "知道了",
+  "currentDevice": "目前裝置",
+  "currentWatchface": "目前錶盤",
+  "description": "描述",
+  "downloads": "下載次數",
+  "changelog": "更新日誌",
+  "notFound": "找不到",
+  "downloadStarted": "已開始下載",
+  "myResources": "我的資源",
+  "drafts": "草稿",
+  "pendingReview": "審核中",
+  "published": "已發佈",
+  "failed": "失敗 / 需要處理",
+  "basicInfo": "基本資訊",
+  "packageFiles": "資源檔案",
+  "publishTargets": "發佈目標",
+  "scan": "掃描",
+  "logs": "日誌",
+  "pairedDevices": "已配對裝置",
+  "apps": "應用程式",
+  "connection": "連線",
+  "protocol": "通訊協定",
+  "error": "錯誤",
+  "appearance": "外觀",
+  "resources": "資源",
+  "devices": "裝置",
+  "categories": "分類",
+  "advanced": "進階",
+  "openSourceLicenses": "開放原始碼授權",
+  "deviceNotConnected": "未連線",
+  "deviceConnected": "已連線",
+  "deviceDisconnected": "已中斷連線",
+  "deviceReconnect": "重新連線",
+  "deviceConnect": "連線",
+  "deviceSwitch": "切換",
+  "deviceSyncTime": "同步",
+  "deviceCharging": "充電中",
+  "deviceFeaturesInstallApp": "安裝應用程式",
+  "deviceFeaturesInstallWatchface": "安裝錶盤",
+  "download": "下載",
+  "checkUpdates": "檢查更新",
+  "updateChecking": "正在檢查更新…",
+  "updateCheckFailed": "無法檢查更新",
+  "latestVersionInstalled": "目前已是最新版本",
+  "newVersionAvailable": "有新版本 {version} 可用",
+  "oobeNext": "下一步",
+  "oobeBack": "返回",
+  "oobeFinish": "完成",
+  "oobeRestoreAction": "從備份還原",
+  "oobeRestoreSuccess": "備份復原成功",
+  "commentEmpty": "目前沒有留言",
+  "commentHint": "撰寫留言",
+  "reply": "回覆",
+  "loadMore": "載入更多",
+  "more": "更多",
+  "settingsCategoryAccounts": "帳戶與授權",
+  "settingsCategoryAppearance": "外觀與導覽",
+  "settingsCategoryConnection": "連線與下載",
+  "settingsCategorySupport": "支援與資訊",
+  "settingsCategoryAdvanced": "進階設定",
+  "settingsAdvancedDescription": "檢視日誌與開發者工具",
+  "cleanMode": "功能開關",
+  "cleanModeDescription": "管理主要導覽、社群功能與資源來源",
+  "settingsGithubCdnAuto": "自動",
+  "updateLater": "稍後",
+  "updateNow": "立即更新",
+  "updateGoToPage": "前往下載頁面",
+  "updateDownloadFromCloud": "從網盤下載",
+  "updateDownloadFromOfficial": "從官方網站下載",
+  "@creatorPublishPreparing": {
+    "placeholders": {
+      "done": {},
+      "total": {}
+    }
+  },
+  "@creatorPublishUploading": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@creatorArtifactCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "@creatorKindMismatchMessage": {
+    "placeholders": {
+      "detected": {},
+      "expected": {}
+    }
+  },
+  "@creatorDeviceMoveBlocked": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@downloadTimes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorModerationReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@creatorBandBbsUnmappedDevices": {
+    "placeholders": {
+      "devices": {}
+    }
+  },
+  "@errorUnknownWithDetail": {
+    "placeholders": {
+      "detail": {}
+    }
+  },
+  "@creatorCompatibleDeviceCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceLastChargedDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@zeppOsScreenMirrorUnsupported": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabAudioProcessingFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabContinuousCaptureFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabAssistantSwitchFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabExportWavFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@voiceLabExportOpusFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@sendFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsMapGarminDetected": {
+    "placeholders": {
+      "fileName": {},
+      "mapName": {}
+    }
+  },
+  "@zeppOsMapTileSummary": {
+    "placeholders": {
+      "fileName": {},
+      "count": {}
+    }
+  },
+  "@zeppOsSettingPageLoadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsAppCompatibilitySaved": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsAppStorageSaved": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsStorageDuplicateKey": {
+    "placeholders": {
+      "key": {}
+    }
+  },
+  "@zeppOsDebugRefreshFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@zeppOsDebugClearEventsDescription": {
+    "placeholders": {
+      "appId": {}
+    }
+  },
+  "@zeppOsDebugBytePreview": {
+    "placeholders": {
+      "count": {},
+      "hex": {}
+    }
+  },
+  "@zeppOsDebugCachedScript": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugLocalRuntimeStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugWatchSession": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@zeppOsDebugLatestStartup": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@deviceMusicSizeInvalid": {
+    "placeholders": {
+      "maxMb": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicSongsTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicPlaylistLimit": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicSongCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicTransferSpeed": {
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicSelectedFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceMusicQueueProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceRecordingsProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceRecordingsProgressCount": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceRecordingsSynced": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deviceRecordingsSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceMusicFileSize": {
+    "placeholders": {
+      "size": {}
+    }
+  },
+  "@deviceMusicProgress": {
+    "placeholders": {
+      "progress": {}
+    }
+  },
+  "@deviceConnectingTo": {
+    "placeholders": {
+      "deviceName": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceConnectionEstablishing": {
+    "placeholders": {
+      "transport": {
+        "type": "String"
+      }
+    }
+  },
+  "@deviceEndpointUnavailable": {
+    "placeholders": {
+      "transport": {
+        "type": "String"
+      }
+    }
+  },
+  "@externalLinkDescription": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountSignOutTitle": {
+    "placeholders": {
+      "accountName": {}
+    }
+  },
+  "@settingsWearableLogFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@settingsWearableLogImportedDevice": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@settingsMiAccountSyncedDevices": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@queueStatusDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@queueStatusInstalling": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@queueAddedFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@timeTodayAt": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@timeYesterdayAt": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@settingsAboutLogsSize": {
+    "placeholders": {
+      "size": {}
+    }
+  },
+  "@settingsAboutLogsExported": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@settingsDeviceLogsProgress": {
+    "placeholders": {
+      "progress": {}
+    }
+  },
+  "@settingsDeviceLogsSaved": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@settingsDeviceLogsFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@pluginPermissionRequestMessage": {
+    "placeholders": {
+      "plugin": {},
+      "operation": {}
+    }
+  },
+  "@pluginErrorMessage": {
+    "placeholders": {
+      "plugin": {},
+      "error": {}
+    }
+  },
+  "@resourceTypeMismatchMessage": {
+    "placeholders": {
+      "detectedType": {},
+      "selectedType": {}
+    }
+  },
+  "@resourcePlatformMismatchMessage": {
+    "placeholders": {
+      "resourcePlatform": {},
+      "resourceType": {},
+      "deviceName": {},
+      "devicePlatform": {}
+    }
+  },
+  "@resourceTypeUnknownMessage": {
+    "placeholders": {
+      "selectedType": {}
+    }
+  },
+  "@resourceInstallForceCountdown": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceInstallAsSelected": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallAsSelectedCountdown": {
+    "placeholders": {
+      "type": {},
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceInstallAsDetected": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallConfirmTitle": {
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "@resourceInstallConfirmMessage": {
+    "placeholders": {
+      "fileName": {},
+      "fileSize": {}
+    }
+  },
+  "@creatorConfirmBandBbs": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "@creatorConfirmAstroBox": {
+    "placeholders": {
+      "owner": {},
+      "repository": {}
+    }
+  },
+  "@creatorLinkedSections": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorBandBbsBindingIds": {
+    "placeholders": {
+      "categoryId": {},
+      "resourceId": {}
+    }
+  },
+  "@creatorAstroBoxPrPublish": {
+    "placeholders": {
+      "repository": {}
+    }
+  },
+  "@creatorReviewState": {
+    "placeholders": {
+      "state": {}
+    }
+  },
+  "@newVersionAvailable": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "@oronBoxCoinsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "@oronBoxCoinsCheckinReward": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceFromCollection": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@resourceCoinCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resourceCollectionType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@creatorMoveToCollectionConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorCollectionResourceCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@communityImportSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorImportPartialFailureMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@creatorImportWarnings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@githubCdnFallback": {
+    "placeholders": {
+      "cdn": {}
+    }
+  },
+  "@bandBbsIdLabel": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@updateNoApkForAbi": {
+    "placeholders": {
+      "abi": {
+        "type": "String"
+      }
+    }
+  },
+  "pluginLegacyWarningTitle": "舊版外掛程式",
+  "pluginLegacyWarningMessage": "這是 AstroBox v1 外掛程式\nOronBox 會嘗試以相容模式執行，但可能遇到問題\n請檢查是否有更新的 OronBox 原生外掛程式，或聯絡作者進行移植",
+  "creatorAstroBoxAuthor": "作者（需與 AstroBox 使用者名稱相同）",
+  "creatorArchiveConfirm": "下架後，這項資源會從商店隱藏\n你可以隨時重新上架",
+  "creatorDeleteConfirm": "這項草稿資源將永久刪除",
+  "creatorDeletePublishedConfirm": "這會永久刪除 OronBox 資源及對應的 BandBBS 資源，且無法復原\n已發佈至 AstroBox 的內容不受影響，如需下架，請聯絡 AstroBox-Repo 維護者",
+  "creatorKindMismatchMessage": "這似乎是一個{detected}檔案，而你正在建立{expected}資源\n可以繼續保留，但提交審核前請確認",
+  "creatorDeviceMoveBlocked": "「{name}」只繫結了這部裝置，無法移動",
+  "oronBox": "OronBox",
+  "bandbbs": "BandBBS",
+  "astroBox": "AstroBox",
+  "local": "本機",
+  "downloadTimes": "{count} 次下載",
+  "changelogUnavailable": "尚無更新日誌",
+  "compatible": "相容於",
+  "incompatible": "不相容於",
+  "incompatibleSuffix": "",
+  "creatorStateSuspended": "已下架",
+  "creatorStateFrozen": "已凍結",
+  "creatorSuspendedByOwnerNotice": "此資源已下架\n你可以繼續編輯並重新提交審核，也可以直接重新上架",
+  "creatorSuspendedByAdminNotice": "管理員已將此資源下架\n編輯後重新提交審核，審核通過後即可重新上架",
+  "creatorFrozenNotice": "管理員已凍結此資源\n你目前無法繼續編輯，只有管理員可以解除凍結",
+  "creatorModerationReason": "原因：{reason}",
+  "creatorBannedTitle": "帳號已被封禁",
+  "creatorBannedDescription": "你的帳號已被管理員封禁，無法使用創作者中心\n如有疑問請透過工單聯絡管理員",
+  "creatorFrozenTitle": "創作者功能已凍結",
+  "creatorFrozenDescription": "你的創作者功能已被管理員凍結，暫時無法提交或管理資源\n帳號的其它功能不受影響",
+  "creatorBandBbsNoDevices": "請先為資源檔案選擇支援的裝置",
+  "creatorBandBbsUnmappedDevices": "找不到對應的 BandBBS 分類：{devices}",
+  "creatorBandBbsSharedCategory": "同一 BandBBS 分類對應了多個套件\n請為每個分類繫結一個套件",
+  "creatorBandBbsUnresolved": "找不到對應的 BandBBS 分類",
+  "creatorOptionalIcon": "圖示（選填，1:1）",
+  "creatorOptionalCover": "封面（選填，3:2）",
+  "creatorRequiredIcon": "圖示（AstroBox 必填，1:1）",
+  "creatorRequiredCover": "封面（AstroBox 必填，3:2）",
+  "creatorIconShapeHint": "圖示不是正方形，在 AstroBox 中可能顯示異常",
+  "creatorCoverShapeHint": "封面不是 3:2，在 AstroBox 中可能顯示異常",
+  "creatorTermsBandBbs": "BandBBS 社群條款與規則",
+  "creatorTermsAstroBox": "AstroBox-Repo 提交規範",
+  "creatorTermsAccept": "我已閱讀並接受以上發佈協議",
+  "creatorTermsContinue": "進入創作者中心",
+  "agree": "同意",
+  "creatorRulesAccept": "我已閱讀並同意以上審核規則",
+  "creatorBandBbsTermsNotice": "OronBox 審核通過後，資源會直接發佈至對應的 BandBBS 分類\n刪除 OronBox 資源也會刪除對應的 BandBBS 資源",
+  "creatorBandBbsLimitsNotice": "一鍵發佈至 BandBBS 有以下限制，發佈後需要手動處理：\n1. BandBBS 沒有提供上傳資源圖示的 API，因此資源圖示在 BandBBS 上會留白，請前往 BandBBS 網站手動更新\n2. BandBBS 沒有提供討論區標籤的 API，因此資源的討論區屬性不會自動設定，可能導致資源被移除，請前往 BandBBS 網站手動設定正確的討論區",
+  "creatorAstroBoxTermsNotice": "OronBox 審核通過後，系統會建立資源儲存庫並向官方 AstroBox 儲存庫提交 PR，由 AstroBox 維護者獨立審核\n資源公開後如需下架，請聯絡 AstroBox-Repo 維護者",
+  "creatorAstroBoxReviewNotice": "提交至 AstroBox 的資源必須符合以下審核要求：\n1. 不得包含色情、政治敏感或其他違法內容\n2. 資源品質不得過低，例如僅替換範本製作的錶盤或過於簡單的快應用\n3. 封面應美觀且具吸引力，比例為 3:2（建議 1200x800）；圖示建議為 192x192\n4. 資源必須能在支援的裝置上正常執行基本功能\n5. 禁止未經授權上傳他人的資源\n6. 使用知名 IP 素材時，預覽圖必須包含版權聲明圖片（說明素材與 AstroBox 及 Xiaomi 無關）",
+  "deviceAppCount": "應用程式數量",
+  "deviceWatchfaceCount": "錶盤數量",
+  "deviceModuleCount": "模組數量",
+  "modules": "模組",
+  "errorBluetoothUnavailable": "無法使用 Bluetooth，請確認 Bluetooth 已開啟，且 OronBox 已獲得使用權限",
+  "errorBluetoothConnectFailed": "連線失敗，請確認 Bluetooth 權限，讓裝置保持在附近且未被使用，在裝置上開啟「連線新手機」後再試一次",
+  "errorBluetoothDisconnected": "Bluetooth 連線已中斷，請重新連線裝置後再試",
+  "errorOperationTimeout": "操作逾時",
+  "errorDeviceNotReady": "裝置尚未就緒，請先連線並完成裝置驗證",
+  "errorBleCharacteristicsMissing": "找不到必要的 BLE 通道，請重新連線裝置，或確認裝置是否支援此功能",
+  "errorWebSerialUnavailable": "此瀏覽器不支援 Web Serial，請使用 Chrome、Edge 或其他相容 Web Serial 的瀏覽器",
+  "errorAccountPasswordIncorrect": "Xiaomi 帳號或密碼錯誤",
+  "errorAccountTwoFactorIncomplete": "Xiaomi 帳號雙重驗證尚未完成，請重新登入",
+  "errorXiaomiAccountSessionExpired": "Xiaomi 帳號已過期，請重新登入",
+  "errorOronBoxSessionExpired": "你的 OronBox 工作階段已過期，請重新登入 BandBBS",
+  "errorNetworkUnavailable": "無法連線至服務，請檢查網路後再試",
+  "errorServiceUnavailable": "服務暫時無法使用，請稍後再試",
+  "errorPermissionDenied": "你沒有執行此操作的權限",
+  "errorContentNotFound": "要求的內容已不存在或無法使用",
+  "errorRequestConflict": "內容已變更，請重新整理後再試",
+  "errorCoinBalanceInsufficient": "硬幣餘額不足",
+  "errorCoinResourceLimit": "每項資源最多只能投 2 枚硬幣",
+  "errorCoinOwnResource": "不能為自己的資源投幣",
+  "errorCoinVotingFrozen": "投幣功能目前已暫停",
+  "errorCoinAccountTooNew": "帳號必須註冊滿 24 小時才能投幣",
+  "errorCoinOperationFailed": "投幣失敗，請再試一次",
+  "errorCoinStatusUnavailable": "無法取得投幣狀態，點擊以重試",
+  "errorOperationFailed": "操作失敗，請再試一次",
+  "errorUnknown": "發生未知錯誤，請再試一次",
+  "errorDownloadQuotaExceeded": "今日下載次數已達上限",
+  "errorGitHubNotConfigured": "尚未設定 GitHub 發佈功能",
+  "errorRateLimited": "請求過於頻繁，請稍候再試",
+  "errorFileTooLarge": "選取的檔案過大",
+  "errorInvalidRequest": "提交的部分資訊無效，請檢查後再試",
+  "errorOperationCancelled": "操作已取消",
+  "errorUnsupportedFileType": "不支援或無法辨識的檔案類型",
+  "errorDeviceFeatureUnsupported": "目前裝置或韌體暫不支援此功能",
+  "errorDeviceMusicUnsupported": "目前裝置或韌體暫不支援音樂傳輸功能",
+  "errorDeviceRecordingUnsupported": "目前裝置或韌體暫不支援錄音匯出功能",
+  "errorDeviceScreenMirrorUnsupported": "目前裝置或韌體暫不支援螢幕鏡像功能",
+  "errorNotInstalled": "未安裝所需元件或應用程式",
+  "errorInvalidOperation": "目前狀態下無法執行此操作",
+  "errorCertificateVerificationFailed": "憑證驗證失敗，如果你正在使用代理伺服器，請停用此應用程式的 HTTPS 攔截，或確認代理憑證受到信任",
+  "errorUnknownWithDetail": "操作失敗：{detail}",
+  "communitySourceAstroBoxRepo": "AstroBox",
+  "communitySourceBandBbs": "BandBBS 社群",
+  "communitySourceHuamiAppStore": "Amazfit 應用程式商店",
+  "creatorCompatibleDeviceCount": "{count} 部裝置",
+  "acknowledgements": "特別致謝",
+  "deviceLastChargedNow": "剛剛充電",
+  "deviceLastChargedMinutes": "{count} 分鐘前充電",
+  "deviceLastChargedHours": "{count} 小時前充電",
+  "deviceLastChargedDays": "{count} 天前充電",
+  "deviceFeaturesInstallFirmware": "更新韌體",
+  "deviceFeaturesInstallFirmwareDesc": "檢查裝置更新或安裝本機韌體",
+  "firmwareCheckingUpdates": "正在檢查韌體更新",
+  "firmwareNoUpdatesFound": "找不到此裝置的較新韌體",
+  "firmwareSourceUnavailable": "此裝置類型目前沒有可用的線上韌體來源",
+  "firmwareVersionUnknown": "無法取得目前韌體版本",
+  "firmwareCurrentVersion": "目前版本",
+  "firmwareLatestRelease": "最新韌體",
+  "firmwareHistoricalReleases": "歷史韌體",
+  "firmwareUpToDate": "你的韌體已是最新版本",
+  "firmwareUpdateAvailable": "有可用的更新",
+  "firmwareDownloadLatestFull": "下載最新完整套件",
+  "firmwareUpdateIncrementalPackage": "更新增量套件",
+  "firmwareUpdateFullPackage": "更新完整套件",
+  "firmwareReleaseNotes": "版本更新說明",
+  "firmwareReleaseNotesUnavailable": "沒有可用的版本更新說明",
+  "downloadTaskAdded": "已加入下載佇列",
+  "zeppOsMoreFeatures": "特殊功能",
+  "zeppOsMoreFeaturesDescription": "管理 Zepp OS 裝置的其他功能",
+  "zeppOsDeviceFeaturesSection": "裝置功能",
+  "zeppOsAppsAndDevelopmentSection": "應用程式與開發",
+  "zeppOsAssistant": "語音實驗室",
+  "zeppOsAssistantDescription": "擷取、監聽及回覆手錶的語音助理工作階段",
+  "zeppOsScreenMirror": "螢幕鏡像",
+  "zeppOsScreenMirrorDescription": "在此裝置上查看手錶畫面",
+  "zeppOsScreenMirrorSemantics": "Zepp OS 手錶螢幕鏡像",
+  "zeppOsScreenMirrorUnsupported": "無法顯示此螢幕格式：{error}",
+  "expand": "展開",
+  "collapse": "收合",
+  "voiceLabTitle": "語音助手",
+  "voiceLabXiaoAi": "XiaoAI",
+  "voiceLabReceivingAudio": "正在接收手錶音訊",
+  "voiceLabWaiting": "等待語音工作階段",
+  "voiceLabContinuousCapture": "連續擷取",
+  "voiceLabContinuousCaptureDescription": "目前錄音結束後要求下一段錄音",
+  "voiceLabReplyLabel": "已將回覆傳送至手錶",
+  "voiceLabReplyHint": "輸入回覆",
+  "voiceLabReplyQueued": "目前錄音結束前，回覆會留在佇列中",
+  "voiceLabReplySent": "已將回覆傳送至手錶",
+  "voiceLabCapturedData": "擷取的資料",
+  "voiceLabDecoder": "解碼器",
+  "voiceLabOpusFrames": "Opus 幀",
+  "voiceLabDataSize": "資料大小",
+  "voiceLabPcmSamples": "PCM 取樣",
+  "voiceLabExportOpus": "匯出 Opus",
+  "voiceLabExportWav": "匯出 WAV",
+  "voiceLabClearCapture": "清除擷取資料",
+  "voiceLabSaveRecording": "儲存語音錄音",
+  "voiceLabSaveOpus": "儲存 Opus 音訊",
+  "voiceLabAudioProcessingFailedPrefix": "音訊處理失敗",
+  "voiceLabAudioProcessingFailed": "音訊處理失敗：{error}",
+  "voiceLabContinuousCaptureFailed": "無法設定連續擷取：{error}",
+  "voiceLabAssistantSwitchFailed": "無法切換語音助理：{error}",
+  "voiceLabExportWavFailed": "無法匯出 WAV：{error}",
+  "voiceLabExportOpusFailed": "無法匯出 Opus：{error}",
+  "send": "傳送",
+  "sendFailed": "傳送失敗：{error}",
+  "ready": "就緒",
+  "initializing": "初始化中",
+  "zeppOsMapSelectPackage": "選擇 Zepp OS 地圖套件",
+  "zeppOsMapReadFailed": "無法讀取地圖套件",
+  "zeppOsMapTransferTitle": "傳輸離線地圖",
+  "zeppOsMapGarminDetected": "{fileName}\n偵測到單檔 Garmin IMG 地圖：{mapName}",
+  "zeppOsMapGarminNoPreview": "該地圖不包含 Zepp OS 的 11/x/y 瓦片目錄，將保留原始 IMG 並作為單檔案地圖包傳輸，因此無法提供覆蓋範圍預覽",
+  "zeppOsMapTileSummary": "{fileName} · {count} 個瓦片\n預覽顯示套件涵蓋範圍，不代表 Garmin IMG 在手錶上的實際呈現",
+  "zeppOsMapStartTransfer": "開始傳輸",
+  "zeppOsMapTransferringBluetooth": "正在透過 Bluetooth 傳輸",
+  "zeppOsMapTransferComplete": "離線地圖傳輸完成",
+  "zeppOsMapConversionFailed": "無法安全轉換地圖",
+  "zeppOsMapBtClassicHint": "目前使用 BT Classic 大檔案通道\n開始傳輸後，請同時在手錶上確認安裝",
+  "zeppOsMapBleHint": "BLE 僅支援不超過 2 MB 的地圖包，傳輸更大的地圖前請切換至 BT Classic\n開始傳輸後，請同時在手錶上確認安裝",
+  "zeppOsMapPreviewTooLarge": "地圖範圍過大，無法完整預覽",
+  "zeppOsSettingPageLoadFailed": "無法載入設定頁面：{error}",
+  "zeppOsAppCompatibilitySaved": "已為 {appId} 儲存相容性檔案",
+  "zeppOsAppStorageSaved": "已為 {appId} 儲存 settingsStorage",
+  "zeppOsAppSupplementFiles": "新增應用程式端或設定檔案",
+  "zeppOsAppSupplementCompatibility": "新增迷你應用程式相容性檔案",
+  "zeppOsAppReplaceCompatibility": "新增或取代相容性檔案",
+  "zeppOsAppSideAvailable": "應用程式端 ✓",
+  "zeppOsAppSideMissing": "缺少應用程式端",
+  "zeppOsSettingAvailable": "設定 ✓",
+  "zeppOsSettingMissing": "缺少設定",
+  "zeppOsAppEditStorage": "編輯設定儲存空間",
+  "zeppOsStorageKeyRequired": "必須輸入索引鍵",
+  "zeppOsStorageDuplicateKey": "索引鍵重複：{key}",
+  "zeppOsStorageDescription": "此資料由設定頁面與應用程式端共用，並依 Zepp OS 規範以字串儲存",
+  "zeppOsStorageEmpty": "沒有已儲存的項目",
+  "zeppOsStorageKey": "索引鍵",
+  "zeppOsStorageValue": "值",
+  "clear": "清除",
+  "save": "儲存",
+  "selectedFileReadFailed": "無法讀取選取的檔案",
+  "zeppOsAppInvalidHexId": "輸入有效的十六進位 App ID",
+  "zeppOsAppSelectCompatibilityFile": "至少選擇一個應用程式端 .js 或設定 .js 檔案",
+  "zeppOsAppHexId": "App ID（十六進位）",
+  "optionalDisplayName": "顯示名稱（選填）",
+  "zeppOsAppSideUnchanged": "保留現有應用程式端",
+  "zeppOsSettingUnchanged": "保留現有設定",
+  "selectFile": "選擇檔案",
+  "zeppOsAppCompatibilityOverwriteHint": "儲存會取代此 App ID 下同名的相容性檔案，但不會修改手錶上的迷你應用程式",
+  "zeppOsDebugRefreshFailed": "自動重新整理失敗：{error}",
+  "zeppOsDebugInvalidHex": "HEX 必須包含完整位元組，可用空格、換行、0x、逗號或類似分隔符分隔",
+  "zeppOsDebugClearEventsTitle": "清除目前應用程式的事件？",
+  "zeppOsDebugClearEventsDescription": "{appId} 的所有除錯事件都將被清除",
+  "zeppOsDebugClearEvents": "清除事件s",
+  "zeppOsDebugRefresh": "重新整理狀態與事件",
+  "zeppOsDebugAppList": "應用程式端清單",
+  "zeppOsDebugNoApps": "尚未偵測到快取指令碼或手錶應用程式端工作階段",
+  "zeppOsDebugCached": "已快取",
+  "zeppOsDebugNotCached": "未快取",
+  "zeppOsDebugRuntimeRunning": "執行環境執行中",
+  "zeppOsDebugRuntimeStopped": "執行環境已停止",
+  "zeppOsDebugLocalRuntime": "本機執行環境",
+  "zeppOsDebugCannotStart": "此 App ID 沒有快取指令碼，無法在本機啟動",
+  "zeppOsDebugCanStart": "可以手動啟動快取指令碼，不會偽造手錶工作階段參數",
+  "zeppOsDebugScriptRunning": "指令碼正在本機 QuickJS 中執行",
+  "zeppOsDebugStartQuickJs": "開始 QuickJS",
+  "stop": "停止",
+  "zeppOsDebugMessageEditor": "訊息編輯器",
+  "zeppOsDebugUtf8Text": "UTF-8 文字",
+  "zeppOsDebugJsonCompact": "JSON（傳送前壓縮）",
+  "zeppOsDebugHexBytes": "HEX位元組",
+  "zeppOsDebugEncodingFailed": "目前內容無法以選取的模式編碼",
+  "zeppOsDebugByteCountUnavailable": "位元組：--",
+  "zeppOsDebugBytePreview": "位元組：{count}\nHEX：{hex}",
+  "zeppOsDebugInjectLocal": "將傳入訊息注入本機執行環境",
+  "zeppOsDebugSendToWatch": "傳送至手錶",
+  "zeppOsDebugWaitingForWatch": "傳送至手錶（等待實際工作階段）",
+  "zeppOsDebugEvents": "除錯事件",
+  "zeppOsDebugClearCurrentApp": "清除目前應用程式",
+  "zeppOsDebugSearch": "搜尋類型、訊息、HEX 或可讀文字",
+  "zeppOsDebugWatchOnly": "僅顯示實際手錶訊息",
+  "zeppOsDebugNoEvents": "沒有事件符合目前篩選條件",
+  "zeppOsDebugMessageActions": "訊息操作",
+  "zeppOsDebugLoadEditor": "載入至編輯器",
+  "zeppOsDebugCopyHex": "複製 HEX",
+  "zeppOsDebugCopyText": "複製文字",
+  "zeppOsDebugSessionStatus": "執行環境與工作階段狀態",
+  "zeppOsDebugCachedScript": "快取指令碼：{status}",
+  "zeppOsDebugLocalRuntimeStatus": "本機執行環境：{status}",
+  "zeppOsDebugWatchSession": "手錶工作階段：{status}",
+  "exists": "可用",
+  "notExists": "不可用",
+  "running": "執行中",
+  "notRunning": "未執行",
+  "notOpen": "未開啟",
+  "zeppOsDebugWatchSessionOpen": "實際工作階段已開啟",
+  "zeppOsDebugRealHeader": "實際標頭",
+  "zeppOsDebugLatestStartup": "最近啟動狀態：{status}",
+  "zeppOsDebugWatchInbound": "來自手錶",
+  "zeppOsDebugWatchOutbound": "傳送至手錶",
+  "zeppOsDebugLifecycle": "生命週期",
+  "zeppOsMirrorInterval": "畫面間隔",
+  "zeppOsMirrorIntervalRange": "10~250",
+  "zeppOsOfflineMaps": "離線地圖",
+  "zeppOsOfflineMapsDescription": "將現有地圖套件傳輸至手錶",
+  "zeppOsAppSettings": "App設定",
+  "zeppOsAppSettingsDescription": "管理 Zepp OS 應用程式的快取設定",
+  "zeppOsAppDebug": "應用程式除錯",
+  "zeppOsAppDebugDescription": "除錯應用程式端指令碼與裝置通訊",
+  "deviceMusicSync": "音樂同步",
+  "deviceMusicUpload": "傳輸音樂",
+  "deviceMusicSyncDescription": "將 MP3 檔案同步至裝置",
+  "deviceMusicChooseDialog": "選擇要同步至裝置的 MP3 檔案",
+  "deviceMusicReadFailed": "無法讀取選取的 MP3 檔案",
+  "deviceMusicSizeInvalid": "MP3 檔案大小必須大於 0 位元組且不得超過 {maxMb} MB",
+  "deviceMusicUnknownArtist": "未知演出者",
+  "deviceMusicTransferred": "音樂傳輸完成",
+  "deviceMusicSongs": "歌曲",
+  "deviceMusicSongsTotal": "共 {count} 首",
+  "deviceMusicNoPlaylist": "不在播放清單中",
+  "deviceMusicPlaylists": "播放清單",
+  "deviceMusicEmpty": "裝置上沒有歌曲",
+  "deviceMusicNoPlaylists": "尚無播放清單",
+  "deviceMusicLoadFailed": "載入裝置音樂失敗：{error}",
+  "deviceMusicPlaylistCreate": "新增播放清單",
+  "deviceMusicPlaylistRename": "重新命名播放清單",
+  "deviceMusicPlaylistName": "播放清單名稱",
+  "deviceMusicPlaylistLimit": "最多 {count} 個播放清單",
+  "deviceMusicSongCount": "{count} 首歌曲",
+  "deviceMusicDeleteSong": "要從裝置刪除此歌曲嗎？",
+  "deviceMusicDeletePlaylist": "要刪除此播放清單嗎？",
+  "deviceMusicDeletePlaylistDescription": "播放清單中的歌曲會保留在裝置上",
+  "deviceMusicManagePlaylists": "管理播放清單",
+  "deviceMusicPlaylistMembership": "播放清單",
+  "deviceMusicTransferSpeed": "{speed}/s",
+  "deviceMusicSelectedFiles": "已選取 {count} 個檔案",
+  "deviceMusicQueueProgress": "正在傳輸 {current}/{total}：{name}",
+  "deviceRecordingsTitle": "錄音同步",
+  "deviceRecordingsDescription": "同步並匯出手錶錄音",
+  "deviceRecordingsHint": "錄音會逐一接收並驗證\n同步後請分別匯出每個原始檔案",
+  "deviceRecordingsSync": "同步錄音",
+  "deviceRecordingsReading": "正在讀取錄音清單",
+  "deviceRecordingsProgress": "已接收 {completed}/{total}：{name}",
+  "deviceRecordingsProgressCount": "已接收 {completed}/{total}",
+  "deviceRecordingsEmpty": "連線手錶後選擇「同步錄音」",
+  "deviceRecordingsSave": "匯出錄音",
+  "deviceRecordingsNoneOnWatch": "手錶上沒有新的錄音",
+  "deviceRecordingsSynced": "已同步 {count} 個錄音",
+  "deviceRecordingsSaveFailed": "無法匯出錄音：{error}",
+  "deviceRecordingsSavedBadge": "已存本機",
+  "deviceRecordingsSelectAll": "全選",
+  "deviceRecordingsDeselectAll": "取消全選",
+  "deviceRecordingsExportSelected": "匯出所選 ({count})",
+  "deviceRecordingsOpenDirectory": "開啟儲存目錄",
+  "deviceRecordingsExported": "已匯出到 {path}",
+  "@deviceRecordingsExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceRecordingsSaveSuccess": "錄音匯出完成",
+  "deviceRecordingsRefresh": "重新整理",
+  "deviceMusicTransferTitle": "傳輸 MP3 檔案",
+  "deviceMusicVelaDescription": "將 MP3 檔案同步至裝置，單個檔案不得超過 100 MB",
+  "deviceMusicZeppDescription": "支援最大 50 MB 的 MP3 檔案\n建議使用經典藍牙以獲得更快的傳輸速度，也可使用 BLE，但傳輸時間較長",
+  "deviceMusicChooseMp3": "選擇 MP3 檔案",
+  "deviceMusicSongTitle": "曲目標題",
+  "deviceMusicArtist": "演出者",
+  "deviceMusicFileSize": "檔案大小：{size}",
+  "deviceMusicProgress": "傳輸進度：{progress}%",
+  "deviceMusicTransferring": "傳輸中",
+  "deviceMusicSend": "開始傳輸",
+  "zeppOsFindDevice": "尋找裝置",
+  "zeppOsFindDeviceDescription": "讓裝置持續震動或響鈴",
+  "deviceFeaturesDeviceInfo": "裝置資訊",
+  "deviceFeaturesDeviceInfoDesc": "韌體、儲存空間與詳細資料",
+  "switchDeviceTitle": "切換裝置",
+  "savedDevices": "已儲存的裝置",
+  "deviceSwitchAddDevice": "新增裝置",
+  "scanAndAdd": "掃描並新增",
+  "authkey": "認證密鑰",
+  "authkeyPrompt": "輸入裝置 Auth key",
+  "authkeyPlaceholder": "認證密鑰",
+  "connectFailed": "連線失敗",
+  "deviceConnectingTo": "正在連線至 {deviceName}…",
+  "deviceConnectionPreparing": "正在準備連線…",
+  "deviceConnectionEstablishing": "正在建立 {transport} 連線…",
+  "deviceConnectionInitializing": "正在初始化裝置通訊協定…",
+  "deviceConnectionAuthenticating": "正在驗證裝置…",
+  "deviceConnectionFetchingStatus": "正在讀取裝置資訊…",
+  "deviceTransportBle": "BLE",
+  "deviceEndpointUnavailable": "未發現可用的 {transport} 連線通道，請先完成系統藍牙配對，然後重新掃描",
+  "deviceTransportSpp": "SPP",
+  "deviceCompatibilityUnknown": "無法辨識的裝置",
+  "webSerialTitle": "Web Serial",
+  "webSerialHint": "在網頁上，OronBox 透過 Web Serial 連線裝置，儲存的裝置會保留在此瀏覽器中",
+  "webSerialConnectDialogTitle": "透過 Web Serial 連線",
+  "webSerialConnectDialogHint": "輸入裝置 Auth key，然後在瀏覽器提示中選擇序列埠，Auth key 會儲存在此瀏覽器中",
+  "deviceActionsDelete": "刪除",
+  "deviceActionsDisconnect": "中斷連線",
+  "deviceActionsShareQR": "分享 QR Code",
+  "deviceShareOronBoxCode": "切換至 OronBox Code",
+  "deviceShareAstroBoxCompatibleCode": "切換至 AstroBox 相容 Code",
+  "installTapToSelectFile": "點擊以選擇檔案",
+  "deviceInfoTitle": "裝置資訊",
+  "deviceInfoGroupDevice": "裝置",
+  "deviceInfoGroupSystem": "系統",
+  "deviceInfoGroupStatus": "狀態",
+  "fieldName": "名稱",
+  "fieldAddress": "位址",
+  "fieldAuthkey": "認證密鑰",
+  "fieldConnectionType": "連線類型",
+  "fieldCodename": "代號",
+  "fieldModel": "型號",
+  "fieldImei": "IMEI",
+  "fieldFirmware": "韌體",
+  "fieldSerial": "序號",
+  "fieldBattery": "電池",
+  "fieldChargeStatus": "充電狀態",
+  "fieldStorage": "儲存空間",
+  "appManagementTitle": "應用程式管理",
+  "appManagementNone": "沒有已安裝的應用程式",
+  "appManagementShowSystemApps": "顯示系統應用程式",
+  "watchfaceManagementTitle": "錶盤管理",
+  "watchfaceManagementNone": "沒有已安裝的錶盤",
+  "moduleManagementTitle": "模組管理",
+  "moduleManagementNone": "沒有已安裝的模組",
+  "moduleUninstallConfirm": "確定要卸載模組「{name}」嗎？",
+  "@moduleUninstallConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "moduleStatusEnabled": "已啟用",
+  "moduleStatusDisabled": "已停用",
+  "moduleEnable": "啟用",
+  "moduleDisable": "停用",
+  "deviceFeaturesInstallModule": "安裝模組",
+  "open": "開啟",
+  "externalLinkTitle": "開啟外部連結",
+  "externalLinkDescription": "你即將前往 {url}\n\n此網站由第三方營運，與 OronBox 無關，安全性未知，請謹慎操作，要繼續嗎？",
+  "externalLinkAstroBoxResourceHint": "這看起來是 AstroBox 資源，你也可以在 OronBox 中查看並安裝",
+  "continueToWebsite": "繼續",
+  "viewInOronBox": "在 OronBox 中查看",
+  "uninstall": "解除安裝",
+  "enable": "啟用",
+  "show": "顯示",
+  "hide": "隱藏",
+  "copy": "複製",
+  "copied": "已複製",
+  "desktopTrayShow": "顯示視窗",
+  "desktopTrayExit": "結束 OronBox",
+  "desktopCloseTitle": "結束確認",
+  "desktopCloseMessage": "要結束 OronBox 嗎？",
+  "desktopCloseRemember": "不再詢問",
+  "desktopCloseToTray": "縮小至系統匣",
+  "desktopCloseExit": "結束 OronBox",
+  "settingsDesktopCloseBehavior": "視窗關閉",
+  "settingsDesktopCloseBehaviorDesc": "選擇關閉主視窗時的行為",
+  "settingsRemoveBondBeforeSpp": "連線時重新配對",
+  "settingsRemoveBondBeforeSppDesc": "開啟有助於提升連線穩定性，防止官方運動健康搶走裝置連線，關閉後有助於加快連線速度",
+  "desktopCloseBehaviorAsk": "每次詢問",
+  "desktopCloseBehaviorExit": "立即結束",
+  "desktopCloseBehaviorTray": "縮小至系統匣",
+  "quickApp": "快應用",
+  "miniprogram": "小程式",
+  "watchface": "錶盤",
+  "firmwareTool": "韌體／工具",
+  "free": "免費",
+  "forcePaid": "強制付費",
+  "version": "版本",
+  "noContent": "沒有內容",
+  "preview": "預覽",
+  "productDeviceRequirements": "裝置需求",
+  "productOtherVersions": "其他版本",
+  "productInQueue": "佇列中",
+  "settingsAccount": "帳號",
+  "settingsGeneral": "一般",
+  "settingsQueue": "佇列",
+  "settingsAbout": "關於",
+  "settingsAccountLoginBBSDesc": "登入以存取 BandBBS 資源",
+  "settingsAccountBandBbsSigningIn": "登入中",
+  "settingsAccountBandBbsOpenedBrowser": "已開啟瀏覽器，請在瀏覽器中完成 BandBBS 授權",
+  "settingsAccountBandBbsSignedIn": "已登入 BandBBS",
+  "settingsAccountBandBbsLoginFailed": "BandBBS 登入失敗",
+  "settingsBandBbsAccountRequired": "請先在設定中登入 BandBBS 帳號",
+  "settingsAccountBBSAccount": "BandBBS帳號",
+  "bandBbsAccountTitle": "BandBBS帳號",
+  "bandBbsResourceId": "資源 ID",
+  "bandBbsResourceIdHint": "輸入 BandBBS 資源 ID",
+  "bandBbsQueryResource": "查詢",
+  "bandBbsLogout": "登出",
+  "bandBbsLoggedOut": "已登出",
+  "accountSignOutTitle": "要登出 {accountName} 嗎？",
+  "accountSignOutMessage": "你需要重新登入才能使用相關功能",
+  "bandBbsLoadPreviews": "載入文章預覽",
+  "bandBbsLoadPreviewsDesc": "自動載入資源清單中的附件預覽",
+  "bandBbsShowAllCategories": "顯示全部分類",
+  "bandBbsShowAllCategoriesDesc": "包含預設隱藏的不支援裝置分類",
+  "settingsMiAccount": "Xiaomi帳號",
+  "settingsMiAccountDesc": "登入並同步已繫結裝置的 Auth key",
+  "deviceSwitchMiAccountImport": "登入 Xiaomi 帳號並同步已繫結裝置",
+  "deviceSwitchWearableLogImport": "從 Xiaomi Fitness 日誌匯入裝置",
+  "settingsMiAccountLoginTitle": "Xiaomi帳號登入",
+  "settingsMiAccountUsername": "帳號",
+  "settingsMiAccountPassword": "密碼",
+  "settingsMiAccountRememberCredentials": "記住帳號與密碼",
+  "settingsMiAccountLoginAndSync": "登入並同步",
+  "settingsMiAccountLogInvalid": "無法讀取此 Xiaomi Fitness 日誌",
+  "settingsMiAccountLogNoDevices": "日誌中找不到包含完整 MAC 位址與 Auth key 的裝置",
+  "settingsWearableLogSync": "讀取 Xiaomi Fitness 日誌",
+  "settingsWearableLogGuide": "開啟 Xiaomi Fitness\n前往「我的」頁面底部的「關於」\n連續點擊橙色圓環標誌\n在彈出的對話框中點擊「確認」\n等待出現「log has been...」提示\n返回此處並點擊「掃描」",
+  "settingsWearableLogFound": "偵測到 {count} 部裝置，點擊以匯入",
+  "settingsWearableLogImportedDevice": "已匯入 {name}",
+  "settingsMiAccountMissingCredentials": "輸入你的 Xiaomi 帳號與密碼",
+  "settingsMiAccountTwoFactorTitle": "小米帳號驗證",
+  "settingsMiAccountTwoFactorPrompt": "請在驗證頁面完成 Xiaomi 帳號雙重驗證",
+  "settingsMiAccountLoginWindowClosed": "登入視窗已關閉",
+  "settingsMiAccountSyncedDevices": "已同步 {count} 部 Mi 裝置",
+  "xiaomiAccountRequiredForEphemeris": "尚未登入 Xiaomi 帳號，請先登入後再同步星曆",
+  "xiaomiWifiPasswordRequestTitle": "Wi-Fi 連線要求",
+  "xiaomiWifiPasswordRequestMessage": "裝置要求連線至 Wi-Fi 網路「{ssid}」",
+  "@xiaomiWifiPasswordRequestMessage": {
+    "placeholders": {
+      "ssid": {}
+    }
+  },
+  "settingsHuamiAccount": "Amazfit帳號",
+  "settingsHuamiAccountDesc": "登入並儲存存取 Zepp 商店所需的憑證",
+  "settingsHuamiAccountSigningIn": "登入中",
+  "settingsHuamiAccountSignedIn": "已登入 Amazfit 帳號",
+  "settingsHuamiAccountLoginTitle": "Amazfit帳號登入",
+  "settingsHuamiAccountUsername": "帳號",
+  "settingsHuamiAccountPassword": "密碼",
+  "settingsHuamiAccountRememberCredentials": "記住密碼",
+  "settingsHuamiAccountLoginAndSave": "登入並儲存",
+  "settingsHuamiAccountMissingCredentials": "輸入你的 Amazfit 帳號與密碼",
+  "settingsHuamiAccountRequired": "請先在設定中登入 Amazfit 帳號",
+  "understood": "我明白",
+  "settingsGeneralLanguage": "語言",
+  "settingsGeneralLanguageDesc": "變更應用程式顯示語言",
+  "settingsWideNavigationPosition": "導覽列位置",
+  "settingsWideNavigationPositionDesc": "調整寬螢幕模式下側邊分頁的位置",
+  "settingsWideNavigationPositionBottom": "底部",
+  "settingsWideNavigationPositionCenter": "中央",
+  "settingsWideNavigationPositionSplit": "分割",
+  "settingsAutoReconnectTitle": "自動重新連線",
+  "settingsAutoReconnectDesc": "啟動時自動重新連線上次配對的裝置",
+  "settingsAutoReconnectOnDisconnectTitle": "自動重新連線",
+  "settingsAutoReconnectOnDisconnectDesc": "與裝置的連線被動中斷時嘗試重新連線",
+  "deviceReconnectAttempting": "正在嘗試重新連線裝置",
+  "deviceReconnectSucceeded": "重新連線成功",
+  "deviceReconnectFailedPrefix": "重新連線失敗，請檢查：",
+  "settingsSourceOfficialCdn": "GitHub 來源 CDN",
+  "settingsSourceOfficialCdnDesc": "用於取得 GitHub 社群索引的 CDN",
+  "settingsQueueAutoInstall": "自動安裝",
+  "settingsQueueAutoInstallDesc": "下載後自動開始安裝",
+  "settingsQueueDontClear": "不要清除安裝佇列",
+  "settingsQueueDontClearDesc": "保留安裝佇列中的已完成項目",
+  "settingsRealtimeActivityNotification": "即時活動通知",
+  "settingsRealtimeActivityNotificationDesc": "使用即時活動通知顯示佇列進度",
+  "settingsAboutWebsite": "官方網站",
+  "settingsTapToSignIn": "點擊以登入",
+  "settingsConnected": "已連線",
+  "settingsSystem": "系統",
+  "settingsLight": "淺色",
+  "settingsDark": "深色",
+  "settingsOledDark": "OLED 深色",
+  "settingsThemeMode": "主題模式",
+  "settingsThemeModeDesc": "變更應用程式主題外觀",
+  "settingsThemePreset": "主題風格",
+  "settingsThemePresetDesc": "選擇應用程式的視覺風格",
+  "settingsThemePresetMaterial3": "Material 3",
+  "settingsThemePresetMaterial2": "Material 2",
+  "settingsThemePresetFluent": "Fluent",
+  "settingsDynamicColor": "動態色彩",
+  "settingsDynamicColorDesc": "使用系統強調色作為應用程式主題色",
+  "settingsColorScheme": "色彩配置",
+  "settingsColorSchemeDesc": "選擇應用程式強調色",
+  "settingsColorSchemePink": "粉紅",
+  "settingsColorSchemePurple": "紫色",
+  "settingsColorSchemeTeal": "藍綠",
+  "settingsColorSchemeGreen": "綠色",
+  "settingsColorSchemeRed": "紅色",
+  "settingsColorSchemeAmber": "琥珀",
+  "settingsDesktopAccentSource": "Linux 強調色來源",
+  "settingsDesktopAccentSourceDesc": "選擇從 GTK 或 Qt 讀取強調色",
+  "settingsDesktopAccentSourceSystem": "自動",
+  "settingsDesktopAccentSourceGtk": "GTK",
+  "settingsDesktopAccentSourceQt": "Qt",
+  "settingsCancel": "取消",
+  "settingsTeamRoleMain": "主要開發／架構／設計",
+  "settingsTeamRoleHarmonyOS": "HarmonyOS 移植維護",
+  "settingsTeamRoleDeviceConnection": "macOS 連線最佳化貢獻",
+  "settingsTeamRoleZeppOS": "ZeppOS 適配實作",
+  "settingsAboutSoftware": "關於軟體",
+  "settingsAboutSoftwareDesc": "版本、更新日誌與開發團隊",
+  "settingsAboutSoftwareTagline": "一款以 Flutter 打造、快速美觀的 VelaOS 與 ZeppOS 穿戴式裝置管理工具",
+  "settingsAboutSoftwareRepository": "開啟 GitHub 儲存庫",
+  "settingsAboutSoftwareTeam": "開發團隊",
+  "settingsAboutSoftwareBuildInfo": "建置資訊",
+  "settingsAboutSoftwareCopyright": "Copyright © 2026 OrPudding",
+  "acknowledgementsKazumi": "參考 Material Design 元件與 UI 模式",
+  "acknowledgementsAstroBoxPublic": "參考 UI 結構與互動設計",
+  "acknowledgementsAstroBoxNgCore": "Xiaomi 裝置通訊協定與傳輸層，移植改寫",
+  "acknowledgementsAstroBoxNgPb": "Xiaomi wear 通訊協定定義，逐字採用",
+  "acknowledgementsAstroBoxNgBluetooth": "藍牙連線流程參考",
+  "acknowledgementsAstroBoxNgAccount": "Xiaomi 帳號登入與 Auth key 取得流程參考",
+  "acknowledgementsAstroBoxNgProvider": "社群資源索引與 manifest 解析流程參考",
+  "acknowledgementsAstroBoxNgAppWasm": "Web Serial 連線流程參考",
+  "acknowledgementsGadgetbridge": "ZeppOS 通訊協定實作，移植改寫",
+  "acknowledgementsBreezyWeather": "中國天氣來源實作參考",
+  "acknowledgementsOpenMeteo": "依 CC BY 4.0 提供的天氣預報、空氣品質與地點搜尋資料",
+  "resourceHomeRecommended": "推薦",
+  "resourceHomeFeatured": "精選",
+  "resourceHomeUpdates": "更新",
+  "blogTypeAnnouncement": "公告",
+  "blogTypeRecommendation": "推薦",
+  "blogTypeDocs": "文件",
+  "resourceHomeEmptyTitle": "目前沒有推薦內容",
+  "resourceLibraryEndOfList": "已到達清單底部——要查看其他來源的資源嗎？",
+  "resourceHomeEmptySubtitle": "你可以從資源庫取得資源",
+  "openResourceLibrary": "開啟資源庫",
+  "downloadQueueTitle": "下載佇列",
+  "installQueueTitle": "安裝佇列",
+  "queueClear": "清除",
+  "queueStart": "開始",
+  "queuePause": "暫停",
+  "downloadQueueEmpty": "沒有下載工作",
+  "installQueueEmpty": "沒有安裝工作",
+  "localAppInstall": "本機應用程式安裝",
+  "localWatchfaceInstall": "本機 錶盤安裝",
+  "localFirmwareInstall": "本機 韌體安裝",
+  "queueStatusPending": "等待中",
+  "queueStatusDownloading": "下載中 {percent}%",
+  "queueStatusInstalling": "安裝中 {percent}%",
+  "queueStatusCompleted": "已完成",
+  "queueStatusFailed": "失敗",
+  "queueDragToInstall": "放開以安裝應用程式、錶盤或外掛程式",
+  "queueAddedFiles": "已將 {count} 個檔案加入安裝佇列",
+  "installQueueReadFailed": "讀取失敗",
+  "installQueueUnsupportedFile": "不支援的檔案",
+  "timeTodayAt": "今天 {time}",
+  "timeYesterdayAt": "昨天 {time}",
+  "settingsAccountBandBbsAccount": "BandBBS帳號",
+  "settingsAccountGitHub": "GitHub帳號",
+  "settingsAccountGitHubDesc": "連線 GitHub，以你的身分發佈 AstroBox 資源",
+  "githubAccountNeedsBandBbs": "請先登入 BandBBS",
+  "bandBbsPublishAuthTitle": "發佈授權",
+  "bandBbsResourceQueryTitle": "安裝已購買的資源",
+  "settingsAboutLogs": "執行環境日誌",
+  "settingsAboutLogsDescription": "檢視、匯出並管理應用程式與已連線裝置的執行環境日誌",
+  "settingsAboutLogsSize": "目前使用 {size}",
+  "settingsAboutLogsExport": "匯出",
+  "settingsAboutLogsExported": "已匯出至 {path}",
+  "settingsAboutLogsEmpty": "沒有日誌檔案",
+  "settingsAboutLogsClear": "清除",
+  "settingsDeviceLogsPull": "取得裝置日誌",
+  "settingsDeviceLogsTip": "此功能會從已連線的 Xiaomi 穿戴式裝置取得日誌，可能需要一段時間\n處理期間請讓應用程式保持在前景，並保持裝置畫面亮起",
+  "settingsDeviceLogsStart": "開始",
+  "settingsDeviceLogsPulling": "正在取得裝置日誌",
+  "settingsDeviceLogsWaiting": "等待裝置回傳",
+  "settingsDeviceLogsProgress": "已接收 {progress}%",
+  "settingsDeviceLogsSaved": "裝置日誌已儲存為 {name}",
+  "settingsDeviceLogsFailed": "無法取得裝置日誌：{error}",
+  "settingsAboutLogsClearConfirm": "除了目前工作階段外，所有日誌檔案都將被刪除",
+  "settingsAboutLogsOpen": "開啟日誌資料夾",
+  "settingsAboutLogsOpenFailed": "無法開啟日誌資料夾",
+  "settingsLogsFileList": "日誌檔案",
+  "settingsAboutLogsWarningTitle": "敏感資訊警告",
+  "settingsAboutLogsWarningMessage": "日誌可能包含 BandBBS、Xiaomi 或 Amazfit 登入憑證及其他敏感資訊\n請勿與 OronBox 官方維護者以外的任何人分享！",
+  "pluginPermissionRequestTitle": "外掛程式權限請求",
+  "pluginPermissionRequestMessage": "「{plugin}」想要{operation}",
+  "pluginPermissionOnce": "僅允許一次",
+  "pluginPermissionSession": "允許本次執行",
+  "pluginPermissionAlways": "一律允許",
+  "pluginPermissionDeny": "拒絕",
+  "pluginPermissionOpenExternal": "開啟外部連結",
+  "pluginPermissionPickFile": "存取主機檔案",
+  "pluginPermissionExportFile": "將檔案匯出至主機",
+  "pluginPermissionInterconnect": "與裝置應用程式通訊",
+  "pluginPermissionProvider": "註冊資源提供者",
+  "pluginPermissionReadDevice": "讀取裝置資訊",
+  "pluginPermissionOperateDevice": "操作裝置",
+  "pluginPermissionObserveProtocol": "讀取原始裝置通訊協定資料",
+  "pluginPermissionSendProtocol": "向裝置傳送原始通訊協定資料",
+  "pluginPermissionReadAppSide": "讀取 AppSide 指令碼與事件",
+  "pluginPermissionOperateAppSide": "管理 AppSide 工作階段",
+  "pluginErrorTitle": "外掛程式已損壞",
+  "pluginErrorMessage": "「{plugin}」無法正常執行，可能已損壞\n\n錯誤：{error}\n\n是否解除安裝此外掛程式？",
+  "pluginPackageCorruptedMessage": "所選外掛程式套件無法讀取，可能已損壞\n請重新取得後再匯入",
+  "pluginErrorClearData": "清除插件資料",
+  "pluginErrorUninstall": "解除安裝外掛程式",
+  "pluginErrorSafeMode": "進入安全模式",
+  "pluginSafeModeTitle": "外掛程式安全模式已啟用",
+  "pluginSafeModeDescription": "所有外掛程式都已停止，停用安全模式後會重新載入",
+  "pluginSafeModeExit": "離開安全模式",
+  "devTools": "開發者工具",
+  "devToolsDescriptionDesktop": "在獨立視窗中開啟 DevTools",
+  "devToolsDescriptionEntry": "在應用程式列顯示 DevTools 入口按鈕",
+  "devToolsOperationFailed": "無法變更 DevTools 狀態",
+  "resourceTypeErrorTitle": "資源類型錯誤",
+  "resourceTypeUnknownTitle": "無法辨識的資源類型",
+  "resourceTypeUnknownNoType": "OronBox 無法辨識此檔案的資源類型\n此檔案似乎已損壞",
+  "resourceTypeUnknownCancel": "取消",
+  "watchfaceRestrictedTitle": "無法安裝的資源",
+  "watchfaceRestrictedMessage": "為尊重智慧財產權及遵守相關政策，應小米方面要求\nOronBox 無法安裝疑似來自官方錶盤商城的錶盤\n如果你認為這是一個誤報，請讓錶盤作者聯繫我們",
+  "resourceTypeMismatchMessage": "這似乎是一個 {detectedType} 資源，而你選擇了 {selectedType}\n請選擇安裝方式",
+  "resourcePlatformMismatchMessage": "這似乎是適用於 {resourcePlatform} 裝置的 {resourceType} 資源，但目前連線的裝置是 {deviceName}（{devicePlatform}）\n不支援此資源，強制安裝可能造成問題",
+  "resourceTypeUnknownMessage": "OronBox 無法辨識實際的資源類型，仍要以 {selectedType} 安裝嗎？",
+  "resourceInstallCancel": "取消安裝",
+  "resourceInstallAcknowledge": "我明白",
+  "resourceInstallForce": "強制安裝",
+  "resourceInstallForceCountdown": "強制安裝（{seconds} 秒）",
+  "resourceInstallAsSelected": "以{type}繼續",
+  "resourceInstallAsSelectedCountdown": "以{type}繼續（{seconds} 秒）",
+  "resourceInstallAsDetected": "以{type}安裝",
+  "resourceTypeApp": "小程式",
+  "resourceTypeQuickApp": "快應用",
+  "resourceTypeResPack": "資源包",
+  "resourceTypeWatchface": "錶盤",
+  "resourceTypeFirmware": "韌體",
+  "resourceInstallConfirmTitle": "安裝 {type}",
+  "resourceInstallConfirmMessage": "要安裝 {fileName}（{fileSize}）嗎？",
+  "resourceInstallConfirm": "安裝",
+  "previewImages": "預覽圖片",
+  "add": "新增",
+  "submit": "提交",
+  "creatorConfirmTitle": "確認提交",
+  "creatorConfirmOronBox": "提交至 OronBox",
+  "creatorConfirmBandBbs": "同步至 BandBBS：{category}",
+  "creatorConfirmAstroBox": "同步至 AstroBox：{owner}/{repository}",
+  "creatorBandBbsDirectPublish": "同步至 BandBBS",
+  "creatorBandBbsBoundUpdate": "已繫結 · 同步至 BandBBS",
+  "creatorBandBbsVersionTitle": "版本標題",
+  "creatorBandBbsVersionMessage": "更新說明",
+  "creatorBandBbsVersionPairRequired": "版本標題和更新說明需要同時填寫，或同時留白",
+  "creatorLinkedSections": "已繫結 {count} 個分區",
+  "creatorBandBbsBindingIds": "分區 {categoryId} · 資源 {resourceId}",
+  "creatorAstroBoxBoundSync": "已繫結 · 同步至 AstroBox",
+  "creatorThisCommit": "此次提交",
+  "creatorAstroBoxPrPublish": "同步至 AstroBox · {repository}",
+  "creatorOronBoxRequired": "必填，資源會由 OronBox 審核",
+  "creatorOpenInOronBox": "在 OronBox 中查看",
+  "creatorAstroTagsHint": "請使用英文分號 ; 分隔標籤",
+  "retry": "重試",
+  "reviewNote": "審核備註",
+  "creatorReviewRejected": "資源變更已被退回",
+  "creatorReviewState": "審核狀態：{state}",
+  "creatorOperationWorking": "處理中",
+  "creatorProcessingImage": "正在處理圖片",
+  "creatorOperationRefreshing": "正在重新整理創作者資料",
+  "creatorOperationCreating": "正在建立資源",
+  "creatorOperationCreatingCollection": "正在建立合集",
+  "creatorOperationSaving": "正在儲存變更",
+  "creatorOperationDeleting": "正在刪除",
+  "creatorOperationSubmitting": "正在提交審核",
+  "creatorOperationAuthorizing": "等待授權",
+  "creatorResolvingPublicationTarget": "正在解析發佈分類",
+  "creatorStateApproved": "已通過",
+  "creatorStateReviewing": "審核中",
+  "creatorStatePublishing": "發布中",
+  "creatorStateExternalReview": "外部審核中",
+  "creatorStateFailed": "發佈失敗",
+  "creatorStateSuperseded": "已由較新的修訂取代",
+  "creatorStateCancelled": "已取消",
+  "creatorNoResources": "尚未建立資源",
+  "creatorLoginRequiredTitle": "登入以使用創作者中心",
+  "creatorLoginRequiredDescription": "請登入 BandBBS 並連線 OronBox 帳號，才能建立、編輯或提交資源",
+  "creatorLoginAction": "登入 BandBBS",
+  "creatorBandBbsWriteReady": "BandBBS 發佈已授權",
+  "creatorBandBbsWriteMissing": "BandBBS 發佈尚未授權",
+  "creatorGitHubOwnPublishReady": "GitHub 已連線",
+  "creatorGitHubOwnPublishMissing": "GitHub 尚未連線",
+  "creatorAuthorize": "授權",
+  "installQueueFixWatchfaceId": "修正錶盤 ID",
+  "installQueueFixWatchfaceIdHint": "輸入新的錶盤 ID",
+  "installQueueReinstallWatchface": "重新安裝錶盤",
+  "installQueueRetryDirectly": "直接重試",
+  "installLowStorageMessage": "裝置預留儲存空間不足或已達數量上限",
+  "installLowBatteryMessage": "裝置電量過低",
+  "installQuantityLimitMessage": "已達安裝數量上限",
+  "installQueueReplaceWatchface": "刪除後重裝",
+  "installQueueReplaceWatchfaceMessage": "裝置上已有 ID 為 {id} 的錶盤\n目前版本無法直接安裝\n可以直接重試，或刪除原錶盤後重新安裝\n刪除後若安裝失敗，原錶盤無法自動還原",
+  "@installQueueReplaceWatchfaceMessage": {"placeholders": {"id": {"type": "String"}}},
+  "watchfaceDowngradeMessage": "裝置上已有相同 ID 的錶盤\n目前版本無法直接安裝",
+  "authorize": "授權",
+  "creatorBandBbsAuthorized": "BandBBS 資源發佈已授權",
+  "creatorBandBbsAuthorizationRequired": "請另外授權 OronBox 代表你發佈 BandBBS 資源",
+  "connect": "連線",
+  "legalAndPrivacy": "法律與隱私",
+  "termsTitle": "條款與免責聲明",
+  "privacyTitle": "隱私權聲明",
+  "resourcePublishingTitle": "資源發布協議",
+  "reviewRulesTitle": "資源審核規則",
+  "joinQqGroup": "加入 QQ 群",
+  "joinQqGroupDesc": "與開發者及其他使用者交流並取得協助",
+  "feedbackTitle": "回饋",
+  "feedbackDesc": "提交回饋並查看回覆",
+  "reportResource": "檢舉資源",
+  "reportComment": "檢舉留言",
+  "report": "檢舉",
+  "feedbackSubject": "主旨",
+  "feedbackMessage": "回饋或問題",
+  "reportReason": "檢舉原因",
+  "noFeedback": "尚無回饋",
+  "feedbackProcessing": "處理中",
+  "feedbackReplied": "已回覆",
+  "feedbackOpen": "開啟",
+  "feedbackResolved": "已解決",
+  "feedbackDismissed": "已忽略",
+  "feedbackClosed": "關閉d",
+  "feedbackLoading": "正在載入工單",
+  "feedbackNewTicket": "新增工單",
+  "feedbackYou": "你",
+  "feedbackResolution": "處理結果",
+  "feedbackReplyHint": "回覆此工單",
+  "feedbackConversationClosed": "此工單已關閉，無法回覆",
+  "oobeWelcomeSlogan": "一款美觀快速的 VelaOS／ZeppOS 穿戴式裝置管理工具，以 Flutter 打造",
+  "oobeFeatureDevicesTitle": "裝置連線",
+  "oobeFeatureDevicesBody": "連線並管理 VelaOS 與 ZeppOS 穿戴式裝置",
+  "oobeFeatureResourcesTitle": "資源中心",
+  "oobeFeatureResourcesBody": "支援官方 OronBox 來源、AstroBox-Repo、BandBBS 與 Amazfit 應用程式商店",
+  "oobeFeaturePluginsTitle": "JavaScript 外掛程式",
+  "oobeFeaturePluginsBody": "高效能且高度可擴充的 JavaScript 外掛程式系統，支援裝置互動",
+  "oobeFeaturePlatformsTitle": "多平台",
+  "oobeFeaturePlatformsBody": "可在 Android、Windows、macOS、Linux 與 Web 上使用",
+  "oobeOpenSourceTitle": "完全開放原始碼",
+  "oobeOpenSourceBody": "OronBox 用戶端與伺服器均採用 GNU AGPL-3.0，完整原始碼公開",
+  "oobeAgreementHint": "請閱讀並捲動至底部",
+  "oobeAgreeCheckbox": "我已閱讀並同意",
+  "oobeDeclineExit": "離開",
+  "oobeDeclineWebHint": "你必須接受協議才能繼續；請關閉此頁面",
+  "oobeLoginTitle": "連線你的帳號",
+  "oobeLoginBandBbsDesc": "登入 BandBBS 帳號以存取 BandBBS 資源並準備創作者服務",
+  "oobeLoginLocalNote": "Xiaomi 與 Amazfit 登入完全在此裝置上進行\n除 Xiaomi／Amazfit 外，相關資料不會傳送給任何第三方",
+  "oobeLoginXiaomiDesc": "登入 Xiaomi 帳號以同步已繫結的 Xiaomi 裝置",
+  "oobeLoginHuamiDesc": "登入 Amazfit 帳號以存取 Amazfit 應用程式商店資源",
+  "oobeCdnTesting": "測試中…",
+  "oobeCdnSelected": "已選取最快 CDN",
+  "oobeCdnTitle": "GitHub CDN 速度測試",
+  "oobeDoneTitle": "設定完成",
+  "oobeDoneBody": "開始探索 OronBox",
+  "settingsReplayOobe": "重新開始導覽",
+  "settingsReplayOobeDesc": "再次查看歡迎導覽與初始設定",
+  "creatorConnect": "連線",
+  "comments": "留言",
+  "commentLoginRequired": "登入 BandBBS 後才能留言",
+  "commentPending": "審核中",
+  "commentBlocked": "此留言不符合社群規範",
+  "commentModerationUnavailable": "留言審核暫時無法使用",
+  "commentRateLimited": "留言速度過快",
+  "commentReplying": "回覆留言",
+  "inbox": "收件匣",
+  "inboxLoading": "正在載入訊息",
+  "inboxEmpty": "沒有訊息",
+  "inboxClear": "清除訊息",
+  "inboxClearFailed": "無法清除訊息，請稍後再試",
+  "messageUnknownTitle": "通知",
+  "messageUnknownBody": "無法取得此通知的詳細資料",
+  "messageCommentRepliedTitle": "留言收到新回覆",
+  "messageCommentHiddenTitle": "留言已隱藏",
+  "messageCommentHiddenAutomatedBody": "你的留言未通過自動審核，目前暫時不可見，可在訊息中提出申訴",
+  "messageCommentHiddenReviewedBody": "你的留言經人工複審後已隱藏",
+  "messageReviewApprovedTitle": "資源審核已通過",
+  "messageReviewRejectedTitle": "資源需要修改",
+  "messageResourceSuspendedTitle": "資源已下架",
+  "messageResourceFrozenTitle": "資源已凍結",
+  "messageResourceDeletedTitle": "資源已刪除",
+  "messageResourceRestoredTitle": "資源已恢復",
+  "messageReportUpdatedTitle": "檢舉狀態已更新",
+  "messagePluginApprovedTitle": "插件審核已通過",
+  "messagePluginRelistedTitle": "插件已恢復上架",
+  "messagePluginRejectedTitle": "插件需要修改",
+  "messagePluginDelistedTitle": "插件已下架",
+  "messageCollectionApprovedTitle": "合輯審核已通過",
+  "messageCollectionRejectedTitle": "合輯需要修改",
+  "messageCoinAddedTitle": "硬幣已入帳",
+  "messageCoinDeductedTitle": "硬幣已扣除",
+  "messageCoinReversedTitle": "硬幣紀錄已沖銷",
+  "messageCoinVoteRevokedTitle": "投幣已作廢",
+  "messageAppealOverturnedTitle": "申訴已受理",
+  "messageAppealUpheldTitle": "維持原處理結果",
+  "messageAppealDismissedTitle": "申訴已駁回",
+  "messageAccountBannedTitle": "帳號已停用",
+  "messageAccountUnbannedTitle": "帳號已解除停用",
+  "messageCreatorFrozenTitle": "創作者權限已凍結",
+  "messageCreatorUnfrozenTitle": "創作者權限已恢復",
+  "messageRoleChangedTitle": "帳號角色已變更",
+  "messageRoleUser": "一般使用者",
+  "messageRoleReviewer": "審核員",
+  "messageRoleAdministrator": "管理員",
+  "messageApprovedBody": "你的提交已通過審核",
+  "messageNeedsChangesBody": "審核發現需要修改的問題",
+  "messageReasonBody": "原因：{reason}",
+  "messageReviewNoteBody": "審核意見：{note}",
+  "messageReviewerPrefix": "審核員：{reviewer}",
+  "messageOperatorPrefix": "操作人：{operator}",
+  "messageReferencePrefix": "關聯：{reference}",
+  "messageTargetsPrefix": "發布渠道：{targets}",
+  "messageUnapprovedItemsPrefix": "待改進項：{items}",
+  "messageStatusChangedBody": "該項目的狀態已發生變化",
+  "messageReportStatusBody": "檢舉狀態：{status}",
+  "messageCoinAddedBody": "你的帳號增加了 {amount} 枚硬幣",
+  "messageCoinDeductedBody": "你的帳號扣除了 {amount} 枚硬幣",
+  "messageCoinVoteRevokedBody": "你對此資源投出的 {amount} 枚硬幣已作廢",
+  "messageAppealOverturnedBody": "管理員已撤銷原處理結果",
+  "messageAppealUpheldBody": "複核後維持原處理結果",
+  "messageAppealDismissedBody": "該申訴未被受理",
+  "messageRoleChangedBody": "你的帳號角色已變更為 {role}",
+  "cleanPluginsEntry": "外掛程式入口",
+  "cleanSourceHuamiAppStore": "Amazfit 應用程式商店",
+  "announcementAcknowledge": "知道了",
+  "cleanHomeFeed": "首頁動態",
+  "cleanExplore": "資源庫",
+  "cleanInbox": "收件匣",
+  "cleanAnnouncements": "公告彈窗",
+  "cleanComments": "留言",
+  "cleanCreator": "創作者中心",
+  "cleanBandBbsLogin": "BandBBS 登入",
+  "cleanGitHubLogin": "GitHub 登入",
+  "cleanSourceOronBox": "OronBox 來源",
+  "cleanSourceBandBbs": "BandBBS 來源",
+  "cleanSourceAstroBox": "AstroBox 來源",
+  "cleanExploreEntry": "探索入口",
+  "cleanNavigationGroup": "主要導覽",
+  "cleanExploreContentGroup": "探索內容",
+  "cleanHomeSectionsGroup": "首頁區塊",
+  "cleanHomeBanner": "橫幅輪播",
+  "cleanHomeEditorSections": "編輯推薦區塊",
+  "cleanResourceSourcesGroup": "資源來源",
+  "cleanCommunityGroup": "社群功能",
+  "xmsDeveloperMode": "XMS 開發者模式",
+  "xmsDeveloperModeDescription": "允許 Android 應用程式簽章差異",
+  "oronBoxCoinsTitle": "資源硬幣",
+  "oronBoxCoinsBalance": "硬幣餘額：{balance}",
+  "oronBoxCoinsCheckin": "簽到",
+  "oronBoxCoinsCheckedIn": "已簽到",
+  "oronBoxCoinsCheckinReward": "已獲得 {count} 枚硬幣",
+  "oronBoxCoinsDescription": "每日簽到可獲得 1~5 枚硬幣，用來支持創作者",
+  "resourceFromCollection": "來自合集 {name}",
+  "resourceCoin": "投幣",
+  "resourceCoinNotSignedIn": "尚未登入",
+  "resourceCoinDialogTitle": "為此資源投幣",
+  "resourceCoinDialogMessage": "要為此資源投幣嗎？\n此操作無法復原\n\n投幣可以增加資源曝光\n創作者將獲得所投硬幣的 10%\n前往「設定－BandBBS 帳號」簽到即可獲得硬幣",
+  "resourceCoinOne": "投 1 枚硬幣",
+  "resourceCoinTwo": "投 2 枚硬幣",
+  "resourceCoinCount": "{count} 枚硬幣",
+  "resourceCoinSuccess": "投幣成功",
+  "resourceCoinVoted": "已投幣",
+  "resourceFeatured": "精選",
+  "resourceCollection": "合集",
+  "resourceCollectionType": "{type}合集",
+  "creatorCollections": "資源合集",
+  "creatorCollectionTag": "合集",
+  "creatorNewCollection": "新增合集",
+  "creatorMoveToCollection": "移至合集",
+  "creatorMoveToCollectionConfirm": "要將選取的 {count} 項資源移至此合集嗎？",
+  "creatorDissolveCollection": "解散合集",
+  "creatorResourceList": "資源",
+  "creatorAdditionalLinks": "其他連結",
+  "creatorAddLink": "新增連結",
+  "creatorLinkTitle": "連結名稱",
+  "creatorLinkUrl": "連結 URL",
+  "creatorCollectionName": "合集名稱",
+  "creatorCollectionSummary": "合集簡介",
+  "creatorCollectionRepresentative": "代表資源",
+  "creatorCollectionDeleteConfirm": "要刪除此合集嗎？其中的資源只會解除繫結",
+  "creatorContentAttributes": "內容屬性",
+  "creatorConfirm": "確認",
+  "creatorCollectionAddResource": "加入合集",
+  "creatorCollectionResourceCount": "{count} 項資源",
+  "communityImportSelected": "已選取 {count} 項",
+  "communityImportResultCreated": "已建立草稿",
+  "communityImportResultFailed": "失敗",
+  "communityImportUnsupported": "目前尚未支援匯入此類型",
+  "communityImportDuplicate": "創作者中心中已存在此資源",
+  "communityImportNoArtifacts": "沒有可匯入的資源檔案",
+  "creatorImportExternal": "從其他平台匯入現有資源",
+  "creatorNewResourceDescription": "從 OronBox 建立並維護資源",
+  "creatorNewCollectionDescription": "建立合集以整理相關資源",
+  "creatorImportExternalDescription": "實驗功能：從 BandBBS 或 AstroBox-Repo 匯入現有資源",
+  "creatorImportAlreadyImported": "已匯入並繫結",
+  "creatorImportReviewNotice": "匯入內容可能不完整或辨識錯誤\n提交前請逐一檢查並調整所有欄位",
+  "creatorImportLogTitle": "處理日誌",
+  "communityImportPickerEmpty": "沒有資源",
+  "creatorWizardChooseAction": "建立",
+  "creatorImportSelectTitle": "選擇資源",
+  "creatorImportProgressTitle": "正在匯入",
+  "creatorImportResultTitle": "匯入結果",
+  "creatorImportGitHubHint": "連線 GitHub 以列出你的 AstroBox 資源",
+  "creatorImportGitHubConnect": "連線 GitHub",
+  "creatorImportStageDetails": "正在取得詳細資料",
+  "creatorImportStageDownloading": "正在下載檔案",
+  "creatorImportStageMedia": "正在處理圖片",
+  "creatorImportStageUploading": "正在建立草稿",
+  "creatorImportContinue": "匯入其他資源",
+  "creatorImportPartialFailureTitle": "部分資源讀取失敗",
+  "creatorImportPartialFailureMessage": "{count} 項資源讀取失敗\n你可以重試失敗項目，或繼續匯入已成功讀取的資源",
+  "creatorImportRetryFailed": "重試失敗項目",
+  "creatorImportContinuePartial": "仍然繼續",
+  "creatorImportWarnings": "{count} 個警告",
+  "creatorDeleteExternalBandbbs": "同時刪除 BandBBS 資源",
+  "creatorDeleteExternalAstrobox": "同時向 AstroBox-Repo 提交刪除 PR",
+  "creatorDeleteExternalWarning": "外部刪除無法復原",
+  "creatorDeletePrSubmitted": "已提交刪除 PR",
+  "githubCdnFallback": "GitHub 請求失敗，正在透過 {cdn} 重試",
+  "deviceConnectBle": "透過 BLE 連線",
+  "deviceConnectBtClassic": "透過 Bluetooth Classic 連線",
+  "bandBbsIdLabel": "BandBBS ID {id}",
+  "oobeCdnTestFailed": "失敗",
+  "updateDownloading": "正在下載更新",
+  "updateInstalling": "正在安裝更新",
+  "updateFailed": "更新失敗",
+  "updateNoApkForAbi": "沒有適用於 ABI {abi} 的 APK",
+  "cleanUpdateGroup": "更新",
+  "cleanCheckUpdates": "啟動時檢查更新",
+  "creatorImportNoticeTitle": "匯入現有資源",
+  "creatorImportNoticeMessage": "支援多部裝置的資源可能已發佈至 BandBBS 的多個分區\n匯入時可以選取多個 BandBBS 項目，但請只選擇同一項資源\n點擊「匯入」會將選取的項目合併為一項資源\n如果匯入失敗，可以開啟對應草稿並刪除\n刪除草稿不會刪除其他平台上已繫結的資源",
+  "creatorImportNoticeConfirm": "繼續匯入",
+  "creatorImportSameResourceHint": "每次匯入請只選擇同一項資源",
+  "deviceHealthTitle": "運動健康",
+  "deviceHealthDescription": "同步裝置上的活動與睡眠資料",
+  "deviceHealthSyncCardTitle": "健康資料",
+  "deviceHealthNeverSynced": "尚未同步運動健康資料",
+  "deviceHealthLastSynced": "上次同步於 {time}",
+  "@deviceHealthLastSynced": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceHealthSync": "同步運動健康資料",
+  "deviceHealthSyncing": "正在同步",
+  "deviceHealthConnectFirst": "請先連線裝置再同步運動健康資料",
+  "deviceHealthPartialSync": "部分運動健康資料同步失敗",
+  "deviceHealthToday": "今日活動",
+  "deviceHealthSteps": "步數",
+  "deviceHealthDistance": "距離",
+  "deviceHealthCalories": "卡路里",
+  "deviceHealthHeartRate": "心率",
+  "deviceHealthAverageHeartRateLabel": "平均心率",
+  "deviceHealthRestingHeartRate": "靜息心率",
+  "deviceHealthAbnormalHeartRate": "異常心率",
+  "deviceHealthHeartRateHigh": "心率過高",
+  "deviceHealthHeartRateLow": "心率過低",
+  "deviceHealthHeartHealth": "心臟健康",
+  "deviceHealthHeartHealthMonitoring": "心臟健康監測",
+  "deviceHealthIrregularHeartbeat": "異常心搏",
+  "deviceHealthLowBloodOxygen": "血氧過低",
+  "deviceHealthHighStress": "壓力過高",
+  "deviceHealthDetected": "已偵測",
+  "deviceHealthSleep": "最近睡眠",
+  "deviceHealthSleepCard": "睡眠",
+  "deviceHealthAllDaySleep": "全天睡眠",
+  "deviceHealthLongSleep": "長睡眠",
+  "deviceHealthSleepStructure": "睡眠結構",
+  "deviceHealthSleepDetails": "睡眠詳情",
+  "deviceHealthSleepAverageHeartRate": "睡眠平均心率",
+  "deviceHealthSleepAverageBloodOxygen": "睡眠平均血氧",
+  "deviceHealthAverageHeartRate": "平均心率 {value} bpm",
+  "@deviceHealthAverageHeartRate": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceHealthNoData": "暫無資料",
+  "deviceHealthLoadFailed": "無法讀取運動健康資料",
+  "deviceHealthSleepStages": "睡眠階段",
+  "deviceHealthSleepHrv": "睡眠 HRV",
+  "deviceHealthSleepAwake": "清醒",
+  "deviceHealthSleepWakeCount": "{count} 次",
+  "@deviceHealthSleepWakeCount": {
+    "description": "睡眠清醒次數",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "deviceHealthSleepLight": "淺睡",
+  "deviceHealthSleepDeep": "深睡",
+  "deviceHealthSleepRem": "REM",
+  "deviceHealthSleepNoStages": "暫無睡眠階段資料",
+  "deviceHealthDayView": "日",
+  "deviceHealthWeekView": "週",
+  "deviceHealthMonthView": "月",
+  "localServerTitle": "本機 API 服務",
+  "localServerDescription": "為外部開發與自動化工具提供本機 API 服務",
+  "localServerEnable": "啟用本機 API 服務",
+  "localServerEnableDescription": "允許區域網路中已核准的用戶端檢視及控制 OronBox",
+  "localServerEndpoint": "連線位址",
+  "localServerFingerprint": "服務指紋",
+  "localServerPendingClients": "待核准配對",
+  "localServerAuthorizedClients": "已核准用戶端",
+  "localServerApprove": "核准",
+  "localServerReject": "拒絕",
+  "localServerRevoke": "撤銷存取權",
+  "localServerNoPendingClients": "沒有等待核准的配對請求",
+  "localServerNoAuthorizedClients": "目前沒有已核准的用戶端",
+  "localServerSecurityNotice": "請只在可信任的網路中啟用此服務",
+  "localServerStartFailed": "無法啟動本機 API 服務",
+  "localServerStopFailed": "無法停止本機 API 服務",
+  "localServerPairingTitle": "允許透過本機 API 控制 OronBox 嗎",
+  "localServerPairingDescription": "「{clientName}」正在要求管理此裝置上的穿戴服務與命令匯流排",
+  "@localServerPairingDescription": {
+    "placeholders": {
+      "clientName": {
+        "type": "String"
+      }
+    }
+  },
+  "localServerPairingFingerprint": "Ed25519 SHA-256 指紋",
+  "localServerPairingAlwaysAllow": "一律允許來自這部電腦的連線",
+  "localServerPairingAllow": "允許",
+  "localServerPairingDeny": "拒絕",
+  "localServerPairingScopes": "請求權限",
+  "wifiPasswordInputPlaceholder": "請輸入 Wi-Fi 密碼",
+  "wifiConnectButton": "連線",
+  "wifiCancelButton": "取消",
+  "creatorFullVersionExternalPurchase": "需要外部購買",
+  "creatorExternalPurchaseDescription": "在 OronBox 和 AstroBox 將會發布資源檔案作為試用版並顯示購買按鈕，在 BandBBS 發布為「第三方購買」資源，您需自行處理付款相關事務",
+  "creatorExternalPurchaseLink": "購買連結",
+  "creatorExternalPurchaseAmount": "金額（CNY）",
+  "creatorExternalPurchaseLinkRequired": "請輸入有效的外部購買連結",
+  "creatorExternalPurchaseAmountRequired": "請輸入有效的 CNY 金額",
+  "resourcePurchaseFullVersion": "外部購買",
+  "creatorBandBbsOverwritePrevious": "覆蓋上次提交",
+  "creatorBandBbsOverwritePreviousDescription": "建立新版本後刪除米壇上一次提交的版本",
+  "deviceHealthAutoSyncTitle": "自動同步運動健康資料",
+  "deviceHealthAutoSyncDescription": "同步裝置資料時自動同步運動健康資料",
+  "weatherAutoSyncTitle": "自動同步天氣資料",
+  "weatherAutoSyncDescription": "同步裝置資料時自動同步天氣資料",
+  "weatherAqiGood": "優",
+  "weatherAqiModerate": "良",
+  "weatherAqiSensitive": "對敏感族群不健康",
+  "weatherAqiUnhealthy": "不健康",
+  "weatherAqiVeryUnhealthy": "非常不健康",
+  "weatherAqiHazardous": "危險",
+  "weatherDataSource": "資料來源：{source}",
+  "@weatherDataSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "xiaomiScreenshotTitle": "裝置截圖",
+  "xiaomiScreenshotDescription": "在裝置上使用組合鍵截圖，截圖會自動同步到這裡",
+  "xiaomiScreenshotAction": "取得截圖",
+  "xiaomiScreenshotLoading": "取得中…",
+  "xiaomiScreenshotEmpty": "尚無截圖",
+  "xiaomiScreenshotFailed": "取得截圖失敗",
+  "xiaomiScreenshotDownloadStarted": "已開始下載截圖",
+  "xiaomiScreenshotSaveFailed": "儲存截圖失敗",
+  "xiaomiScreenshotSaved": "手錶截圖已儲存至：{path}",
+  "@xiaomiScreenshotSaved": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "deviceHealthRecoveryTime": "恢復時間",
+  "deviceHealthTodayLoad": "今日負荷",
+  "deviceHealthSevenDayLoad": "7 日負荷",
+  "deviceHealthLoadLevel": "負荷等級",
+  "deviceHealthFitnessBalance": "體能平衡",
+  "deviceHealthFitnessLevel": "體能水平",
+  "deviceHealthFatigueLevel": "疲勞水平",
+  "deviceHealthTrainingStress": "訓練壓力",
+  "deviceHealthTrainingStatus": "訓練狀態",
+  "deviceHealthSevenDayVitality": "近 7 日元氣值",
+  "deviceHealthEarnedToday": "當日獲得",
+  "deviceHealthEarnedInPeriod": "所選期間獲得",
+  "deviceHealthModerateIntensity": "中等強度",
+  "deviceHealthHighIntensity": "高強度",
+  "deviceHealthNap": "小睡",
+  "deviceHealthNapSingular": "小睡",
+  "deviceHealthWorkoutOverview": "運動概覽",
+  "deviceHealthWorkoutHistory": "歷史記錄",
+  "deviceHealthWorkoutDuration": "運動時長",
+  "deviceHealthWorkoutRoute": "運動路線",
+  "deviceHealthWorkoutDetails": "詳細數據",
+  "deviceHealthSwimmingSections": "游泳分段",
+  "deviceHealthWorkoutCharts": "運動曲線",
+  "deviceHealthActiveDuration": "有效時長",
+  "deviceHealthAveragePace": "平均配速",
+  "deviceHealthBestPace": "最佳配速",
+  "deviceHealthHeartRateRange": "心率範圍",
+  "deviceHealthBloodOxygenRange": "血氧範圍",
+  "deviceHealthMainStroke": "主要泳姿",
+  "deviceHealthHeartRateZones": "心率區間",
+  "deviceHealthZoneLabel": "區間 {zone}",
+  "@deviceHealthZoneLabel": {
+    "placeholders": {
+      "zone": {}
+    }
+  },
+  "deviceHealthZoneWarmup": "熱身",
+  "deviceHealthZoneFatBurning": "燃脂",
+  "deviceHealthZoneAerobic": "有氧",
+  "deviceHealthZoneAnaerobic": "無氧",
+  "deviceHealthZoneExtreme": "極限",
+  "deviceHealthRecoveryAfterWorkout": "運動後心率恢復",
+  "deviceHealthRecoveredHeartRate": "恢復心率",
+  "deviceHealthRecoveryRate": "恢復率",
+  "deviceHealthSamples": "採樣點",
+  "deviceHealthAverageSpeed": "平均速度",
+  "deviceHealthTopSpeed": "最高速度",
+  "deviceHealthAverageStride": "平均步幅",
+  "deviceHealthAverageCadence": "平均步頻",
+  "deviceHealthMaximumCadence": "最高步頻",
+  "deviceHealthAverageBloodOxygenDetail": "平均血氧",
+  "deviceHealthTotalAscent": "累計上升",
+  "deviceHealthTotalDescent": "累計下降",
+  "deviceHealthAverageAltitude": "平均海拔",
+  "deviceHealthAerobicEffect": "有氧訓練效果",
+  "deviceHealthAnaerobicEffect": "無氧訓練效果",
+  "deviceHealthPeakEffect": "巔峰訓練效果",
+  "deviceHealthVo2Max": "最大攝氧量",
+  "deviceHealthBodyEnergyUsed": "身體能量消耗",
+  "deviceHealthExpectedRecovery": "預計恢復",
+  "deviceHealthTrainingLoad": "訓練負荷",
+  "deviceHealthVitalityEarned": "獲得元氣值",
+  "deviceHealthAveragePower": "平均功率",
+  "deviceHealthMaximumPower": "最大功率",
+  "deviceHealthArmPulls": "划水次數",
+  "deviceHealthAverageStrokeRate": "平均划頻",
+  "deviceHealthMaximumStrokeRate": "最高划頻",
+  "deviceHealthTurns": "轉身次數",
+  "deviceHealthAverageSwolf": "平均 SWOLF",
+  "deviceHealthBestSwolf": "最佳 SWOLF",
+  "deviceHealthPoolLength": "泳池長度",
+  "deviceHealthJumps": "跳繩次數",
+  "deviceHealthAverageJumpRate": "平均跳頻",
+  "deviceHealthBestJumpRate": "最佳跳頻",
+  "deviceHealthTrips": "絆腳次數",
+  "deviceHealthSets": "組數",
+  "deviceHealthTotalStrokes": "總划次",
+  "deviceHealthAverageRowingRate": "平均槳頻",
+  "deviceHealthBestRowingRate": "最佳槳頻",
+  "deviceHealthChartHeartRate": "心率",
+  "deviceHealthChartCadence": "步頻",
+  "deviceHealthChartPace": "配速",
+  "deviceHealthChartSpeed": "速度",
+  "deviceHealthChartPower": "功率",
+  "deviceHealthChartStrokeRate": "划頻",
+  "deviceHealthChartJumpRate": "跳頻",
+  "deviceHealthChartBloodOxygen": "血氧",
+  "deviceHealthChartStress": "壓力",
+  "deviceHealthWorkoutOutdoorRunning": "戶外跑步",
+  "deviceHealthWorkoutOutdoorWalking": "戶外健走",
+  "deviceHealthWorkoutIndoorRunning": "室內跑步",
+  "deviceHealthWorkoutMountaineering": "登山",
+  "deviceHealthWorkoutTrailRunning": "越野跑",
+  "deviceHealthWorkoutOutdoorCycling": "戶外騎行",
+  "deviceHealthWorkoutIndoorCycling": "室內騎行",
+  "deviceHealthWorkoutFreeTraining": "自由訓練",
+  "deviceHealthWorkoutSwimming": "游泳",
+  "deviceHealthWorkoutElliptical": "橢圓機",
+  "deviceHealthWorkoutRowing": "划船機",
+  "deviceHealthWorkoutJumpRope": "跳繩",
+  "deviceHealthWorkoutHiking": "徒步",
+  "deviceHealthWorkoutGeneric": "運動",
+  "deviceHealthWorkoutExport": "匯出 FIT",
+  "deviceHealthWorkoutExported": "FIT 已匯出至 {path}",
+  "deviceHealthWorkoutExportFailed": "無法匯出 FIT：{error}",
+  "@deviceHealthWorkoutExported": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@deviceHealthWorkoutExportFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "deviceHealthStrokeMedley": "混合泳",
+  "deviceHealthStrokeBreaststroke": "蛙泳",
+  "deviceHealthStrokeFreestyle": "自由泳",
+  "deviceHealthStrokeBackstroke": "仰泳",
+  "deviceHealthStrokeButterfly": "蝶泳",
+  "deviceHealthSectionLabel": "分段",
+  "deviceHealthVitalityRunSuggestion": "建議跑步 {minutes} 分鐘以接近下一個目標",
+  "@deviceHealthVitalityRunSuggestion": {
+    "placeholders": {
+      "minutes": {}
+    }
+  },
+  "deviceHealthVitalityActiveMinutes": "距離下一個目標還需 {minutes} 分鐘活動",
+  "@deviceHealthVitalityActiveMinutes": {
+    "placeholders": {
+      "minutes": {}
+    }
+  },
+  "deviceHealthLatestHeartRate": "最近心率",
+  "deviceHealthLatestBloodOxygen": "最近血氧",
+  "deviceHealthLatestStress": "最近壓力",
+  "deviceHealthDebugSnapshots": "活動檔案",
+  "deviceHealthDebugSnapshotList": "活動檔案",
+  "deviceHealthDebugSnapshotsDescription": "已儲存的活動檔案，可供匯出",
+  "deviceHealthDebugRefresh": "重新整理",
+  "deviceHealthDebugRefreshDescription": "重新读取已保存的活动文件列表",
+  "deviceHealthDebugClearAll": "全部清除",
+  "deviceHealthDebugClearAllDescription": "删除所有已保存的活动文件",
+  "deviceHealthDebugNoSnapshots": "暫無活動檔案",
+  "deviceHealthDebugReload": "重放",
+  "deviceHealthDebugReloaded": "活动文件已重放",
+  "deviceHealthDebugFiles": "{count} 個檔案",
+  "@deviceHealthDebugFiles": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "creatorAccounts": "帳號",
+  "creatorPendingItems": "待處理事項",
+  "creatorResourceStatus": "資源狀態",
+  "creatorOverview": "總覽",
+  "creatorManage": "管理",
+  "creatorManageUnavailable": "管理功能暫不可用",
+  "creatorReviewTab": "審核",
+  "creatorReviewQueue": "審核清單",
+  "creatorReviewStatus": "審核狀態",
+  "creatorReviewActive": "進行中",
+  "creatorReviewChangesRequested": "需要修改",
+  "creatorReviewDeclined": "已拒絕",
+  "creatorReviewClosed": "已關閉",
+  "creatorReviewFixedPending": "已修復待複核",
+  "creatorNoPendingReviews": "暫無待審核",
+  "creatorNoReviews": "暫無審核",
+  "creatorNeedsChanges": "需要修改",
+  "creatorConnected": "已連接",
+  "creatorNotConnected": "未連接",
+  "creatorCenterExitTitle": "結束創作者中心",
+  "creatorCenterExitMessage": "確定要結束創作者中心嗎？",
+  "creatorEditComment": "編輯評論",
+  "creatorReply": "回覆",
+  "creatorReplyingTo": "正在回覆 #{id}",
+  "@creatorReplyingTo": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "creatorReplyPrefix": "回覆 #{id}：",
+  "@creatorReplyPrefix": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "creatorSupplement": "補充說明",
+  "creatorModifyResource": "修改資源",
+  "creatorAstroBoxReview": "AstroBox 審核",
+  "creatorGithubPr": "GitHub 儲存庫與 PR",
+  "creatorApplyChanges": "套用修改",
+  "creatorUpdatedAt": "更新時間",
+  "creatorSubmittedAt": "提交時間",
+  "creatorPublicationStatus": "發佈狀態",
+  "creatorStageInfo": "編輯資訊",
+  "creatorStageFiles": "檔案綁定",
+  "creatorStagePublish": "發佈設定",
+  "creatorNextStep": "下一步",
+  "creatorWatchfaceMissingId": "錶盤辨識失敗或全為零：錶盤缺少 ID，無法上傳",
+  "creatorWatchfaceZeroIdTitle": "偵測到錶盤 ID 全為零，請修改後上傳",
+  "creatorWatchfacePayloadTooShort": "錶盤檔案過小，無法寫入 ID 欄位",
+  "creatorQuickAppMissingPackage": "快應用辨識失敗：快應用缺少套件名稱，無法上傳",
+  "creatorVelajsDefaultPackage": "偵測到快應用套件名為 com.application.watch.demo，這是 VelaJS 專案預設套件名，請先修改後再上傳",
+  "creatorFilteredSupport": "過濾支援",
+  "creatorSkippedPublication": "略過發佈",
+  "creatorAstroBoxUnsupportedDevicesNotice": "勾選的部分支援裝置暫不支援同步發佈到 AstroBox，將會過濾這部分裝置的支援宣告",
+  "creatorBandBbsUnsupportedDevicesNotice": "勾選的部分支援裝置暫不支援同步發佈到米壇社群，將會略過這部分裝置的發佈",
+  "errorSppBondRemovalFailed": "無法移除裝置的藍牙配對\n請在手機藍牙設定中取消配對後再試",
+  "viewAllResources": "查看全部",
+  "deviceHealthMinimum": "最低",
+  "deviceHealthMaximum": "最高",
+  "deviceHealthResting": "靜息",
+  "deviceHealthDebugExport": "匯出活動檔案",
+  "deviceHealthDebugExportTooltip": "匯出活動檔案",
+  "deviceHealthDebugExported": "活動檔案已匯出到：{path}",
+  "deviceHealthDebugExportFailed": "無法匯出活動檔案：{error}",
+  "deviceHealthDebugImport": "匯入活動檔案",
+  "deviceHealthDebugImportDescription": "匯入先前匯出的活動檔案",
+  "deviceHealthDebugImported": "已匯入 {deviceCode}（{files} 個檔案）",
+  "deviceHealthDebugImportFailed": "無法匯入活動檔案：{error}",
+  "commentDeletedPlaceholder": "評論已刪除",
+  "commentViewReplies": "查看全部 {count} 則回覆",
+  "commentThreadTitle": "評論詳情",
+  "commentReplyTarget": "回覆 {username}",
+  "commentLoadEarlier": "載入較早的回覆",
+  "@commentViewReplies": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@commentReplyTarget": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "messageCommentCreatedTitle": "資源收到新評論",
+  "scanQrCode": "掃描 QR 碼",
+  "deviceSwitchQrImport": "掃描分享 QR 碼匯入現有裝置",
+  "creatorCollectionReplacePendingDescription": "提交後將取代待審版本\n已上線版本不受影響",
+  "creatorCollectionNoMatchingResources": "暫無同類型資源\n請先在創作者中心建立資源",
+  "commentCreateFailed": "發表評論失敗，請重試",
+  "commentsReadFailed": "讀取評論失敗，請重試",
+  "commentDeleteFailed": "刪除評論失敗，請重試",
+  "errorRequestTimeout": "請求逾時，請重試",
+  "creatorCollectionReplacePendingTitle": "替換待審版本？",
+  "creatorCollectionReplaceAndSubmit": "替換並提審",
+  "creatorCollectionCreateTitle": "建立合集",
+  "creatorCollectionEditTitle": "編輯合集",
+  "creatorCollectionCurrentRevision": "線上版本：{number}",
+  "@creatorCollectionCurrentRevision": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorCollectionPendingRevision": "待審版本：{number}",
+  "@creatorCollectionPendingRevision": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorCollectionHistory": "查看／參考歷史版本",
+  "creatorCollectionBody": "正文（Markdown）",
+  "creatorMediaIcon": "圖示",
+  "creatorMediaCover": "封面",
+  "creatorMediaUnset": "未設定",
+  "creatorMediaSet": "已設定",
+  "creatorCollectionMemberOrder": "成員順序與代表資源",
+  "creatorCollectionMemberUnavailable": "資源無法使用，請移除",
+  "creatorCollectionSetRepresentative": "設為代表資源",
+  "creatorCollectionAddMember": "新增成員",
+  "creatorImageReadFailed": "無法讀取圖片",
+  "creatorImageProcessFailed": "無法處理圖片",
+  "creatorPublicationRetry": "重試發布",
+  "creatorTermsLoadFailed": "發布條款載入失敗",
+  "creatorReviewItems": "整改項",
+  "creatorReviewFixReplied": "已回覆修正",
+  "creatorReviewReplyFix": "回覆修正",
+  "creatorTermsUpdated": "資源發布條款已更新",
+  "creatorPublishingLater": "暫不發布",
+  "creatorTermsAgree": "已閱讀並同意",
+  "updateAssetUnavailable": "此版本沒有適用於目前平台的安裝包",
+  "legalDocumentUnavailable": "文件暫時無法使用，請重試",
+  "deviceImportTitle": "匯入裝置",
+  "qrScanFromImage": "從圖片辨識",
+  "qrScanNoCode": "未辨識到 QR Code",
+  "qrScanImageFailed": "無法辨識這張圖片",
+  "qrScanCameraUnavailable": "相機無法使用",
+  "qrScanChooseCode": "選擇 QR Code",
+  "qrScanCodeLabel": "QR Code {index}",
+  "@qrScanCodeLabel": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "qrScanUnsupported": "目前平台暫不支援 QR Code 辨識",
+  "featureLabTitle": "功能實驗室",
+  "featureLabDescription": "測試一些正在開發中的功能",
+  "voiceAssistantDescription": "接收裝置語音、監聽和回覆",
+  "voiceLabConnectDevice": "連接裝置後，在裝置上喚醒語音助手",
+  "voiceLabCaptureLimit": "錄音已達到上限，請清除後重試",
+  "voiceLabReplyTooLong": "回覆內容過長",
+  "voiceLabRecognitionLabel": "辨識結果",
+  "voiceLabRecognitionHint": "輸入辨識出的文字",
+  "appDataTitle": "應用程式資料",
+  "appDataDescription": "查看儲存用量與匯出檔案",
+  "appDataSpaceUsage": "分類用量",
+  "appDataHealth": "活動檔案",
+  "appDataPlugins": "外掛程式",
+  "appDataZeppos": "ZeppOS 應用程式資料",
+  "appDataRecovery": "匯入復原資料",
+  "appDataDownloads": "資源與更新下載",
+  "appDataPluginCache": "外掛程式快取",
+  "appDataManageSnapshots": "管理已儲存的活動檔案",
+  "appDataExported": "已儲存匯出檔案",
+  "appDataLoadFailed": "無法讀取應用程式資料",
+  "appDataExportFailed": "檔案匯出失敗",
+  "appDataArchiveTooLarge": "活动文件过大，请分别导出",
+  "appDataUpdateFailed": "應用程式資料修改失敗",
+  "appDataBackup": "匯出備份",
+  "appDataBackupDescription": "選擇並匯出需要保留的本機資料",
+  "appDataRestore": "還原備份",
+  "appDataRestoreDescription": "選擇要還原的資料\n相同裝置的本機健康紀錄將被取代",
+  "appDataSettings": "應用程式設定",
+  "appDataHealthDevices": "健康紀錄（{count} 台裝置）",
+  "appDataRestored": "備份已還原\n重新啟動以套用所有設定",
+  "appDataRestoreFailed": "備份還原失敗",
+  "appDataRecover": "復原上次還原",
+  "appDataRecoveryPending": "上次還原未完成",
+  "appDataRecoverDescription": "將還原至上次匯入前的設定與健康紀錄\n之後新增的本機健康資料也會被取代",
+  "@appDataHealthDevices": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "voiceAsrMethod": "辨識方式",
+  "voiceAsrManual": "手動輸入",
+  "voiceAsrLocal": "本機辨識",
+  "voiceAsrWeType": "微信輸入法",
+  "voiceAsrDoubao": "豆包輸入法",
+  "voiceAsrWasm": "WASM 實驗",
+  "voiceAsrCloudConsent": "錄音將傳送至{provider}進行辨識\n僅在使用此頁面時傳送",
+  "voiceAsrPreparing": "正在準備辨識",
+  "voiceAsrRecognizing": "正在辨識",
+  "voiceAsrFinishing": "正在處理最後的語音",
+  "voiceAsrFinished": "辨識完成",
+  "voiceAsrModelReady": "本機中英辨識資料已就緒",
+  "voiceAsrModelDescription": "本機中英辨識\n首次使用需下載模型和辨識元件",
+  "voiceAsrDownloadModel": "下載辨識資料",
+  "voiceAsrDeleteModel": "刪除辨識資料",
+  "voiceAsrSendRecognition": "傳送辨識結果",
+  "voiceAsrModelMissing": "請先下載本機辨識資料",
+  "voiceAsrModelDamaged": "辨識資料損毀，請刪除後重新下載",
+  "voiceAsrDownloadFailed": "模型下載失敗，請檢查網路後重試",
+  "voiceAsrRegistrationFailed": "無法啟用此辨識服務，請稍後重試",
+  "voiceAsrServiceRejected": "辨識服務拒絕了本次請求",
+  "voiceAsrTimeout": "等待辨識結果逾時，請重新說話",
+  "voiceAsrOpusUnsupported": "此裝置的音訊暫不適用於微信輸入法",
+  "voiceAsrUnsupported": "此平台暫不支援這種辨識方式",
+  "voiceAsrTooSlow": "辨識處理過慢，請結束本輪後重試",
+  "voiceAsrNoSpeech": "未辨識到語音",
+  "voiceAsrInvalidResponse": "辨識服務傳回無效結果",
+  "voiceAsrInferenceFailed": "本機辨識失敗，請重新選擇辨識方式",
+  "voiceAsrCancelled": "已取消辨識",
+  "voiceAsrConnectionFailed": "無法連線至辨識服務，請檢查網路後重試",
+  "@voiceAsrCloudConsent": {
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    }
+  },
+  "appDataModels": "語音辨識資料",
+  "appDataTasks": "工作記錄",
+  "appDataDocuments": "文件快取",
+  "privateStateLoadFailed": "暫時無法讀取已儲存的帳號和裝置\n請重試",
+  "privateStateSaveFailed": "未能儲存帳號或裝置的變更\n請重試",
+  "resetPrivateStorageAction": "重設本機憑證",
+  "resetPrivateStorageTitle": "重設本機帳號與裝置",
+  "resetPrivateStorageMessage": "重設後需要重新登入帳號並重新連接裝置\n已儲存的運動健康歷程記錄與應用程式設定不會遺失",
+  "confirmReset": "確認重設",
+  "voiceAsrStorageFull": "儲存空間不足\n請清理後重試",
+  "voiceAsrReconnect": "重新連線辨識服務",
+  "voiceAsrReconnectDescription": "重新連線後將重新註冊此辨識服務\n不會影響已登入的帳號",
+  "voiceAsrReconnectFailed": "重新連線失敗",
+  "appDataClearCache": "清理快取",
+  "appDataClearCacheDescription": "清除圖片、WebAssembly 編譯、外掛和文件快取及過期暫存檔案\n需要時會重新產生或下載\n執行中的外掛和裝置應用程式將停止",
+  "appDataCacheCleared": "快取已清理",
+  "voiceAsrReplayRecording": "重播目前錄音",
+  "voiceAsrImportWave": "匯入 WAV",
+  "voiceAsrReplayDescription": "選擇辨識方式後重播錄音或匯入 WAV\n僅支援 16 kHz 單聲道 PCM16，最長 60 秒\n線上辨識會將音訊傳送給所選服務",
+  "voiceAsrReplayMetrics": "耗時 {elapsed} ms · 首次結果 {first} ms · 即時因子 {factor}",
+  "voiceAsrExportReport": "匯出測試報告",
+  "voiceAsrWaveFormat": "請選擇 16 kHz 單聲道 PCM16 WAV\n音訊長度不超過 60 秒",
+  "voiceAsrReplayBusy": "請先結束目前語音或辨識工作",
+  "@voiceAsrReplayMetrics": {
+    "placeholders": {
+      "elapsed": {
+        "type": "String"
+      },
+      "first": {
+        "type": "String"
+      },
+      "factor": {
+        "type": "String"
+      }
+    }
+  },
+  "appDataExtensionSettings": "外掛與裝置應用資料",
+  "appDataExtensionSettingsDescription": "外掛和裝置應用程式的設定及資料",
+  "appDataExtensionMissing": "請先安裝備份中相同版本的外掛與對應裝置應用",
+  "appDataImageCache": "圖片快取",
+  "appDataSelectBackup": "選擇要備份的資料",
+  "appDataSettingsDescription": "主題、語言和功能偏好",
+  "appDataHealthDescription": "裝置同步的運動健康數據",
+  "appDataDeviceKeys": "裝置配對與金鑰",
+  "appDataDeviceKeysDescription": "裝置清單及連線所需的認證資訊",
+  "appDataXiaomiAccount": "小米與 Amazfit 帳號資訊",
+  "appDataXiaomiAccountDescription": "帳號密碼及目前登入工作階段",
+  "appDataSensitiveBackup": "備份包含未加密的帳號憑證\n請妥善保管，不要分享",
+  "appDataImportDescription": "從備份檔案選擇資料進行還原",
+  "appDataPluginDescription": "已安裝外掛及其本機資料",
+  "appDataZepposDescription": "裝置應用程式腳本和本機設定",
+  "appDataLogsDescription": "應用程式執行和問題排查記錄",
+  "appDataRecoveryDescription": "還原未完成時保留的資料",
+  "appDataDownloadsDescription": "下載和安裝產生的暫存檔案",
+  "appDataPluginCacheDescription": "外掛執行產生的快取和暫存檔案",
+  "appDataImagesDescription": "瀏覽資源時儲存的圖片快取",
+  "appDataModelsDescription": "已下載的語音模型和辨識元件",
+  "appDataTasksDescription": "下載和安裝工作的進度記錄",
+  "appDataDocumentsDescription": "條款和隱私說明的本機副本",
+  "phoneLocationTitle": "輔助定位",
+  "deviceFeaturesGroupTitle": "常用功能與應用",
+  "deviceSettingsGroupTitle": "裝置設定與維護",
+  "phoneLocationStatusSection": "運行狀態",
+  "phoneLocationPermissionsSection": "權限與系統服務",
+  "phoneLocationOptionsSection": "協同選項",
+  "phoneLocationReady": "輔助定位已就緒",
+  "phoneLocationReadyDesc": "裝置發起戶外運動時將自動協同定位",
+  "phoneLocationServiceEnabled": "系統定位服務",
+  "phoneLocationPreciseTitle": "精確位置",
+  "phoneLocationPreciseGranted": "已授予高精度定位",
+  "phoneLocationPreciseDenied": "未授予精確位置",
+  "phoneLocationBackgroundTitle": "背景定位",
+  "phoneLocationBackgroundAlways": "始終允許",
+  "phoneLocationBackgroundWhileInUse": "僅在使用中允許",
+  "phoneLocationBackgroundDenied": "未授權",
+  "phoneLocationAutoSync": "自動輔助定位",
+  "phoneLocationAutoSyncDesc": "裝置發起戶外運動時自動提供手機 GPS 定位",
+  "phoneLocationEnabledText": "已開啟",
+  "phoneLocationDisabledText": "未開啟",
+  "phoneLocationNotification": "向裝置提供運動位置",
+  "phoneLocationDescription": "運動準備和進行期間提供手機位置",
+  "phoneLocationOpenApp": "開啟 OronBox 繼續定位",
+  "phoneLocationRecovery": "開啟應用程式後重試裝置上的運動",
+  "phoneLocationPermission": "需要精確位置權限",
+  "phoneLocationBackground": "允許背景定位",
+  "phoneLocationBackgroundDescription": "在背景接收裝置的運動定位請求",
+  "phoneLocationSettings": "開啟系統設定",
+  "phoneLocationServiceOff": "定位服務未開啟",
+  "phoneLocationPermissionHelp": "請授予精確位置權限後重試",
+  "phoneLocationMobileOnly": "此功能僅支援 Android 和 iOS",
+  "phoneLocationUnavailable": "無法取得手機位置\n請檢查定位權限和定位服務",
+  "deviceConnectionAbnormalTitle": "裝置連線異常",
+  "deviceConnectionAbnormalMessage": "裝置頻繁中斷，建議重新配對，或確認裝置已進入「連線新手機」模式，以提升連線穩定性",
+  "deviceRePair": "重新配對",
+  "appDataClearCategoryTitle": "清理{category}？",
+  "appDataClearCategoryDescription": "將移除此分類的本機資料\n其它分類不受影響",
+  "appDataClearHealthDescription": "將刪除已同步的活動檔案\n本機運動健康數據將清空",
+  "appDataClearCachedCategoryDescription": "清除未使用的快取檔案\n需要時會重新產生或下載",
+  "appDataClearModelsDescription": "保留目前模型\n清理未使用的舊版本與過期下載",
+  "settingsPermissionsTitle": "權限管理",
+  "settingsPermissionsDesc": "應用運行與設備協同權限",
+  "appArrangementTitle": "應用排布",
+  "appArrangementDescription": "調整應用顯示順序與抽屜排布",
+  "appOrderMainSection": "顯示應用",
+  "appOrderMoreSection": "更多應用",
+  "appOrderHiddenSection": "隱藏應用",
+  "appOrderMoreSectionDesc": "裝置二級抽屜中顯示的應用",
+  "appOrderHiddenSectionDesc": "不在裝置上顯示的應用",
+  "appOrderMoveToMore": "移入更多",
+  "appOrderMoveToMain": "移入列表",
+  "appOrderHide": "隱藏",
+  "appOrderUnhide": "顯示",
+  "appOrderCannotHide": "系統常駐應用不可隱藏",
+  "privateStateAccessPromptTitle": "OronBox 需要存取系統安全儲存保護的帳號憑據",
+  "privateStateAccessPromptMacOs": "若出現系統授權彈窗，請輸入使用者密碼並點擊「始終允許」以避免重複提示",
+  "privateStateAccessPromptLinux": "若出現系統解鎖彈窗，請輸入使用者密碼解鎖金鑰圈",
+  "creatorSubmissionPreview": "檢視提交預覽",
+  "creatorResourceBinding": "資源關聯",
+  "creatorPublicationIdentity": "發布帳號",
+  "creatorPublicationRange": "本次發布",
+  "creatorNewPublication": "首次發布",
+  "creatorUpdatePublication": "更新已有資源",
+  "creatorAppendSubmission": "追加至 PR #{number}",
+  "@creatorAppendSubmission": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorPublicationExcludedDevices": "暫不發布到這些裝置：{devices}",
+  "@creatorPublicationExcludedDevices": {
+    "placeholders": {
+      "devices": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorBackToEdit": "返回修改",
+  "creatorPackageVersionCodeMissing": "安裝套件缺少有效的版本代碼，請重新打包後上傳",
+  "creatorReopenSubmission": "請求重新審核",
+  "creatorReopenRequested": "已請求重新審核",
+  "creatorFixesForSubmission": "本次已修復的問題",
+  "creatorFixNote": "修復說明",
+  "creatorNameRequired": "請填寫資源名稱",
+  "creatorSummaryRequired": "請填寫資源簡介",
+  "creatorSubmitForReview": "提交審核",
+  "creatorAstroBoxPRBody": "PR 說明（選填）",
+  "autoBackupTitle": "定時備份",
+  "autoBackupDescription": "定期將應用程式資料備份並儲存至系統文件目錄",
+  "autoBackupEnabled": "啟用定時備份",
+  "autoBackupInterval": "備份頻率",
+  "autoBackupEvery": "每",
+  "autoBackupUnitDay": "天",
+  "autoBackupUnitWeek": "週",
+  "autoBackupUnitMonth": "月",
+  "autoBackupRetention": "保留份數",
+  "autoBackupRetentionCount": "{count} 份",
+  "@autoBackupRetentionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "autoBackupRetentionUnlimited": "不限制",
+  "autoBackupPasswordEnable": "密碼保護",
+  "autoBackupPasswordEnableDesc": "使用標準 AES-256 為備份加密",
+  "autoBackupPassword": "備份密碼",
+  "autoBackupPasswordConfirm": "確認密碼",
+  "autoBackupPasswordMismatch": "兩次輸入的密碼不一致",
+  "autoBackupPasswordPlaceholder": "請輸入密碼",
+  "autoBackupScope": "備份範圍",
+  "autoBackupScopeSettings": "偏好設定",
+  "autoBackupScopeHealth": "健康資料",
+  "autoBackupScopeExtensions": "擴充套件資料",
+  "autoBackupScopeDevices": "裝置連線資訊",
+  "autoBackupStorageLocation": "儲存位置",
+  "autoBackupStorageLocationDesc": "備份檔案自動儲存至系統公用文件目錄",
+  "autoBackupOpenFolder": "在檔案管理器中開啟",
+  "autoBackupStatusEnabled": "已開啟 · 每 {value} {unit}",
+  "@autoBackupStatusEnabled": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "autoBackupStatusDisabled": "未開啟",
+  "autoBackupRunNow": "立即備份",
+  "autoBackupRunSuccess": "自動備份完成",
+  "autoBackupRunFailed": "自動備份失敗",
+  "backupPasswordDialogTitle": "輸入備份密碼",
+  "backupPasswordDialogMessage": "此備份已加密，請輸入密碼解密",
+  "backupPasswordIncorrect": "密碼錯誤，無法解密",
+  "backupPasswordRequired": "請輸入密碼",
+  "exportBackupPasswordOptional": "備份密碼（選填）",
+  "exportBackupPasswordPlaceholder": "留空則不加密",
+  "backupTargetPublicDocuments": "儲存至系統文件目錄",
+  "backupTargetCustom": "另存為外部檔案",
+  "restoreFromDocumentsTitle": "選擇要還原的備份",
+  "restorePickExternalFile": "選擇其他外部檔案...",
+  "backupSavedToDocuments": "備份已儲存至系統文件目錄",
+  "appDataExporting": "正在匯出並加密備份，請稍候",
+  "appDataDecrypting": "正在解密備份，請稍候",
+  "appDataRestoring": "正在還原資料，請稍候",
+  "autoBackupRetentionInputHint": "0 為不限制",
+  "autoBackupRetentionLabel": "保留份數（0 為不限制）",
+  "autoBackupRetentionUnit": "份",
+  "backupTypeAuto": "定期備份",
+  "backupTypeManual": "手動備份",
+  "autoBackupStatusDetail": "已開啟 · 每 {value} {unit} · 保留 {retentionText}",
+  "@autoBackupStatusDetail": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "retentionText": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsMiAccountRegion": "伺服器區域",
+  "settingsMiAccountRegionCn": "中國大陸 (CN)",
+  "settingsMiAccountRegionDe": "歐洲 (DE)",
+  "settingsMiAccountRegionRu": "俄羅斯 (RU)",
+  "settingsMiAccountRegionSg": "全球 / 新加坡 (SG)",
+  "settingsMiAccountRegionUs": "美洲 (US)",
+  "settingsMiAccountRegionIn": "印度 (IN)",
+  "alarmManagementTitle": "鬧鐘管理",
+  "alarmManagementNone": "沒有已設定的鬧鐘",
+  "pluginPermissionReadClipboard": "讀取剪貼簿",
+  "pluginPermissionWriteClipboard": "寫入剪貼簿",
+  "pluginPermissionHostServer": "執行本機 HTTP 服務",
+  "pluginPermissionReceiveLink": "接收應用程式連結",
+  "pluginProviderUnavailable": "此外掛程式資源來源暫時無法使用",
+  "pluginDisabled": "外掛程式已停用",
+  "pluginOpenWindow": "在獨立視窗中開啟",
+  "pluginRunSettings": "執行設定",
+  "pluginEnable": "啟用",
+  "pluginDisable": "停用",
+  "pluginEnabled": "啟用外掛程式",
+  "pluginBackground": "背景執行",
+  "pluginBackgroundDescription": "無活動 10 分鐘後停止",
+  "pluginBackgroundForbidden": "禁止",
+  "pluginBackgroundActive": "保持活躍",
+  "pluginBackgroundContinuous": "持續執行",
+  "pluginBackgroundForbiddenDescription": "離開外掛程式後停止執行",
+  "pluginBackgroundContinuousDescription": "離開外掛程式後繼續執行",
+  "pluginAutoStart": "自動啟動",
+  "pluginAutoStartDescription": "開啟 OronBox 時啟動外掛程式",
+  "pluginRunStatus": "執行狀態",
+  "pluginStopped": "已停止",
+  "pluginExistingGrant": "現有授權",
+  "pluginPermissionAsk": "詢問",
+  "pluginPermissionAllow": "允許",
+  "pluginTargetPermissions": "操作與目標授權",
+  "pluginNoTargetPermissions": "暫無裝置或應用程式授權",
+  "errorPlatformCapabilityUnavailable": "目前的平台或瀏覽器暫不支援此操作",
+  "oauthPopupBlocked": "請允許此網站開啟彈出視窗，然後重新登入",
+  "oauthBrowserCompleting": "正在原頁面完成登入",
+  "oauthBrowserCompleted": "登入成功，可以關閉此頁面",
+  "oauthBrowserOriginalClosed": "原頁面暫未回應，可以在此繼續登入",
+  "oauthBrowserContinue": "繼續登入",
+  "wasmCompatibilityTitle": "執行階段相容性測試",
+  "wasmCompatibilityMessage": "OronBox 需要測試此裝置能否執行 WebAssembly\n\n如果你看到此提示，可能有以下原因\n• 裝置執行 Android 8~9，且使用 Linux 4.x 核心\n• 上次載入執行階段或進行測試時意外退出\n\n測試期間可能閃退，這是已知的相容性風險\n這可能是由於裝置的系統安全性原則與執行階段不相容\n\n如果發生閃退，請重新開啟 OronBox\n應用程式會暫停載入執行階段以避免再次閃退\n\n屆時圖片處理、語音處理、部分外掛程式\n和華米應用程式背景指令碼等功能可能無法使用\n直到你再次使用相關功能前成功通過測試",
+  "wasmCompatibilityDefer": "暫不測試",
+  "wasmCompatibilityStart": "開始測試",
+  "wasmCompatibilityTesting": "正在測試，請稍候",
+  "wasmCompatibilityPassed": "相容性測試通過",
+  "wasmCompatibilityTestFailed": "測試未完成，請重試或暫不測試",
+  "wasmCompatibilityRequired": "使用此功能前需要完成相容性測試",
+  "pluginType": "外掛類型",
+  "pluginTypeAstroBox": "AstroBox-NG",
+  "pluginTypeOronBox": "OronBox",
+  "appDataCompilationCache": "編譯快取",
+  "appDataCompilationCacheDescription": "WebAssembly 編譯快取",
+  "openExternally": "外部開啟",
+  "externalOpenFailed": "無法開啟瀏覽器",
+  "resourceAstroBoxPurchaseTitle": "此檔案需要購買或授權",
+  "resourceAstroBoxPurchaseMessage": "此資源透過 AstroBox Creator Console 加密上傳\n需購買或取得授權後才能解密\n請改用 AstroBox 開啟",
+  "resourceAstroBoxAccessCheckFailed": "無法確認此檔案的存取狀態\n請重試",
+  "resourceAstroBoxDecryptionFailed": "檔案解密失敗\n請重試",
+  "appDataClearPluginCacheDescription": "清除外掛快取和暫存檔案\n需要時會重新產生或下載",
+  "appDataClearCompilationCacheDescription": "清除 WebAssembly 編譯快取\n需要時會重新產生",
+  "resourceMoreDevicesDownload": "更多裝置下載",
+  "resourceCompatibleWithDevice": "此資源適配了您的裝置",
+  "resourceIncompatibleWithDevice": "此資源暫未適配您的裝置",
+  "resourceInstallSucceeded": "安裝成功",
+  "installStorageFullTitle": "裝置儲存空間不足",
+  "installQuantityLimitTitle": "已達到安裝數量限制",
+  "installStorageFullHelp": "裝置預留儲存空間不足或已達到資源數量上限\n請先刪除一些資源，再重試安裝",
+  "installQuantityLimitHelp": "裝置已達到資源安裝數量上限\n請先刪除一些資源，再重試安裝",
+  "installTargetDeviceChanged": "請先切換至此安裝工作對應的裝置",
+  "debugNoLogs": "暫無日誌",
+  "debugNoLayoutTree": "此來源暫無版面配置樹",
+  "debugSelectElement": "選擇元素以查看詳細資訊",
+  "debugEmptyDirectory": "目錄為空",
+  "debugNoProtocolEvents": "尚未擷取通訊協定事件",
+  "globalAiNoProvidersTitle": "尚未新增提供者",
+  "globalAiNoProvidersMessage": "在上方新增提供者",
+  "globalAiNoModelsTitle": "暫無可用模型",
+  "globalAiNoModelsMessage": "請先新增模型",
+  "debugNoMatchingLogs": "沒有符合條件的日誌",
+  "appManagementNoVisibleApps": "沒有可顯示的應用程式",
+  "zeppOsAppCompatibilityEmpty": "尚未新增應用程式相容性檔案",
+  "qrScanCameraUnavailableMessage": "可以選擇圖片辨識 QR Code",
+  "resourceFeaturesDisabledTitle": "資源功能已關閉",
+  "pairingConnectStep": "連線裝置",
+  "pairingAccountStep": "綁定帳號",
+  "pairingLocalStep": "本機綁定",
+  "pairingAuthStep": "裝置驗證",
+  "pairingUnbound": "未綁定",
+  "pairingContinue": "繼續",
+  "pairingStartPrompt": "此裝置尚未綁定\n繼續後請依提示完成綁定",
+  "pairingSuccess": "連線成功",
+  "pairingTitle": "綁定裝置",
+  "pairingConnecting": "正在連線至裝置",
+  "pairingConfirmOnDevice": "請在裝置上確認綁定",
+  "pairingCompareCode": "請核對綁定碼是否一致",
+  "pairingRebind": "裝置需要重新綁定",
+  "pairingAlreadyBound": "此裝置已綁定",
+  "pairingUseExistingKey": "使用現有金鑰連線",
+  "engineeringTitle": "MiWear 工程模式",
+  "engineeringDescription": "裝置模式切換與韌體更新",
+  "engineeringMode": "裝置模式",
+  "engineeringUser": "使用者模式",
+  "engineeringUserDebug": "使用者偵錯模式",
+  "engineeringEng": "工程模式",
+  "engineeringModeConfirm": "裝置將重新啟動並中斷連線\n重新啟動後請重新連線",
+  "engineeringConnectDevice": "連線裝置",
+  "engineeringConnectConfirm": "將中斷目前裝置的連線\n請確認連線的是需要操作的裝置",
+  "engineeringFirmwareHint": "請選擇裝置對應的韌體檔案",
+  "engineeringOtaConfirm": "使用此韌體更新目前連線的裝置？\n請確認型號相符\n更新期間保持裝置電量充足",
+  "engineeringReturn": "重新啟動至使用者模式",
+  "engineeringIdle": "等待操作",
+  "engineeringScanning": "正在搜尋工程裝置",
+  "engineeringConnecting": "正在連線",
+  "engineeringUpdateBackBlocked": "正在更新韌體\n請等待目前操作完成",
+  "engineeringUploading": "正在上傳韌體",
+  "engineeringRestarting": "正在要求裝置重新啟動",
+  "engineeringWaiting": "正在等待裝置重新啟動\n請在裝置啟動後重新連線",
+  "engineeringFailed": "更新已中斷",
+  "engineeringEmpty": "未發現工程裝置\n請確認裝置已進入工程模式後重新搜尋",
+  "engineeringFirmwareError": "請選擇非空的韌體檔案",
+  "engineeringResponseError": "裝置拒絕了要求或傳回異常回應",
+  "engineeringTimeout": "裝置回應逾時\n請重新連線後再試",
+  "engineeringMtuError": "目前藍牙連線無法傳送控制訊息\n請重新連線或使用 SPP",
+  "engineeringBusyError": "請先完成或取消目前操作",
+  "engineeringConnectionError": "請先連線工程裝置",
+  "deviceSettingsTitle": "裝置設定",
+  "deviceSettingsDescription": "調整此裝置的使用偏好",
+  "deviceSettingsUnavailable": "目前沒有可用的裝置設定",
+  "deviceNotificationSync": "通知同步",
+  "deviceNotificationSyncDescription": "將所選應用程式的通知同步到此裝置",
+  "deviceNotificationApps": "同步的應用程式",
+  "deviceNotificationAppsEmpty": "找不到應用程式",
+  "updateReminderInbox": "訊息匣通知",
+  "inboxNotificationUnread": "您有未讀訊息",
+  "notificationPermissionsSection": "通知權限",
+  "notificationPermissionDisplay": "顯示通知",
+  "notificationPermissionRead": "讀取通知",
+  "notificationPermissionEnabled": "已開啟",
+  "notificationPermissionDisabled": "未開啟",
+  "notificationPermissionUnavailable": "無法讀取權限狀態",
+  "updateReminderFirmwareTitle": "發現韌體更新",
+  "updateReminderResourcesTitle": "發現資源更新",
+  "updateReminderPluginsTitle": "發現外掛程式更新",
+  "updateReminderFirmwareMessage": "您的裝置有可用的韌體更新",
+  "updateReminderResourcesMessage": "您裝置上的資源有可用更新",
+  "updateReminderCurrentVersion": "目前版本  {version}",
+  "updateReminderLatestFirmware": "最新韌體  {version}",
+  "updateReminderSilence": "不再提示直到下次更新",
+  "updateReminderInstall": "更新",
+  "updateReminderInstallAll": "更新全部",
+  "updateReminderChanged": "目前無法執行此更新"
+}

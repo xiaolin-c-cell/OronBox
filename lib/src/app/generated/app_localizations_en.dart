@@ -1,0 +1,6862 @@
+// Flutter's gen-l10n template emits deprecated SDK localization delegates.
+// ignore_for_file: deprecated_member_use
+
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get homeTab => 'Home';
+
+  @override
+  String get exploreTab => 'Explore';
+
+  @override
+  String get devicesTab => 'Devices';
+
+  @override
+  String get pluginsTab => 'Plugins';
+
+  @override
+  String get pluginImport => 'Import plugin';
+
+  @override
+  String get pluginInstalled => 'Installed';
+
+  @override
+  String get pluginMarket => 'Plugin market';
+
+  @override
+  String get pluginMarketEmpty => 'No plugins available';
+
+  @override
+  String get pluginSearchEmpty => 'No matching plugins';
+
+  @override
+  String get pluginEmpty => 'No plugins installed';
+
+  @override
+  String get pluginSelectHint => 'Select a plugin to view its features';
+
+  @override
+  String get pluginFeatures => 'Features';
+
+  @override
+  String get pluginDetails => 'Details';
+
+  @override
+  String get pluginNoFeatures => 'This plugin has no available features';
+
+  @override
+  String get pluginAuthor => 'Author';
+
+  @override
+  String get pluginVersion => 'Version';
+
+  @override
+  String get pluginApiLevel => 'API level';
+
+  @override
+  String get pluginWebsite => 'Website';
+
+  @override
+  String get pluginPermissions => 'Permissions';
+
+  @override
+  String get pluginDeclaredPermissions =>
+      'This plugin declares the following permissions:';
+
+  @override
+  String get pluginNoPermissions => 'No permissions declared';
+
+  @override
+  String get pluginUpToDate => 'Installed and up to date';
+
+  @override
+  String get pluginUninstallTitle => 'Uninstall plugin';
+
+  @override
+  String get pluginUninstallMessage =>
+      'The plugin\'s data will also be removed';
+
+  @override
+  String get pluginLegacyWarningTitle => 'Legacy plugin';
+
+  @override
+  String get pluginLegacyWarningMessage =>
+      'This is an AstroBox v1 plugin. OronBox will try to run it in compatibility mode, but issues may occur.\nCheck for an updated native OronBox plugin, or ask the author to adapt it';
+
+  @override
+  String get settingsTab => 'Settings';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get resourceListView => 'List view';
+
+  @override
+  String get resourceGridView => 'Card view';
+
+  @override
+  String get refresh => 'Refresh';
+
+  @override
+  String get refreshing => 'Refreshing';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get newlyPublished => 'Newly published';
+
+  @override
+  String get resourceLibrary => 'Resource library';
+
+  @override
+  String get resourceDetails => 'Resource details';
+
+  @override
+  String get resourceCollectionDetails => 'Collection details';
+
+  @override
+  String get resourceArticleDetails => 'Article details';
+
+  @override
+  String get creatorCenter => 'Creator center';
+
+  @override
+  String get creatorNewResource => 'New resource';
+
+  @override
+  String get creatorResourceName => 'Resource name';
+
+  @override
+  String get creatorResourceSummary => 'Resource summary';
+
+  @override
+  String get creatorSummaryHint =>
+      'Brief one or two sentences, single-line plain text';
+
+  @override
+  String get creatorDescriptionHint =>
+      'Detailed description, supports multi-line Markdown';
+
+  @override
+  String get creatorResourceMetadataRequired =>
+      'Resource name and summary are required';
+
+  @override
+  String get creatorSubmitValidationFailed =>
+      'Please fix the following before submitting';
+
+  @override
+  String get creatorPaidType => 'Payment type';
+
+  @override
+  String get creatorSaveDraft => 'Save draft';
+
+  @override
+  String get creatorAddArtifact => 'Add resource file';
+
+  @override
+  String get creatorBindDevices => 'Bind devices';
+
+  @override
+  String get creatorDeleteResource => 'Delete';
+
+  @override
+  String get creatorIconCover => 'Icon & cover';
+
+  @override
+  String get creatorInvalidImage =>
+      'Unable to decode this image; use PNG/JPEG/WebP';
+
+  @override
+  String get creatorInvalidPackage =>
+      'This file is not a Vela quick app or watchface';
+
+  @override
+  String creatorPublishPreparing(Object done, Object total) {
+    return 'Processing file $done/$total';
+  }
+
+  @override
+  String creatorPublishUploading(Object percent) {
+    return 'Uploading $percent%';
+  }
+
+  @override
+  String get creatorPublishServer => 'Server is processing…';
+
+  @override
+  String get creatorAstroBoxItemId => 'Item ID';
+
+  @override
+  String get creatorAstroBoxRepository => 'Repository name';
+
+  @override
+  String get creatorAstroBoxTags => 'Tags (comma separated)';
+
+  @override
+  String get creatorAstroBoxAuthor =>
+      'Author (must match your AstroBox username)';
+
+  @override
+  String get creatorAstroBoxBindAccount => 'Bind AstroBox account';
+
+  @override
+  String get replace => 'Replace';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get creatorSubmitReview => 'Submit';
+
+  @override
+  String get creatorArchiveAction => 'Delist';
+
+  @override
+  String get creatorArchiveConfirm =>
+      'Delisting hides this resource from the store. You can restore it anytime.';
+
+  @override
+  String get creatorRestoreAction => 'Relist';
+
+  @override
+  String get creatorDeleteConfirm =>
+      'This draft resource will be permanently deleted.';
+
+  @override
+  String get creatorDeletePublishedConfirm =>
+      'Permanently deletes the OronBox resource and the corresponding BandBBS resources. This cannot be undone. Content already published on AstroBox is not affected; contact the AstroBox-Repo maintainers to delist it.';
+
+  @override
+  String creatorArtifactCount(Object count) {
+    return '$count packages';
+  }
+
+  @override
+  String creatorKindMismatchMessage(Object detected, Object expected) {
+    return 'This file looks like a $detected, but this resource is a $expected. You can keep it, but please confirm before submitting for review.';
+  }
+
+  @override
+  String creatorDeviceMoveBlocked(Object name) {
+    return '\"$name\" has only this device bound and cannot be moved';
+  }
+
+  @override
+  String get creatorSelectDevices => 'Select supported devices';
+
+  @override
+  String creatorSelectedDeviceCount(Object count) {
+    return '$count devices selected';
+  }
+
+  @override
+  String get creatorNoDevicesSelected => 'No devices selected';
+
+  @override
+  String get creatorDeviceSelectionDone => 'Done';
+
+  @override
+  String get creatorAtLeastOneDevice =>
+      'Each resource file must bind at least one device';
+
+  @override
+  String get resourceAstroBoxPurchaseAction => 'Got it';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get resourceTypeFilter => 'Resource type';
+
+  @override
+  String get resourceCompatibleDevicesFilter => 'Compatible devices';
+
+  @override
+  String get currentDevice => 'Current device';
+
+  @override
+  String get currentWatchface => 'Current watchface';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get watchfaces => 'Watchface';
+
+  @override
+  String get module => 'Module';
+
+  @override
+  String get quickApps => 'Quickapps';
+
+  @override
+  String get firmwareTools => 'Firmware / Tools';
+
+  @override
+  String get oronBox => 'OronBox';
+
+  @override
+  String get bandbbs => 'BandBBS';
+
+  @override
+  String get astroBox => 'AstroBox';
+
+  @override
+  String get local => 'Local';
+
+  @override
+  String get install => 'Install';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get supportedDevices => 'Supported devices';
+
+  @override
+  String get downloads => 'Downloads';
+
+  @override
+  String downloadTimes(int count) {
+    return '$count downloads';
+  }
+
+  @override
+  String get changelog => 'Changelog';
+
+  @override
+  String get changelogUnavailable => 'No changelog yet';
+
+  @override
+  String get notFound => 'Not found';
+
+  @override
+  String get downloadStarted => 'Download started';
+
+  @override
+  String get compatible => 'Compatible with';
+
+  @override
+  String get incompatible => 'Incompatible with';
+
+  @override
+  String get incompatibleSuffix => '';
+
+  @override
+  String get myResources => 'My resources';
+
+  @override
+  String get drafts => 'Drafts';
+
+  @override
+  String get pendingReview => 'Pending review';
+
+  @override
+  String get published => 'Published';
+
+  @override
+  String get creatorStateSuspended => 'Delisted';
+
+  @override
+  String get creatorStateFrozen => 'Frozen';
+
+  @override
+  String get creatorSuspendedByOwnerNotice =>
+      'The resource is delisted. Keep editing and resubmit for review, or restore it directly';
+
+  @override
+  String get creatorSuspendedByAdminNotice =>
+      'An administrator delisted this resource. Edit and resubmit for review; it is restored once approved';
+
+  @override
+  String get creatorFrozenNotice =>
+      'An administrator froze this resource. It can no longer be edited and only an administrator can lift the freeze';
+
+  @override
+  String creatorModerationReason(Object reason) {
+    return 'Reason: $reason';
+  }
+
+  @override
+  String get creatorBannedTitle => 'Account banned';
+
+  @override
+  String get creatorBannedDescription =>
+      'Your account was banned by an administrator and the creator center is unavailable. Contact the team through a support ticket if you believe this is a mistake';
+
+  @override
+  String get creatorFrozenTitle => 'Creator capability frozen';
+
+  @override
+  String get creatorFrozenDescription =>
+      'An administrator froze your creator capability, so you cannot submit or manage resources for now. The rest of your account is unaffected';
+
+  @override
+  String get creatorBandBbsNoDevices =>
+      'Select supported devices for the resource file first';
+
+  @override
+  String creatorBandBbsUnmappedDevices(Object devices) {
+    return 'No BandBBS category could be resolved for: $devices';
+  }
+
+  @override
+  String get creatorBandBbsSharedCategory =>
+      'Devices in the same BandBBS category are bound to multiple packages. Bind one package per category';
+
+  @override
+  String get creatorBandBbsUnresolved => 'Unable to resolve a BandBBS category';
+
+  @override
+  String get creatorOptionalIcon => 'Icon (optional, 1:1)';
+
+  @override
+  String get creatorOptionalCover => 'Cover (optional, 3:2)';
+
+  @override
+  String get creatorRequiredIcon => 'Icon (required for AstroBox, 1:1)';
+
+  @override
+  String get creatorRequiredCover => 'Cover (required for AstroBox, 3:2)';
+
+  @override
+  String get creatorIconShapeHint =>
+      'The icon is not square and may look wrong in AstroBox';
+
+  @override
+  String get creatorCoverShapeHint =>
+      'The cover is not 3:2 and may look wrong in AstroBox';
+
+  @override
+  String get creatorTermsBandBbs => 'BandBBS community terms and rules';
+
+  @override
+  String get creatorTermsAstroBox => 'AstroBox-Repo submission standards';
+
+  @override
+  String get creatorTermsAccept =>
+      'I have read and accept the publishing agreements above';
+
+  @override
+  String get creatorTermsContinue => 'Enter Creator Center';
+
+  @override
+  String get agree => 'Agree';
+
+  @override
+  String get creatorRulesAccept =>
+      'I have read and agree to the review rules above';
+
+  @override
+  String get creatorBandBbsTermsNotice =>
+      'After OronBox review, this resource is published directly to the matching BandBBS categories. Deleting the OronBox resource also deletes the corresponding BandBBS resources.';
+
+  @override
+  String get creatorBandBbsLimitsNotice =>
+      'One-click publishing to BandBBS has the following limitations, which must be fixed manually after publishing:\n1. BandBBS provides no API to upload the resource icon, so the icon will appear blank on BandBBS; please update it manually on the BandBBS site\n2. BandBBS provides no API for discussion-forum tags, so the resource\'s forum attributes will not be set, which may get the resource removed; please set the correct forum manually on the BandBBS site';
+
+  @override
+  String get creatorAstroBoxTermsNotice =>
+      'After OronBox review, a resource repository is created and a PR is submitted to the official AstroBox repository, reviewed independently by AstroBox maintainers. To delist after publication, contact the AstroBox-Repo maintainers.';
+
+  @override
+  String get creatorAstroBoxReviewNotice =>
+      'Resources published to AstroBox must meet the review requirements:\n1. The resource must not contain obscene, politically sensitive or otherwise illegal content\n2. The resource quality must not be too low, e.g. a watchface made by merely swapping a template, or an overly simple quickapp\n3. The cover should be attractive and aesthetically pleasing, with a 3:2 ratio (recommended 1200x800); icon recommended 192x192\n4. The resource must run its basic functions properly on supported devices\n5. Uploading others\' resources without authorization is forbidden\n6. When using well-known IP assets, the preview must include a copyright notice image (stating the assets are unrelated to AstroBox and Xiaomi)';
+
+  @override
+  String get failed => 'Failed / Needs action';
+
+  @override
+  String get basicInfo => 'Basic info';
+
+  @override
+  String get packageFiles => 'Resource files';
+
+  @override
+  String get publishTargets => 'Publish targets';
+
+  @override
+  String get scan => 'Scan';
+
+  @override
+  String get logs => 'Logs';
+
+  @override
+  String get pairedDevices => 'Paired devices';
+
+  @override
+  String get apps => 'Apps';
+
+  @override
+  String get deviceAppCount => 'App count';
+
+  @override
+  String get deviceWatchfaceCount => 'Watchface count';
+
+  @override
+  String get deviceModuleCount => 'Module count';
+
+  @override
+  String get modules => 'Modules';
+
+  @override
+  String get connection => 'Connection';
+
+  @override
+  String get protocol => 'Protocol';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get errorBluetoothUnavailable =>
+      'Bluetooth is not available. Check that Bluetooth is enabled and OronBox has permission to use it';
+
+  @override
+  String get errorBluetoothConnectFailed =>
+      'Connection failed. Check Bluetooth permission, keep the device nearby and not in use, enable Connect new phone on the device, then try again';
+
+  @override
+  String get errorBluetoothDisconnected =>
+      'Bluetooth disconnected. Reconnect the device and try again';
+
+  @override
+  String get errorOperationTimeout => 'Operation timed out';
+
+  @override
+  String get errorDeviceNotReady =>
+      'Device is not ready. Connect and authenticate the device first';
+
+  @override
+  String get errorBleCharacteristicsMissing =>
+      'Required BLE channels were not found. Reconnect the device or check whether it supports this feature';
+
+  @override
+  String get errorWebSerialUnavailable =>
+      'This browser does not support Web Serial. Use Chrome, Edge, or another Web Serial compatible browser';
+
+  @override
+  String get errorAccountPasswordIncorrect =>
+      'Xiaomi account username or password is incorrect';
+
+  @override
+  String get errorAccountTwoFactorIncomplete =>
+      'Xiaomi account two-factor verification was not completed. Sign in again';
+
+  @override
+  String get errorXiaomiAccountSessionExpired =>
+      'Your Xiaomi account session has expired. Sign in again';
+
+  @override
+  String get errorOronBoxSessionExpired =>
+      'Your OronBox session has expired. Sign in to BandBBS again';
+
+  @override
+  String get errorNetworkUnavailable =>
+      'Unable to reach the service. Check your network and try again';
+
+  @override
+  String get errorServiceUnavailable =>
+      'The service is temporarily unavailable. Try again later';
+
+  @override
+  String get errorPermissionDenied =>
+      'You do not have permission to perform this operation';
+
+  @override
+  String get errorContentNotFound =>
+      'The requested content no longer exists or is unavailable';
+
+  @override
+  String get errorRequestConflict =>
+      'The content has changed. Refresh it and try again';
+
+  @override
+  String get errorCoinBalanceInsufficient => 'You do not have enough coins';
+
+  @override
+  String get errorCoinResourceLimit =>
+      'You can give at most 2 coins to this resource';
+
+  @override
+  String get errorCoinOwnResource => 'You cannot coin your own resource';
+
+  @override
+  String get errorCoinVotingFrozen => 'Coin voting is currently frozen';
+
+  @override
+  String get errorCoinAccountTooNew =>
+      'Your account must be at least 24 hours old to give coins';
+
+  @override
+  String get errorCoinOperationFailed =>
+      'The coin could not be sent. Try again';
+
+  @override
+  String get errorCoinStatusUnavailable =>
+      'Coin status is unavailable. Tap to retry';
+
+  @override
+  String get errorOperationFailed => 'The operation failed. Try again';
+
+  @override
+  String get errorUnknown => 'Something went wrong. Try again';
+
+  @override
+  String get errorDownloadQuotaExceeded =>
+      'Today\'s download limit has been reached';
+
+  @override
+  String get errorGitHubNotConfigured => 'GitHub publishing is not configured';
+
+  @override
+  String get errorRateLimited =>
+      'Too many requests. Wait a moment and try again';
+
+  @override
+  String get errorFileTooLarge => 'The selected file is too large';
+
+  @override
+  String get errorInvalidRequest =>
+      'Some submitted information is invalid. Check it and try again';
+
+  @override
+  String get errorOperationCancelled => 'Operation cancelled';
+
+  @override
+  String get errorUnsupportedFileType =>
+      'Unsupported or unrecognized file type';
+
+  @override
+  String get errorDeviceFeatureUnsupported =>
+      'This feature is not supported by the current device or firmware';
+
+  @override
+  String get errorDeviceMusicUnsupported =>
+      'Music transfer is not supported by the current device or firmware';
+
+  @override
+  String get errorDeviceRecordingUnsupported =>
+      'Recording export is not supported by the current device or firmware';
+
+  @override
+  String get errorDeviceScreenMirrorUnsupported =>
+      'Screen mirroring is not supported by the current device or firmware';
+
+  @override
+  String get errorNotInstalled => 'Required component or app is not installed';
+
+  @override
+  String get errorInvalidOperation =>
+      'Cannot perform this operation in the current state';
+
+  @override
+  String get errorCertificateVerificationFailed =>
+      'Certificate verification failed. If you are using a proxy, disable HTTPS interception for this app or make sure its certificate is trusted';
+
+  @override
+  String errorUnknownWithDetail(Object detail) {
+    return 'Operation failed: $detail';
+  }
+
+  @override
+  String get appearance => 'Appearance';
+
+  @override
+  String get resources => 'Resources';
+
+  @override
+  String get communitySourceAstroBoxRepo => 'AstroBox';
+
+  @override
+  String get communitySourceBandBbs => 'BandBBS Community';
+
+  @override
+  String get communitySourceHuamiAppStore => 'Amazfit App Store';
+
+  @override
+  String get devices => 'Devices';
+
+  @override
+  String creatorCompatibleDeviceCount(int count) {
+    return '$count devices';
+  }
+
+  @override
+  String get categories => 'Categories';
+
+  @override
+  String get advanced => 'Advanced';
+
+  @override
+  String get openSourceLicenses => 'Open source licenses';
+
+  @override
+  String get acknowledgements => 'Special Acknowledgements';
+
+  @override
+  String get deviceNotConnected => 'Not connected';
+
+  @override
+  String get deviceConnected => 'Connected';
+
+  @override
+  String get deviceDisconnected => 'Disconnected';
+
+  @override
+  String get deviceReconnect => 'Reconnect';
+
+  @override
+  String get deviceConnect => 'Connect';
+
+  @override
+  String get deviceSwitch => 'Switch';
+
+  @override
+  String get deviceSyncTime => 'Sync';
+
+  @override
+  String get deviceCharging => 'Charging';
+
+  @override
+  String get deviceLastChargedNow => 'Charged just now';
+
+  @override
+  String deviceLastChargedMinutes(int count) {
+    return 'Charged $count min ago';
+  }
+
+  @override
+  String deviceLastChargedHours(int count) {
+    return 'Charged $count hr ago';
+  }
+
+  @override
+  String deviceLastChargedDays(int count) {
+    return 'Charged $count days ago';
+  }
+
+  @override
+  String get deviceFeaturesInstallApp => 'Install app';
+
+  @override
+  String get deviceFeaturesInstallWatchface => 'Install watchface';
+
+  @override
+  String get deviceFeaturesInstallModule => 'Install module';
+
+  @override
+  String get deviceFeaturesInstallFirmware => 'Firmware update';
+
+  @override
+  String get deviceFeaturesInstallFirmwareDesc =>
+      'Check for device updates or install local firmware';
+
+  @override
+  String get firmwareCheckingUpdates => 'Checking for firmware updates';
+
+  @override
+  String get firmwareNoUpdatesFound =>
+      'No newer firmware was found for this device';
+
+  @override
+  String get firmwareSourceUnavailable =>
+      'An online firmware source is not yet available for this device type';
+
+  @override
+  String get firmwareVersionUnknown => 'Current firmware version unavailable';
+
+  @override
+  String get firmwareCurrentVersion => 'Current version';
+
+  @override
+  String get firmwareLatestRelease => 'Latest firmware';
+
+  @override
+  String get firmwareHistoricalReleases => 'Historical firmware';
+
+  @override
+  String get firmwareUpToDate => 'Your firmware is up to date';
+
+  @override
+  String get firmwareUpdateAvailable => 'An update is available';
+
+  @override
+  String get firmwareDownloadLatestFull => 'Download latest full package';
+
+  @override
+  String get firmwareUpdateIncrementalPackage => 'Install incremental update';
+
+  @override
+  String get firmwareUpdateFullPackage => 'Install full update';
+
+  @override
+  String get firmwareReleaseNotes => 'Release notes';
+
+  @override
+  String get firmwareReleaseNotesUnavailable => 'No release notes available';
+
+  @override
+  String get download => 'Download';
+
+  @override
+  String get downloadTaskAdded => 'Added to the download queue';
+
+  @override
+  String get zeppOsMoreFeatures => 'Special features';
+
+  @override
+  String get zeppOsMoreFeaturesDescription =>
+      'Manage additional features for Zepp OS devices';
+
+  @override
+  String get zeppOsDeviceFeaturesSection => 'Device features';
+
+  @override
+  String get zeppOsAppsAndDevelopmentSection => 'Apps and development';
+
+  @override
+  String get zeppOsAssistant => 'Voice lab';
+
+  @override
+  String get zeppOsAssistantDescription =>
+      'Capture, monitor, and reply to watch voice assistant sessions';
+
+  @override
+  String get zeppOsScreenMirror => 'Screen mirroring';
+
+  @override
+  String get zeppOsScreenMirrorDescription =>
+      'View the watch screen on this device';
+
+  @override
+  String get zeppOsScreenMirrorSemantics => 'Zepp OS watch screen mirror';
+
+  @override
+  String zeppOsScreenMirrorUnsupported(Object error) {
+    return 'This screen format cannot be displayed: $error';
+  }
+
+  @override
+  String get expand => 'Expand';
+
+  @override
+  String get collapse => 'Collapse';
+
+  @override
+  String get voiceLabTitle => 'Voice assistant';
+
+  @override
+  String get voiceLabXiaoAi => 'XiaoAI';
+
+  @override
+  String get voiceLabReceivingAudio => 'Receiving audio from the watch';
+
+  @override
+  String get voiceLabWaiting => 'Waiting for a voice session';
+
+  @override
+  String get voiceLabContinuousCapture => 'Continuous capture';
+
+  @override
+  String get voiceLabContinuousCaptureDescription =>
+      'Request the next recording when the current one ends';
+
+  @override
+  String get voiceLabReplyLabel => 'Reply sent to the watch';
+
+  @override
+  String get voiceLabReplyHint => 'Enter a reply';
+
+  @override
+  String get voiceLabReplyQueued =>
+      'Reply queued until the current recording ends';
+
+  @override
+  String get voiceLabReplySent => 'Reply sent to the watch';
+
+  @override
+  String get voiceLabCapturedData => 'Captured data';
+
+  @override
+  String get voiceLabDecoder => 'Decoder';
+
+  @override
+  String get voiceLabOpusFrames => 'Opus frames';
+
+  @override
+  String get voiceLabDataSize => 'Data size';
+
+  @override
+  String get voiceLabPcmSamples => 'PCM samples';
+
+  @override
+  String get voiceLabExportOpus => 'Export Opus';
+
+  @override
+  String get voiceLabExportWav => 'Export WAV';
+
+  @override
+  String get voiceLabClearCapture => 'Clear captured data';
+
+  @override
+  String get voiceLabSaveRecording => 'Save voice recording';
+
+  @override
+  String get voiceLabSaveOpus => 'Save Opus audio';
+
+  @override
+  String get voiceLabAudioProcessingFailedPrefix => 'Audio processing failed';
+
+  @override
+  String voiceLabAudioProcessingFailed(Object error) {
+    return 'Audio processing failed: $error';
+  }
+
+  @override
+  String voiceLabContinuousCaptureFailed(Object error) {
+    return 'Could not configure continuous capture: $error';
+  }
+
+  @override
+  String voiceLabAssistantSwitchFailed(Object error) {
+    return 'Could not switch voice assistant: $error';
+  }
+
+  @override
+  String voiceLabExportWavFailed(Object error) {
+    return 'Could not export WAV: $error';
+  }
+
+  @override
+  String voiceLabExportOpusFailed(Object error) {
+    return 'Could not export Opus: $error';
+  }
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String sendFailed(Object error) {
+    return 'Could not send: $error';
+  }
+
+  @override
+  String get ready => 'Ready';
+
+  @override
+  String get initializing => 'Initializing';
+
+  @override
+  String get zeppOsMapSelectPackage => 'Select a Zepp OS map package';
+
+  @override
+  String get zeppOsMapReadFailed => 'Could not read the map package';
+
+  @override
+  String get zeppOsMapTransferTitle => 'Transfer offline map';
+
+  @override
+  String zeppOsMapGarminDetected(Object fileName, Object mapName) {
+    return '$fileName\nDetected a single-file Garmin IMG map: $mapName';
+  }
+
+  @override
+  String get zeppOsMapGarminNoPreview =>
+      'This map does not contain a Zepp OS 11/x/y tile tree. The original IMG will be transferred as a single-file map package, so a coverage preview is unavailable.';
+
+  @override
+  String zeppOsMapTileSummary(Object fileName, Object count) {
+    return '$fileName · $count tiles\nThe preview shows package coverage, not the Garmin IMG rendering on the watch.';
+  }
+
+  @override
+  String get zeppOsMapStartTransfer => 'Start transfer';
+
+  @override
+  String get zeppOsMapTransferringBluetooth => 'Transferring over Bluetooth';
+
+  @override
+  String get zeppOsMapTransferComplete => 'Offline map transfer complete';
+
+  @override
+  String get zeppOsMapConversionFailed => 'Map could not be converted safely';
+
+  @override
+  String get zeppOsMapBtClassicHint =>
+      'BT Classic bulk transfer is active. After transfer starts, confirm the installation on the watch.';
+
+  @override
+  String get zeppOsMapBleHint =>
+      'BLE supports map packages up to 2 MB. Switch to BT Classic before transferring a larger map. After transfer starts, confirm the installation on the watch.';
+
+  @override
+  String get zeppOsMapPreviewTooLarge =>
+      'The map area is too large to preview in full';
+
+  @override
+  String zeppOsSettingPageLoadFailed(Object error) {
+    return 'Could not load the settings page: $error';
+  }
+
+  @override
+  String zeppOsAppCompatibilitySaved(Object appId) {
+    return 'Compatibility files saved for $appId';
+  }
+
+  @override
+  String zeppOsAppStorageSaved(Object appId) {
+    return 'settingsStorage saved for $appId';
+  }
+
+  @override
+  String get zeppOsAppSupplementFiles => 'Add app-side or setting files';
+
+  @override
+  String get zeppOsAppSupplementCompatibility =>
+      'Add mini-app compatibility files';
+
+  @override
+  String get zeppOsAppReplaceCompatibility =>
+      'Add or replace compatibility files';
+
+  @override
+  String get zeppOsAppSideAvailable => 'app-side ✓';
+
+  @override
+  String get zeppOsAppSideMissing => 'app-side missing';
+
+  @override
+  String get zeppOsSettingAvailable => 'setting ✓';
+
+  @override
+  String get zeppOsSettingMissing => 'setting missing';
+
+  @override
+  String get zeppOsAppEditStorage => 'Edit settingsStorage';
+
+  @override
+  String get zeppOsStorageKeyRequired => 'Key is required';
+
+  @override
+  String zeppOsStorageDuplicateKey(Object key) {
+    return 'Duplicate key: $key';
+  }
+
+  @override
+  String get zeppOsStorageDescription =>
+      'This data is shared by the setting page and app-side, and is stored as strings according to the Zepp OS specification.';
+
+  @override
+  String get zeppOsStorageEmpty => 'No stored entries';
+
+  @override
+  String get zeppOsStorageKey => 'Key';
+
+  @override
+  String get zeppOsStorageValue => 'Value';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get selectedFileReadFailed => 'Could not read the selected file';
+
+  @override
+  String get zeppOsAppInvalidHexId => 'Enter a valid hexadecimal App ID';
+
+  @override
+  String get zeppOsAppSelectCompatibilityFile =>
+      'Select at least one app-side.js or setting.js file';
+
+  @override
+  String get zeppOsAppHexId => 'App ID (hexadecimal)';
+
+  @override
+  String get optionalDisplayName => 'Display name (optional)';
+
+  @override
+  String get zeppOsAppSideUnchanged => 'Keep existing app-side';
+
+  @override
+  String get zeppOsSettingUnchanged => 'Keep existing setting';
+
+  @override
+  String get selectFile => 'Select file';
+
+  @override
+  String get zeppOsAppCompatibilityOverwriteHint =>
+      'Saving replaces compatibility files with the same name for this App ID, but does not modify the mini app on the watch.';
+
+  @override
+  String zeppOsDebugRefreshFailed(Object error) {
+    return 'Automatic refresh failed: $error';
+  }
+
+  @override
+  String get zeppOsDebugInvalidHex =>
+      'HEX must contain complete bytes separated by spaces, line breaks, 0x, commas, or similar separators';
+
+  @override
+  String get zeppOsDebugClearEventsTitle => 'Clear events for the current app?';
+
+  @override
+  String zeppOsDebugClearEventsDescription(Object appId) {
+    return 'All debug events for $appId will be cleared.';
+  }
+
+  @override
+  String get zeppOsDebugClearEvents => 'Clear events';
+
+  @override
+  String get zeppOsDebugRefresh => 'Refresh status and events';
+
+  @override
+  String get zeppOsDebugAppList => 'App-side list';
+
+  @override
+  String get zeppOsDebugNoApps =>
+      'No cached scripts or watch app-side sessions have been detected.';
+
+  @override
+  String get zeppOsDebugCached => 'Cached';
+
+  @override
+  String get zeppOsDebugNotCached => 'Not cached';
+
+  @override
+  String get zeppOsDebugRuntimeRunning => 'runtime running';
+
+  @override
+  String get zeppOsDebugRuntimeStopped => 'runtime stopped';
+
+  @override
+  String get zeppOsDebugLocalRuntime => 'Local runtime';
+
+  @override
+  String get zeppOsDebugCannotStart =>
+      'This App ID has no cached script and cannot be started locally.';
+
+  @override
+  String get zeppOsDebugCanStart =>
+      'The cached script can be started manually without fabricating watch session parameters.';
+
+  @override
+  String get zeppOsDebugScriptRunning =>
+      'The script is running in local QuickJS.';
+
+  @override
+  String get zeppOsDebugStartQuickJs => 'Start QuickJS';
+
+  @override
+  String get stop => 'Stop';
+
+  @override
+  String get zeppOsDebugMessageEditor => 'Message editor';
+
+  @override
+  String get zeppOsDebugUtf8Text => 'UTF-8 text';
+
+  @override
+  String get zeppOsDebugJsonCompact => 'JSON (compacted before sending)';
+
+  @override
+  String get zeppOsDebugHexBytes => 'HEX bytes';
+
+  @override
+  String get zeppOsDebugEncodingFailed =>
+      'The current content cannot be encoded in the selected mode';
+
+  @override
+  String get zeppOsDebugByteCountUnavailable => 'Bytes: --';
+
+  @override
+  String zeppOsDebugBytePreview(Object count, Object hex) {
+    return 'Bytes: $count\nHEX: $hex';
+  }
+
+  @override
+  String get zeppOsDebugInjectLocal =>
+      'Inject inbound message into local runtime';
+
+  @override
+  String get zeppOsDebugSendToWatch => 'Send to watch';
+
+  @override
+  String get zeppOsDebugWaitingForWatch =>
+      'Send to watch (waiting for a real session)';
+
+  @override
+  String get zeppOsDebugEvents => 'Debug events';
+
+  @override
+  String get zeppOsDebugClearCurrentApp => 'Clear current app';
+
+  @override
+  String get zeppOsDebugSearch => 'Search type, message, HEX, or readable text';
+
+  @override
+  String get zeppOsDebugWatchOnly => 'Real watch messages only';
+
+  @override
+  String get zeppOsDebugNoEvents => 'No events match the current filters';
+
+  @override
+  String get zeppOsDebugMessageActions => 'Message actions';
+
+  @override
+  String get zeppOsDebugLoadEditor => 'Load in editor';
+
+  @override
+  String get zeppOsDebugCopyHex => 'Copy HEX';
+
+  @override
+  String get zeppOsDebugCopyText => 'Copy text';
+
+  @override
+  String get zeppOsDebugSessionStatus => 'Runtime and session status';
+
+  @override
+  String zeppOsDebugCachedScript(Object status) {
+    return 'Cached script: $status';
+  }
+
+  @override
+  String zeppOsDebugLocalRuntimeStatus(Object status) {
+    return 'Local runtime: $status';
+  }
+
+  @override
+  String zeppOsDebugWatchSession(Object status) {
+    return 'Watch session: $status';
+  }
+
+  @override
+  String get exists => 'Available';
+
+  @override
+  String get notExists => 'Unavailable';
+
+  @override
+  String get running => 'Running';
+
+  @override
+  String get notRunning => 'Not running';
+
+  @override
+  String get notOpen => 'Not open';
+
+  @override
+  String get zeppOsDebugWatchSessionOpen => 'Real session open';
+
+  @override
+  String get zeppOsDebugRealHeader => 'Real header';
+
+  @override
+  String zeppOsDebugLatestStartup(Object status) {
+    return 'Latest startup status: $status';
+  }
+
+  @override
+  String get zeppOsDebugWatchInbound => 'From watch';
+
+  @override
+  String get zeppOsDebugWatchOutbound => 'To watch';
+
+  @override
+  String get zeppOsDebugLifecycle => 'Lifecycle';
+
+  @override
+  String get zeppOsMirrorInterval => 'Frame interval';
+
+  @override
+  String get zeppOsMirrorIntervalRange => '10–250';
+
+  @override
+  String get zeppOsOfflineMaps => 'Offline maps';
+
+  @override
+  String get zeppOsOfflineMapsDescription =>
+      'Transfer existing map packages to the watch';
+
+  @override
+  String get zeppOsAppSettings => 'App settings';
+
+  @override
+  String get zeppOsAppSettingsDescription =>
+      'Manage cached settings for Zepp OS apps';
+
+  @override
+  String get zeppOsAppDebug => 'App debugging';
+
+  @override
+  String get zeppOsAppDebugDescription =>
+      'Debug app-side scripts and device communication';
+
+  @override
+  String get deviceMusicSync => 'Music sync';
+
+  @override
+  String get deviceHealthTitle => 'Health';
+
+  @override
+  String get deviceHealthDescription =>
+      'Sync activity and sleep data from the device';
+
+  @override
+  String get deviceHealthSyncCardTitle => 'Health data';
+
+  @override
+  String get deviceHealthNeverSynced =>
+      'No health data has been synchronized yet';
+
+  @override
+  String deviceHealthLastSynced(String time) {
+    return 'Last synchronized $time';
+  }
+
+  @override
+  String get deviceHealthSync => 'Synchronize health data';
+
+  @override
+  String get deviceHealthSyncing => 'Synchronizing';
+
+  @override
+  String get deviceHealthAutoSyncTitle => 'Automatically sync health data';
+
+  @override
+  String get deviceHealthAutoSyncDescription =>
+      'Automatically synchronize health data when synchronizing device data';
+
+  @override
+  String get deviceHealthConnectFirst =>
+      'Connect the device to synchronize health data';
+
+  @override
+  String get deviceHealthPartialSync =>
+      'Some health data could not be synchronized';
+
+  @override
+  String get deviceHealthToday => 'Today';
+
+  @override
+  String get deviceHealthSteps => 'Steps';
+
+  @override
+  String get deviceHealthDistance => 'Distance';
+
+  @override
+  String get deviceHealthCalories => 'Calories';
+
+  @override
+  String get deviceHealthHeartRate => 'Heart rate';
+
+  @override
+  String get deviceHealthAverageHeartRateLabel => 'Average heart rate';
+
+  @override
+  String get deviceHealthRestingHeartRate => 'Resting heart rate';
+
+  @override
+  String get deviceHealthAbnormalHeartRate => 'Abnormal heart rate';
+
+  @override
+  String get deviceHealthHeartRateHigh => 'High heart rate';
+
+  @override
+  String get deviceHealthHeartRateLow => 'Low heart rate';
+
+  @override
+  String get deviceHealthHeartHealth => 'Heart health';
+
+  @override
+  String get deviceHealthHeartHealthMonitoring => 'Heart health monitoring';
+
+  @override
+  String get deviceHealthIrregularHeartbeat => 'Irregular heartbeat';
+
+  @override
+  String get deviceHealthLowBloodOxygen => 'Low blood oxygen';
+
+  @override
+  String get deviceHealthHighStress => 'High stress';
+
+  @override
+  String get deviceHealthDetected => 'Detected';
+
+  @override
+  String get deviceHealthSleep => 'Recent sleep';
+
+  @override
+  String get deviceHealthSleepCard => 'Sleep';
+
+  @override
+  String get deviceHealthAllDaySleep => 'All-day sleep';
+
+  @override
+  String get deviceHealthLongSleep => 'Long sleep';
+
+  @override
+  String get deviceHealthSleepStructure => 'Sleep structure';
+
+  @override
+  String get deviceHealthSleepDetails => 'Sleep details';
+
+  @override
+  String get deviceHealthSleepAverageHeartRate => 'Average sleep heart rate';
+
+  @override
+  String get deviceHealthSleepAverageBloodOxygen =>
+      'Average sleep blood oxygen';
+
+  @override
+  String deviceHealthAverageHeartRate(int value) {
+    return 'Average heart rate $value bpm';
+  }
+
+  @override
+  String get deviceHealthNoData => 'No data available';
+
+  @override
+  String get deviceHealthLoadFailed => 'Unable to load health data';
+
+  @override
+  String get deviceMusicUpload => 'Transfer music';
+
+  @override
+  String get deviceMusicSyncDescription => 'Sync MP3 files to the device';
+
+  @override
+  String get deviceMusicChooseDialog =>
+      'Select an MP3 file to sync to the device';
+
+  @override
+  String get deviceMusicReadFailed => 'Unable to read the selected MP3 file';
+
+  @override
+  String deviceMusicSizeInvalid(int maxMb) {
+    return 'MP3 files must be larger than 0 bytes and no larger than $maxMb MB';
+  }
+
+  @override
+  String get deviceMusicUnknownArtist => 'Unknown artist';
+
+  @override
+  String get deviceMusicTransferred => 'Music transfer complete';
+
+  @override
+  String get deviceMusicSongs => 'Songs';
+
+  @override
+  String deviceMusicSongsTotal(int count) {
+    return '$count total';
+  }
+
+  @override
+  String get deviceMusicNoPlaylist => 'Not in a playlist';
+
+  @override
+  String get deviceMusicPlaylists => 'Playlists';
+
+  @override
+  String get deviceMusicEmpty => 'No songs on the device';
+
+  @override
+  String get deviceMusicNoPlaylists => 'No playlists yet';
+
+  @override
+  String deviceMusicLoadFailed(String error) {
+    return 'Failed to load device music: $error';
+  }
+
+  @override
+  String get deviceMusicPlaylistCreate => 'New playlist';
+
+  @override
+  String get deviceMusicPlaylistRename => 'Rename playlist';
+
+  @override
+  String get deviceMusicPlaylistName => 'Playlist name';
+
+  @override
+  String deviceMusicPlaylistLimit(int count) {
+    return 'Up to $count playlists';
+  }
+
+  @override
+  String deviceMusicSongCount(int count) {
+    return '$count songs';
+  }
+
+  @override
+  String get deviceMusicDeleteSong => 'Delete this song from the device?';
+
+  @override
+  String get deviceMusicDeletePlaylist => 'Delete this playlist?';
+
+  @override
+  String get deviceMusicDeletePlaylistDescription =>
+      'Songs in the playlist will remain on the device.';
+
+  @override
+  String get deviceMusicManagePlaylists => 'Manage playlists';
+
+  @override
+  String get deviceMusicPlaylistMembership => 'Playlists';
+
+  @override
+  String deviceMusicTransferSpeed(String speed) {
+    return '$speed/s';
+  }
+
+  @override
+  String deviceMusicSelectedFiles(int count) {
+    return '$count files selected';
+  }
+
+  @override
+  String deviceMusicQueueProgress(int current, int total, String name) {
+    return 'Transferring $current/$total: $name';
+  }
+
+  @override
+  String get deviceRecordingsTitle => 'Recording sync';
+
+  @override
+  String get deviceRecordingsDescription =>
+      'Sync and export recordings from the watch';
+
+  @override
+  String get deviceRecordingsHint =>
+      'Recordings are received and verified one by one. Export each original file after synchronization.';
+
+  @override
+  String get deviceRecordingsSync => 'Sync recordings';
+
+  @override
+  String get deviceRecordingsReading => 'Reading recording list';
+
+  @override
+  String deviceRecordingsProgress(int completed, int total, String name) {
+    return 'Received $completed/$total: $name';
+  }
+
+  @override
+  String deviceRecordingsProgressCount(int completed, int total) {
+    return 'Received $completed/$total';
+  }
+
+  @override
+  String get deviceRecordingsEmpty =>
+      'Connect the watch and select Sync recordings';
+
+  @override
+  String get deviceRecordingsSave => 'Export recording';
+
+  @override
+  String get deviceRecordingsNoneOnWatch =>
+      'No new recordings were found on the watch';
+
+  @override
+  String deviceRecordingsSynced(int count) {
+    return 'Synced $count recordings';
+  }
+
+  @override
+  String deviceRecordingsSaveFailed(String error) {
+    return 'Could not export recording: $error';
+  }
+
+  @override
+  String get deviceRecordingsSavedBadge => 'Saved';
+
+  @override
+  String get deviceRecordingsSelectAll => 'Select all';
+
+  @override
+  String get deviceRecordingsDeselectAll => 'Deselect all';
+
+  @override
+  String deviceRecordingsExportSelected(int count) {
+    return 'Export selected ($count)';
+  }
+
+  @override
+  String get deviceRecordingsOpenDirectory => 'Open folder';
+
+  @override
+  String deviceRecordingsExported(String path) {
+    return 'Exported to $path';
+  }
+
+  @override
+  String get deviceRecordingsSaveSuccess => 'Recording exported';
+
+  @override
+  String get deviceRecordingsRefresh => 'Refresh';
+
+  @override
+  String get deviceMusicTransferTitle => 'Transfer MP3 file';
+
+  @override
+  String get deviceMusicVelaDescription =>
+      'Sync MP3 files to the device. Each file must not exceed 100 MB.';
+
+  @override
+  String get deviceMusicZeppDescription =>
+      'MP3 files up to 50 MB are supported. Bluetooth Classic is recommended for faster transfers; BLE is also supported but takes longer.';
+
+  @override
+  String get deviceMusicChooseMp3 => 'Select MP3 file';
+
+  @override
+  String get deviceMusicSongTitle => 'Track title';
+
+  @override
+  String get deviceMusicArtist => 'Artist';
+
+  @override
+  String deviceMusicFileSize(Object size) {
+    return 'File size: $size';
+  }
+
+  @override
+  String deviceMusicProgress(Object progress) {
+    return 'Transfer progress: $progress%';
+  }
+
+  @override
+  String get deviceMusicTransferring => 'Transferring';
+
+  @override
+  String get deviceMusicSend => 'Start transfer';
+
+  @override
+  String get zeppOsFindDevice => 'Find device';
+
+  @override
+  String get zeppOsFindDeviceDescription =>
+      'Make the device vibrate or ring continuously';
+
+  @override
+  String get deviceFeaturesDeviceInfo => 'Device info';
+
+  @override
+  String get deviceFeaturesDeviceInfoDesc => 'Firmware, storage and details';
+
+  @override
+  String get switchDeviceTitle => 'Switch device';
+
+  @override
+  String get savedDevices => 'Saved devices';
+
+  @override
+  String get deviceSwitchAddDevice => 'Add device';
+
+  @override
+  String get scanAndAdd => 'Scan and add';
+
+  @override
+  String get authkey => 'Auth key';
+
+  @override
+  String get authkeyPrompt => 'Enter device auth key';
+
+  @override
+  String get authkeyPlaceholder => 'Auth key';
+
+  @override
+  String get connectFailed => 'Connection failed';
+
+  @override
+  String deviceConnectingTo(String deviceName) {
+    return 'Connecting to $deviceName…';
+  }
+
+  @override
+  String get deviceConnectionPreparing => 'Preparing connection…';
+
+  @override
+  String deviceConnectionEstablishing(String transport) {
+    return 'Establishing $transport connection…';
+  }
+
+  @override
+  String get deviceConnectionInitializing => 'Initializing device protocol…';
+
+  @override
+  String get deviceConnectionAuthenticating => 'Authenticating device…';
+
+  @override
+  String get deviceConnectionFetchingStatus => 'Reading device information…';
+
+  @override
+  String get deviceTransportBle => 'BLE';
+
+  @override
+  String deviceEndpointUnavailable(String transport) {
+    return 'No $transport endpoint is available. Pair the device in system Bluetooth settings, then scan again.';
+  }
+
+  @override
+  String get deviceTransportSpp => 'SPP';
+
+  @override
+  String get deviceCompatibilityUnknown => 'Unrecognized device';
+
+  @override
+  String get webSerialTitle => 'Web Serial';
+
+  @override
+  String get webSerialHint =>
+      'On the web, OronBox connects to devices via Web Serial. Saved devices stay in this browser.';
+
+  @override
+  String get webSerialConnectDialogTitle => 'Connect via Web Serial';
+
+  @override
+  String get webSerialConnectDialogHint =>
+      'Enter the device auth key, then select the serial port in the browser prompt. The auth key is saved in this browser.';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get deviceActionsDelete => 'Delete';
+
+  @override
+  String get deviceActionsDisconnect => 'Disconnect';
+
+  @override
+  String get deviceActionsShareQR => 'Share QR';
+
+  @override
+  String get deviceShareOronBoxCode => 'Switch to OronBox code';
+
+  @override
+  String get deviceShareAstroBoxCompatibleCode =>
+      'Switch to AstroBox compatible code';
+
+  @override
+  String get installTapToSelectFile => 'Tap to select file';
+
+  @override
+  String get deviceInfoTitle => 'Device info';
+
+  @override
+  String get deviceInfoGroupDevice => 'Device';
+
+  @override
+  String get deviceInfoGroupSystem => 'System';
+
+  @override
+  String get deviceInfoGroupStatus => 'Status';
+
+  @override
+  String get fieldName => 'Name';
+
+  @override
+  String get fieldAddress => 'Address';
+
+  @override
+  String get fieldAuthkey => 'Auth key';
+
+  @override
+  String get fieldConnectionType => 'Connection type';
+
+  @override
+  String get fieldCodename => 'Codename';
+
+  @override
+  String get fieldModel => 'Model';
+
+  @override
+  String get fieldImei => 'IMEI';
+
+  @override
+  String get fieldFirmware => 'Firmware';
+
+  @override
+  String get fieldSerial => 'Serial';
+
+  @override
+  String get fieldBattery => 'Battery';
+
+  @override
+  String get fieldChargeStatus => 'Charge status';
+
+  @override
+  String get fieldStorage => 'Storage';
+
+  @override
+  String get appManagementTitle => 'App management';
+
+  @override
+  String get appManagementNone => 'No installed apps';
+
+  @override
+  String get appManagementShowSystemApps => 'Show system apps';
+
+  @override
+  String get watchfaceManagementTitle => 'Watchface management';
+
+  @override
+  String get watchfaceManagementNone => 'No installed watchfaces';
+
+  @override
+  String get moduleManagementTitle => 'Module management';
+
+  @override
+  String get moduleManagementNone => 'No installed modules';
+
+  @override
+  String moduleUninstallConfirm(String name) {
+    return 'Are you sure you want to uninstall module \"$name\"?';
+  }
+
+  @override
+  String get moduleStatusEnabled => 'Enabled';
+
+  @override
+  String get moduleStatusDisabled => 'Disabled';
+
+  @override
+  String get moduleEnable => 'Enable';
+
+  @override
+  String get moduleDisable => 'Disable';
+
+  @override
+  String get open => 'Open';
+
+  @override
+  String get externalLinkTitle => 'Open external link';
+
+  @override
+  String externalLinkDescription(String url) {
+    return 'You are about to visit $url\n\nThis website is operated by a third party, is not affiliated with OronBox, and its security is unknown. Please proceed with caution. Do you want to continue?';
+  }
+
+  @override
+  String get externalLinkAstroBoxResourceHint =>
+      'This appears to be an AstroBox resource. You can also view and install it within OronBox';
+
+  @override
+  String get continueToWebsite => 'Continue';
+
+  @override
+  String get viewInOronBox => 'View in OronBox';
+
+  @override
+  String get uninstall => 'Uninstall';
+
+  @override
+  String get enable => 'Enable';
+
+  @override
+  String get show => 'Show';
+
+  @override
+  String get hide => 'Hide';
+
+  @override
+  String get copy => 'Copy';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get desktopTrayShow => 'Show window';
+
+  @override
+  String get desktopTrayExit => 'Exit OronBox';
+
+  @override
+  String get desktopCloseTitle => 'Exit confirmation';
+
+  @override
+  String get desktopCloseMessage => 'Would you like to exit OronBox?';
+
+  @override
+  String get desktopCloseRemember => 'Do not ask again';
+
+  @override
+  String get desktopCloseToTray => 'Minimize to tray';
+
+  @override
+  String get desktopCloseExit => 'Exit OronBox';
+
+  @override
+  String get settingsDesktopCloseBehavior => 'Window closing';
+
+  @override
+  String get settingsDesktopCloseBehaviorDesc =>
+      'Choose what happens when the main window is closed';
+
+  @override
+  String get settingsRemoveBondBeforeSpp => 'Re-pair when connecting';
+
+  @override
+  String get settingsRemoveBondBeforeSppDesc =>
+      'Improves connection stability and prevents Xiaomi Fitness from taking the connection; turning it off may speed up connections';
+
+  @override
+  String get desktopCloseBehaviorAsk => 'Ask every time';
+
+  @override
+  String get desktopCloseBehaviorExit => 'Exit immediately';
+
+  @override
+  String get desktopCloseBehaviorTray => 'Minimize to tray';
+
+  @override
+  String get quickApp => 'Quickapp';
+
+  @override
+  String get miniprogram => 'Miniprogram';
+
+  @override
+  String get miniprograms => 'Miniprograms';
+
+  @override
+  String get watchface => 'Watchface';
+
+  @override
+  String get firmwareTool => 'Firmware / Tool';
+
+  @override
+  String get free => 'Free';
+
+  @override
+  String get paid => 'Paid';
+
+  @override
+  String get forcePaid => 'Force Paid';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get noContent => 'No content';
+
+  @override
+  String get preview => 'Preview';
+
+  @override
+  String get productDeviceRequirements => 'Device requirements';
+
+  @override
+  String get productOtherVersions => 'Other versions';
+
+  @override
+  String get productInQueue => 'In queue';
+
+  @override
+  String get settingsAccount => 'Account';
+
+  @override
+  String get settingsGeneral => 'General';
+
+  @override
+  String get settingsQueue => 'Queue';
+
+  @override
+  String get settingsAbout => 'About';
+
+  @override
+  String get settingsAccountLoginBBSDesc =>
+      'Sign in to access BandBBS resources';
+
+  @override
+  String get settingsAccountBandBbsSigningIn => 'Signing in';
+
+  @override
+  String get settingsAccountBandBbsOpenedBrowser =>
+      'Browser opened. Complete BandBBS authorization there';
+
+  @override
+  String get settingsAccountBandBbsSignedIn => 'BandBBS signed in';
+
+  @override
+  String get settingsAccountBandBbsLoginFailed => 'BandBBS sign-in failed';
+
+  @override
+  String get settingsBandBbsAccountRequired =>
+      'Sign in to your BandBBS account in Settings first';
+
+  @override
+  String get settingsAccountBBSAccount => 'BandBBS account';
+
+  @override
+  String get bandBbsAccountTitle => 'BandBBS account';
+
+  @override
+  String get bandBbsResourceId => 'Resource ID';
+
+  @override
+  String get bandBbsResourceIdHint => 'Enter BandBBS resource ID';
+
+  @override
+  String get bandBbsQueryResource => 'Query';
+
+  @override
+  String get bandBbsLogout => 'Sign out';
+
+  @override
+  String get bandBbsLoggedOut => 'Signed out';
+
+  @override
+  String accountSignOutTitle(Object accountName) {
+    return 'Sign out of $accountName?';
+  }
+
+  @override
+  String get accountSignOutMessage =>
+      'You will need to sign in again to use related features.';
+
+  @override
+  String get bandBbsLoadPreviews => 'Load post previews';
+
+  @override
+  String get bandBbsLoadPreviewsDesc =>
+      'Automatically load attachment previews in the resource list';
+
+  @override
+  String get bandBbsShowAllCategories => 'Show all categories';
+
+  @override
+  String get bandBbsShowAllCategoriesDesc =>
+      'Include categories for unsupported devices hidden by default';
+
+  @override
+  String get settingsMiAccount => 'Xiaomi account';
+
+  @override
+  String get settingsMiAccountDesc =>
+      'Sign in and sync authkeys from bound devices';
+
+  @override
+  String get deviceSwitchMiAccountImport =>
+      'Sign in to Xiaomi account and sync bound devices';
+
+  @override
+  String get deviceSwitchWearableLogImport =>
+      'Import devices from Xiaomi Fitness logs';
+
+  @override
+  String get settingsMiAccountLoginTitle => 'Xiaomi account login';
+
+  @override
+  String get settingsMiAccountUsername => 'Account';
+
+  @override
+  String get settingsMiAccountPassword => 'Password';
+
+  @override
+  String get settingsMiAccountRememberCredentials =>
+      'Remember account and password';
+
+  @override
+  String get settingsMiAccountLoginAndSync => 'Sign in and sync';
+
+  @override
+  String get settingsMiAccountLogInvalid =>
+      'Unable to read this Xiaomi Fitness log';
+
+  @override
+  String get settingsMiAccountLogNoDevices =>
+      'No device with a complete MAC and authkey was found in the log';
+
+  @override
+  String get settingsWearableLogSync => 'Read Xiaomi Fitness log';
+
+  @override
+  String get settingsWearableLogGuide =>
+      'Open Xiaomi Fitness\nGo to About at the bottom of the Profile page\nRepeatedly tap the orange ring logo\nTap Confirm in the dialog\nWait for the log has been... toast\nReturn here and tap Scan';
+
+  @override
+  String settingsWearableLogFound(int count) {
+    return 'Found $count devices, tap one to import';
+  }
+
+  @override
+  String settingsWearableLogImportedDevice(Object name) {
+    return 'Imported $name';
+  }
+
+  @override
+  String get settingsMiAccountMissingCredentials =>
+      'Enter your Xiaomi account and password';
+
+  @override
+  String get settingsMiAccountTwoFactorTitle => 'Xiaomi account verification';
+
+  @override
+  String get settingsMiAccountTwoFactorPrompt =>
+      'Complete Xiaomi account two-factor verification in the verification page';
+
+  @override
+  String get settingsMiAccountLoginWindowClosed =>
+      'The login window was closed';
+
+  @override
+  String settingsMiAccountSyncedDevices(int count) {
+    return 'Synced $count Mi devices';
+  }
+
+  @override
+  String get xiaomiAccountRequiredForEphemeris =>
+      'Sign in to your Xiaomi account before syncing ephemeris data';
+
+  @override
+  String get xiaomiWifiPasswordRequestTitle => 'Wi-Fi connection request';
+
+  @override
+  String xiaomiWifiPasswordRequestMessage(Object ssid) {
+    return 'The device is requesting a connection to “$ssid”.';
+  }
+
+  @override
+  String get settingsHuamiAccount => 'Amazfit account';
+
+  @override
+  String get settingsHuamiAccountDesc =>
+      'Sign in and save credentials for Zepp store access';
+
+  @override
+  String get settingsHuamiAccountSigningIn => 'Signing in';
+
+  @override
+  String get settingsHuamiAccountSignedIn => 'Amazfit account signed in';
+
+  @override
+  String get settingsHuamiAccountLoginTitle => 'Amazfit account login';
+
+  @override
+  String get settingsHuamiAccountUsername => 'Account';
+
+  @override
+  String get settingsHuamiAccountPassword => 'Password';
+
+  @override
+  String get settingsHuamiAccountRememberCredentials => 'Remember password';
+
+  @override
+  String get settingsHuamiAccountLoginAndSave => 'Sign in and save';
+
+  @override
+  String get settingsHuamiAccountMissingCredentials =>
+      'Enter your Amazfit account and password';
+
+  @override
+  String get settingsHuamiAccountRequired =>
+      'Sign in to your Amazfit account in Settings first';
+
+  @override
+  String get understood => 'I understand';
+
+  @override
+  String get settingsGeneralLanguage => 'Language';
+
+  @override
+  String get settingsGeneralLanguageDesc => 'Change app display language';
+
+  @override
+  String get settingsWideNavigationPosition => 'Navigation position';
+
+  @override
+  String get settingsWideNavigationPositionDesc =>
+      'Adjust side tab placement in the wide-screen state';
+
+  @override
+  String get settingsWideNavigationPositionBottom => 'Bottom';
+
+  @override
+  String get settingsWideNavigationPositionCenter => 'Center';
+
+  @override
+  String get settingsWideNavigationPositionSplit => 'Split';
+
+  @override
+  String get settingsAutoReconnectTitle => 'Auto reconnect';
+
+  @override
+  String get settingsAutoReconnectDesc =>
+      'Automatically reconnect to the last paired device on startup';
+
+  @override
+  String get settingsAutoReconnectOnDisconnectTitle => 'Auto reconnect';
+
+  @override
+  String get settingsAutoReconnectOnDisconnectDesc =>
+      'Try to reconnect when the device is disconnected unexpectedly';
+
+  @override
+  String get deviceReconnectAttempting => 'Reconnecting to device...';
+
+  @override
+  String get deviceReconnectSucceeded => 'Reconnected successfully';
+
+  @override
+  String get deviceReconnectFailedPrefix => 'Reconnect failed. Check: ';
+
+  @override
+  String get settingsSourceOfficialCdn => 'GitHub source CDN';
+
+  @override
+  String get settingsSourceOfficialCdnDesc =>
+      'CDN used to fetch the GitHub-hosted community index';
+
+  @override
+  String get settingsQueueAutoInstall => 'Auto install';
+
+  @override
+  String get settingsQueueAutoInstallDesc =>
+      'Start installation automatically after download';
+
+  @override
+  String get settingsQueueDontClear => 'Don\'t clear install queue';
+
+  @override
+  String get settingsQueueDontClearDesc =>
+      'Keep completed items in the install queue';
+
+  @override
+  String get settingsRealtimeActivityNotification =>
+      'Real-time activity notification';
+
+  @override
+  String get settingsRealtimeActivityNotificationDesc =>
+      'Use a real-time activity notification to show queue progress';
+
+  @override
+  String get settingsAboutWebsite => 'Official website';
+
+  @override
+  String get settingsTapToSignIn => 'Tap to sign in';
+
+  @override
+  String get settingsConnected => 'Connected';
+
+  @override
+  String get settingsSystem => 'System';
+
+  @override
+  String get settingsLight => 'Light';
+
+  @override
+  String get settingsDark => 'Dark';
+
+  @override
+  String get settingsOledDark => 'OLED dark';
+
+  @override
+  String get settingsThemeMode => 'Theme mode';
+
+  @override
+  String get settingsThemeModeDesc => 'Change app theme appearance';
+
+  @override
+  String get settingsThemePreset => 'Theme style';
+
+  @override
+  String get settingsThemePresetDesc => 'Choose the app\'s visual style';
+
+  @override
+  String get settingsThemePresetMaterial3 => 'Material 3';
+
+  @override
+  String get settingsThemePresetMaterial2 => 'Material 2';
+
+  @override
+  String get settingsThemePresetFluent => 'Fluent';
+
+  @override
+  String get settingsDynamicColor => 'Dynamic color';
+
+  @override
+  String get settingsDynamicColorDesc =>
+      'Use system accent colors for the app theme';
+
+  @override
+  String get settingsColorScheme => 'Color scheme';
+
+  @override
+  String get settingsColorSchemeDesc => 'Choose the app accent color';
+
+  @override
+  String get settingsColorSchemePink => 'Pink';
+
+  @override
+  String get settingsColorSchemePurple => 'Purple';
+
+  @override
+  String get settingsColorSchemeTeal => 'Teal';
+
+  @override
+  String get settingsColorSchemeGreen => 'Green';
+
+  @override
+  String get settingsColorSchemeRed => 'Red';
+
+  @override
+  String get settingsColorSchemeAmber => 'Amber';
+
+  @override
+  String get settingsDesktopAccentSource => 'Linux accent source';
+
+  @override
+  String get settingsDesktopAccentSourceDesc =>
+      'Choose whether to read accent colors from GTK or Qt';
+
+  @override
+  String get settingsDesktopAccentSourceSystem => 'Auto';
+
+  @override
+  String get settingsDesktopAccentSourceGtk => 'GTK';
+
+  @override
+  String get settingsDesktopAccentSourceQt => 'Qt';
+
+  @override
+  String get settingsCancel => 'Cancel';
+
+  @override
+  String get settingsTeamRoleMain => 'Main Developer / Architecture / Design';
+
+  @override
+  String get settingsTeamRoleHarmonyOS => 'HarmonyOS porting and maintenance';
+
+  @override
+  String get settingsTeamRoleDeviceConnection =>
+      'macOS connection optimization contribution';
+
+  @override
+  String get settingsTeamRoleZeppOS => 'ZeppOS adaptation and implementation';
+
+  @override
+  String get settingsAboutSoftware => 'About software';
+
+  @override
+  String get settingsAboutSoftwareDesc =>
+      'Version, changelog and development team';
+
+  @override
+  String get settingsAboutSoftwareTagline =>
+      'A pretty fast wearable management tool for VelaOS and ZeppOS, built with Flutter';
+
+  @override
+  String get settingsAboutSoftwareRepository => 'Open GitHub repository';
+
+  @override
+  String get settingsAboutSoftwareTeam => 'Development team';
+
+  @override
+  String get settingsAboutSoftwareBuildInfo => 'Build info';
+
+  @override
+  String get settingsAboutSoftwareCopyright => 'Copyright © 2026 OrPudding';
+
+  @override
+  String get acknowledgementsKazumi =>
+      'Reference for Material Design components and UI patterns.';
+
+  @override
+  String get acknowledgementsAstroBoxPublic =>
+      'Reference for UI structure and interaction design.';
+
+  @override
+  String get acknowledgementsAstroBoxNgCore =>
+      'Xiaomi device protocol and transport layer, ported and modified.';
+
+  @override
+  String get acknowledgementsAstroBoxNgPb =>
+      'Xiaomi wear protocol definitions, adopted verbatim.';
+
+  @override
+  String get acknowledgementsAstroBoxNgBluetooth =>
+      'Reference for Bluetooth connection flows.';
+
+  @override
+  String get acknowledgementsAstroBoxNgAccount =>
+      'Reference for Xiaomi account login and authkey retrieval flows.';
+
+  @override
+  String get acknowledgementsAstroBoxNgProvider =>
+      'Reference for community resource indexes and manifest parsing flows.';
+
+  @override
+  String get acknowledgementsAstroBoxNgAppWasm =>
+      'Reference for Web Serial connection flows.';
+
+  @override
+  String get acknowledgementsGadgetbridge =>
+      'ZeppOS protocol implementation, ported and modified.';
+
+  @override
+  String get acknowledgementsBreezyWeather =>
+      'Reference for the China weather source implementation.';
+
+  @override
+  String get acknowledgementsOpenMeteo =>
+      'Weather forecasts, air quality, and geocoding data under CC BY 4.0';
+
+  @override
+  String get resourceHomeRecommended => 'Recommended';
+
+  @override
+  String get resourceHomeFeatured => 'Featured';
+
+  @override
+  String get resourceHomeUpdates => 'Updates';
+
+  @override
+  String get blogTypeAnnouncement => 'Announcement';
+
+  @override
+  String get blogTypeRecommendation => 'Recommendation';
+
+  @override
+  String get blogTypeDocs => 'Docs';
+
+  @override
+  String get resourceHomeEmptyTitle => 'Nothing to recommend yet';
+
+  @override
+  String get resourceLibraryEndOfList =>
+      'You\'ve reached the end — check out resources from other sources?';
+
+  @override
+  String get resourceHomeEmptySubtitle =>
+      'You can get resources from the library';
+
+  @override
+  String get openResourceLibrary => 'Open resource library';
+
+  @override
+  String get downloadQueueTitle => 'Download queue';
+
+  @override
+  String get installQueueTitle => 'Install queue';
+
+  @override
+  String get queueClear => 'Clear';
+
+  @override
+  String get queueStart => 'Start';
+
+  @override
+  String get queuePause => 'Pause';
+
+  @override
+  String get downloadQueueEmpty => 'No download tasks';
+
+  @override
+  String get installQueueEmpty => 'No install tasks';
+
+  @override
+  String get localAppInstall => 'Local app install';
+
+  @override
+  String get localWatchfaceInstall => 'Local watchface install';
+
+  @override
+  String get localFirmwareInstall => 'Local firmware install';
+
+  @override
+  String get queueStatusPending => 'Waiting';
+
+  @override
+  String queueStatusDownloading(String percent) {
+    return 'Downloading $percent%';
+  }
+
+  @override
+  String queueStatusInstalling(String percent) {
+    return 'Installing $percent%';
+  }
+
+  @override
+  String get queueStatusCompleted => 'Completed';
+
+  @override
+  String get queueStatusFailed => 'Failed';
+
+  @override
+  String get queueDragToInstall =>
+      'Release to install an app, watchface, or plugin';
+
+  @override
+  String queueAddedFiles(int count) {
+    return 'Added $count files to install queue';
+  }
+
+  @override
+  String get installQueueReadFailed => 'Read failed';
+
+  @override
+  String get installQueueUnsupportedFile => 'Unsupported file';
+
+  @override
+  String timeTodayAt(Object time) {
+    return 'Today $time';
+  }
+
+  @override
+  String timeYesterdayAt(Object time) {
+    return 'Yesterday $time';
+  }
+
+  @override
+  String get settingsAccountBandBbsAccount => 'BandBBS account';
+
+  @override
+  String get settingsAccountGitHub => 'GitHub account';
+
+  @override
+  String get settingsAccountGitHubDesc =>
+      'Connect to publish AstroBox resources as yourself';
+
+  @override
+  String get githubAccountNeedsBandBbs => 'Sign in to BandBBS first';
+
+  @override
+  String get bandBbsPublishAuthTitle => 'Publish authorization';
+
+  @override
+  String get bandBbsResourceQueryTitle => 'Install purchased resources';
+
+  @override
+  String get settingsAboutLogs => 'Runtime logs';
+
+  @override
+  String get settingsAboutLogsDescription =>
+      'View, export, and manage runtime logs from the app and connected devices';
+
+  @override
+  String settingsAboutLogsSize(Object size) {
+    return 'Currently using $size';
+  }
+
+  @override
+  String get settingsAboutLogsExport => 'Export';
+
+  @override
+  String settingsAboutLogsExported(Object path) {
+    return 'Exported to $path';
+  }
+
+  @override
+  String get settingsAboutLogsEmpty => 'No log files';
+
+  @override
+  String get settingsAboutLogsClear => 'Clear';
+
+  @override
+  String get settingsDeviceLogsPull => 'Pull device logs';
+
+  @override
+  String get settingsDeviceLogsTip =>
+      'This pulls logs from the connected Xiaomi wearable and may take a while. Keep the app in the foreground and the device screen on until it finishes.';
+
+  @override
+  String get settingsDeviceLogsStart => 'Start';
+
+  @override
+  String get settingsDeviceLogsPulling => 'Pulling device logs';
+
+  @override
+  String get settingsDeviceLogsWaiting => 'Waiting for the device to send logs';
+
+  @override
+  String settingsDeviceLogsProgress(Object progress) {
+    return 'Received $progress%';
+  }
+
+  @override
+  String settingsDeviceLogsSaved(Object name) {
+    return 'Device logs saved as $name';
+  }
+
+  @override
+  String settingsDeviceLogsFailed(Object error) {
+    return 'Unable to pull device logs: $error';
+  }
+
+  @override
+  String get settingsAboutLogsClearConfirm =>
+      'All log files except the current session will be deleted.';
+
+  @override
+  String get settingsAboutLogsOpen => 'Open logs folder';
+
+  @override
+  String get settingsAboutLogsOpenFailed => 'Unable to open the logs folder';
+
+  @override
+  String get settingsLogsFileList => 'Log files';
+
+  @override
+  String get settingsAboutLogsWarningTitle => 'Sensitive information warning';
+
+  @override
+  String get settingsAboutLogsWarningMessage =>
+      'Logs may contain BandBBS, Xiaomi, or Amazfit login credentials and other sensitive information. Do not share them with anyone other than official OronBox maintainers!';
+
+  @override
+  String get pluginPermissionRequestTitle => 'Plugin permission request';
+
+  @override
+  String pluginPermissionRequestMessage(Object plugin, Object operation) {
+    return '\"$plugin\" wants to $operation.';
+  }
+
+  @override
+  String get pluginPermissionOnce => 'Allow once';
+
+  @override
+  String get pluginPermissionSession => 'Allow this run';
+
+  @override
+  String get pluginPermissionAlways => 'Always allow';
+
+  @override
+  String get pluginPermissionDeny => 'Deny';
+
+  @override
+  String get pluginPermissionOpenExternal => 'open an external link';
+
+  @override
+  String get pluginPermissionPickFile => 'access host files';
+
+  @override
+  String get pluginPermissionExportFile => 'export a file to the host';
+
+  @override
+  String get pluginPermissionInterconnect =>
+      'communicate with device applications';
+
+  @override
+  String get pluginPermissionProvider => 'register a resource provider';
+
+  @override
+  String get pluginPermissionReadDevice => 'read device information';
+
+  @override
+  String get pluginPermissionOperateDevice => 'operate a device';
+
+  @override
+  String get pluginPermissionObserveProtocol => 'read raw device protocol data';
+
+  @override
+  String get pluginPermissionSendProtocol =>
+      'send raw protocol data to a device';
+
+  @override
+  String get pluginPermissionReadAppSide => 'read AppSide scripts and events';
+
+  @override
+  String get pluginPermissionOperateAppSide => 'manage AppSide sessions';
+
+  @override
+  String get pluginErrorTitle => 'Plugin corrupted';
+
+  @override
+  String pluginErrorMessage(Object plugin, Object error) {
+    return '\"$plugin\" cannot run and may be corrupted.\n\nError: $error\n\nUninstall this plugin?';
+  }
+
+  @override
+  String get pluginPackageCorruptedMessage =>
+      'The selected plugin package cannot be read and may be corrupted. Obtain it again and try importing it.';
+
+  @override
+  String get pluginErrorClearData => 'Clear plugin data';
+
+  @override
+  String get pluginErrorUninstall => 'Uninstall plugin';
+
+  @override
+  String get pluginErrorSafeMode => 'Enter safe mode';
+
+  @override
+  String get pluginSafeModeTitle => 'Plugin safe mode is enabled';
+
+  @override
+  String get pluginSafeModeDescription =>
+      'All plugins are stopped and will reload after safe mode is disabled.';
+
+  @override
+  String get pluginSafeModeExit => 'Exit safe mode';
+
+  @override
+  String get devTools => 'DevTools';
+
+  @override
+  String get devToolsDescriptionDesktop => 'Open DevTools in a separate window';
+
+  @override
+  String get devToolsDescriptionEntry =>
+      'Show a DevTools entry button in app bars';
+
+  @override
+  String get devToolsOperationFailed => 'Unable to change the DevTools state';
+
+  @override
+  String get resourceTypeErrorTitle => 'Incorrect resource type';
+
+  @override
+  String get resourceTypeUnknownTitle => 'Unrecognized resource type';
+
+  @override
+  String get resourceTypeUnknownNoType =>
+      'OronBox cannot identify the resource type of this file; it may be corrupted';
+
+  @override
+  String get resourceTypeUnknownCancel => 'Cancel';
+
+  @override
+  String get watchfaceRestrictedTitle => 'Cannot Install Resource';
+
+  @override
+  String get watchfaceRestrictedMessage =>
+      'To respect intellectual property and comply with relevant policies, at the request of Xiaomi,\nOronBox cannot install watchfaces suspected of being from the official watchface store.\nIf you believe this is a false positive, please have the watchface author contact us.';
+
+  @override
+  String resourceTypeMismatchMessage(Object detectedType, Object selectedType) {
+    return 'This appears to be a $detectedType resource, but you selected $selectedType. Choose how to install it';
+  }
+
+  @override
+  String resourcePlatformMismatchMessage(
+    Object resourcePlatform,
+    Object resourceType,
+    Object deviceName,
+    Object devicePlatform,
+  ) {
+    return 'This appears to be a $resourceType resource for a $resourcePlatform device, but the connected device is $deviceName ($devicePlatform). It is not supported and forcing installation may cause unexpected problems';
+  }
+
+  @override
+  String resourceTypeUnknownMessage(Object selectedType) {
+    return 'OronBox cannot identify the actual resource type. Install it as $selectedType anyway?';
+  }
+
+  @override
+  String get resourceInstallCancel => 'Cancel installation';
+
+  @override
+  String get resourceInstallAcknowledge => 'I understand';
+
+  @override
+  String get resourceInstallForce => 'Force install';
+
+  @override
+  String resourceInstallForceCountdown(int seconds) {
+    return 'Force install (${seconds}s)';
+  }
+
+  @override
+  String resourceInstallAsSelected(Object type) {
+    return 'Continue as $type';
+  }
+
+  @override
+  String resourceInstallAsSelectedCountdown(Object type, int seconds) {
+    return 'Continue as $type (${seconds}s)';
+  }
+
+  @override
+  String resourceInstallAsDetected(Object type) {
+    return 'Install as $type';
+  }
+
+  @override
+  String get resourceTypeApp => 'miniprogram';
+
+  @override
+  String get resourceTypeQuickApp => 'quick app';
+
+  @override
+  String get resourceTypeResPack => 'Resource pack';
+
+  @override
+  String get resourceTypeWatchface => 'watchface';
+
+  @override
+  String get resourceTypeFirmware => 'firmware';
+
+  @override
+  String resourceInstallConfirmTitle(Object type) {
+    return 'Install $type';
+  }
+
+  @override
+  String resourceInstallConfirmMessage(Object fileName, Object fileSize) {
+    return 'Install $fileName ($fileSize)?';
+  }
+
+  @override
+  String get resourceInstallConfirm => 'Install';
+
+  @override
+  String get previewImages => 'Preview images';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get creatorConfirmTitle => 'Confirm commit';
+
+  @override
+  String get creatorConfirmOronBox => 'Commit to OronBox';
+
+  @override
+  String creatorConfirmBandBbs(Object category) {
+    return 'Sync to BandBBS: $category';
+  }
+
+  @override
+  String creatorConfirmAstroBox(Object owner, Object repository) {
+    return 'Sync to AstroBox: $owner/$repository';
+  }
+
+  @override
+  String get creatorBandBbsDirectPublish => 'Sync to BandBBS';
+
+  @override
+  String get creatorBandBbsBoundUpdate => 'Linked · Sync to BandBBS';
+
+  @override
+  String get creatorBandBbsVersionTitle => 'Version title';
+
+  @override
+  String get creatorBandBbsVersionMessage => 'Update notes';
+
+  @override
+  String get creatorBandBbsVersionPairRequired =>
+      'Enter both a version title and update notes, or leave both empty';
+
+  @override
+  String creatorLinkedSections(int count) {
+    return '$count linked sections';
+  }
+
+  @override
+  String creatorBandBbsBindingIds(Object categoryId, Object resourceId) {
+    return 'Section $categoryId · Resource $resourceId';
+  }
+
+  @override
+  String get creatorAstroBoxBoundSync => 'Linked · Sync to AstroBox';
+
+  @override
+  String get creatorThisCommit => 'This commit';
+
+  @override
+  String creatorAstroBoxPrPublish(Object repository) {
+    return 'Sync to AstroBox · $repository';
+  }
+
+  @override
+  String get creatorOronBoxRequired =>
+      'Required. Resources are reviewed by OronBox';
+
+  @override
+  String get creatorOpenInOronBox => 'View in OronBox';
+
+  @override
+  String get creatorAstroTagsHint => 'Separate tags with English semicolons ;';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get reviewNote => 'Review note';
+
+  @override
+  String get creatorReviewRejected => 'Resource changes requested';
+
+  @override
+  String creatorReviewState(Object state) {
+    return 'Review status: $state';
+  }
+
+  @override
+  String get creatorOperationWorking => 'Working';
+
+  @override
+  String get creatorProcessingImage => 'Processing image';
+
+  @override
+  String get creatorOperationRefreshing => 'Refreshing creator data';
+
+  @override
+  String get creatorOperationCreating => 'Creating resource';
+
+  @override
+  String get creatorOperationCreatingCollection => 'Creating collection';
+
+  @override
+  String get creatorOperationSaving => 'Saving changes';
+
+  @override
+  String get creatorOperationDeleting => 'Deleting';
+
+  @override
+  String get creatorOperationSubmitting => 'Submitting for review';
+
+  @override
+  String get creatorOperationAuthorizing => 'Waiting for authorization';
+
+  @override
+  String get creatorResolvingPublicationTarget =>
+      'Resolving publication category';
+
+  @override
+  String get creatorStateApproved => 'Approved';
+
+  @override
+  String get creatorStateReviewing => 'Reviewing';
+
+  @override
+  String get creatorStatePublishing => 'Publishing';
+
+  @override
+  String get creatorStateExternalReview => 'External review';
+
+  @override
+  String get creatorStateFailed => 'Publishing failed';
+
+  @override
+  String get creatorStateSuperseded => 'Superseded by a newer revision';
+
+  @override
+  String get creatorStateCancelled => 'Cancelled';
+
+  @override
+  String get creatorNoResources => 'No resources created yet';
+
+  @override
+  String get creatorLoginRequiredTitle => 'Sign in to use Creator Center';
+
+  @override
+  String get creatorLoginRequiredDescription =>
+      'Sign in to BandBBS and connect your OronBox account before creating, editing, or submitting resources';
+
+  @override
+  String get creatorLoginAction => 'Sign in to BandBBS';
+
+  @override
+  String get creatorBandBbsWriteReady => 'BandBBS publishing authorized';
+
+  @override
+  String get creatorBandBbsWriteMissing => 'BandBBS publishing not authorized';
+
+  @override
+  String get creatorGitHubOwnPublishReady => 'GitHub connected';
+
+  @override
+  String get creatorGitHubOwnPublishMissing => 'GitHub not connected';
+
+  @override
+  String get creatorAuthorize => 'Authorize';
+
+  @override
+  String get installQueueFixWatchfaceId => 'Fix watchface ID';
+
+  @override
+  String get installQueueFixWatchfaceIdHint => 'Enter a new watchface ID';
+
+  @override
+  String get installQueueReinstallWatchface => 'Reinstall watch face';
+
+  @override
+  String get installQueueRetryDirectly => 'Retry directly';
+
+  @override
+  String get installLowStorageMessage =>
+      'The device has insufficient reserved storage or has reached its item limit';
+
+  @override
+  String get installLowBatteryMessage => 'The device battery is too low';
+
+  @override
+  String get installQuantityLimitMessage =>
+      'The device has reached its installation limit';
+
+  @override
+  String get installQueueReplaceWatchface => 'Delete and reinstall';
+
+  @override
+  String installQueueReplaceWatchfaceMessage(String id) {
+    return 'A watch face with ID $id is already installed on the device, and this version cannot be installed directly\nYou can retry directly, or delete the existing watch face and reinstall\nIf installation fails after deletion, the original watch face cannot be restored automatically';
+  }
+
+  @override
+  String get watchfaceDowngradeMessage =>
+      'A watch face with the same ID is already installed on the device, and this version cannot be installed directly';
+
+  @override
+  String get authorize => 'Authorize';
+
+  @override
+  String get creatorBandBbsAuthorized =>
+      'BandBBS resource publishing is authorized';
+
+  @override
+  String get creatorBandBbsAuthorizationRequired =>
+      'Authorize OronBox separately to publish BandBBS resources on your behalf';
+
+  @override
+  String get connect => 'Connect';
+
+  @override
+  String get legalAndPrivacy => 'Legal and privacy';
+
+  @override
+  String get termsTitle => 'Terms and disclaimer';
+
+  @override
+  String get privacyTitle => 'Privacy notice';
+
+  @override
+  String get resourcePublishingTitle => 'Resource publishing agreement';
+
+  @override
+  String get reviewRulesTitle => 'Resource review rules';
+
+  @override
+  String get joinQqGroup => 'Join QQ Group';
+
+  @override
+  String get joinQqGroupDesc => 'Chat with developers and other users for help';
+
+  @override
+  String get feedbackTitle => 'Feedback';
+
+  @override
+  String get feedbackDesc => 'Submit feedback and view responses';
+
+  @override
+  String get reportResource => 'Report resource';
+
+  @override
+  String get reportComment => 'Report comment';
+
+  @override
+  String get report => 'Report';
+
+  @override
+  String get feedbackSubject => 'Subject';
+
+  @override
+  String get feedbackMessage => 'Feedback or issue';
+
+  @override
+  String get reportReason => 'Reason for report';
+
+  @override
+  String get noFeedback => 'No feedback yet';
+
+  @override
+  String get feedbackProcessing => 'Processing';
+
+  @override
+  String get feedbackReplied => 'Replied';
+
+  @override
+  String get feedbackOpen => 'Open';
+
+  @override
+  String get feedbackResolved => 'Resolved';
+
+  @override
+  String get feedbackDismissed => 'Dismissed';
+
+  @override
+  String get feedbackClosed => 'Closed';
+
+  @override
+  String get feedbackLoading => 'Loading tickets';
+
+  @override
+  String get feedbackNewTicket => 'New ticket';
+
+  @override
+  String get feedbackYou => 'You';
+
+  @override
+  String get feedbackResolution => 'Resolution';
+
+  @override
+  String get feedbackReplyHint => 'Reply to this ticket';
+
+  @override
+  String get feedbackConversationClosed =>
+      'This ticket is closed and cannot be replied to';
+
+  @override
+  String get checkUpdates => 'Check for updates';
+
+  @override
+  String get updateChecking => 'Checking for updates…';
+
+  @override
+  String get updateCheckFailed => 'Unable to check for updates';
+
+  @override
+  String get latestVersionInstalled => 'You are using the latest version';
+
+  @override
+  String newVersionAvailable(Object version) {
+    return 'Version $version is available';
+  }
+
+  @override
+  String get oobeWelcomeSlogan =>
+      'A beautiful and fast VelaOS / ZeppOS wearable device manager, built with Flutter';
+
+  @override
+  String get oobeNext => 'Next';
+
+  @override
+  String get oobeBack => 'Back';
+
+  @override
+  String get oobeFeatureDevicesTitle => 'Device connection';
+
+  @override
+  String get oobeFeatureDevicesBody =>
+      'Connect and manage VelaOS and ZeppOS wearable devices';
+
+  @override
+  String get oobeFeatureResourcesTitle => 'Resource center';
+
+  @override
+  String get oobeFeatureResourcesBody =>
+      'Supports the official OronBox source, AstroBox-Repo, BandBBS, and the Amazfit App Store';
+
+  @override
+  String get oobeFeaturePluginsTitle => 'JavaScript plugins';
+
+  @override
+  String get oobeFeaturePluginsBody =>
+      'A high-performance, highly extensible JavaScript plugin system with device interaction';
+
+  @override
+  String get oobeFeaturePlatformsTitle => 'Multi-platform';
+
+  @override
+  String get oobeFeaturePlatformsBody =>
+      'Available on Android, Windows, macOS, Linux, and Web';
+
+  @override
+  String get oobeOpenSourceTitle => 'Fully open source';
+
+  @override
+  String get oobeOpenSourceBody =>
+      'The OronBox client and server both follow GNU AGPL-3.0 with their complete source code available';
+
+  @override
+  String get oobeAgreementHint => 'Please read and scroll to the bottom';
+
+  @override
+  String get oobeAgreeCheckbox => 'I have read and agree';
+
+  @override
+  String get oobeDeclineExit => 'Exit';
+
+  @override
+  String get oobeDeclineWebHint =>
+      'You must accept the agreements to continue; please close this page';
+
+  @override
+  String get oobeLoginTitle => 'Connect your accounts';
+
+  @override
+  String get oobeLoginBandBbsDesc =>
+      'Sign in with your BandBBS account to access BandBBS resources and prepare creator services';
+
+  @override
+  String get oobeLoginLocalNote =>
+      'Xiaomi and Amazfit sign-in run entirely on this device\nRelated data is never sent to any third party other than Xiaomi/Amazfit';
+
+  @override
+  String get oobeLoginXiaomiDesc =>
+      'Sign in with your Xiaomi account to sync your bound Xiaomi devices';
+
+  @override
+  String get oobeLoginHuamiDesc =>
+      'Sign in with your Amazfit account to access Amazfit app store resources';
+
+  @override
+  String get oobeCdnTesting => 'Testing…';
+
+  @override
+  String get oobeCdnSelected => 'Best CDN selected';
+
+  @override
+  String get oobeCdnTitle => 'GitHub CDN Speed Test';
+
+  @override
+  String get oobeDoneTitle => 'All set';
+
+  @override
+  String get oobeDoneBody => 'Start exploring OronBox';
+
+  @override
+  String get oobeFinish => 'Finish';
+
+  @override
+  String get oobeRestoreAction => 'Restore from backup';
+
+  @override
+  String get oobeRestoreSuccess => 'Backup restored successfully';
+
+  @override
+  String get settingsReplayOobe => 'Restart guide';
+
+  @override
+  String get settingsReplayOobeDesc =>
+      'View the welcome guide and initial setup again';
+
+  @override
+  String get creatorConnect => 'Connect';
+
+  @override
+  String get comments => 'Comments';
+
+  @override
+  String get commentEmpty => 'No comments yet';
+
+  @override
+  String get commentHint => 'Write a comment';
+
+  @override
+  String get commentLoginRequired => 'Sign in with BandBBS to comment';
+
+  @override
+  String get commentPending => 'Pending review';
+
+  @override
+  String get commentBlocked =>
+      'This comment did not meet the community guidelines';
+
+  @override
+  String get commentModerationUnavailable =>
+      'Comment moderation is temporarily unavailable';
+
+  @override
+  String get commentRateLimited => 'You are commenting too quickly';
+
+  @override
+  String get commentReplying => 'Reply to comment';
+
+  @override
+  String get loadMore => 'Load more';
+
+  @override
+  String get more => 'More';
+
+  @override
+  String get reply => 'Reply';
+
+  @override
+  String get inbox => 'Inbox';
+
+  @override
+  String get inboxLoading => 'Loading messages';
+
+  @override
+  String get inboxEmpty => 'No messages';
+
+  @override
+  String get inboxClear => 'Clear messages';
+
+  @override
+  String get inboxClearFailed => 'Could not clear messages. Try again later.';
+
+  @override
+  String get messageUnknownTitle => 'Notification';
+
+  @override
+  String get messageUnknownBody => 'The notification data is unavailable.';
+
+  @override
+  String get messageCommentRepliedTitle => 'New comment reply';
+
+  @override
+  String get messageCommentHiddenTitle => 'Comment hidden';
+
+  @override
+  String get messageCommentHiddenAutomatedBody =>
+      'Your comment did not pass automated moderation and is currently hidden. You can submit an appeal from the message.';
+
+  @override
+  String get messageCommentHiddenReviewedBody =>
+      'Your comment was hidden after manual review.';
+
+  @override
+  String get messageReviewApprovedTitle => 'Resource approved';
+
+  @override
+  String get messageReviewRejectedTitle => 'Resource needs changes';
+
+  @override
+  String get messageResourceSuspendedTitle => 'Resource delisted';
+
+  @override
+  String get messageResourceFrozenTitle => 'Resource frozen';
+
+  @override
+  String get messageResourceDeletedTitle => 'Resource deleted';
+
+  @override
+  String get messageResourceRestoredTitle => 'Resource restored';
+
+  @override
+  String get messageReportUpdatedTitle => 'Report updated';
+
+  @override
+  String get messagePluginApprovedTitle => 'Plugin approved';
+
+  @override
+  String get messagePluginRelistedTitle => 'Plugin relisted';
+
+  @override
+  String get messagePluginRejectedTitle => 'Plugin needs changes';
+
+  @override
+  String get messagePluginDelistedTitle => 'Plugin delisted';
+
+  @override
+  String get messageCollectionApprovedTitle => 'Collection approved';
+
+  @override
+  String get messageCollectionRejectedTitle => 'Collection needs changes';
+
+  @override
+  String get messageCoinAddedTitle => 'Coins added';
+
+  @override
+  String get messageCoinDeductedTitle => 'Coins deducted';
+
+  @override
+  String get messageCoinReversedTitle => 'Coin transaction reversed';
+
+  @override
+  String get messageCoinVoteRevokedTitle => 'Coin contribution revoked';
+
+  @override
+  String get messageAppealOverturnedTitle => 'Appeal accepted';
+
+  @override
+  String get messageAppealUpheldTitle => 'Original decision upheld';
+
+  @override
+  String get messageAppealDismissedTitle => 'Appeal dismissed';
+
+  @override
+  String get messageAccountBannedTitle => 'Account suspended';
+
+  @override
+  String get messageAccountUnbannedTitle => 'Account suspension lifted';
+
+  @override
+  String get messageCreatorFrozenTitle => 'Creator access frozen';
+
+  @override
+  String get messageCreatorUnfrozenTitle => 'Creator access restored';
+
+  @override
+  String get messageRoleChangedTitle => 'Account role changed';
+
+  @override
+  String get messageRoleUser => 'user';
+
+  @override
+  String get messageRoleReviewer => 'reviewer';
+
+  @override
+  String get messageRoleAdministrator => 'administrator';
+
+  @override
+  String get messageApprovedBody => 'Your submission passed review.';
+
+  @override
+  String get messageNeedsChangesBody =>
+      'Review found issues that require changes.';
+
+  @override
+  String messageReasonBody(String reason) {
+    return 'Reason: $reason';
+  }
+
+  @override
+  String messageReviewNoteBody(String note) {
+    return 'Review note: $note';
+  }
+
+  @override
+  String messageReviewerPrefix(String reviewer) {
+    return 'Reviewer: $reviewer';
+  }
+
+  @override
+  String messageOperatorPrefix(String operator) {
+    return 'Operator: $operator';
+  }
+
+  @override
+  String messageReferencePrefix(String reference) {
+    return 'Related: $reference';
+  }
+
+  @override
+  String messageTargetsPrefix(String targets) {
+    return 'Channels: $targets';
+  }
+
+  @override
+  String messageUnapprovedItemsPrefix(String items) {
+    return 'Items needing changes: $items';
+  }
+
+  @override
+  String get messageStatusChangedBody => 'The status of this item has changed.';
+
+  @override
+  String messageReportStatusBody(String status) {
+    return 'Report status: $status';
+  }
+
+  @override
+  String messageCoinAddedBody(String amount) {
+    return '$amount coins were added to your account.';
+  }
+
+  @override
+  String messageCoinDeductedBody(String amount) {
+    return '$amount coins were deducted from your account.';
+  }
+
+  @override
+  String messageCoinVoteRevokedBody(String amount) {
+    return 'Your contribution of $amount coins to this resource was revoked.';
+  }
+
+  @override
+  String get messageAppealOverturnedBody =>
+      'The administrator reversed the original decision.';
+
+  @override
+  String get messageAppealUpheldBody =>
+      'The original decision remains unchanged after review.';
+
+  @override
+  String get messageAppealDismissedBody => 'The appeal was not accepted.';
+
+  @override
+  String messageRoleChangedBody(String role) {
+    return 'Your account role is now $role.';
+  }
+
+  @override
+  String get cleanMode => 'Feature switches';
+
+  @override
+  String get cleanModeDescription =>
+      'Manage main navigation, community features, and resource sources';
+
+  @override
+  String get cleanPluginsEntry => 'Plugins entry';
+
+  @override
+  String get cleanSourceHuamiAppStore => 'Amazfit App Store';
+
+  @override
+  String get announcementAcknowledge => 'Got it';
+
+  @override
+  String get cleanHomeFeed => 'Home feed';
+
+  @override
+  String get cleanExplore => 'Resource library';
+
+  @override
+  String get cleanInbox => 'Inbox';
+
+  @override
+  String get cleanAnnouncements => 'Announcement popups';
+
+  @override
+  String get cleanComments => 'Comments';
+
+  @override
+  String get cleanCreator => 'Creator center';
+
+  @override
+  String get cleanBandBbsLogin => 'BandBBS sign-in';
+
+  @override
+  String get cleanGitHubLogin => 'GitHub sign-in';
+
+  @override
+  String get cleanSourceOronBox => 'OronBox source';
+
+  @override
+  String get cleanSourceBandBbs => 'BandBBS source';
+
+  @override
+  String get cleanSourceAstroBox => 'AstroBox source';
+
+  @override
+  String get cleanExploreEntry => 'Explore entry';
+
+  @override
+  String get cleanNavigationGroup => 'Main navigation';
+
+  @override
+  String get cleanExploreContentGroup => 'Explore content';
+
+  @override
+  String get cleanHomeSectionsGroup => 'Home sections';
+
+  @override
+  String get cleanHomeBanner => 'Banner carousel';
+
+  @override
+  String get cleanHomeEditorSections => 'Editor sections';
+
+  @override
+  String get cleanResourceSourcesGroup => 'Resource sources';
+
+  @override
+  String get cleanCommunityGroup => 'Community features';
+
+  @override
+  String get settingsCategoryAccounts => 'Accounts and authorization';
+
+  @override
+  String get settingsCategoryAppearance => 'Appearance and navigation';
+
+  @override
+  String get settingsCategoryConnection => 'Connections and downloads';
+
+  @override
+  String get settingsCategorySupport => 'Support and information';
+
+  @override
+  String get settingsCategoryAdvanced => 'Advanced settings';
+
+  @override
+  String get settingsAdvancedDescription => 'View logs and developer tools';
+
+  @override
+  String get localServerTitle => 'Local API Server';
+
+  @override
+  String get localServerDescription =>
+      'Expose a local API for external CLI and development tools';
+
+  @override
+  String get localServerEnable => 'Enable Local API Server';
+
+  @override
+  String get localServerEnableDescription =>
+      'Allow approved clients on the local network to inspect and control OronBox';
+
+  @override
+  String get localServerEndpoint => 'Endpoint';
+
+  @override
+  String get localServerFingerprint => 'Server fingerprint';
+
+  @override
+  String get localServerPendingClients => 'Pending approvals';
+
+  @override
+  String get localServerAuthorizedClients => 'Approved clients';
+
+  @override
+  String get localServerApprove => 'Approve';
+
+  @override
+  String get localServerReject => 'Reject';
+
+  @override
+  String get localServerRevoke => 'Revoke access';
+
+  @override
+  String get localServerNoPendingClients =>
+      'No clients are waiting for approval';
+
+  @override
+  String get localServerNoAuthorizedClients => 'No approved clients';
+
+  @override
+  String get localServerSecurityNotice =>
+      'Only enable this service on a trusted network';
+
+  @override
+  String get localServerStartFailed => 'Could not start the Local API Server';
+
+  @override
+  String get localServerStopFailed => 'Could not stop the Local API Server';
+
+  @override
+  String get localServerPairingTitle => 'Allow Local API Access?';
+
+  @override
+  String localServerPairingDescription(String clientName) {
+    return '“$clientName” is requesting control over wearable services and command bus';
+  }
+
+  @override
+  String get localServerPairingFingerprint => 'Ed25519 SHA-256 Fingerprint';
+
+  @override
+  String get localServerPairingAlwaysAllow => 'Always allow from this computer';
+
+  @override
+  String get localServerPairingAllow => 'Allow';
+
+  @override
+  String get localServerPairingDeny => 'Deny';
+
+  @override
+  String get localServerPairingScopes => 'Requested permissions';
+
+  @override
+  String get wifiPasswordInputPlaceholder => 'Enter Wi-Fi password';
+
+  @override
+  String get wifiConnectButton => 'Connect';
+
+  @override
+  String get wifiCancelButton => 'Cancel';
+
+  @override
+  String get xmsDeveloperMode => 'XMS developer mode';
+
+  @override
+  String get xmsDeveloperModeDescription =>
+      'Allow Android app signatures to differ';
+
+  @override
+  String get oronBoxCoinsTitle => 'Resource coins';
+
+  @override
+  String oronBoxCoinsBalance(String balance) {
+    return 'Coin balance: $balance';
+  }
+
+  @override
+  String get oronBoxCoinsCheckin => 'Check in';
+
+  @override
+  String get oronBoxCoinsCheckedIn => 'Checked in';
+
+  @override
+  String oronBoxCoinsCheckinReward(int count) {
+    return 'Received $count coins';
+  }
+
+  @override
+  String get oronBoxCoinsDescription =>
+      'Check in daily for 1–5 coins and use them to support creators';
+
+  @override
+  String resourceFromCollection(String name) {
+    return 'From collection $name';
+  }
+
+  @override
+  String get resourceCoin => 'Coin';
+
+  @override
+  String get resourceCoinNotSignedIn => 'Not signed in';
+
+  @override
+  String get resourceCoinDialogTitle => 'Coin this resource';
+
+  @override
+  String get resourceCoinDialogMessage =>
+      'Coin this resource?\nThis action cannot be undone\n\nCoins help the resource receive more exposure\nThe creator receives 10% of the contributed amount\nCheck in at Settings - BandBBS account to earn coins';
+
+  @override
+  String get resourceCoinOne => 'Give 1 coin';
+
+  @override
+  String get resourceCoinTwo => 'Give 2 coins';
+
+  @override
+  String resourceCoinCount(int count) {
+    return '$count coins';
+  }
+
+  @override
+  String get resourceCoinSuccess => 'Coin sent';
+
+  @override
+  String get resourceCoinVoted => 'Coined';
+
+  @override
+  String get resourceFeatured => 'Featured';
+
+  @override
+  String get resourceCollection => 'Collection';
+
+  @override
+  String resourceCollectionType(String type) {
+    return '$type Collection';
+  }
+
+  @override
+  String get creatorCollections => 'Resource collections';
+
+  @override
+  String get creatorCollectionTag => 'Collection';
+
+  @override
+  String get creatorNewCollection => 'New collection';
+
+  @override
+  String get creatorMoveToCollection => 'Move to collection';
+
+  @override
+  String creatorMoveToCollectionConfirm(int count) {
+    return 'Move the $count selected resources into this collection?';
+  }
+
+  @override
+  String get creatorDissolveCollection => 'Dissolve collection';
+
+  @override
+  String get creatorResourceList => 'Resources';
+
+  @override
+  String get creatorAdditionalLinks => 'Additional links';
+
+  @override
+  String get creatorAddLink => 'Add link';
+
+  @override
+  String get creatorLinkTitle => 'Link name';
+
+  @override
+  String get creatorLinkUrl => 'Link URL';
+
+  @override
+  String get creatorCollectionName => 'Collection name';
+
+  @override
+  String get creatorCollectionSummary => 'Collection summary';
+
+  @override
+  String get creatorCollectionRepresentative => 'Representative resource';
+
+  @override
+  String get creatorCollectionDeleteConfirm =>
+      'Delete this collection? Its resources will only be unlinked.';
+
+  @override
+  String get creatorContentAttributes => 'Content attributes';
+
+  @override
+  String get creatorConfirm => 'Confirm';
+
+  @override
+  String get creatorCollectionAddResource => 'Add to collection';
+
+  @override
+  String creatorCollectionResourceCount(int count) {
+    return '$count resources';
+  }
+
+  @override
+  String communityImportSelected(int count) {
+    return '$count selected';
+  }
+
+  @override
+  String get communityImportResultCreated => 'Draft created';
+
+  @override
+  String get communityImportResultFailed => 'Failed';
+
+  @override
+  String get communityImportUnsupported => 'This type cannot be imported yet';
+
+  @override
+  String get communityImportDuplicate => 'Already exists in the creator center';
+
+  @override
+  String get communityImportNoArtifacts => 'No importable resource files';
+
+  @override
+  String get creatorImportExternal =>
+      'Import existing resources from other platforms';
+
+  @override
+  String get creatorNewResourceDescription =>
+      'Create and maintain a resource from OronBox';
+
+  @override
+  String get creatorNewCollectionDescription =>
+      'Create a collection for related resources';
+
+  @override
+  String get creatorImportExternalDescription =>
+      'Experimental: import your existing resources from BandBBS or AstroBox-Repo';
+
+  @override
+  String get creatorImportAlreadyImported => 'Imported and linked';
+
+  @override
+  String get creatorImportReviewNotice =>
+      'Imported content may be incomplete or misidentified. Review and adjust every field before submitting.';
+
+  @override
+  String get creatorImportLogTitle => 'Processing log';
+
+  @override
+  String get communityImportPickerEmpty => 'No resources';
+
+  @override
+  String get creatorWizardChooseAction => 'Create';
+
+  @override
+  String get creatorImportSelectTitle => 'Select resources';
+
+  @override
+  String get creatorImportProgressTitle => 'Importing';
+
+  @override
+  String get creatorImportResultTitle => 'Import result';
+
+  @override
+  String get creatorImportGitHubHint =>
+      'Connect GitHub to list your AstroBox resources';
+
+  @override
+  String get creatorImportGitHubConnect => 'Connect GitHub';
+
+  @override
+  String get creatorImportStageDetails => 'Fetching details';
+
+  @override
+  String get creatorImportStageDownloading => 'Downloading files';
+
+  @override
+  String get creatorImportStageMedia => 'Processing images';
+
+  @override
+  String get creatorImportStageUploading => 'Creating draft';
+
+  @override
+  String get creatorImportContinue => 'Import another';
+
+  @override
+  String get creatorImportPartialFailureTitle =>
+      'Some resources could not be read';
+
+  @override
+  String creatorImportPartialFailureMessage(int count) {
+    return '$count resource(s) could not be read\nYou can retry the failed items or continue with the resources that were read successfully';
+  }
+
+  @override
+  String get creatorImportRetryFailed => 'Retry failed items';
+
+  @override
+  String get creatorImportContinuePartial => 'Continue anyway';
+
+  @override
+  String creatorImportWarnings(int count) {
+    return '$count warnings';
+  }
+
+  @override
+  String get creatorDeleteExternalBandbbs =>
+      'Also delete the BandBBS resources';
+
+  @override
+  String get creatorDeleteExternalAstrobox =>
+      'Also submit a deletion PR to AstroBox-Repo';
+
+  @override
+  String get creatorDeleteExternalWarning =>
+      'External deletions cannot be undone';
+
+  @override
+  String get creatorDeletePrSubmitted => 'Deletion PR submitted';
+
+  @override
+  String githubCdnFallback(Object cdn) {
+    return 'GitHub request failed, retrying via $cdn';
+  }
+
+  @override
+  String get deviceConnectBle => 'Connect via BLE';
+
+  @override
+  String get deviceConnectBtClassic => 'Connect via BT Classic';
+
+  @override
+  String bandBbsIdLabel(Object id) {
+    return 'BandBBS ID $id';
+  }
+
+  @override
+  String get oobeCdnTestFailed => 'Failed';
+
+  @override
+  String get settingsGithubCdnAuto => 'Auto';
+
+  @override
+  String get updateDownloading => 'Downloading update';
+
+  @override
+  String get updateInstalling => 'Installing update';
+
+  @override
+  String get updateFailed => 'Update failed';
+
+  @override
+  String updateNoApkForAbi(String abi) {
+    return 'No APK is available for ABI $abi';
+  }
+
+  @override
+  String get cleanUpdateGroup => 'Updates';
+
+  @override
+  String get cleanCheckUpdates => 'Check for updates on launch';
+
+  @override
+  String get updateLater => 'Later';
+
+  @override
+  String get updateNow => 'Update now';
+
+  @override
+  String get updateGoToPage => 'Go to download page';
+
+  @override
+  String get updateDownloadFromCloud => 'Download from cloud drive';
+
+  @override
+  String get updateDownloadFromOfficial => 'Download from official website';
+
+  @override
+  String get creatorImportNoticeTitle => 'Import existing resources';
+
+  @override
+  String get creatorImportNoticeMessage =>
+      'Resources supporting multiple devices may be published to multiple BandBBS sections\nYou can select multiple BandBBS entries when importing, but select entries from the same resource\nClick Import to merge the selected entries into one resource\nIf the import fails, open the corresponding draft and delete it\nDeleting a draft will not delete resources linked on other platforms';
+
+  @override
+  String get creatorImportNoticeConfirm => 'Continue import';
+
+  @override
+  String get creatorImportSameResourceHint =>
+      'Select only one resource for each import';
+
+  @override
+  String get creatorFullVersionExternalPurchase => 'Requires external purchase';
+
+  @override
+  String get creatorExternalPurchaseDescription =>
+      'OronBox and AstroBox will publish the resource files as a trial version with a purchase button, while BandBBS publishes it as a \"Third-party purchase\" resource. You are responsible for handling payment-related matters yourself';
+
+  @override
+  String get creatorExternalPurchaseLink => 'Purchase link';
+
+  @override
+  String get creatorExternalPurchaseAmount => 'Amount (CNY)';
+
+  @override
+  String get creatorExternalPurchaseLinkRequired =>
+      'Enter a valid external purchase link';
+
+  @override
+  String get creatorExternalPurchaseAmountRequired =>
+      'Enter a valid CNY amount';
+
+  @override
+  String get resourcePurchaseFullVersion => 'External purchase';
+
+  @override
+  String get creatorBandBbsOverwritePrevious => 'Overwrite previous submission';
+
+  @override
+  String get creatorBandBbsOverwritePreviousDescription =>
+      'Create the new version first, then delete the previous BandBBS submission';
+
+  @override
+  String get deviceAboutTitle => 'About device';
+
+  @override
+  String get deviceValueUnavailable => 'Not provided';
+
+  @override
+  String get deviceHealthActivityOverview => 'Activity overview';
+
+  @override
+  String get deviceHealthActiveCalories => 'Active calories';
+
+  @override
+  String get deviceHealthStanding => 'Standing';
+
+  @override
+  String get deviceHealthBloodOxygen => 'Blood oxygen';
+
+  @override
+  String get deviceHealthStress => 'Stress';
+
+  @override
+  String get deviceHealthVitality => 'Vitality';
+
+  @override
+  String get deviceHealthWorkout => 'Workouts';
+
+  @override
+  String get deviceHealthTodayTotal => 'Today\'s total';
+
+  @override
+  String get deviceHealthRecordCount => 'records';
+
+  @override
+  String get deviceHealthNoDetailedRange => 'No detailed range';
+
+  @override
+  String get deviceHealthActivityTrend => 'Activity trend';
+
+  @override
+  String get deviceHealthTrend => 'Trend';
+
+  @override
+  String get deviceHealthDayView => 'Day';
+
+  @override
+  String get deviceHealthWeekView => 'Week';
+
+  @override
+  String get deviceHealthMonthView => 'Month';
+
+  @override
+  String get deviceHealthLatest => 'Latest';
+
+  @override
+  String get deviceHealthAverage => 'Average';
+
+  @override
+  String get deviceHealthRange => 'Range';
+
+  @override
+  String get deviceHealthNoSamples => 'No detailed samples';
+
+  @override
+  String get deviceHealthCurrentVitality => 'Current vitality';
+
+  @override
+  String get deviceHealthLightIntensity => 'Light intensity';
+
+  @override
+  String get deviceHealthModerateHighIntensity => 'Moderate to high intensity';
+
+  @override
+  String get deviceHealthNoSleep => 'No sleep data';
+
+  @override
+  String get deviceHealthNoWorkouts => 'No workout records';
+
+  @override
+  String get deviceHealthSleepStages => 'Sleep stages';
+
+  @override
+  String get deviceHealthSleepHrv => 'Sleep HRV';
+
+  @override
+  String get deviceHealthSleepAwake => 'Awake';
+
+  @override
+  String deviceHealthSleepWakeCount(num count) {
+    final intl.NumberFormat countNumberFormat = intl.NumberFormat.compact(
+      locale: localeName,
+    );
+    final String countString = countNumberFormat.format(count);
+
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countString times',
+      one: '1 time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get deviceHealthSleepLight => 'Light';
+
+  @override
+  String get deviceHealthSleepDeep => 'Deep';
+
+  @override
+  String get deviceHealthSleepRem => 'REM';
+
+  @override
+  String get deviceHealthSleepNoStages => 'No sleep stage data';
+
+  @override
+  String deviceHealthStepValue(Object value) {
+    return '$value steps';
+  }
+
+  @override
+  String get deviceHealthFeatureDescription =>
+      'View activity, heart rate, blood oxygen, stress, and sleep data';
+
+  @override
+  String get weatherSyncTitle => 'Weather sync';
+
+  @override
+  String get weatherSyncDescription =>
+      'Select a city and sync current weather and forecasts';
+
+  @override
+  String get weatherAutoSyncTitle => 'Automatically sync weather data';
+
+  @override
+  String get weatherAutoSyncDescription =>
+      'Automatically synchronize weather data when synchronizing device data';
+
+  @override
+  String get alarmManagementTitle => 'Alarm management';
+
+  @override
+  String get alarmManagementNone => 'No alarms configured';
+
+  @override
+  String get alarmManagementDescription =>
+      'Add, edit, enable, or delete device alarms';
+
+  @override
+  String get findDeviceDescription =>
+      'Make the device vibrate or ring continuously';
+
+  @override
+  String get appOrderTitle => 'App order';
+
+  @override
+  String get appOrderDescription =>
+      'Drag to reorder apps in the device launcher';
+
+  @override
+  String get appOrderSaved => 'App order saved';
+
+  @override
+  String get appOrderReload => 'Reload';
+
+  @override
+  String get appOrderUndo => 'Undo changes';
+
+  @override
+  String get appOrderSaving => 'Saving…';
+
+  @override
+  String get appOrderSave => 'Save changes';
+
+  @override
+  String get appOrderEmpty => 'The device returned no reorderable apps';
+
+  @override
+  String get appLayoutTitle => 'App layout';
+
+  @override
+  String get appLayoutDescription =>
+      'Choose how the device app list is displayed';
+
+  @override
+  String get appLayoutLoadFailed => 'Unable to load app layout';
+
+  @override
+  String get appLayoutList => 'List';
+
+  @override
+  String get appLayoutGrid => 'Grid';
+
+  @override
+  String get appLayoutTextGrid => 'Grid with labels';
+
+  @override
+  String get firmwareUpdateDescription =>
+      'Check for updates or install local firmware';
+
+  @override
+  String get deviceAboutDescription =>
+      'View model, system version, storage, and device identifiers';
+
+  @override
+  String get alarmAdd => 'Add alarm';
+
+  @override
+  String get alarmEdit => 'Edit alarm';
+
+  @override
+  String get alarmHour => 'Hour';
+
+  @override
+  String get alarmMinute => 'Minute';
+
+  @override
+  String get alarmRepeat => 'Repeat';
+
+  @override
+  String get alarmOnce => 'Once';
+
+  @override
+  String get alarmEveryDay => 'Every day';
+
+  @override
+  String get alarmWorkdays => 'Workdays';
+
+  @override
+  String get alarmHolidays => 'Holidays';
+
+  @override
+  String get alarmCustom => 'Custom';
+
+  @override
+  String get alarmLabel => 'Label';
+
+  @override
+  String get alarmDeleteTitle => 'Delete alarm?';
+
+  @override
+  String get alarmWeekly => 'Weekly';
+
+  @override
+  String get alarmMonthly => 'Monthly';
+
+  @override
+  String get alarmYearly => 'Yearly';
+
+  @override
+  String get alarmNoRepeat => 'Does not repeat';
+
+  @override
+  String alarmCustomDays(Object days) {
+    return 'Week $days';
+  }
+
+  @override
+  String get weekdayMonShort => 'M';
+
+  @override
+  String get weekdayTueShort => 'T';
+
+  @override
+  String get weekdayWedShort => 'W';
+
+  @override
+  String get weekdayThuShort => 'T';
+
+  @override
+  String get weekdayFriShort => 'F';
+
+  @override
+  String get weekdaySatShort => 'S';
+
+  @override
+  String get weekdaySunShort => 'S';
+
+  @override
+  String get weatherCityLabel => 'Sync city';
+
+  @override
+  String get weatherCityHint => 'Enter a city name';
+
+  @override
+  String get weatherSyncAction => 'Sync weather';
+
+  @override
+  String get weatherSyncing => 'Syncing…';
+
+  @override
+  String get weatherHumidity => 'Humidity';
+
+  @override
+  String get weatherWind => 'Wind';
+
+  @override
+  String get weatherAirQuality => 'Air quality';
+
+  @override
+  String get weatherAqiGood => 'Good';
+
+  @override
+  String get weatherAqiModerate => 'Moderate';
+
+  @override
+  String get weatherAqiSensitive => 'Unhealthy for sensitive groups';
+
+  @override
+  String get weatherAqiUnhealthy => 'Unhealthy';
+
+  @override
+  String get weatherAqiVeryUnhealthy => 'Very unhealthy';
+
+  @override
+  String get weatherAqiHazardous => 'Hazardous';
+
+  @override
+  String get weatherUv => 'UV index';
+
+  @override
+  String get weatherPressure => 'Pressure';
+
+  @override
+  String get weatherNext24Hours => 'Next 24 hours';
+
+  @override
+  String get weatherNext7Days => 'Next 7 days';
+
+  @override
+  String weatherDataSource(Object source) {
+    return 'Data source: $source';
+  }
+
+  @override
+  String weatherLevelDirection(Object level, Object direction) {
+    return 'Level $level · $direction';
+  }
+
+  @override
+  String weatherLevelDirectionCompact(Object level, Object direction) {
+    return 'Level $level $direction';
+  }
+
+  @override
+  String weatherForecastSummary(
+    Object condition,
+    Object sunrise,
+    Object sunset,
+  ) {
+    return '$condition · Sunrise $sunrise · Sunset $sunset';
+  }
+
+  @override
+  String get weatherClear => 'Clear';
+
+  @override
+  String get weatherPartlyCloudy => 'Partly cloudy';
+
+  @override
+  String get weatherCloudy => 'Cloudy';
+
+  @override
+  String get weatherLightRain => 'Light rain';
+
+  @override
+  String get weatherHeavyRain => 'Heavy rain';
+
+  @override
+  String get weatherThunderstorm => 'Thunderstorm';
+
+  @override
+  String get weatherSnow => 'Snow';
+
+  @override
+  String get weatherFog => 'Fog';
+
+  @override
+  String get weatherUnknown => 'Unknown';
+
+  @override
+  String get weatherUnknownDate => 'Unknown date';
+
+  @override
+  String weatherUpdatedAt(Object time) {
+    return 'Updated $time';
+  }
+
+  @override
+  String get windNorth => 'N';
+
+  @override
+  String get windNorthEast => 'NE';
+
+  @override
+  String get windEast => 'E';
+
+  @override
+  String get windSouthEast => 'SE';
+
+  @override
+  String get windSouth => 'S';
+
+  @override
+  String get windSouthWest => 'SW';
+
+  @override
+  String get windWest => 'W';
+
+  @override
+  String get windNorthWest => 'NW';
+
+  @override
+  String get xiaomiScreenshotTitle => 'Device screenshot';
+
+  @override
+  String get xiaomiScreenshotDescription =>
+      'Use the wearable\'s key combination to take a screenshot; it will sync here automatically';
+
+  @override
+  String get xiaomiScreenshotAction => 'Capture screenshot';
+
+  @override
+  String get xiaomiScreenshotLoading => 'Capturing screenshot…';
+
+  @override
+  String get xiaomiScreenshotEmpty => 'No screenshot yet';
+
+  @override
+  String get xiaomiScreenshotFailed => 'Screenshot failed';
+
+  @override
+  String get xiaomiScreenshotDownloadStarted => 'Screenshot download started';
+
+  @override
+  String get xiaomiScreenshotSaveFailed => 'Failed to save screenshot';
+
+  @override
+  String xiaomiScreenshotSaved(Object path) {
+    return 'Watch screenshot saved to: $path';
+  }
+
+  @override
+  String get deviceHealthRecoveryTime => 'Recovery';
+
+  @override
+  String get deviceHealthTodayLoad => 'Today load';
+
+  @override
+  String get deviceHealthSevenDayLoad => '7-day load';
+
+  @override
+  String get deviceHealthLoadLevel => 'Load level';
+
+  @override
+  String get deviceHealthFitnessBalance => 'Fitness balance';
+
+  @override
+  String get deviceHealthFitnessLevel => 'Fitness';
+
+  @override
+  String get deviceHealthFatigueLevel => 'Fatigue';
+
+  @override
+  String get deviceHealthTrainingStress => 'Training stress';
+
+  @override
+  String get deviceHealthTrainingStatus => 'Training status';
+
+  @override
+  String get deviceHealthSevenDayVitality => '7-day vitality';
+
+  @override
+  String get deviceHealthEarnedToday => 'Earned on this day';
+
+  @override
+  String get deviceHealthEarnedInPeriod => 'Earned in this period';
+
+  @override
+  String get deviceHealthModerateIntensity => 'Moderate';
+
+  @override
+  String get deviceHealthHighIntensity => 'High';
+
+  @override
+  String get deviceHealthNap => 'Naps';
+
+  @override
+  String get deviceHealthNapSingular => 'Nap';
+
+  @override
+  String get deviceHealthWorkoutOverview => 'Workout overview';
+
+  @override
+  String get deviceHealthWorkoutHistory => 'History';
+
+  @override
+  String get deviceHealthWorkoutDuration => 'Duration';
+
+  @override
+  String get deviceHealthWorkoutRoute => 'Route';
+
+  @override
+  String get deviceHealthWorkoutDetails => 'Details';
+
+  @override
+  String get deviceHealthSwimmingSections => 'Swimming sections';
+
+  @override
+  String get deviceHealthWorkoutCharts => 'Workout charts';
+
+  @override
+  String get deviceHealthActiveDuration => 'Active duration';
+
+  @override
+  String get deviceHealthAveragePace => 'Average pace';
+
+  @override
+  String get deviceHealthBestPace => 'Best pace';
+
+  @override
+  String get deviceHealthHeartRateRange => 'Heart-rate range';
+
+  @override
+  String get deviceHealthBloodOxygenRange => 'Blood oxygen range';
+
+  @override
+  String get deviceHealthMainStroke => 'Main stroke';
+
+  @override
+  String get deviceHealthHeartRateZones => 'Heart-rate zones';
+
+  @override
+  String deviceHealthZoneLabel(Object zone) {
+    return 'Zone $zone';
+  }
+
+  @override
+  String get deviceHealthZoneWarmup => 'Warm-up';
+
+  @override
+  String get deviceHealthZoneFatBurning => 'Fat burning';
+
+  @override
+  String get deviceHealthZoneAerobic => 'Aerobic';
+
+  @override
+  String get deviceHealthZoneAnaerobic => 'Anaerobic';
+
+  @override
+  String get deviceHealthZoneExtreme => 'Extreme';
+
+  @override
+  String get deviceHealthRecoveryAfterWorkout => 'Heart-rate recovery';
+
+  @override
+  String get deviceHealthRecoveredHeartRate => 'Recovered HR';
+
+  @override
+  String get deviceHealthRecoveryRate => 'Recovery rate';
+
+  @override
+  String get deviceHealthSamples => 'Samples';
+
+  @override
+  String get deviceHealthAverageSpeed => 'Average speed';
+
+  @override
+  String get deviceHealthTopSpeed => 'Top speed';
+
+  @override
+  String get deviceHealthAverageStride => 'Average stride';
+
+  @override
+  String get deviceHealthAverageCadence => 'Average cadence';
+
+  @override
+  String get deviceHealthMaximumCadence => 'Maximum cadence';
+
+  @override
+  String get deviceHealthAverageBloodOxygenDetail => 'Average blood oxygen';
+
+  @override
+  String get deviceHealthTotalAscent => 'Total ascent';
+
+  @override
+  String get deviceHealthTotalDescent => 'Total descent';
+
+  @override
+  String get deviceHealthAverageAltitude => 'Average altitude';
+
+  @override
+  String get deviceHealthAerobicEffect => 'Aerobic effect';
+
+  @override
+  String get deviceHealthAnaerobicEffect => 'Anaerobic effect';
+
+  @override
+  String get deviceHealthPeakEffect => 'Peak effect';
+
+  @override
+  String get deviceHealthVo2Max => 'VO₂ max';
+
+  @override
+  String get deviceHealthBodyEnergyUsed => 'Body energy used';
+
+  @override
+  String get deviceHealthExpectedRecovery => 'Recovery';
+
+  @override
+  String get deviceHealthTrainingLoad => 'Training load';
+
+  @override
+  String get deviceHealthVitalityEarned => 'Vitality earned';
+
+  @override
+  String get deviceHealthAveragePower => 'Average power';
+
+  @override
+  String get deviceHealthMaximumPower => 'Maximum power';
+
+  @override
+  String get deviceHealthArmPulls => 'Arm pulls';
+
+  @override
+  String get deviceHealthAverageStrokeRate => 'Average stroke rate';
+
+  @override
+  String get deviceHealthMaximumStrokeRate => 'Maximum stroke rate';
+
+  @override
+  String get deviceHealthTurns => 'Turns';
+
+  @override
+  String get deviceHealthAverageSwolf => 'Average SWOLF';
+
+  @override
+  String get deviceHealthBestSwolf => 'Best SWOLF';
+
+  @override
+  String get deviceHealthPoolLength => 'Pool length';
+
+  @override
+  String get deviceHealthJumps => 'Jumps';
+
+  @override
+  String get deviceHealthAverageJumpRate => 'Average jump rate';
+
+  @override
+  String get deviceHealthBestJumpRate => 'Best jump rate';
+
+  @override
+  String get deviceHealthTrips => 'Trips';
+
+  @override
+  String get deviceHealthSets => 'Sets';
+
+  @override
+  String get deviceHealthTotalStrokes => 'Total strokes';
+
+  @override
+  String get deviceHealthAverageRowingRate => 'Average rowing rate';
+
+  @override
+  String get deviceHealthBestRowingRate => 'Best rowing rate';
+
+  @override
+  String get deviceHealthChartHeartRate => 'Heart rate';
+
+  @override
+  String get deviceHealthChartCadence => 'Cadence';
+
+  @override
+  String get deviceHealthChartPace => 'Pace';
+
+  @override
+  String get deviceHealthChartSpeed => 'Speed';
+
+  @override
+  String get deviceHealthChartPower => 'Power';
+
+  @override
+  String get deviceHealthChartStrokeRate => 'Stroke rate';
+
+  @override
+  String get deviceHealthChartJumpRate => 'Jump rate';
+
+  @override
+  String get deviceHealthChartBloodOxygen => 'Blood oxygen';
+
+  @override
+  String get deviceHealthChartStress => 'Stress';
+
+  @override
+  String get deviceHealthWorkoutOutdoorRunning => 'Outdoor running';
+
+  @override
+  String get deviceHealthWorkoutOutdoorWalking => 'Outdoor walking';
+
+  @override
+  String get deviceHealthWorkoutIndoorRunning => 'Indoor running';
+
+  @override
+  String get deviceHealthWorkoutMountaineering => 'Mountaineering';
+
+  @override
+  String get deviceHealthWorkoutTrailRunning => 'Trail running';
+
+  @override
+  String get deviceHealthWorkoutOutdoorCycling => 'Outdoor cycling';
+
+  @override
+  String get deviceHealthWorkoutIndoorCycling => 'Indoor cycling';
+
+  @override
+  String get deviceHealthWorkoutFreeTraining => 'Free training';
+
+  @override
+  String get deviceHealthWorkoutSwimming => 'Swimming';
+
+  @override
+  String get deviceHealthWorkoutElliptical => 'Elliptical';
+
+  @override
+  String get deviceHealthWorkoutRowing => 'Rowing';
+
+  @override
+  String get deviceHealthWorkoutJumpRope => 'Jump rope';
+
+  @override
+  String get deviceHealthWorkoutHiking => 'Hiking';
+
+  @override
+  String get deviceHealthWorkoutGeneric => 'Workout';
+
+  @override
+  String get deviceHealthWorkoutExport => 'Export FIT';
+
+  @override
+  String deviceHealthWorkoutExported(Object path) {
+    return 'FIT exported to $path';
+  }
+
+  @override
+  String deviceHealthWorkoutExportFailed(Object error) {
+    return 'Could not export FIT: $error';
+  }
+
+  @override
+  String get deviceHealthStrokeMedley => 'Medley';
+
+  @override
+  String get deviceHealthStrokeBreaststroke => 'Breaststroke';
+
+  @override
+  String get deviceHealthStrokeFreestyle => 'Freestyle';
+
+  @override
+  String get deviceHealthStrokeBackstroke => 'Backstroke';
+
+  @override
+  String get deviceHealthStrokeButterfly => 'Butterfly';
+
+  @override
+  String get deviceHealthSectionLabel => 'Section';
+
+  @override
+  String deviceHealthVitalityRunSuggestion(Object minutes) {
+    return 'Run for $minutes minutes toward the next target';
+  }
+
+  @override
+  String deviceHealthVitalityActiveMinutes(Object minutes) {
+    return '$minutes active minutes to the next target';
+  }
+
+  @override
+  String get deviceHealthLatestHeartRate => 'Latest heart rate';
+
+  @override
+  String get deviceHealthLatestBloodOxygen => 'Latest blood oxygen';
+
+  @override
+  String get deviceHealthLatestStress => 'Latest stress';
+
+  @override
+  String get deviceHealthDebugSnapshots => 'Activity files';
+
+  @override
+  String get deviceHealthDebugSnapshotList => 'Activity files';
+
+  @override
+  String get deviceHealthDebugSnapshotsDescription =>
+      'Saved activity files available for export';
+
+  @override
+  String get deviceHealthDebugRefresh => 'Refresh';
+
+  @override
+  String get deviceHealthDebugRefreshDescription =>
+      'Reload the saved activity file list';
+
+  @override
+  String get deviceHealthDebugClearAll => 'Clear all';
+
+  @override
+  String get deviceHealthDebugClearAllDescription =>
+      'Delete every saved activity file';
+
+  @override
+  String get deviceHealthDebugNoSnapshots => 'No activity files yet';
+
+  @override
+  String get deviceHealthDebugReload => 'Replay';
+
+  @override
+  String get deviceHealthDebugReloaded => 'Activity file replayed';
+
+  @override
+  String deviceHealthDebugFiles(Object count) {
+    return '$count files';
+  }
+
+  @override
+  String get creatorAccounts => 'Accounts';
+
+  @override
+  String get creatorPendingItems => 'Pending';
+
+  @override
+  String get creatorResourceStatus => 'Resource status';
+
+  @override
+  String get creatorOverview => 'Overview';
+
+  @override
+  String get creatorManage => 'Manage';
+
+  @override
+  String get creatorManageUnavailable => 'Management is unavailable';
+
+  @override
+  String get creatorReviewTab => 'Reviews';
+
+  @override
+  String get creatorReviewQueue => 'Review queue';
+
+  @override
+  String get creatorReviewStatus => 'Review status';
+
+  @override
+  String get creatorReviewActive => 'Active';
+
+  @override
+  String get creatorReviewChangesRequested => 'Changes requested';
+
+  @override
+  String get creatorReviewDeclined => 'Rejected';
+
+  @override
+  String get creatorReviewClosed => 'Closed';
+
+  @override
+  String get creatorReviewFixedPending => 'Fixed, awaiting review';
+
+  @override
+  String get creatorNoPendingReviews => 'No pending reviews';
+
+  @override
+  String get creatorNoReviews => 'No reviews';
+
+  @override
+  String get creatorNeedsChanges => 'Needs changes';
+
+  @override
+  String get creatorConnected => 'Connected';
+
+  @override
+  String get creatorNotConnected => 'Not connected';
+
+  @override
+  String get creatorCenterExitTitle => 'Leave creator center';
+
+  @override
+  String get creatorCenterExitMessage =>
+      'Are you sure you want to leave the creator center';
+
+  @override
+  String get creatorEditComment => 'Edit comment';
+
+  @override
+  String get creatorReply => 'Reply';
+
+  @override
+  String creatorReplyingTo(Object id) {
+    return 'Replying to #$id';
+  }
+
+  @override
+  String creatorReplyPrefix(Object id) {
+    return 'Reply #$id: ';
+  }
+
+  @override
+  String get creatorSupplement => 'Additional note';
+
+  @override
+  String get creatorModifyResource => 'Modify resource';
+
+  @override
+  String get creatorAstroBoxReview => 'AstroBox review';
+
+  @override
+  String get creatorGithubPr => 'GitHub repository and PR';
+
+  @override
+  String get creatorApplyChanges => 'Apply changes';
+
+  @override
+  String get creatorUpdatedAt => 'Updated at';
+
+  @override
+  String get creatorSubmittedAt => 'Submitted at';
+
+  @override
+  String get creatorPublicationStatus => 'Publication status';
+
+  @override
+  String get creatorStageInfo => 'Edit info';
+
+  @override
+  String get creatorStageFiles => 'Bind files';
+
+  @override
+  String get creatorStagePublish => 'Publish config';
+
+  @override
+  String get creatorNextStep => 'Next step';
+
+  @override
+  String get creatorWatchfaceMissingId =>
+      'Watchface identification failed or all-zero: the watchface has no ID and cannot be uploaded';
+
+  @override
+  String get creatorWatchfaceZeroIdTitle =>
+      'All-zero watchface ID detected, please modify it before uploading';
+
+  @override
+  String get creatorWatchfacePayloadTooShort =>
+      'This watchface file is too small to contain an ID field';
+
+  @override
+  String get creatorQuickAppMissingPackage =>
+      'Quick app identification failed: the quick app has no package name and cannot be uploaded';
+
+  @override
+  String get creatorVelajsDefaultPackage =>
+      'Detected the quick app package name com.application.watch.demo, which is the VelaJS project default; please change it before uploading';
+
+  @override
+  String get creatorFilteredSupport => 'Filtered support';
+
+  @override
+  String get creatorSkippedPublication => 'Skipped publication';
+
+  @override
+  String get creatorAstroBoxUnsupportedDevicesNotice =>
+      'Some selected supported devices do not support publishing to AstroBox yet; their support declarations will be filtered out';
+
+  @override
+  String get creatorBandBbsUnsupportedDevicesNotice =>
+      'Some selected supported devices do not support publishing to BandBBS yet; their publication will be skipped';
+
+  @override
+  String get errorSppBondRemovalFailed =>
+      'Could not remove Bluetooth pairing\nUnpair the device in your phone’s Bluetooth settings and try again';
+
+  @override
+  String get viewAllResources => 'View all';
+
+  @override
+  String get deviceHealthMinimum => 'Minimum';
+
+  @override
+  String get deviceHealthMaximum => 'Maximum';
+
+  @override
+  String get deviceHealthResting => 'Resting';
+
+  @override
+  String get deviceHealthDebugExport => 'Export activity files';
+
+  @override
+  String get deviceHealthDebugExportTooltip => 'Export activity files';
+
+  @override
+  String deviceHealthDebugExported(String path) {
+    return 'Activity files exported to $path';
+  }
+
+  @override
+  String deviceHealthDebugExportFailed(String error) {
+    return 'Could not export activity files: $error';
+  }
+
+  @override
+  String get deviceHealthDebugImport => 'Import activity files';
+
+  @override
+  String get deviceHealthDebugImportDescription =>
+      'Import previously exported activity files';
+
+  @override
+  String deviceHealthDebugImported(String deviceCode, int files) {
+    return 'Imported $deviceCode ($files files)';
+  }
+
+  @override
+  String deviceHealthDebugImportFailed(String error) {
+    return 'Could not import activity files: $error';
+  }
+
+  @override
+  String get commentDeletedPlaceholder => 'Comment deleted';
+
+  @override
+  String commentViewReplies(int count) {
+    return 'View all $count replies';
+  }
+
+  @override
+  String get commentThreadTitle => 'Comment details';
+
+  @override
+  String commentReplyTarget(String username) {
+    return 'Reply to $username';
+  }
+
+  @override
+  String get commentLoadEarlier => 'Load earlier replies';
+
+  @override
+  String get messageCommentCreatedTitle => 'New comment on your resource';
+
+  @override
+  String get scanQrCode => 'Scan QR code';
+
+  @override
+  String get deviceSwitchQrImport =>
+      'Import existing device from share QR code';
+
+  @override
+  String get creatorCollectionReplacePendingDescription =>
+      'This replaces the pending submission\nThe published version stays available';
+
+  @override
+  String get creatorCollectionNoMatchingResources =>
+      'No matching resources\nCreate a resource in Creator Center first';
+
+  @override
+  String get commentCreateFailed => 'Could not post comment, try again';
+
+  @override
+  String get commentsReadFailed => 'Could not load comments, try again';
+
+  @override
+  String get commentDeleteFailed => 'Could not delete comment, try again';
+
+  @override
+  String get errorRequestTimeout => 'Request timed out, try again';
+
+  @override
+  String get creatorCollectionReplacePendingTitle =>
+      'Replace pending revision?';
+
+  @override
+  String get creatorCollectionReplaceAndSubmit => 'Replace and submit';
+
+  @override
+  String get creatorCollectionCreateTitle => 'Create collection';
+
+  @override
+  String get creatorCollectionEditTitle => 'Edit collection';
+
+  @override
+  String creatorCollectionCurrentRevision(String number) {
+    return 'Live revision: $number';
+  }
+
+  @override
+  String creatorCollectionPendingRevision(String number) {
+    return 'Pending revision: $number';
+  }
+
+  @override
+  String get creatorCollectionHistory => 'View previous revisions';
+
+  @override
+  String get creatorCollectionBody => 'Body (Markdown)';
+
+  @override
+  String get creatorMediaIcon => 'Icon';
+
+  @override
+  String get creatorMediaCover => 'Cover';
+
+  @override
+  String get creatorMediaUnset => 'Not set';
+
+  @override
+  String get creatorMediaSet => 'Set';
+
+  @override
+  String get creatorCollectionMemberOrder =>
+      'Member order and representative resource';
+
+  @override
+  String get creatorCollectionMemberUnavailable =>
+      'Resource unavailable, remove it';
+
+  @override
+  String get creatorCollectionSetRepresentative =>
+      'Set as representative resource';
+
+  @override
+  String get creatorCollectionAddMember => 'Add members';
+
+  @override
+  String get creatorImageReadFailed => 'Could not read image';
+
+  @override
+  String get creatorImageProcessFailed => 'Could not process image';
+
+  @override
+  String get creatorPublicationRetry => 'Retry publishing';
+
+  @override
+  String get creatorTermsLoadFailed => 'Could not load publishing terms';
+
+  @override
+  String get creatorReviewItems => 'Requested changes';
+
+  @override
+  String get creatorReviewFixReplied => 'Fix reported';
+
+  @override
+  String get creatorReviewReplyFix => 'Report fix';
+
+  @override
+  String get creatorTermsUpdated => 'Publishing terms updated';
+
+  @override
+  String get creatorPublishingLater => 'Not now';
+
+  @override
+  String get creatorTermsAgree => 'Read and agree';
+
+  @override
+  String get updateAssetUnavailable =>
+      'No installation package for this platform in this release';
+
+  @override
+  String get legalDocumentUnavailable => 'Document unavailable, try again';
+
+  @override
+  String get deviceImportTitle => 'Import device';
+
+  @override
+  String get qrScanFromImage => 'Scan from image';
+
+  @override
+  String get qrScanNoCode => 'No QR code found';
+
+  @override
+  String get qrScanImageFailed => 'Unable to read this image';
+
+  @override
+  String get qrScanCameraUnavailable => 'Camera unavailable';
+
+  @override
+  String get qrScanChooseCode => 'Choose a QR code';
+
+  @override
+  String qrScanCodeLabel(int index) {
+    return 'QR code $index';
+  }
+
+  @override
+  String get qrScanUnsupported =>
+      'QR code recognition is unavailable on this platform';
+
+  @override
+  String get featureLabTitle => 'Feature lab';
+
+  @override
+  String get featureLabDescription => 'Try features currently in development';
+
+  @override
+  String get voiceAssistantDescription =>
+      'Receive device audio, monitor and reply';
+
+  @override
+  String get voiceLabConnectDevice =>
+      'Connect a device, then activate its voice assistant';
+
+  @override
+  String get voiceLabCaptureLimit =>
+      'Recording limit reached, clear the recording to retry';
+
+  @override
+  String get voiceLabReplyTooLong => 'Reply is too long';
+
+  @override
+  String get voiceLabRecognitionLabel => 'Recognition result';
+
+  @override
+  String get voiceLabRecognitionHint => 'Enter the recognized words';
+
+  @override
+  String get appDataTitle => 'App data';
+
+  @override
+  String get appDataDescription => 'View stored data and export files';
+
+  @override
+  String get appDataSpaceUsage => 'Storage by category';
+
+  @override
+  String get appDataHealth => 'Activity files';
+
+  @override
+  String get appDataPlugins => 'Plugins';
+
+  @override
+  String get appDataZeppos => 'ZeppOS app data';
+
+  @override
+  String get appDataRecovery => 'Import recovery data';
+
+  @override
+  String get appDataDownloads => 'Resource and update downloads';
+
+  @override
+  String get appDataPluginCache => 'Plugin cache';
+
+  @override
+  String get appDataManageSnapshots => 'Manage saved activity files';
+
+  @override
+  String get appDataExported => 'Export saved';
+
+  @override
+  String get appDataLoadFailed => 'Unable to read app data';
+
+  @override
+  String get appDataExportFailed => 'Unable to export files';
+
+  @override
+  String get appDataArchiveTooLarge =>
+      'Activity files are too large, export them separately';
+
+  @override
+  String get appDataUpdateFailed => 'Unable to update app data';
+
+  @override
+  String get appDataBackup => 'Export backup';
+
+  @override
+  String get appDataBackupDescription => 'Choose and export local data to keep';
+
+  @override
+  String get appDataRestore => 'Restore backup';
+
+  @override
+  String get appDataRestoreDescription =>
+      'Select data to restore\nLocal health history for matching devices will be replaced';
+
+  @override
+  String get appDataSettings => 'App settings';
+
+  @override
+  String appDataHealthDevices(int count) {
+    return 'Health history ($count devices)';
+  }
+
+  @override
+  String get appDataRestored =>
+      'Backup restored\nRestart the app to apply all settings';
+
+  @override
+  String get appDataRestoreFailed => 'Unable to restore backup';
+
+  @override
+  String get appDataRecover => 'Undo previous restore';
+
+  @override
+  String get appDataRecoveryPending => 'The previous restore was interrupted';
+
+  @override
+  String get appDataRecoverDescription =>
+      'Restore settings and health history from before the last import\nLocal health data added since then will also be replaced';
+
+  @override
+  String get voiceAsrMethod => 'Recognition method';
+
+  @override
+  String get voiceAsrManual => 'Manual input';
+
+  @override
+  String get voiceAsrLocal => 'On-device recognition';
+
+  @override
+  String get voiceAsrWeType => 'WeChat Input';
+
+  @override
+  String get voiceAsrDoubao => 'Doubao Input';
+
+  @override
+  String get voiceAsrWasm => 'WASM experiment';
+
+  @override
+  String voiceAsrCloudConsent(String provider) {
+    return 'Audio will be sent to $provider for recognition\nOnly while using this page';
+  }
+
+  @override
+  String get voiceAsrPreparing => 'Preparing recognition';
+
+  @override
+  String get voiceAsrRecognizing => 'Recognizing';
+
+  @override
+  String get voiceAsrFinishing => 'Finishing recognition';
+
+  @override
+  String get voiceAsrFinished => 'Recognition complete';
+
+  @override
+  String get voiceAsrModelReady =>
+      'Local Chinese and English recognition is ready';
+
+  @override
+  String get voiceAsrModelDescription =>
+      'Local Chinese and English recognition\nDownload models and runtime before first use';
+
+  @override
+  String get voiceAsrDownloadModel => 'Download recognition data';
+
+  @override
+  String get voiceAsrDeleteModel => 'Delete recognition data';
+
+  @override
+  String get voiceAsrSendRecognition => 'Send recognition result';
+
+  @override
+  String get voiceAsrModelMissing => 'Download local recognition data first';
+
+  @override
+  String get voiceAsrModelDamaged =>
+      'Recognition data is damaged, delete and download it again';
+
+  @override
+  String get voiceAsrDownloadFailed =>
+      'Model download failed\nCheck your connection and retry';
+
+  @override
+  String get voiceAsrRegistrationFailed =>
+      'Unable to enable this recognition service\nTry again later';
+
+  @override
+  String get voiceAsrServiceRejected =>
+      'The recognition service rejected this request';
+
+  @override
+  String get voiceAsrTimeout => 'Recognition timed out\nSpeak again to retry';
+
+  @override
+  String get voiceAsrOpusUnsupported =>
+      'This device’s audio is not supported by WeChat Input';
+
+  @override
+  String get voiceAsrUnsupported =>
+      'This recognition method is unavailable on this platform';
+
+  @override
+  String get voiceAsrTooSlow =>
+      'Recognition is too slow\nEnd this round and retry';
+
+  @override
+  String get voiceAsrNoSpeech => 'No speech recognized';
+
+  @override
+  String get voiceAsrInvalidResponse =>
+      'The recognition service returned an invalid result';
+
+  @override
+  String get voiceAsrInferenceFailed =>
+      'Local recognition failed\nSelect the recognition method again';
+
+  @override
+  String get voiceAsrCancelled => 'Recognition cancelled';
+
+  @override
+  String get voiceAsrConnectionFailed =>
+      'Unable to connect to the recognition service\nCheck your connection and retry';
+
+  @override
+  String get appDataModels => 'Speech recognition data';
+
+  @override
+  String get appDataTasks => 'Task history';
+
+  @override
+  String get appDataDocuments => 'Document cache';
+
+  @override
+  String get privateStateLoadFailed =>
+      'Unable to read saved accounts and devices\nPlease retry';
+
+  @override
+  String get privateStateSaveFailed =>
+      'Unable to save account or device changes\nPlease retry';
+
+  @override
+  String get resetPrivateStorageAction => 'Reset local credentials';
+
+  @override
+  String get resetPrivateStorageTitle => 'Reset local accounts and devices';
+
+  @override
+  String get resetPrivateStorageMessage =>
+      'You will need to sign in again and reconnect your devices after resetting\nYour saved health history and application settings will not be lost';
+
+  @override
+  String get confirmReset => 'Reset';
+
+  @override
+  String get voiceAsrStorageFull =>
+      'Not enough storage\nFree up space and try again';
+
+  @override
+  String get voiceAsrReconnect => 'Reconnect recognition service';
+
+  @override
+  String get voiceAsrReconnectDescription =>
+      'This will register a new connection with this recognition service\nYour signed-in accounts are unaffected';
+
+  @override
+  String get voiceAsrReconnectFailed => 'Could not reconnect';
+
+  @override
+  String get appDataClearCache => 'Clear cache';
+
+  @override
+  String get appDataClearCacheDescription =>
+      'Clear image, WebAssembly compilation, plugin and document caches, and expired temporary files\nRegenerated or downloaded when needed\nRunning plugins and device apps will stop';
+
+  @override
+  String get appDataCacheCleared => 'Cache cleared';
+
+  @override
+  String get voiceAsrReplayRecording => 'Replay recording';
+
+  @override
+  String get voiceAsrImportWave => 'Import WAV';
+
+  @override
+  String get voiceAsrReplayDescription =>
+      'Choose a recognition method, then replay or import audio\n16 kHz mono PCM16 only, up to 60 seconds\nOnline recognition sends audio to the selected service';
+
+  @override
+  String voiceAsrReplayMetrics(String elapsed, String first, String factor) {
+    return 'Elapsed $elapsed ms · First result $first ms · RTF $factor';
+  }
+
+  @override
+  String get voiceAsrExportReport => 'Export test report';
+
+  @override
+  String get voiceAsrWaveFormat =>
+      'Choose a 16 kHz mono PCM16 WAV\nMaximum duration: 60 seconds';
+
+  @override
+  String get voiceAsrReplayBusy =>
+      'Finish the current voice or recognition session first';
+
+  @override
+  String get appDataExtensionSettings => 'Plugin and device app data';
+
+  @override
+  String get appDataExtensionSettingsDescription =>
+      'Settings and data for plugins and device apps';
+
+  @override
+  String get appDataExtensionMissing =>
+      'Install matching plugin versions and device apps before restoring this data';
+
+  @override
+  String get appDataImageCache => 'Image cache';
+
+  @override
+  String get appDataSelectBackup => 'Choose what to back up';
+
+  @override
+  String get appDataSettingsDescription =>
+      'Theme, language and feature preferences';
+
+  @override
+  String get appDataHealthDescription =>
+      'Device-synced fitness and health data';
+
+  @override
+  String get appDataDeviceKeys => 'Device pairing and keys';
+
+  @override
+  String get appDataDeviceKeysDescription =>
+      'Saved devices and connection credentials';
+
+  @override
+  String get appDataXiaomiAccount => 'Xiaomi and Amazfit credentials';
+
+  @override
+  String get appDataXiaomiAccountDescription =>
+      'Account password and current sign-in session';
+
+  @override
+  String get appDataSensitiveBackup =>
+      'The backup contains unencrypted account credentials\nKeep it secure and do not share it';
+
+  @override
+  String get appDataImportDescription => 'Choose data to restore from a backup';
+
+  @override
+  String get appDataPluginDescription =>
+      'Installed plugins and their local data';
+
+  @override
+  String get appDataZepposDescription =>
+      'Device app scripts and local settings';
+
+  @override
+  String get appDataLogsDescription => 'App activity and troubleshooting logs';
+
+  @override
+  String get appDataRecoveryDescription =>
+      'Data retained for interrupted restores';
+
+  @override
+  String get appDataDownloadsDescription =>
+      'Temporary download and installation files';
+
+  @override
+  String get appDataPluginCacheDescription =>
+      'Caches and temporary files created by plugins';
+
+  @override
+  String get appDataImagesDescription =>
+      'Cached images from browsing resources';
+
+  @override
+  String get appDataModelsDescription => 'Downloaded speech models and runtime';
+
+  @override
+  String get appDataTasksDescription =>
+      'Saved download and installation progress';
+
+  @override
+  String get appDataDocumentsDescription =>
+      'Local copies of terms and privacy notices';
+
+  @override
+  String get phoneLocationTitle => 'Assisted Positioning';
+
+  @override
+  String get deviceFeaturesGroupTitle => 'Features and tools';
+
+  @override
+  String get deviceSettingsGroupTitle => 'Device settings and maintenance';
+
+  @override
+  String get phoneLocationStatusSection => 'Status';
+
+  @override
+  String get phoneLocationPermissionsSection =>
+      'Permissions and system services';
+
+  @override
+  String get phoneLocationOptionsSection => 'Assisted location options';
+
+  @override
+  String get phoneLocationReady => 'Assisted location ready';
+
+  @override
+  String get phoneLocationReadyDesc =>
+      'Automatic positioning will be provided during outdoor workouts';
+
+  @override
+  String get phoneLocationServiceEnabled => 'Location service';
+
+  @override
+  String get phoneLocationPreciseTitle => 'Precise location';
+
+  @override
+  String get phoneLocationPreciseGranted => 'Precise location granted';
+
+  @override
+  String get phoneLocationPreciseDenied => 'Precise location not granted';
+
+  @override
+  String get phoneLocationBackgroundTitle => 'Background location';
+
+  @override
+  String get phoneLocationBackgroundAlways => 'Always allowed';
+
+  @override
+  String get phoneLocationBackgroundWhileInUse => 'Allowed while in use';
+
+  @override
+  String get phoneLocationBackgroundDenied => 'Not allowed';
+
+  @override
+  String get phoneLocationAutoSync => 'Auto-assisted location';
+
+  @override
+  String get phoneLocationAutoSyncDesc =>
+      'Provide phone GPS when device starts outdoor workouts';
+
+  @override
+  String get phoneLocationEnabledText => 'Enabled';
+
+  @override
+  String get phoneLocationDisabledText => 'Disabled';
+
+  @override
+  String get phoneLocationNotification =>
+      'Provide workout location to your device';
+
+  @override
+  String get phoneLocationDescription =>
+      'Share phone location while preparing for and recording a workout';
+
+  @override
+  String get phoneLocationOpenApp => 'Open OronBox to continue location';
+
+  @override
+  String get phoneLocationRecovery =>
+      'Open the app, then retry the workout on your device';
+
+  @override
+  String get phoneLocationPermission => 'Precise location permission required';
+
+  @override
+  String get phoneLocationBackground => 'Allow background location';
+
+  @override
+  String get phoneLocationBackgroundDescription =>
+      'Receive device workout location requests in the background';
+
+  @override
+  String get phoneLocationSettings => 'Open system settings';
+
+  @override
+  String get phoneLocationServiceOff => 'Location services are off';
+
+  @override
+  String get phoneLocationPermissionHelp =>
+      'Allow precise location, then try again';
+
+  @override
+  String get phoneLocationMobileOnly => 'Available on Android and iOS';
+
+  @override
+  String get phoneLocationUnavailable =>
+      'Unable to get phone location\nCheck location permissions and services';
+
+  @override
+  String get deviceConnectionAbnormalTitle => 'Device connection problem';
+
+  @override
+  String get deviceConnectionAbnormalMessage =>
+      'The device keeps disconnecting. Re-pair it or make sure the device is in Connect new phone mode for a more stable connection.';
+
+  @override
+  String get deviceRePair => 'Re-pair';
+
+  @override
+  String appDataClearCategoryTitle(String category) {
+    return 'Clear $category?';
+  }
+
+  @override
+  String get appDataClearCategoryDescription =>
+      'The selected local data will be removed\nOther categories will be kept';
+
+  @override
+  String get appDataClearHealthDescription =>
+      'Synced activity files will be removed\nLocal health data will be cleared';
+
+  @override
+  String get appDataClearCachedCategoryDescription =>
+      'Clear unused cached files\nRegenerated or downloaded when needed';
+
+  @override
+  String get appDataClearModelsDescription =>
+      'The latest model will be kept\nUnused versions and expired downloads will be removed';
+
+  @override
+  String get settingsPermissionsTitle => 'Permissions';
+
+  @override
+  String get settingsPermissionsDesc =>
+      'App runtime and device coordination permissions';
+
+  @override
+  String get appArrangementTitle => 'App Arrangement';
+
+  @override
+  String get appArrangementDescription => 'Adjust app order and drawer layout';
+
+  @override
+  String get appOrderMainSection => 'Displayed Apps';
+
+  @override
+  String get appOrderMoreSection => 'More Apps';
+
+  @override
+  String get appOrderHiddenSection => 'Hidden Apps';
+
+  @override
+  String get appOrderMoreSectionDesc => 'Apps displayed in device drawer';
+
+  @override
+  String get appOrderHiddenSectionDesc => 'Apps hidden from device';
+
+  @override
+  String get appOrderMoveToMore => 'Move to More';
+
+  @override
+  String get appOrderMoveToMain => 'Move to Main';
+
+  @override
+  String get appOrderHide => 'Hide';
+
+  @override
+  String get appOrderUnhide => 'Show';
+
+  @override
+  String get appOrderCannotHide => 'System app cannot be hidden';
+
+  @override
+  String get privateStateAccessPromptTitle =>
+      'OronBox needs to access account credentials protected by secure storage';
+
+  @override
+  String get privateStateAccessPromptMacOs =>
+      'If a system authorization prompt appears, enter your user password and click \"Always Allow\" to avoid repeated prompts';
+
+  @override
+  String get privateStateAccessPromptLinux =>
+      'If a system unlock prompt appears, enter your password to unlock the keyring';
+
+  @override
+  String get creatorSubmissionPreview => 'Review submission';
+
+  @override
+  String get creatorResourceBinding => 'Resource link';
+
+  @override
+  String get creatorPublicationIdentity => 'Publishing accounts';
+
+  @override
+  String get creatorPublicationRange => 'Included in this submission';
+
+  @override
+  String get creatorNewPublication => 'First publication';
+
+  @override
+  String get creatorUpdatePublication => 'Update existing resource';
+
+  @override
+  String creatorAppendSubmission(String number) {
+    return 'Append to PR #$number';
+  }
+
+  @override
+  String creatorPublicationExcludedDevices(String devices) {
+    return 'Excluded devices: $devices';
+  }
+
+  @override
+  String get creatorBackToEdit => 'Back to editing';
+
+  @override
+  String get creatorPackageVersionCodeMissing =>
+      'The package has no valid version code; rebuild it and upload again';
+
+  @override
+  String get creatorReopenSubmission => 'Request another review';
+
+  @override
+  String get creatorReopenRequested => 'Another review requested';
+
+  @override
+  String get creatorFixesForSubmission => 'Issues fixed in this submission';
+
+  @override
+  String get creatorFixNote => 'Fix details';
+
+  @override
+  String get creatorNameRequired => 'Enter a resource name';
+
+  @override
+  String get creatorSummaryRequired => 'Enter a resource summary';
+
+  @override
+  String get creatorSubmitForReview => 'Submit for review';
+
+  @override
+  String get creatorAstroBoxPRBody => 'PR description (optional)';
+
+  @override
+  String get autoBackupTitle => 'Scheduled Backup';
+
+  @override
+  String get autoBackupDescription =>
+      'Periodically back up app data to system Documents directory';
+
+  @override
+  String get autoBackupEnabled => 'Enable scheduled backup';
+
+  @override
+  String get autoBackupInterval => 'Backup frequency';
+
+  @override
+  String get autoBackupEvery => 'Every';
+
+  @override
+  String get autoBackupUnitDay => 'day(s)';
+
+  @override
+  String get autoBackupUnitWeek => 'week(s)';
+
+  @override
+  String get autoBackupUnitMonth => 'month(s)';
+
+  @override
+  String get autoBackupRetention => 'Retention';
+
+  @override
+  String autoBackupRetentionCount(int count) {
+    return '$count copies';
+  }
+
+  @override
+  String get autoBackupRetentionUnlimited => 'Unlimited';
+
+  @override
+  String get autoBackupPasswordEnable => 'Password protection';
+
+  @override
+  String get autoBackupPasswordEnableDesc =>
+      'Encrypt backup with standard AES-256';
+
+  @override
+  String get autoBackupPassword => 'Backup password';
+
+  @override
+  String get autoBackupPasswordConfirm => 'Confirm password';
+
+  @override
+  String get autoBackupPasswordMismatch => 'Passwords do not match';
+
+  @override
+  String get autoBackupPasswordPlaceholder => 'Enter password';
+
+  @override
+  String get autoBackupScope => 'Backup scope';
+
+  @override
+  String get autoBackupScopeSettings => 'Preferences';
+
+  @override
+  String get autoBackupScopeHealth => 'Health records';
+
+  @override
+  String get autoBackupScopeExtensions => 'Extensions and mini-apps';
+
+  @override
+  String get autoBackupScopeDevices => 'Device pairing info';
+
+  @override
+  String get autoBackupStorageLocation => 'Storage location';
+
+  @override
+  String get autoBackupStorageLocationDesc =>
+      'Backups are automatically saved to public Documents directory';
+
+  @override
+  String get autoBackupOpenFolder => 'Open in file manager';
+
+  @override
+  String autoBackupStatusEnabled(int value, String unit) {
+    return 'Enabled · Every $value $unit';
+  }
+
+  @override
+  String get autoBackupStatusDisabled => 'Disabled';
+
+  @override
+  String get autoBackupRunNow => 'Back up now';
+
+  @override
+  String get autoBackupRunSuccess => 'Scheduled backup completed';
+
+  @override
+  String get autoBackupRunFailed => 'Scheduled backup failed';
+
+  @override
+  String get backupPasswordDialogTitle => 'Enter backup password';
+
+  @override
+  String get backupPasswordDialogMessage =>
+      'This backup is encrypted; enter the password to restore';
+
+  @override
+  String get backupPasswordIncorrect => 'Incorrect password';
+
+  @override
+  String get backupPasswordRequired => 'Password is required';
+
+  @override
+  String get exportBackupPasswordOptional => 'Password (optional)';
+
+  @override
+  String get exportBackupPasswordPlaceholder => 'Leave blank for unencrypted';
+
+  @override
+  String get backupTargetPublicDocuments => 'Save to system Documents folder';
+
+  @override
+  String get backupTargetCustom => 'Save as external file';
+
+  @override
+  String get restoreFromDocumentsTitle => 'Select Backup to Restore';
+
+  @override
+  String get restorePickExternalFile => 'Choose another external file...';
+
+  @override
+  String get backupSavedToDocuments =>
+      'Backup saved to system Documents folder';
+
+  @override
+  String get appDataExporting => 'Exporting and encrypting backup, please wait';
+
+  @override
+  String get appDataDecrypting => 'Decrypting backup, please wait';
+
+  @override
+  String get appDataRestoring => 'Restoring data, please wait';
+
+  @override
+  String get autoBackupRetentionInputHint => '0 for unlimited';
+
+  @override
+  String get autoBackupRetentionLabel => 'Backup copies (0 for unlimited)';
+
+  @override
+  String get autoBackupRetentionUnit => 'copies';
+
+  @override
+  String get backupTypeAuto => 'Auto Backup';
+
+  @override
+  String get backupTypeManual => 'Manual Backup';
+
+  @override
+  String autoBackupStatusDetail(int value, String unit, String retentionText) {
+    return 'Enabled · Every $value $unit · Keep $retentionText';
+  }
+
+  @override
+  String get globalAiTitle => 'Global AI';
+
+  @override
+  String get globalAiDescription =>
+      'Configure LLM and wearable voice assistant integration';
+
+  @override
+  String get globalAiEnableSwitch => 'Enable Global AI';
+
+  @override
+  String get globalAiEnableSwitchDesc =>
+      'Enable client-wide LLM integration and intelligent capabilities';
+
+  @override
+  String get globalAiProviders => 'Provider Management';
+
+  @override
+  String globalAiProvidersCount(int count) {
+    return '$count providers configured';
+  }
+
+  @override
+  String get globalAiModelSettings => 'Model Settings';
+
+  @override
+  String get globalAiTestConnection => 'Test Connection';
+
+  @override
+  String get globalAiStreamResponse => 'Streaming Response';
+
+  @override
+  String get globalAiStreamResponseDesc =>
+      'Stream output progressively to wearable device';
+
+  @override
+  String get globalAiWearableSection => 'Wearable Device';
+
+  @override
+  String get globalAiWearableEnable => 'Wearable Enable';
+
+  @override
+  String get globalAiWearableEnableDesc =>
+      'Wearable voice assistant will be handled by LLM when triggered';
+
+  @override
+  String get globalAiWearableAdvancedSettings => 'Wearable Settings';
+
+  @override
+  String get globalAiToolsScope => 'Tool Permission Scopes';
+
+  @override
+  String get globalAiToolDeviceStatus => 'Device Status';
+
+  @override
+  String get globalAiToolDeviceStatusDesc =>
+      'Read device connection, battery and basic info';
+
+  @override
+  String get globalAiToolHealthData => 'Health Data';
+
+  @override
+  String get globalAiToolHealthDataDesc =>
+      'Read steps, calories, distance and heart rate';
+
+  @override
+  String get globalAiToolWeather => 'Weather Query';
+
+  @override
+  String get globalAiToolWeatherDesc => 'Query real-time weather and forecast';
+
+  @override
+  String get globalAiToolSearchResources => 'Search Resources';
+
+  @override
+  String get globalAiToolSearchResourcesDesc =>
+      'Search watch faces and third-party apps';
+
+  @override
+  String get globalAiToolInstallResources => 'Install Resources';
+
+  @override
+  String get globalAiToolInstallResourcesDesc =>
+      'Download and install watch faces or apps to device';
+
+  @override
+  String get globalAiToolDeleteResources => 'Delete Resources';
+
+  @override
+  String get globalAiToolDeleteResourcesDesc =>
+      'Uninstall or delete resources on device';
+
+  @override
+  String get globalAiToolManageAlarms => 'Manage Alarms';
+
+  @override
+  String get globalAiToolManageAlarmsDesc => 'Create or manage wearable alarms';
+
+  @override
+  String get globalAiToolFindDevice => 'Find Device';
+
+  @override
+  String get globalAiToolFindDeviceDesc =>
+      'Make wearable device vibrate or ring continuously';
+
+  @override
+  String get globalAiToolAppArrangement => 'App Layout';
+
+  @override
+  String get globalAiToolAppArrangementDesc =>
+      'Query and rearrange device app ordering';
+
+  @override
+  String get globalAiToolPhoneLocation => 'Phone Location';
+
+  @override
+  String get globalAiToolPhoneLocationDesc =>
+      'Supported on client phone only, assist queries with location';
+
+  @override
+  String get globalAiAddProvider => 'Add Provider';
+
+  @override
+  String get globalAiEditProvider => 'Edit Provider';
+
+  @override
+  String get globalAiProviderName => 'Provider Name';
+
+  @override
+  String get globalAiProviderBaseUrl => 'API Base URL';
+
+  @override
+  String get globalAiProviderApiKey => 'API Key';
+
+  @override
+  String get globalAiProviderModels => 'Model List';
+
+  @override
+  String get globalAiAddModel => 'Add Model';
+
+  @override
+  String get globalAiModelId => 'Model ID';
+
+  @override
+  String get globalAiProtocolType => 'Protocol Type';
+
+  @override
+  String get globalAiProtocolCompletions => 'Completions';
+
+  @override
+  String get globalAiProtocolResponses => 'Responses';
+
+  @override
+  String get globalAiMultimodalSupport => 'Multimodal Capabilities';
+
+  @override
+  String get globalAiSupportImages => 'Images';
+
+  @override
+  String get globalAiSupportAudio => 'Audio';
+
+  @override
+  String get globalAiContextLength => 'Context Window';
+
+  @override
+  String get globalAiWearableReplyLength => 'Wearable Reply Length';
+
+  @override
+  String get globalAiWearableLengthShort => 'Short (<50 chars)';
+
+  @override
+  String get globalAiWearableLengthMedium => 'Medium (<100 chars)';
+
+  @override
+  String get globalAiWearableLengthLong => 'Long (<200 chars)';
+
+  @override
+  String get globalAiWearableLengthUnlimited => 'Unlimited';
+
+  @override
+  String get globalAiWearableToolPolicy => 'Tool Calling Policy';
+
+  @override
+  String get globalAiToolPolicyDisabled => 'Disabled';
+
+  @override
+  String get globalAiToolPolicyReadOnly => 'Read-Only';
+
+  @override
+  String get globalAiToolPolicyReadWrite => 'Read-Write';
+
+  @override
+  String get globalAiConfirmationMode => 'Confirmation Mode';
+
+  @override
+  String get globalAiConfirmModeWearableVoice => 'Wearable Voice Confirmation';
+
+  @override
+  String get globalAiConfirmModeManual => 'Client Manual Confirmation';
+
+  @override
+  String get globalAiTesting => 'Testing connection...';
+
+  @override
+  String get globalAiTestSuccess => 'Connection successful';
+
+  @override
+  String get globalAiTestFailed => 'Connection failed';
+
+  @override
+  String globalAiTestDuration(int ms) {
+    return 'Latency $ms ms';
+  }
+
+  @override
+  String get globalAiSectionModelAndProvider => 'Model and Provider';
+
+  @override
+  String get globalAiTestConnectionDesc =>
+      'Verify connectivity and latency of current provider and model';
+
+  @override
+  String get globalAiWearableAdvancedDesc =>
+      'Reply length, tool permission mode and confirmation mode';
+
+  @override
+  String get globalAiNoModelSelected => 'No model configured or selected';
+
+  @override
+  String get globalAiSave => 'Save';
+
+  @override
+  String get globalAiCancel => 'Cancel';
+
+  @override
+  String get globalAiClose => 'Close';
+
+  @override
+  String get globalAiBack => 'Back';
+
+  @override
+  String get globalAiRetry => 'Retry';
+
+  @override
+  String get globalAiDelete => 'Delete';
+
+  @override
+  String get globalAiSystemPrompt => 'System prompt';
+
+  @override
+  String get globalAiSystemPromptDescription =>
+      'Edit the model instructions. Device and tool safety rules are added automatically.';
+
+  @override
+  String get globalAiSystemPromptHint => 'Enter the system prompt template';
+
+  @override
+  String get globalAiSystemPromptPlaceholders => 'Available placeholders';
+
+  @override
+  String get globalAiDeleteProvider => 'Delete this Provider';
+
+  @override
+  String get globalAiDeleteModel => 'Delete Model';
+
+  @override
+  String get globalAiConnecting => 'Connecting...';
+
+  @override
+  String get globalAiReceiving => 'Receiving response...';
+
+  @override
+  String get globalAiWaitingFirstToken => 'Waiting for first token...';
+
+  @override
+  String globalAiTargetLabel(String provider, String model) {
+    return 'Target $provider / $model';
+  }
+
+  @override
+  String get globalAiNoProviderConfigured =>
+      'No valid provider or model configured';
+
+  @override
+  String get globalAiNoApiKeyConfigured =>
+      'No API key found, please check provider settings';
+
+  @override
+  String get globalAiSelectActiveModel => 'Select Active Model';
+
+  @override
+  String get globalAiContextLengthHint => 'e.g. 4096, 8192, 131072';
+
+  @override
+  String get globalAiModelNameHint => 'e.g. deepseek-flash, qwen3.8-flash';
+
+  @override
+  String get globalAiProviderNameHint => 'e.g. DeepSeek, OpenAI, SiliconFlow';
+
+  @override
+  String get globalAiBaseUrlHint => 'e.g. https://api.deepseek.com';
+
+  @override
+  String get globalAiApiKeyHint => 'sk-...';
+
+  @override
+  String get globalAiConfirmDeleteProvider =>
+      'Delete this provider and all its models?';
+
+  @override
+  String get globalAiConfirmDeleteModel => 'Delete this model configuration?';
+
+  @override
+  String get globalAiModelAlreadyExists => 'Model ID already exists';
+
+  @override
+  String get globalAiModelAdded => 'Model added';
+
+  @override
+  String get globalAiProviderAdded => 'Provider added';
+
+  @override
+  String get globalAiVoiceAssistantProcessing =>
+      'AI is thinking and streaming reply...';
+
+  @override
+  String globalAiVoiceAssistantError(String error) {
+    return 'AI reply error: $error';
+  }
+
+  @override
+  String get globalAiAsrEngine => 'Speech Recognition Engine';
+
+  @override
+  String get globalAiAsrManual => 'Manual Input';
+
+  @override
+  String get globalAiAsrNative => 'Local Offline Model';
+
+  @override
+  String get globalAiAsrWeType => 'WeType Cloud';
+
+  @override
+  String get globalAiAsrDoubao => 'Volcengine Doubao';
+
+  @override
+  String get globalAiTestRequestLabel => 'Request Sent';
+
+  @override
+  String get globalAiTestResponseLabel => 'Model Response';
+
+  @override
+  String get globalAiTestStart => 'Start Test';
+
+  @override
+  String get settingsMiAccountRegion => 'Server Region';
+
+  @override
+  String get settingsMiAccountRegionCn => 'China Mainland (CN)';
+
+  @override
+  String get settingsMiAccountRegionDe => 'Europe (DE)';
+
+  @override
+  String get settingsMiAccountRegionRu => 'Russia (RU)';
+
+  @override
+  String get settingsMiAccountRegionSg => 'Global / Singapore (SG)';
+
+  @override
+  String get settingsMiAccountRegionUs => 'United States (US)';
+
+  @override
+  String get settingsMiAccountRegionIn => 'India (IN)';
+
+  @override
+  String get pluginPermissionReadClipboard => 'read the clipboard';
+
+  @override
+  String get pluginPermissionWriteClipboard => 'write to the clipboard';
+
+  @override
+  String get pluginPermissionHostServer => 'run a local HTTP server';
+
+  @override
+  String get pluginPermissionReceiveLink => 'receive application links';
+
+  @override
+  String get pluginProviderUnavailable =>
+      'This plugin resource provider is currently unavailable';
+
+  @override
+  String get pluginDisabled => 'Plugin is disabled';
+
+  @override
+  String get pluginOpenWindow => 'Open in new window';
+
+  @override
+  String get pluginRunSettings => 'Run settings';
+
+  @override
+  String get pluginEnable => 'Enable';
+
+  @override
+  String get pluginDisable => 'Disable';
+
+  @override
+  String get pluginEnabled => 'Enable plugin';
+
+  @override
+  String get pluginBackground => 'Background execution';
+
+  @override
+  String get pluginBackgroundDescription =>
+      'Stop after 10 minutes of inactivity';
+
+  @override
+  String get pluginBackgroundForbidden => 'Disabled';
+
+  @override
+  String get pluginBackgroundActive => 'Keep active';
+
+  @override
+  String get pluginBackgroundContinuous => 'Keep running';
+
+  @override
+  String get pluginBackgroundForbiddenDescription =>
+      'Stop when leaving the plugin';
+
+  @override
+  String get pluginBackgroundContinuousDescription =>
+      'Continue running after leaving the plugin';
+
+  @override
+  String get pluginAutoStart => 'Start automatically';
+
+  @override
+  String get pluginAutoStartDescription => 'Start when OronBox opens';
+
+  @override
+  String get pluginRunStatus => 'Status';
+
+  @override
+  String get pluginStopped => 'Stopped';
+
+  @override
+  String get pluginExistingGrant => 'Existing authorization';
+
+  @override
+  String get pluginPermissionAsk => 'Ask';
+
+  @override
+  String get pluginPermissionAllow => 'Allow';
+
+  @override
+  String get pluginTargetPermissions => 'Operation and target authorizations';
+
+  @override
+  String get pluginNoTargetPermissions =>
+      'No device or application authorizations';
+
+  @override
+  String get errorPlatformCapabilityUnavailable =>
+      'This feature is unavailable on this platform or browser';
+
+  @override
+  String get oauthPopupBlocked =>
+      'Allow pop-ups for this site and try signing in again';
+
+  @override
+  String get oauthBrowserCompleting =>
+      'Completing sign-in in the original page';
+
+  @override
+  String get oauthBrowserCompleted =>
+      'Signed in successfully, you can close this page';
+
+  @override
+  String get oauthBrowserOriginalClosed =>
+      'The original page has not responded, you can continue signing in here';
+
+  @override
+  String get oauthBrowserContinue => 'Continue signing in';
+
+  @override
+  String get wasmCompatibilityTitle => 'Runtime compatibility test';
+
+  @override
+  String get wasmCompatibilityMessage =>
+      'OronBox needs to test whether this device can run WebAssembly\n\nYou may see this prompt because\n• Your device runs Android 8~9 with a Linux 4.x kernel\n• The app exited unexpectedly while loading a runtime or running a test\n\nThe app may crash during the test due to a known compatibility risk\nYour device’s security policy may be incompatible with the runtime\n\nIf the app crashes, reopen OronBox\nRuntime loading will be paused to prevent another crash\n\nImage processing, voice processing, some plugins and Huami app background scripts may then be unavailable until you pass the test before using these features again';
+
+  @override
+  String get wasmCompatibilityDefer => 'Not now';
+
+  @override
+  String get wasmCompatibilityStart => 'Start test';
+
+  @override
+  String get wasmCompatibilityTesting => 'Testing, please wait';
+
+  @override
+  String get wasmCompatibilityPassed => 'Compatibility test passed';
+
+  @override
+  String get wasmCompatibilityTestFailed =>
+      'Test incomplete, retry or choose Not now';
+
+  @override
+  String get wasmCompatibilityRequired =>
+      'Complete the compatibility test before using this feature';
+
+  @override
+  String get pluginType => 'Plugin type';
+
+  @override
+  String get pluginTypeAstroBox => 'AstroBox-NG';
+
+  @override
+  String get pluginTypeOronBox => 'OronBox';
+
+  @override
+  String get appDataCompilationCache => 'Compilation cache';
+
+  @override
+  String get appDataCompilationCacheDescription =>
+      'WebAssembly compilation cache';
+
+  @override
+  String get openExternally => 'Open externally';
+
+  @override
+  String get externalOpenFailed => 'Unable to open the browser';
+
+  @override
+  String get resourceAstroBoxPurchaseTitle =>
+      'This file requires purchase or authorization';
+
+  @override
+  String get resourceAstroBoxPurchaseMessage =>
+      'This resource was encrypted and uploaded through AstroBox Creator Console\nPurchase or authorization is required to decrypt it\nPlease open it with AstroBox';
+
+  @override
+  String get resourceAstroBoxAccessCheckFailed =>
+      'Unable to check access to this file\nPlease try again';
+
+  @override
+  String get resourceAstroBoxDecryptionFailed =>
+      'Unable to decrypt this file\nPlease try again';
+
+  @override
+  String get appDataClearPluginCacheDescription =>
+      'Clear plugin caches and temporary files\nRegenerated or downloaded when needed';
+
+  @override
+  String get appDataClearCompilationCacheDescription =>
+      'Clear the WebAssembly compilation cache\nRegenerated when needed';
+
+  @override
+  String get resourceMoreDevicesDownload => 'Download for more devices';
+
+  @override
+  String get resourceCompatibleWithDevice =>
+      'This resource supports your device';
+
+  @override
+  String get resourceIncompatibleWithDevice =>
+      'This resource does not support your device yet';
+
+  @override
+  String get resourceInstallSucceeded => 'Installed successfully';
+
+  @override
+  String get installStorageFullTitle => 'Device storage is full';
+
+  @override
+  String get installQuantityLimitTitle => 'Installation limit reached';
+
+  @override
+  String get installStorageFullHelp =>
+      'The device has insufficient reserved storage or has reached its resource limit\nDelete some resources, then retry the installation';
+
+  @override
+  String get installQuantityLimitHelp =>
+      'The device has reached its resource installation limit\nDelete some resources, then retry the installation';
+
+  @override
+  String get installTargetDeviceChanged =>
+      'Switch to the device for this installation task first';
+
+  @override
+  String get debugNoLogs => 'No logs';
+
+  @override
+  String get debugNoLayoutTree => 'This source has no layout tree';
+
+  @override
+  String get debugSelectElement => 'Select an element to inspect';
+
+  @override
+  String get debugEmptyDirectory => 'Empty directory';
+
+  @override
+  String get debugNoProtocolEvents => 'No protocol events captured';
+
+  @override
+  String get globalAiNoProvidersTitle => 'No providers added';
+
+  @override
+  String get globalAiNoProvidersMessage => 'Add a provider above';
+
+  @override
+  String get globalAiNoModelsTitle => 'No models available';
+
+  @override
+  String get globalAiNoModelsMessage => 'Add a model first';
+
+  @override
+  String get debugNoMatchingLogs => 'No matching logs';
+
+  @override
+  String get appManagementNoVisibleApps => 'No apps to display';
+
+  @override
+  String get zeppOsAppCompatibilityEmpty => 'No app compatibility files added';
+
+  @override
+  String get qrScanCameraUnavailableMessage =>
+      'You can scan a QR code from an image';
+
+  @override
+  String get resourceFeaturesDisabledTitle => 'Resource features are disabled';
+
+  @override
+  String get pairingConnectStep => 'Connect device';
+
+  @override
+  String get pairingAccountStep => 'Bind account';
+
+  @override
+  String get pairingLocalStep => 'Pair locally';
+
+  @override
+  String get pairingAuthStep => 'Authenticate device';
+
+  @override
+  String get pairingUnbound => 'Unpaired';
+
+  @override
+  String get pairingContinue => 'Continue';
+
+  @override
+  String get pairingStartPrompt =>
+      'This device is not bound\nFollow the prompts to complete binding';
+
+  @override
+  String get pairingSuccess => 'Connected successfully';
+
+  @override
+  String get pairingTitle => 'Bind device';
+
+  @override
+  String get pairingConnecting => 'Connecting to device';
+
+  @override
+  String get pairingConfirmOnDevice => 'Confirm binding on your device';
+
+  @override
+  String get pairingCompareCode => 'Check that the binding code matches';
+
+  @override
+  String get pairingRebind => 'This device needs to be bound again';
+
+  @override
+  String get pairingAlreadyBound => 'This device is already paired';
+
+  @override
+  String get pairingUseExistingKey => 'Connect with an existing key';
+
+  @override
+  String get engineeringTitle => 'MiWear engineering mode';
+
+  @override
+  String get engineeringDescription => 'Device modes and firmware updates';
+
+  @override
+  String get engineeringMode => 'Device mode';
+
+  @override
+  String get engineeringUser => 'User mode';
+
+  @override
+  String get engineeringUserDebug => 'User debug mode';
+
+  @override
+  String get engineeringEng => 'Engineering mode';
+
+  @override
+  String get engineeringModeConfirm =>
+      'The device will restart and disconnect\nReconnect after it restarts';
+
+  @override
+  String get engineeringConnectDevice => 'Connect device';
+
+  @override
+  String get engineeringConnectConfirm =>
+      'The current device will disconnect\nConnect to the device you want to operate';
+
+  @override
+  String get engineeringFirmwareHint =>
+      'Select the firmware file for your device';
+
+  @override
+  String get engineeringOtaConfirm =>
+      'Update the connected device with this firmware?\nCheck that the model matches\nKeep the device sufficiently charged during the update';
+
+  @override
+  String get engineeringReturn => 'Restart in user mode';
+
+  @override
+  String get engineeringIdle => 'Ready';
+
+  @override
+  String get engineeringScanning => 'Scanning for engineering devices';
+
+  @override
+  String get engineeringConnecting => 'Connecting';
+
+  @override
+  String get engineeringUpdateBackBlocked =>
+      'Firmware update in progress\nWait for the current operation to finish';
+
+  @override
+  String get engineeringUploading => 'Uploading firmware';
+
+  @override
+  String get engineeringRestarting => 'Requesting device restart';
+
+  @override
+  String get engineeringWaiting =>
+      'Waiting for the device to restart\nReconnect after it starts';
+
+  @override
+  String get engineeringFailed => 'Update interrupted';
+
+  @override
+  String get engineeringEmpty =>
+      'No engineering devices found\nCheck that the device is in engineering mode, then scan again';
+
+  @override
+  String get engineeringFirmwareError => 'Select a non-empty firmware file';
+
+  @override
+  String get engineeringResponseError =>
+      'The device rejected the request or returned an unexpected response';
+
+  @override
+  String get engineeringTimeout =>
+      'The device did not respond in time\nReconnect and try again';
+
+  @override
+  String get engineeringMtuError =>
+      'The Bluetooth connection cannot carry the control message\nReconnect or use SPP';
+
+  @override
+  String get engineeringBusyError =>
+      'Finish or cancel the current operation first';
+
+  @override
+  String get engineeringConnectionError =>
+      'Connect to an engineering device first';
+
+  @override
+  String get deviceSettingsTitle => 'Device settings';
+
+  @override
+  String get deviceSettingsDescription => 'Adjust preferences for this device';
+
+  @override
+  String get deviceSettingsUnavailable =>
+      'No settings are available for this device';
+
+  @override
+  String get deviceNotificationSync => 'Notification sync';
+
+  @override
+  String get deviceNotificationSyncDescription =>
+      'Send notifications from selected apps to this device';
+
+  @override
+  String get deviceNotificationApps => 'Synced apps';
+
+  @override
+  String get deviceNotificationAppsEmpty => 'No apps found';
+
+  @override
+  String get updateReminderInbox => 'Inbox notifications';
+
+  @override
+  String get inboxNotificationUnread => 'You have unread messages';
+
+  @override
+  String get notificationPermissionsSection => 'Notification permissions';
+
+  @override
+  String get notificationPermissionDisplay => 'Show notifications';
+
+  @override
+  String get notificationPermissionRead => 'Read notifications';
+
+  @override
+  String get notificationPermissionEnabled => 'Enabled';
+
+  @override
+  String get notificationPermissionDisabled => 'Disabled';
+
+  @override
+  String get notificationPermissionUnavailable =>
+      'Unable to check permission status';
+
+  @override
+  String get updateReminderFirmwareTitle => 'Firmware update available';
+
+  @override
+  String get updateReminderResourcesTitle => 'Resource updates available';
+
+  @override
+  String get updateReminderPluginsTitle => 'Plugin updates available';
+
+  @override
+  String get updateReminderFirmwareMessage =>
+      'A firmware update is available for your device';
+
+  @override
+  String get updateReminderResourcesMessage =>
+      'Updates are available for resources on your device';
+
+  @override
+  String updateReminderCurrentVersion(String version) {
+    return 'Current version  $version';
+  }
+
+  @override
+  String updateReminderLatestFirmware(String version) {
+    return 'Latest firmware  $version';
+  }
+
+  @override
+  String get updateReminderSilence => 'Mute until the next update';
+
+  @override
+  String get updateReminderInstall => 'Update';
+
+  @override
+  String get updateReminderInstallAll => 'Update all';
+
+  @override
+  String get updateReminderChanged =>
+      'The update is no longer available for the connected device';
+}

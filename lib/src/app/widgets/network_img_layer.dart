@@ -1,0 +1,152 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:oronbox/src/core/constants/style_constants.dart' as style;
+
+class NetworkImgLayer extends StatelessWidget {
+  const NetworkImgLayer({
+    super.key,
+    this.src,
+    this.width,
+    this.height,
+    this.type,
+    this.fadeOutDuration,
+    this.fadeInDuration,
+    this.filterQuality = FilterQuality.high,
+    this.color,
+    this.colorBlendMode,
+    this.fit = BoxFit.cover,
+    this.memCacheWidth,
+    this.memCacheHeight,
+    this.borderRadius,
+  });
+
+  final String? src;
+  final double? width;
+  final double? height;
+  final String? type;
+  final Duration? fadeOutDuration;
+  final Duration? fadeInDuration;
+  final FilterQuality filterQuality;
+  final Color? color;
+  final BlendMode? colorBlendMode;
+  final BoxFit fit;
+  final int? memCacheWidth;
+  final int? memCacheHeight;
+  final BorderRadius? borderRadius;
+
+  @override
+  Widget build(BuildContext context) {
+    final imageUrl = src ?? '';
+
+    return imageUrl.isNotEmpty
+        ? ClipRRect(
+            clipBehavior: Clip.antiAlias,
+            borderRadius:
+                borderRadius ??
+                BorderRadius.circular(
+                  type == 'avatar'
+                      ? 50
+                      : type == 'emote'
+                      ? 0
+                      : style.StyleConstants.imgRadius.x,
+                ),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              width: width,
+              height: height,
+              fit: fit,
+              fadeOutDuration:
+                  fadeOutDuration ?? const Duration(milliseconds: 120),
+              fadeInDuration:
+                  fadeInDuration ?? const Duration(milliseconds: 120),
+              filterQuality: filterQuality,
+              color: color,
+              colorBlendMode: colorBlendMode,
+              memCacheWidth: memCacheWidth,
+              memCacheHeight: memCacheHeight,
+              errorWidget: (context, url, error) => _placeholder(context),
+              placeholder: (context, url) => _placeholder(context),
+            ),
+          )
+        : _placeholder(context);
+  }
+
+  Widget _placeholder(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Theme.of(
+          context,
+        ).colorScheme.onInverseSurface.withValues(alpha: 0.4),
+        borderRadius:
+            borderRadius ??
+            BorderRadius.circular(
+              type == 'avatar'
+                  ? 50
+                  : type == 'emote'
+                  ? 0
+                  : style.StyleConstants.imgRadius.x,
+            ),
+      ),
+      child: const Center(child: Icon(Icons.image_outlined)),
+    );
+  }
+}
+
+/// A network image with a fixed [height] whose width follows the image's
+/// intrinsic aspect ratio. The loading/error placeholder keeps a portrait
+/// 3:4 box instead of stretching to the available width.
+class NetworkImgAutoWidth extends StatelessWidget {
+  const NetworkImgAutoWidth({
+    super.key,
+    required this.src,
+    required this.height,
+    this.maxWidth = 560,
+    this.fit = BoxFit.contain,
+    this.memCacheWidth,
+    this.memCacheHeight,
+  });
+
+  final String src;
+  final double height;
+  final double maxWidth;
+  final BoxFit fit;
+  final int? memCacheWidth;
+  final int? memCacheHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      clipBehavior: Clip.antiAlias,
+      borderRadius: BorderRadius.circular(style.StyleConstants.imgRadius.x),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: maxWidth, maxHeight: height),
+        child: CachedNetworkImage(
+          imageUrl: src,
+          height: height,
+          fit: fit,
+          fadeOutDuration: const Duration(milliseconds: 120),
+          fadeInDuration: const Duration(milliseconds: 120),
+          filterQuality: FilterQuality.high,
+          memCacheWidth: memCacheWidth,
+          memCacheHeight: memCacheHeight,
+          placeholder: (context, url) => _placeholder(context),
+          errorWidget: (context, url, error) => _placeholder(context),
+        ),
+      ),
+    );
+  }
+
+  Widget _placeholder(BuildContext context) {
+    return Container(
+      width: height * 3 / 4,
+      height: height,
+      color: Theme.of(
+        context,
+      ).colorScheme.onInverseSurface.withValues(alpha: 0.4),
+      child: const Center(child: Icon(Icons.image_outlined)),
+    );
+  }
+}

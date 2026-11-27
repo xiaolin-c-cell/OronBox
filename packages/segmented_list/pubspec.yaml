@@ -1,0 +1,20 @@
+name: segmented_list
+description: "A segmented list ui for flutter. (OronBox fork of card-settings-ui with web support.)"
+version: 2.0.1+oronbox.1
+homepage: https://github.com/ErBWs/card-settings-ui
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  material_ui: ^1.4.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:

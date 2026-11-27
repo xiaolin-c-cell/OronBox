@@ -1,0 +1,17 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Flutter localization generated code
+lib/src/app/generated/** linguist-generated=true
+
+# Xiaomi wearable protobuf generated code
+lib/src/device/xiaomi/protocol/generated/** linguist-generated=true
+
+# Build runner generated files
+*.g.dart linguist-generated=true
+
+# Precompiled Web runtime workers
+web/asr_worker.js linguist-generated=true
+
+# Windows launchers retain CRLF line endings
+*.bat whitespace=cr-at-eol
