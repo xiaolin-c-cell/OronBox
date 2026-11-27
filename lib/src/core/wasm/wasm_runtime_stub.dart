@@ -29,7 +29,7 @@ final class WasmScope {
   bool get isDisposed => _disposed;
 
   Future<ScopedWasmInstance> instantiateAsset(String assetPath) async {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
@@ -39,7 +39,7 @@ final class WasmScope {
     bool withWasi = true,
     Map<String, String> preopens = const {},
   }) async {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
@@ -60,19 +60,19 @@ final class ScopedWasmInstance {
   bool _disposed = false;
 
   List<int> call(String name, [List<int> arguments = const []]) {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
 
   Future<List<num>> callNumbersAsync(String name, List<num> arguments) async {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
 
   WasmMemoryView memory([String name = 'memory']) {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
@@ -92,13 +92,13 @@ final class WasmMemoryView {
   WasmMemoryView._();
 
   Uint8List read(int offset, int length) {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
 
   void write(int offset, Uint8List data) {
-    throw const UnsupportedError(
+    throw UnsupportedError(
       'WebAssembly runtime is not available on this platform',
     );
   }
