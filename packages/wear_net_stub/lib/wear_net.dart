@@ -43,14 +43,14 @@ class WearNetSession {
   WearNetSession._();
 
   static Future<WearNetSession> open() => Future.error(
-    const UnsupportedError('Network proxy is unavailable on this platform'),
+    UnsupportedError('Network proxy is unavailable on this platform'),
   );
 
   Stream<Uint8List> get outboundPackets => const Stream<Uint8List>.empty();
   Stream<WearNetEvent> get events => const Stream.empty();
 
   void pushInbound(List<int> packet) {
-    throw const UnsupportedError('Network proxy is unavailable on this platform');
+    throw UnsupportedError('Network proxy is unavailable on this platform');
   }
 
   Future<void> close() async {}
