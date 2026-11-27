@@ -1,0 +1,6 @@
+name: wear_net
+description: iOS stub for wear_net (network proxy via native TUN unavailable on iOS).
+publish_to: none
+version: 0.0.0
+environment:
+  sdk: ^3.13.0

@@ -74,9 +74,7 @@ dependencies:
   # Unified WebAssembly & AstroBox Plugin System (ABP) runtime
   webview_all: ^1.5.2
   wear_net:
-    git:
-      url: https://github.com/OrPudding/wear_net.git
-      ref: 8f8a8d2736c3d03c696ec58e4cefac7b8e72ea17
+    path: packages/wear_net_stub
   web: ^1.1.1
   flutter_markdown_plus: ^1.0.12
   uuid: ^4.6.0
