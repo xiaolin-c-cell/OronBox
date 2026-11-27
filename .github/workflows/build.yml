@@ -28,8 +28,8 @@ jobs:
           set -uo pipefail
           flutter build ios --release --no-codesign || echo "::warning:: flutter build non-zero exit (known Team-check diagnosis), verifying artifacts"
           echo "===== DIAG build/ios tree ====="
-          find build/ios -maxdepth 4 2>/dev/null | head -80
-          APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
+          find build/ios -maxdepth 4 2>/dev/null | head -80 || true
+          APP="$(find build/ios -name "Runner.app" -type d -print -quit 2>/dev/null || true)"
           OK=0
           if [ -n "$APP" ]; then
             BIN_NAME="$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist" 2>/dev/null || echo Runner)"
@@ -50,8 +50,8 @@ jobs:
               CODE_SIGN_IDENTITY="" \
               EXPANDED_CODE_SIGN_IDENTITY="" \
               ENABLE_BITCODE=NO \
-              build 2>&1 | tail -200
-            APP="$(find build/xcode-direct -name "Runner.app" -type d | head -n1 || true)"
+              build 2>&1 | tail -200 || true
+            APP="$(find build/xcode-direct -name "Runner.app" -type d -print -quit 2>/dev/null || true)"
           fi
           if [ -z "$APP" ]; then
             echo "::error:: Runner.app not found"
