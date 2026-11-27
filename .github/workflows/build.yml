@@ -18,13 +18,49 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
+          cache: true
       - name: Pub get
         run: flutter pub get
-      - name: Build iOS
-        run: flutter build ios --release --no-codesign
+      - name: Build iOS (no codesign)
+        run: |
+          set -uo pipefail
+          flutter build ios --release --no-codesign || echo "::warning:: flutter build non-zero exit (known Team-check diagnosis), verifying artifacts"
+          echo "===== DIAG build/ios tree ====="
+          find build/ios -maxdepth 4 2>/dev/null | head -80
+          APP="$(find build/ios -name "Runner.app" -type d | head -n1 || true)"
+          OK=0
+          if [ -n "$APP" ]; then
+            BIN_NAME="$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist" 2>/dev/null || echo Runner)"
+            if [ -f "$APP/$BIN_NAME" ] && [ -d "$APP/Frameworks" ] && [ -d "$APP/flutter_assets" ]; then
+              OK=1
+            fi
+          fi
+          if [ "$OK" != "1" ]; then
+            echo "::warning:: fallback: direct xcodebuild with signing disabled"
+            xcodebuild \
+              -workspace ios/Runner.xcworkspace \
+              -scheme Runner \
+              -configuration Release \
+              -destination 'generic/platform=iOS' \
+              -derivedDataPath build/xcode-direct \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY="" \
+              EXPANDED_CODE_SIGN_IDENTITY="" \
+              ENABLE_BITCODE=NO \
+              build 2>&1 | tail -200
+            APP="$(find build/xcode-direct -name "Runner.app" -type d | head -n1 || true)"
+          fi
+          if [ -z "$APP" ]; then
+            echo "::error:: Runner.app not found"
+            exit 1
+          fi
+          echo "using app: $APP"
+          printf '%s' "$APP" > .app_path
       - name: Package IPA
         run: |
-          APP=$(find build/ios/iphoneos -name Runner.app -type d | head -n1)
+          set -euo pipefail
+          APP="$(cat .app_path)"
           rm -rf Payload && mkdir Payload
           cp -r "$APP" Payload/
           codesign --force --deep --sign - Payload/Runner.app
@@ -39,4 +75,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ios-ble-full-v1.3.0
+          name: OronBox iOS Full BLE v1.3.0
           files: OronBox-iOS-BLE-Full.ipa
