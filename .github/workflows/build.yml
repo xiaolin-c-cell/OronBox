@@ -1,0 +1,42 @@
+name: Build OronBox iOS BLE
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ios-ble-full-v130
+permissions:
+  contents: write
+env:
+  FLUTTER_VERSION: 3.50.1
+jobs:
+  build-ios:
+    runs-on: macos-15
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+      - name: Pub get
+        run: flutter pub get
+      - name: Build iOS
+        run: flutter build ios --release --no-codesign
+      - name: Package IPA
+        run: |
+          APP=$(find build/ios/iphoneos -name Runner.app -type d | head -n1)
+          rm -rf Payload && mkdir Payload
+          cp -r "$APP" Payload/
+          codesign --force --deep --sign - Payload/Runner.app
+          zip -qry OronBox-iOS-BLE-Full.ipa Payload
+          ls -lh OronBox-iOS-BLE-Full.ipa
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OronBox-iOS-BLE-Full-ipa
+          path: OronBox-iOS-BLE-Full.ipa
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ios-ble-full-v1.3.0
+          files: OronBox-iOS-BLE-Full.ipa
