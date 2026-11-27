@@ -72,10 +72,6 @@ dependencies:
   app_links: ^7.2.1
   path_provider: ^2.1.6
   # Unified WebAssembly & AstroBox Plugin System (ABP) runtime
-  wasm_abp:
-    git:
-      url: https://github.com/OrPudding/wasm_abp.git
-      ref: 8d75c2ec40555f670dfbf191e3db77448bd772a9
   webview_all: ^1.5.2
   wear_net:
     git:
