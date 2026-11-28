@@ -1,0 +1,299 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index da6c0df..a61fe8b 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -21,8 +21,18 @@ jobs:
+           cache: true
+       - name: Pub get
+         run: |
+-          rm -f pubspec.lock
+-          flutter pub get
++          set -euo pipefail
++          # 有 lockfile 时必须严格校验，保证构建可复现；
++          # 缺失时只生成一次并显式警告，绝不静默删除已有 lockfile。
++          if [ -f pubspec.lock ]; then
++            echo "✓ 使用已提交的 pubspec.lock 进行可复现构建"
++            flutter pub get --enforce-lockfile
++          else
++            echo "::warning::pubspec.lock 缺失，本次将重新解析依赖（构建不可复现）。"
++            echo "::warning::请运行 Actions → Lockfile 生成并提交 pubspec.lock。"
++            flutter pub get
++            cp pubspec.lock pubspec.lock.generated
++          fi
+       - name: Build iOS (no codesign)
+         run: |
+           set -uo pipefail
+@@ -73,6 +83,14 @@ jobs:
+         with:
+           name: OronBox-iOS-BLE-Full-ipa
+           path: OronBox-iOS-BLE-Full.ipa
++
++      - name: Upload generated lockfile (if any)
++        if: hashFiles('pubspec.lock.generated') != ''
++        uses: actions/upload-artifact@v4
++        with:
++          name: pubspec-lock-generated
++          path: pubspec.lock.generated
++          if-no-files-found: ignore
+       - name: Publish release
+         uses: softprops/action-gh-release@v2
+         with:
+diff --git a/.github/workflows/lockfile.yml b/.github/workflows/lockfile.yml
+new file mode 100644
+index 0000000..1d5500f
+--- /dev/null
++++ b/.github/workflows/lockfile.yml
+@@ -0,0 +1,76 @@
++name: Lockfile
++
++# 一次性/按需生成并提交 pubspec.lock。
++# 背景：本分支历史上从未提交 pubspec.lock，而 ci.yml / release.yml
++# 都使用 `flutter pub get --enforce-lockfile`，没有 lock 时无法运行；
++# build.yml 曾用 `rm -f pubspec.lock` 绕过，导致每次构建依赖都可能漂移。
++#
++# 用法：Actions → Lockfile → Run workflow。
++# 运行后会把生成的 pubspec.lock 提交回当前分支（仅当有变化时）。
++
++on:
++  workflow_dispatch:
++    inputs:
++      flutter_version:
++        description: 'Flutter 版本（留空则用 build.yml 中的默认值）'
++        required: false
++        default: '3.50.1'
++
++permissions:
++  contents: write
++
++env:
++  FLUTTER_VERSION: ${{ inputs.flutter_version || '3.50.1' }}
++
++jobs:
++  generate:
++    runs-on: macos-15
++    timeout-minutes: 30
++    steps:
++      - uses: actions/checkout@v4
++        with:
++          ref: ${{ github.ref_name }}
++
++      - uses: subosito/flutter-action@v2
++        with:
++          flutter-version: ${{ env.FLUTTER_VERSION }}
++          channel: stable
++          cache: true
++
++      - name: Generate pubspec.lock
++        run: |
++          set -euo pipefail
++          # 生成时必须允许重新解析；生成后立即校验可复现性
++          rm -f pubspec.lock
++          flutter pub get
++          test -f pubspec.lock || { echo "::error::pubspec.lock 未生成"; exit 1; }
++          echo "===== lockfile 摘要 ====="
++          head -5 pubspec.lock
++          echo "包数量: $(grep -c '^  [a-z_0-9]*:$' pubspec.lock || true)"
++
++      - name: Verify lockfile is enforceable
++        run: |
++          set -euo pipefail
++          flutter pub get --enforce-lockfile
++          echo "✓ --enforce-lockfile 通过，lockfile 与 pubspec 一致"
++
++      - name: Commit lockfile if changed
++        run: |
++          set -euo pipefail
++          git config user.name "github-actions[bot]"
++          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
++          if git diff --quiet -- pubspec.lock; then
++            echo "pubspec.lock 无变化，无需提交"
++            exit 0
++          fi
++          git add pubspec.lock
++          git commit -m "chore: 生成并锁定 pubspec.lock (Flutter ${FLUTTER_VERSION})"
++          git push origin HEAD:${{ github.ref_name }}
++          echo "✓ 已提交 pubspec.lock"
++
++      - name: Upload lockfile artifact
++        uses: actions/upload-artifact@v4
++        with:
++          name: pubspec-lock
++          path: pubspec.lock
++          if-no-files-found: error
+diff --git a/lib/src/features/devices/controllers/device_manager.dart b/lib/src/features/devices/controllers/device_manager.dart
+index 38658d9..5de389c 100644
+--- a/lib/src/features/devices/controllers/device_manager.dart
++++ b/lib/src/features/devices/controllers/device_manager.dart
+@@ -890,9 +890,20 @@ class LocalDeviceManager extends DeviceManager {
+     final paired = saved
+         .map((e) {
+           try {
+-            return _normalizeDeviceIdentity(
++            final normalized = _normalizeDeviceIdentity(
+               MiWearState.fromJson(jsonDecode(e) as Map<String, dynamic>),
+             ).copyWith(disconnected: true);
++            // iOS 上历史保存的 SPP 记录一律归正为 BLE，
++            // 否则 _initialConnectType 会一直读回旧的 "SPP"。
++            if (_iosBleOnly &&
++                normalized.connectType.toLowerCase() ==
++                    ConnectType.spp.name) {
++              _log.info(
++                'migrating saved device ${normalized.addr} from SPP to BLE on iOS',
++              );
++              return normalized.copyWith(connectType: ConnectType.ble.name);
++            }
++            return normalized;
+           } catch (e, st) {
+             _log.warning('Invalid saved device record', null, st);
+             return null;
+@@ -985,6 +996,8 @@ class LocalDeviceManager extends DeviceManager {
+ 
+   Set<ConnectType> _scanConnectTypes(ConnectType connectType) {
+     if (kIsWeb) return const {ConnectType.ble};
++    // iOS 上不要扫经典蓝牙，否则会扫出一张永远连不上的 SPP 设备卡。
++    if (_iosBleOnly) return const {ConnectType.ble};
+     if (connectType == ConnectType.ble) {
+       return const {ConnectType.ble, ConnectType.spp};
+     }
+@@ -1410,7 +1423,7 @@ class LocalDeviceManager extends DeviceManager {
+         : 'name';
+     var effectiveKind = kind == DeviceKind.xiaomi ? profile.kind : kind;
+     final normalizedConnectType = connectType.toLowerCase();
+-    final effectiveConnectType =
++    var effectiveConnectType =
+         effectiveKind == DeviceKind.zepp && normalizedConnectType.isNotEmpty
+         ? normalizedConnectType
+         : normalizedConnectType.isEmpty ||
+@@ -1419,6 +1432,16 @@ class LocalDeviceManager extends DeviceManager {
+                   profile.preferredConnectType.name != normalizedConnectType)
+         ? profile.preferredConnectType.name
+         : normalizedConnectType;
++
++    // iOS 纯 BLE 兜底：覆盖 ZeppOS、未知设备、已保存设备三条绕过 profile 的路径。
++    // 之前只改 profile.preferredConnectType 对这三类设备无效。
++    if (_iosBleOnly && effectiveConnectType != ConnectType.ble.name) {
++      _log.info(
++        'iOS forces BLE over requested "$effectiveConnectType" for $addr',
++      );
++      effectiveConnectType = ConnectType.ble.name;
++    }
++
+     _log.info(
+       'connect request $addr rawName="$name" displayName="$displayName" '
+       'codename="$effectiveCodename" via=$effectiveConnectType '
+@@ -2242,7 +2265,10 @@ class LocalDeviceManager extends DeviceManager {
+             device.addr,
+             device.name,
+             authKey,
+-            connectType: device.connectType,
++            // iOS 上重连同样要归一到 BLE，否则会拿旧的 SPP 记录重试到超时
++            connectType: _iosBleOnly
++                ? ConnectType.ble.name
++                : device.connectType,
+           );
+         } catch (error, stackTrace) {
+           _log.warning(
+@@ -4599,7 +4625,9 @@ class LocalDeviceManager extends DeviceManager {
+               ? device.name.trim()
+               : (identity?.displayName ?? device.model),
+           addr: device.mac.trim(),
+-          connectType: ConnectType.spp.name,
++          connectType: _iosBleOnly
++              ? ConnectType.ble.name
++              : ConnectType.spp.name,
+           authkey: device.authKey.trim(),
+           codename: identity?.codename,
+           disconnected: true,
+@@ -4661,3 +4689,7 @@ class LocalDeviceManager extends DeviceManager {
+ 
+ final deviceManagerProvider =
+     NotifierProvider<DeviceManager, DeviceManagerState>(LocalDeviceManager.new);
++
++/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制）。
++bool get _iosBleOnly =>
++    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+diff --git a/lib/src/features/devices/domain/device_connection_endpoint.dart b/lib/src/features/devices/domain/device_connection_endpoint.dart
+index a769d21..d9e9ec1 100644
+--- a/lib/src/features/devices/domain/device_connection_endpoint.dart
++++ b/lib/src/features/devices/domain/device_connection_endpoint.dart
+@@ -1,3 +1,4 @@
++import 'package:flutter/foundation.dart';
+ import 'package:oronbox/src/core/models/bt_models.dart';
+ import 'package:oronbox/src/device/core/connect_type.dart';
+ import 'package:oronbox/src/device/core/device_profile.dart';
+@@ -27,11 +28,41 @@ DeviceConnectionEndpoint? resolveDeviceConnectionEndpoint({
+ }) {
+   final normalizedType = connectType.toLowerCase();
+   final hasClassicAddress = _isClassicAddress(device.addr);
+-  if (device.connectType.toLowerCase() == normalizedType &&
++
++  // iOS 上 BLE 只能用 CoreBluetooth 的 UUID 连接，不能拿经典蓝牙 MAC。
++  // 若设备记录里是 MAC（历史上以 SPP 配对过），必须先到扫描结果里
++  // 找同名 BLE 端点，否则会把 MAC 直接喂给 GATT，连接必定失败。
++  final needsIosBleAddressRemap =
++      isIosBleOnly &&
++      normalizedType == ConnectType.ble.name &&
++      hasClassicAddress;
++
++  if (!needsIosBleAddressRemap &&
++      device.connectType.toLowerCase() == normalizedType &&
+       !(normalizedType == ConnectType.spp.name && !hasClassicAddress)) {
+     return (addr: device.addr, name: device.name);
+   }
+ 
++  if (needsIosBleAddressRemap) {
++    final wantName = device.name.trim();
++    final wantIdentity =
++        xiaomiWearableIdentityForCodename(device.codename) ??
++        normalizeXiaomiWearableIdentity(device.name);
++    for (final endpoint in scannedDevices) {
++      if (endpoint.connectType.toLowerCase() != ConnectType.ble.name) continue;
++      final sameName = endpoint.name.trim() == wantName;
++      final sameIdentity =
++          wantIdentity != null &&
++          (normalizeXiaomiWearableIdentity(endpoint.name)?.codename ==
++              wantIdentity.codename);
++      if (!sameName && !sameIdentity) continue;
++      return (addr: endpoint.addr, name: endpoint.name);
++    }
++    // 扫不到对应的 BLE 端点时返回 null，由 UI 提示「端点不可用」，
++    // 好过把经典 MAC 喂给 GATT 后静默超时。
++    return null;
++  }
++
+   final sourceIdentity = zeppOsDeviceForBluetoothName(device.name);
+   if (sourceIdentity == null) {
+     final profile = DeviceRegistry.resolveIdentity(
+@@ -93,3 +124,7 @@ DeviceConnectionEndpoint? resolveDeviceConnectionEndpoint({
+   }
+   return null;
+ }
++
++/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制）。
++bool get isIosBleOnly =>
++    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+diff --git a/lib/src/features/devices/pages/switch/device_switch_page.dart b/lib/src/features/devices/pages/switch/device_switch_page.dart
+index 006e4b4..065b8fc 100644
+--- a/lib/src/features/devices/pages/switch/device_switch_page.dart
++++ b/lib/src/features/devices/pages/switch/device_switch_page.dart
+@@ -1416,6 +1416,11 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
+   }
+ 
+   String _initialConnectType(DeviceProfile profile) {
++    // iOS 12+ 不允许第三方 App 使用经典蓝牙 SPP，任何情况下都只能走 BLE。
++    // 这里必须前置判断：已保存设备的 connectType 来自本地持久化，
++    // 可能是历史遗留的 "SPP"，若不拦截会一直覆盖 profile 的推荐值。
++    if (isIosBleOnly) return ConnectType.ble.name;
++
+     if (!widget.saved && profile.id != DeviceRegistry.unknown.id) {
+       return profile.preferredConnectType.name;
+     }
+@@ -1893,3 +1898,8 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
+     );
+   }
+ }
++
++/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制），
++/// 因此连接类型必须强制为 BLE。
++bool get isIosBleOnly =>
++    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;

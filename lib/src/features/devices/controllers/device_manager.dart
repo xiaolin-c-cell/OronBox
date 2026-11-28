@@ -890,9 +890,20 @@ class LocalDeviceManager extends DeviceManager {
     final paired = saved
         .map((e) {
           try {
-            return _normalizeDeviceIdentity(
+            final normalized = _normalizeDeviceIdentity(
               MiWearState.fromJson(jsonDecode(e) as Map<String, dynamic>),
             ).copyWith(disconnected: true);
+            // iOS 上历史保存的 SPP 记录一律归正为 BLE，
+            // 否则 _initialConnectType 会一直读回旧的 "SPP"。
+            if (_iosBleOnly &&
+                normalized.connectType.toLowerCase() ==
+                    ConnectType.spp.name) {
+              _log.info(
+                'migrating saved device ${normalized.addr} from SPP to BLE on iOS',
+              );
+              return normalized.copyWith(connectType: ConnectType.ble.name);
+            }
+            return normalized;
           } catch (e, st) {
             _log.warning('Invalid saved device record', null, st);
             return null;
@@ -985,6 +996,8 @@ class LocalDeviceManager extends DeviceManager {
 
   Set<ConnectType> _scanConnectTypes(ConnectType connectType) {
     if (kIsWeb) return const {ConnectType.ble};
+    // iOS 上不要扫经典蓝牙，否则会扫出一张永远连不上的 SPP 设备卡。
+    if (_iosBleOnly) return const {ConnectType.ble};
     if (connectType == ConnectType.ble) {
       return const {ConnectType.ble, ConnectType.spp};
     }
@@ -1410,7 +1423,7 @@ class LocalDeviceManager extends DeviceManager {
         : 'name';
     var effectiveKind = kind == DeviceKind.xiaomi ? profile.kind : kind;
     final normalizedConnectType = connectType.toLowerCase();
-    final effectiveConnectType =
+    var effectiveConnectType =
         effectiveKind == DeviceKind.zepp && normalizedConnectType.isNotEmpty
         ? normalizedConnectType
         : normalizedConnectType.isEmpty ||
@@ -1419,6 +1432,16 @@ class LocalDeviceManager extends DeviceManager {
                   profile.preferredConnectType.name != normalizedConnectType)
         ? profile.preferredConnectType.name
         : normalizedConnectType;
+
+    // iOS 纯 BLE 兜底：覆盖 ZeppOS、未知设备、已保存设备三条绕过 profile 的路径。
+    // 之前只改 profile.preferredConnectType 对这三类设备无效。
+    if (_iosBleOnly && effectiveConnectType != ConnectType.ble.name) {
+      _log.info(
+        'iOS forces BLE over requested "$effectiveConnectType" for $addr',
+      );
+      effectiveConnectType = ConnectType.ble.name;
+    }
+
     _log.info(
       'connect request $addr rawName="$name" displayName="$displayName" '
       'codename="$effectiveCodename" via=$effectiveConnectType '
@@ -2242,7 +2265,10 @@ class LocalDeviceManager extends DeviceManager {
             device.addr,
             device.name,
             authKey,
-            connectType: device.connectType,
+            // iOS 上重连同样要归一到 BLE，否则会拿旧的 SPP 记录重试到超时
+            connectType: _iosBleOnly
+                ? ConnectType.ble.name
+                : device.connectType,
           );
         } catch (error, stackTrace) {
           _log.warning(
@@ -4599,7 +4625,9 @@ class LocalDeviceManager extends DeviceManager {
               ? device.name.trim()
               : (identity?.displayName ?? device.model),
           addr: device.mac.trim(),
-          connectType: ConnectType.spp.name,
+          connectType: _iosBleOnly
+              ? ConnectType.ble.name
+              : ConnectType.spp.name,
           authkey: device.authKey.trim(),
           codename: identity?.codename,
           disconnected: true,
@@ -4661,3 +4689,7 @@ class LocalDeviceManager extends DeviceManager {
 
 final deviceManagerProvider =
     NotifierProvider<DeviceManager, DeviceManagerState>(LocalDeviceManager.new);
+
+/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制）。
+bool get _iosBleOnly =>
+    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;

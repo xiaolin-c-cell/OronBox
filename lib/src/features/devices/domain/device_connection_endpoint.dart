@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:oronbox/src/core/models/bt_models.dart';
 import 'package:oronbox/src/device/core/connect_type.dart';
 import 'package:oronbox/src/device/core/device_profile.dart';
@@ -27,9 +28,39 @@ DeviceConnectionEndpoint? resolveDeviceConnectionEndpoint({
 }) {
   final normalizedType = connectType.toLowerCase();
   final hasClassicAddress = _isClassicAddress(device.addr);
-  if (device.connectType.toLowerCase() == normalizedType &&
+
+  // iOS 上 BLE 只能用 CoreBluetooth 的 UUID 连接，不能拿经典蓝牙 MAC。
+  // 若设备记录里是 MAC（历史上以 SPP 配对过），必须先到扫描结果里
+  // 找同名 BLE 端点，否则会把 MAC 直接喂给 GATT，连接必定失败。
+  final needsIosBleAddressRemap =
+      isIosBleOnly &&
+      normalizedType == ConnectType.ble.name &&
+      hasClassicAddress;
+
+  if (!needsIosBleAddressRemap &&
+      device.connectType.toLowerCase() == normalizedType &&
       !(normalizedType == ConnectType.spp.name && !hasClassicAddress)) {
     return (addr: device.addr, name: device.name);
+  }
+
+  if (needsIosBleAddressRemap) {
+    final wantName = device.name.trim();
+    final wantIdentity =
+        xiaomiWearableIdentityForCodename(device.codename) ??
+        normalizeXiaomiWearableIdentity(device.name);
+    for (final endpoint in scannedDevices) {
+      if (endpoint.connectType.toLowerCase() != ConnectType.ble.name) continue;
+      final sameName = endpoint.name.trim() == wantName;
+      final sameIdentity =
+          wantIdentity != null &&
+          (normalizeXiaomiWearableIdentity(endpoint.name)?.codename ==
+              wantIdentity.codename);
+      if (!sameName && !sameIdentity) continue;
+      return (addr: endpoint.addr, name: endpoint.name);
+    }
+    // 扫不到对应的 BLE 端点时返回 null，由 UI 提示「端点不可用」，
+    // 好过把经典 MAC 喂给 GATT 后静默超时。
+    return null;
   }
 
   final sourceIdentity = zeppOsDeviceForBluetoothName(device.name);
@@ -93,3 +124,7 @@ DeviceConnectionEndpoint? resolveDeviceConnectionEndpoint({
   }
   return null;
 }
+
+/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制）。
+bool get isIosBleOnly =>
+    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;

@@ -4,7 +4,7 @@ import 'package:oronbox/src/features/devices/services/device_share_link.dart';
 
 void main() {
   const parameters =
-      'source=deviceQr&name=Xiaomi%20Watch%20S5&mac=aabbccddeeff&authkey=0123456789abcdef0123456789abcdef';
+      'source=deviceQr&name=Xiaomi%20Watch%20S5&mac=aabbccddeeff&authkey=0000000000000000testfixture0000';
   test('recognizes the shared parameter contract independently of the URL', () {
     for (final prefix in [
       'https://astrobox.online/open?',
@@ -17,12 +17,12 @@ void main() {
       final device = DeviceShareLink.parse('$prefix$parameters');
       expect(device?.addr, 'AA:BB:CC:DD:EE:FF', reason: prefix);
       expect(device?.name, 'Xiaomi Watch S5');
-      expect(device?.authkey, '0123456789abcdef0123456789abcdef');
+      expect(device?.authkey, '0000000000000000testfixture0000');
     }
   });
   test('accepts addr sharing without requiring source or kind', () {
     const fields =
-        'name=%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF10+NFC%E7%89%88+++&addr=AA%3ABB%3ACC%3ADD%3AEE%3AFF&authkey=0123456789abcdef0123456789abcdef';
+        'name=%E5%B0%8F%E7%B1%B3%E6%89%8B%E7%8E%AF10+NFC%E7%89%88+++&addr=AA%3ABB%3ACC%3ADD%3AEE%3AFF&authkey=0000000000000000testfixture0000';
     for (final prefix in [
       'https://abox.run/open?source=device&kind=Xiaomi&',
       'https://unrelated.example/anything?',
@@ -32,7 +32,7 @@ void main() {
       final device = DeviceShareLink.parse('$prefix$fields');
       expect(device?.name, '小米手环10 NFC版');
       expect(device?.addr, 'AA:BB:CC:DD:EE:FF');
-      expect(device?.authkey, '0123456789abcdef0123456789abcdef');
+      expect(device?.authkey, '0000000000000000testfixture0000');
     }
   });
 
@@ -50,7 +50,7 @@ void main() {
     () {
       for (final value in [
         parameters.replaceFirst('aabbccddeeff', 'not-a-mac'),
-        parameters.replaceFirst('0123456789abcdef0123456789abcdef', 'invalid'),
+        parameters.replaceFirst('0000000000000000testfixture0000', 'invalid'),
         '$parameters&mac=112233445566',
         'https://example.com/ordinary',
         '?source=deviceQr&name=%&mac=aabbccddeeff',
@@ -89,7 +89,7 @@ void main() {
       name: '手表 & Test',
       addr: 'aa-bb-cc-dd-ee-ff',
       connectType: 'spp',
-      authkey: '0123456789abcdef0123456789abcdef',
+      authkey: '0000000000000000testfixture0000',
     );
     for (final link in [
       DeviceShareLink.build(device),

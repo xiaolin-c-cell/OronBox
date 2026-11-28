@@ -1416,6 +1416,11 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
   }
 
   String _initialConnectType(DeviceProfile profile) {
+    // iOS 12+ 不允许第三方 App 使用经典蓝牙 SPP，任何情况下都只能走 BLE。
+    // 这里必须前置判断：已保存设备的 connectType 来自本地持久化，
+    // 可能是历史遗留的 "SPP"，若不拦截会一直覆盖 profile 的推荐值。
+    if (isIosBleOnly) return ConnectType.ble.name;
+
     if (!widget.saved && profile.id != DeviceRegistry.unknown.id) {
       return profile.preferredConnectType.name;
     }
@@ -1893,3 +1898,8 @@ class _DeviceCardState extends ConsumerState<_DeviceCard> {
     );
   }
 }
+
+/// iOS 上第三方 App 无法使用经典蓝牙 SPP（iOS 12+ 限制），
+/// 因此连接类型必须强制为 BLE。
+bool get isIosBleOnly =>
+    !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;

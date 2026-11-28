@@ -21,8 +21,18 @@ jobs:
           cache: true
       - name: Pub get
         run: |
-          rm -f pubspec.lock
-          flutter pub get
+          set -euo pipefail
+          # 有 lockfile 时必须严格校验，保证构建可复现；
+          # 缺失时只生成一次并显式警告，绝不静默删除已有 lockfile。
+          if [ -f pubspec.lock ]; then
+            echo "✓ 使用已提交的 pubspec.lock 进行可复现构建"
+            flutter pub get --enforce-lockfile
+          else
+            echo "::warning::pubspec.lock 缺失，本次将重新解析依赖（构建不可复现）。"
+            echo "::warning::请运行 Actions → Lockfile 生成并提交 pubspec.lock。"
+            flutter pub get
+            cp pubspec.lock pubspec.lock.generated
+          fi
       - name: Build iOS (no codesign)
         run: |
           set -uo pipefail
@@ -73,9 +83,17 @@ jobs:
         with:
           name: OronBox-iOS-BLE-Full-ipa
           path: OronBox-iOS-BLE-Full.ipa
+
+      - name: Upload generated lockfile (if any)
+        if: hashFiles('pubspec.lock.generated') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: pubspec-lock-generated
+          path: pubspec.lock.generated
+          if-no-files-found: ignore
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ios-ble-full-v1.3.0
-          name: OronBox iOS Full BLE v1.3.0
+          tag_name: ios-ble-full-v1.3.0-deepseek
+          name: OronBox iOS Full BLE v1.3.0 (DeepSeek fixes)
           files: OronBox-iOS-BLE-Full.ipa

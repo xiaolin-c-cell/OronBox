@@ -1,0 +1,76 @@
+name: Lockfile
+
+# 一次性/按需生成并提交 pubspec.lock。
+# 背景：本分支历史上从未提交 pubspec.lock，而 ci.yml / release.yml
+# 都使用 `flutter pub get --enforce-lockfile`，没有 lock 时无法运行；
+# build.yml 曾用 `rm -f pubspec.lock` 绕过，导致每次构建依赖都可能漂移。
+#
+# 用法：Actions → Lockfile → Run workflow。
+# 运行后会把生成的 pubspec.lock 提交回当前分支（仅当有变化时）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      flutter_version:
+        description: 'Flutter 版本（留空则用 build.yml 中的默认值）'
+        required: false
+        default: '3.50.1'
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: ${{ inputs.flutter_version || '3.50.1' }}
+
+jobs:
+  generate:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Generate pubspec.lock
+        run: |
+          set -euo pipefail
+          # 生成时必须允许重新解析；生成后立即校验可复现性
+          rm -f pubspec.lock
+          flutter pub get
+          test -f pubspec.lock || { echo "::error::pubspec.lock 未生成"; exit 1; }
+          echo "===== lockfile 摘要 ====="
+          head -5 pubspec.lock
+          echo "包数量: $(grep -c '^  [a-z_0-9]*:$' pubspec.lock || true)"
+
+      - name: Verify lockfile is enforceable
+        run: |
+          set -euo pipefail
+          flutter pub get --enforce-lockfile
+          echo "✓ --enforce-lockfile 通过，lockfile 与 pubspec 一致"
+
+      - name: Commit lockfile if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- pubspec.lock; then
+            echo "pubspec.lock 无变化，无需提交"
+            exit 0
+          fi
+          git add pubspec.lock
+          git commit -m "chore: 生成并锁定 pubspec.lock (Flutter ${FLUTTER_VERSION})"
+          git push origin HEAD:${{ github.ref_name }}
+          echo "✓ 已提交 pubspec.lock"
+
+      - name: Upload lockfile artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pubspec-lock
+          path: pubspec.lock
+          if-no-files-found: error
